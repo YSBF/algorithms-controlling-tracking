@@ -87,6 +87,26 @@ The main states are \textit{ARMED , STAND-BY , INIT , ERROR} and \textit{UNLOCKE
 
 \section{Estimation modules}
 
+Since I am using an older version of PX4 because it is stable and well tested, the estimation occurs in two different modules. The first module, called \textit{position\_estimator\_inav} , is used to estimate the position of the quadcopter while the second, named\textit{ att\_estimator\_ekf }, estimates the attitude. The choice of dividing in two different processes the estimation phase  is mainly because attitude has an higher dynamics than position, this gives the possibility to run the attitude estimator at a frequency higher than the position estimator thus having better results.
+
+\subsection{Position estimator}
+
+The position estimator is based on inertial model and optimized for multirotors. It reads multiple sensors and estimates 3D position and velocity, in local and global frames. It is a fixed gain estimator and it relies on the following sources with the respective gains:
+\begin{table}[H]
+		\centering
+	\begin{tabular}{l l r}
+		\textbf{Sensor} & \textbf{ID} & \textbf{Gain} \\ \hline
+		Accelerometer (for altitude) & INAV\_W\_Z\_ACC & 50 \\
+		Barometer (gives absolute altitude)  & INAV\_W\_Z\_BARO & 50  \\
+		Accelerometer (for x and y) & INAV\_W\_XY\_ACC & 10 \\
+		GPS Position & INAV\_W\_XY\_GPS\_P & 1 \\
+		GPS Velocity & INAV\_W\_XY\_GPS\_V & 2 \\
+		Mocap estimate ( altitude ) & INAV\_W\_Z\_VIS\_P & 5 \\
+		Mocap estimate ( altitude ) & INAV\_W\_XY\_VIS\_P & 7 \\
+	\end{tabular}
+\end{table}
+fprgqwrgqwgwqg
+
 
 
 
