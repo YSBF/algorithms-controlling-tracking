@@ -18,10 +18,18 @@ Due to the nature of the dynamics of the quadrotor, several control algorithms h
 The PX4 Flight Stack denotes the list of all the applications running on board the PixHawk. Those modules provide the services and methods which are necessary to manage the radio communications, inter process message pass-through, data logging, state estimation, control, high level states and low level communication with motors and sensors.
 
 \subsection{Message pass-through}
-The core on board applications are started at system startup, others can be started via the NuttShell or forced to startup by inserting them in the start boot file. Every application runs independently with its own frequency; the interfaces between processes are managed by \textit{uOrb} middleware (Micro Orb) which, with the use of topics, guarantees the message pass-through for data packets over named buses. Those topics encode structs and they are pre defined. In PX4, a topic (often called node) contains only one message type, e.g. the \textit{vehicle attitude} topic transports a message containing the attitude struct (roll, pitch and yaw estimates).\par Nodes can publish a message on a bus/topic or subscribe to a bus/topic. They are not aware of who they are communicating with. There can be multiple publishers and multiple subscribers to a topic. This design pattern prevents locking issues and is very common in robotics. \textbf{To make this efficient, there is always only one message on the bus and no queue is kept} \cite{uOrb}. The total list of \textit{uOrb} topics can be found in the uOrb folder of the PX4 Firmware since the online documentation is not updated. \\
+The core on board applications are started at system startup, others can be started via the NuttShell or forced to startup by inserting them in the start boot file. Every application runs independently with its own frequency; the interfaces between processes are managed by \textit{uOrb} middleware (Micro Orb) which, with the use of topics, guarantees the message pass-through for data packets over named buses. Those topics encode structs and they are pre defined. In PX4, a topic (often called node) contains only one message type, e.g. the \textit{vehicle attitude} topic transports a message containing the attitude struct (roll, pitch and yaw estimates).\par Nodes can publish a message on a bus/topic or subscribe to a bus/topic. They are not aware of who they are communicating with. There can be multiple publishers and multiple subscribers to a topic (Figure \ref{figure:pubsub}). This design pattern prevents locking issues and is very common in robotics. \textbf{To make this efficient, there is always only one message on the bus and no queue is kept} \cite{uOrb}. The total list of \textit{uOrb} topics can be found in the uOrb folder of the PX4 Firmware since the online documentation is not updated. \\
 
 \noindent
 The external communication (through radio link) is managed by mavlink, previously presented in section \ref{sec:mavlink}, however Mav packets are translated in uOrb topics internally.   
+
+\begin{figure}[h]
+	\centering
+	\noindent
+	\includegraphics[width=0.6\textwidth]{pub_sub.PNG}
+	\caption{Publish/Subscribe design pattern}
+	\label{figure:pubsub}
+\end{figure}
 
 \subsection{Onboard nodes}
 
@@ -61,6 +69,23 @@ The most relevant apps that are started at boot can be divided in groups. \\
 	\item navigator - highest level of abstraction, it implements mission following and failsafe
 \end{itemize}
 
+\subsection{State machine overview}
+
+The system relies on a state machine in order to manage what it can and cannot do at a particular moment. The main task of this module is to assure safety from an high level point of view. Other safety procedures are implemented also on a lower level on hardware. \\
+
+\noindent
+The main states are \textit{ARMED , STAND-BY , INIT , ERROR} and \textit{UNLOCKED}. At the moment the user turns on the robot, the state machine is in \textit{INIT} state. Here all the procedure for sensor initialization and checklists are done. The next state then becomes \textit{STAND-BY} where IRIS waits for orders. By manually pressing a safety button, the state changes to UNLOCKED and back to STAND-BY by pressing again the button. In UNLOCKED state, the motor are electrically connected to the power source thus they can be armed. With a button on the remote control, the motors are armed and start spinning with idle velocity and the robot can fly. From any state, an error signal may arrive changing the actual configuration to ERROR. Here the motors are turned off after the automatic landing procedure and the robot must be rebooted. Those concept are depicted in figure \ref{figure:iris_state}.
+
+\begin{figure}[h]
+	\centering
+	\noindent
+	\includegraphics[width=0.7\textwidth]{iris_state.png}
+	\caption{IRIS state machine}
+	\label{figure:iris_state}
+\end{figure}
+
+
+\section{Estimation modules}
 
 
 
