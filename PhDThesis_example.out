@@ -1,0 +1,43 @@
+\BOOKMARK [0][]{chapter.1}{1 Introductory}{}% 1
+\BOOKMARK [1][]{section.1.1}{1.1 Introduction}{chapter.1}% 2
+\BOOKMARK [2][]{subsection.1.1.1}{1.1.1 Hosting laboratories}{section.1.1}% 3
+\BOOKMARK [1][]{section.1.2}{1.2 Problem statement}{chapter.1}% 4
+\BOOKMARK [2][]{subsection.1.2.1}{1.2.1 Work plan}{section.1.2}% 5
+\BOOKMARK [0][]{chapter.2}{2 Related work}{}% 6
+\BOOKMARK [1][]{section.2.1}{2.1 Quadrotor platform}{chapter.2}% 7
+\BOOKMARK [1][]{section.2.2}{2.2 Motion capture systems}{chapter.2}% 8
+\BOOKMARK [1][]{section.2.3}{2.3 Current autopilots}{chapter.2}% 9
+\BOOKMARK [1][]{section.2.4}{2.4 Modeling and control}{chapter.2}% 10
+\BOOKMARK [1][]{section.2.5}{2.5 Software architectures and control stations}{chapter.2}% 11
+\BOOKMARK [1][]{section.2.6}{2.6 Landing on a moving platform}{chapter.2}% 12
+\BOOKMARK [0][]{chapter.3}{3 System description}{}% 13
+\BOOKMARK [1][]{section.3.1}{3.1 The setup}{chapter.3}% 14
+\BOOKMARK [2][]{subsection.3.1.1}{3.1.1 IRIS Quadcopter}{section.3.1}% 15
+\BOOKMARK [3][]{subsubsection.3.1.1.1}{3.1.1.1 PixHawk board}{subsection.3.1.1}% 16
+\BOOKMARK [3][]{subsubsection.3.1.1.2}{3.1.1.2 PX4 Autopilot}{subsection.3.1.1}% 17
+\BOOKMARK [3][]{subsubsection.3.1.1.3}{3.1.1.3 MAVLink Protocol}{subsection.3.1.1}% 18
+\BOOKMARK [2][]{subsection.3.1.2}{3.1.2 Motion capture system}{section.3.1}% 19
+\BOOKMARK [3][]{subsubsection.3.1.2.1}{3.1.2.1 Image sensor specifications and performances}{subsection.3.1.2}% 20
+\BOOKMARK [3][]{subsubsection.3.1.2.2}{3.1.2.2 Software, cameras layout and requirements}{subsection.3.1.2}% 21
+\BOOKMARK [2][]{subsection.3.1.3}{3.1.3 Flight Arena}{section.3.1}% 22
+\BOOKMARK [1][]{section.3.2}{3.2 Overall Integration}{chapter.3}% 23
+\BOOKMARK [2][]{subsection.3.2.1}{3.2.1 Hardware interfaces}{section.3.2}% 24
+\BOOKMARK [2][]{subsection.3.2.2}{3.2.2 Software interfaces}{section.3.2}% 25
+\BOOKMARK [3][]{subsubsection.3.2.2.1}{3.2.2.1 Adapting reference frames}{subsection.3.2.2}% 26
+\BOOKMARK [0][]{chapter.4}{4 Modeling IRIS}{}% 27
+\BOOKMARK [1][]{section.4.1}{4.1 Generalities}{chapter.4}% 28
+\BOOKMARK [2][]{subsection.4.1.1}{4.1.1 Reference frames}{section.4.1}% 29
+\BOOKMARK [2][]{subsection.4.1.2}{4.1.2 General assumptions}{section.4.1}% 30
+\BOOKMARK [1][]{section.4.2}{4.2 Transformation matrices}{chapter.4}% 31
+\BOOKMARK [1][]{section.4.3}{4.3 Propulsion and controls}{chapter.4}% 32
+\BOOKMARK [1][]{section.4.4}{4.4 Complete model}{chapter.4}% 33
+\BOOKMARK [2][]{subsection.4.4.1}{4.4.1 Rigid body equations}{section.4.4}% 34
+\BOOKMARK [0][]{chapter.5}{5 Control and state estimation}{}% 35
+\BOOKMARK [1][]{section.5.1}{5.1 Introduction to the PX4 Flight Stack}{chapter.5}% 36
+\BOOKMARK [2][]{subsection.5.1.1}{5.1.1 Message pass-through}{section.5.1}% 37
+\BOOKMARK [0][]{chapter.6}{6 Software architecture}{}% 38
+\BOOKMARK [0][]{chapter.7}{7 Landing on a mobile platform}{}% 39
+\BOOKMARK [0][]{chapter.8}{8 Results}{}% 40
+\BOOKMARK [0][]{chapter.9}{9 Conclusions}{}% 41
+\BOOKMARK [0][]{appendix.A}{A Extra}{}% 42
+\BOOKMARK [0][]{appendix*.16}{References}{}% 43

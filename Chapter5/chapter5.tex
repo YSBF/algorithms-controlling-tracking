@@ -1,0 +1,25 @@
+% THESIS CHAPTER
+
+\chapter{Control and state estimation}
+\label{chap:fifth
+}
+\ifpdf
+    \graphicspath{{Chapter5/Figures/PNG/}{Chapter5/Figures/PDF/}{Chapter5/Figures/}}
+\else
+    \graphicspath{{Chapter5/Figures/EPS/}{Chapter5/Figures/}}
+\fi
+
+% short summary of the chapter
+\section*{Summary}
+Due to the nature of the dynamics of the quadrotor, several control algorithms have been applied to it. As to be expected, each control scheme has its advantages and disadvantages. This chapter presents the techniques that are used to estimate the system's states and to stabilize IRIS which are currently implemented in the PX4 Firmware.\par After a quick overview of the estimator modules, the controller architecture is presented. Moreover, this chapter explains in details how the on board autopilot interfaces with the software architecture and which modules are involved.
+
+\section{Introduction to the PX4 Flight Stack}
+
+The PX4 Flight Stack denotes the list of all the applications running on board the PixHawk. Those modules provide the services and methods which are necessary to manage the radio communications, inter process message pass-through, data logging, state estimation, control, high level states and low level communication with motors and sensors.
+
+\subsection{Message pass-through}
+The core on board applications are started at system startup, others can be started via the NuttShell or forced to startup by inserting them in the start boot file. Every application runs independently with its own frequency; the interfaces between processes are managed by \textit{uOrb} middleware (Micro Orb) which, with the use of topics, guarantees the message pass-through for data packets over named buses. Those topics encode structs and they are pre defined. In PX4, a topic (often called node) contains only one message type, e.g. the \textit{vehicle attitude} topic transports a message containing the attitude struct (roll, pitch and yaw estimates).\par Nodes can publish a message on a bus/topic or subscribe to a bus/topic. They are not aware of who they are communicating with. There can be multiple publishers and multiple subscribers to a topic. This design pattern prevents locking issues and is very common in robotics. \textbf{To make this efficient, there is always only one message on the bus and no queue is kept}. The total list of \textit{uOrb} topics can be found in the uOrb folder of the PX4 Firmware since the online documentation is not updated. \\
+
+\noindent
+The external communication (through radio link) is managed by mavlink, previously presented in section \ref{sec:mavlink}, however Mav packets are translated in uOrb topics internally.   
+        

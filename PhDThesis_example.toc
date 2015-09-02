@@ -1,0 +1,46 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introductory}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Hosting laboratories}{2}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Problem statement}{3}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Work plan}{3}{subsection.1.2.1}
+\contentsline {chapter}{\numberline {2}Related work}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Quadrotor platform}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Motion capture systems}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Current autopilots}{8}{section.2.3}
+\contentsline {section}{\numberline {2.4}Modeling and control}{9}{section.2.4}
+\contentsline {section}{\numberline {2.5}Software architectures and control stations}{12}{section.2.5}
+\contentsline {section}{\numberline {2.6}Landing on a moving platform}{13}{section.2.6}
+\contentsline {chapter}{\numberline {3}System description}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}The setup}{16}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}IRIS Quadcopter}{17}{subsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.1}PixHawk board}{18}{subsubsection.3.1.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.2}PX4 Autopilot}{19}{subsubsection.3.1.1.2}
+\contentsline {subsubsection}{\numberline {3.1.1.3}MAVLink Protocol}{20}{subsubsection.3.1.1.3}
+\contentsline {subsection}{\numberline {3.1.2}Motion capture system}{23}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Image sensor specifications and performances}{23}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {3.1.2.2}Software, cameras layout and requirements}{24}{subsubsection.3.1.2.2}
+\contentsline {subsection}{\numberline {3.1.3}Flight Arena}{27}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Overall Integration}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Hardware interfaces}{28}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Software interfaces}{30}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Adapting reference frames}{30}{subsubsection.3.2.2.1}
+\contentsline {chapter}{\numberline {4}Modeling IRIS}{34}{chapter.4}
+\contentsline {section}{\numberline {4.1}Generalities}{34}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Reference frames}{34}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}General assumptions}{35}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Transformation matrices}{36}{section.4.2}
+\contentsline {section}{\numberline {4.3}Propulsion and controls}{38}{section.4.3}
+\contentsline {section}{\numberline {4.4}Complete model}{41}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Rigid body equations}{41}{subsection.4.4.1}
+\contentsline {paragraph}{Equations for translation}{42}{section*.8}
+\contentsline {paragraph}{Equations for rotation}{42}{section*.9}
+\contentsline {chapter}{\numberline {5}Control and state estimation}{46}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction to the PX4 Flight Stack}{46}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Message pass-through}{46}{subsection.5.1.1}
+\contentsline {chapter}{\numberline {6}Software architecture}{48}{chapter.6}
+\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{49}{chapter.7}
+\contentsline {chapter}{\numberline {8}Results}{50}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusions}{51}{chapter.9}
+\contentsline {chapter}{\numberline {A}Extra}{52}{appendix.A}
+\contentsline {chapter}{References}{57}{appendix*.16}

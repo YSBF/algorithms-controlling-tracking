@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: PhDThesis_example.aux
+A level-1 auxiliary file: Acknowledgement/acknowledgement.aux
+A level-1 auxiliary file: Dedication/dedication.aux
+A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Introduction/introduction.aux
+A level-1 auxiliary file: Chapter2/chapter2.aux
+A level-1 auxiliary file: Chapter3/chapter3.aux
+A level-1 auxiliary file: Chapter4/chapter4.aux
+A level-1 auxiliary file: Chapter5/chapter5.aux
+A level-1 auxiliary file: Chapter6/chapter6.aux
+A level-1 auxiliary file: Chapter7/chapter7.aux
+A level-1 auxiliary file: Chapter8/chapter8.aux
+A level-1 auxiliary file: Conclusions/conclusions.aux
+A level-1 auxiliary file: Appendix1/appendix1.aux
+The style file: abbrv.bst
+Database file #1: References/references.bib
+Warning--I'm ignoring Algorithms2014's extra "title" field
+--line 283 of file References/references.bib
+I was expecting a `,' or a `}'---line 374 of file References/references.bib
+ : 
+ : year = {2004}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 453 of file References/references.bib
+ :  
+ :  title = {Minimum Snap Trajectory Generation and Control for Quadrotors}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in Heli
+Warning--to sort, need author or key in gyro
+Warning--to sort, need author or key in Ascend
+Warning--to sort, need author or key in DJI
+Warning--to sort, need author or key in ARDrone
+Warning--to sort, need author or key in Flamewheel
+Warning--to sort, need author or key in 3Dr
+Warning--to sort, need author or key in qualisys
+Warning--to sort, need author or key in OptiT
+Warning--to sort, need author or key in vicon
+Warning--to sort, need author or key in ArduP
+Warning--to sort, need author or key in APM
+Warning--to sort, need author or key in PX4
+Warning--to sort, need author or key in PX4Git
+Warning--to sort, need author or key in airware
+Warning--to sort, need author or key in APMplan
+Warning--to sort, need author or key in QGround
+Warning--to sort, need author or key in IRIS
+Warning--to sort, need author or key in PiXH
+Warning--to sort, need author or key in Nutty
+Warning--to sort, need author or key in MAVLink
+Warning--to sort, need author or key in PX4Build
+Warning--to sort, need author or key in FrameRef
+Warning--to sort, need author or key in OptiHub
+Warning--to sort, need author or key in lumenier
+Warning--to sort, need author or key in mikrocop
+Warning--to sort, need author or key in Pred
+Warning--to sort, need author or key in PixETH
+Warning--there's a number but no volume in Bouabdallah2
+Warning--empty journal in Croon2015
+Warning--empty publisher in Khalil2004
+Warning--empty year in Khalil2004
+Warning--empty title in Mellinger2012
+Warning--empty journal in Mellinger2012
+Warning--empty year in Mellinger2012
+Warning--empty journal in Vendittelli
+Warning--empty year in Vendittelli
+(There were 2 error messages)

@@ -1,0 +1,323 @@
+\begin{thebibliography}{10}
+
+\bibitem{gyro}
+{Gyroscopic stabilizer}.
+\newblock The Sperry Gyroscopic Stabilizer, 1915.
+\newblock published on Flight magazine, available on
+  \url{http://www.flightglobal.com/pdfarchive/view/1915/}.
+
+\bibitem{3Dr}
+{3D Robotics store}.
+\newblock \url{https://store.3drobotics.com/products}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{airware}
+{Airware control station}.
+\newblock \url{http://www.airware.com/products/ground-control-software}, 2015.
+\newblock Accessed: 18-08-2015.
+
+\bibitem{ARDrone}
+{ARDrone website}.
+\newblock \url{http://ardrone2.parrot.com/}, 2015.
+\newblock Accessed: 18-08-2015.
+
+\bibitem{APM}
+{Ardupilot Firmware}.
+\newblock \url{http://ardupilot.com/}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{APMplan}
+{ArduPilot Mission Planner}.
+\newblock \url{http://planner2.ardupilot.com/}, 2015.
+\newblock Accessed: 18-08-2015.
+
+\bibitem{ArduP}
+{Ardupilot website}.
+\newblock \url{http://www.ardupilot.co.uk/}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{Ascend}
+{Ascending Technologies}.
+\newblock \url{http://www.asctec.de/en/}, 2015.
+\newblock Accessed: 18-08-2015.
+
+\bibitem{DJI}
+{DJI website}.
+\newblock \url{http://www.dji.com}, 2015.
+\newblock Accessed: 15-08-2015.
+
+\bibitem{Flamewheel}
+{Flamewheel built by Lorenz Meier}.
+\newblock \url{https://pixhawk.org/platforms/multicopters/dji_flamewheel_450},
+  2015.
+\newblock Accessed: 19-08-2015.
+
+\bibitem{Heli}
+{Helicopter hisorical website}.
+\newblock \url{http://www.helicopter-history.org/ }, 2015.
+\newblock Accessed: 20-08-2015.
+
+\bibitem{IRIS}
+{IRIS, 3d Robotics}.
+\newblock \url{https://store.3drobotics.com/products/iris}, 2015.
+\newblock Accessed: 15-08-2015.
+
+\bibitem{lumenier}
+{Lumenier website}.
+\newblock \url{http://www.lumenier.com/products/multirotors/qav500}, 2015.
+\newblock Accessed: 18-08-2015.
+
+\bibitem{MAVLink}
+{MAVLink protocol description}.
+\newblock \url{http://qgroundcontrol.org/mavlink/start}, 2015.
+\newblock Accessed: 15-08-2015.
+
+\bibitem{mikrocop}
+{Mikrocopter website}.
+\newblock \url{http://www.mikrokopter.de/en/home}, 2015.
+\newblock Accessed: 18-08-2015.
+
+\bibitem{Nutty}
+{NuttX website}.
+\newblock \url{http://nuttx.org/}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{OptiHub}
+{Optihub image}.
+\newblock
+  \url{http://www.fontysvr.nl/mediawiki/index.php/OptiTrack_FLEX:V100R2}, 2015.
+\newblock Accessed: 15-08-2015.
+
+\bibitem{OptiT}
+{OptiTrack website}.
+\newblock \url{http://www.optitrack.com/}, 2015.
+\newblock Accessed: 15-08-2015.
+
+\bibitem{PiXH}
+{PixHawk board description}.
+\newblock \url{https://pixhawk.org/modules/pixhawk}, 2015.
+\newblock Accessed: 15-08-2015.
+
+\bibitem{PixETH}
+{PixHawk project at ETH}.
+\newblock \url{https://pixhawk.ethz.ch/}, 2015.
+\newblock Accessed: 19-08-2015.
+
+\bibitem{Pred}
+{Predator image}.
+\newblock
+  \url{http://www.airforce-technology.com/projects/predator-uav/predator-uav6.html
+  }, 2015.
+\newblock Accessed: 20-08-2015.
+
+\bibitem{PX4}
+{PX4 autopilot description}.
+\newblock \url{https://pixhawk.org/firmware/source_code}, 2015.
+\newblock Accessed: 15-08-2015.
+
+\bibitem{PX4Build}
+{PX4 build environment}.
+\newblock \url{https://pixhawk.org/dev/toolchain_installation_lin}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{PX4Git}
+{PX4 Firmware Github}.
+\newblock \url{https://github.com/PX4/Firmware}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{QGround}
+{QGroundControl website}.
+\newblock \url{http://qgroundcontrol.org/}, 2015.
+\newblock Accessed: 19-08-2015.
+
+\bibitem{qualisys}
+{qualisys website}.
+\newblock \url{http://www.qualisys.com/}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{FrameRef}
+{Reference frames}.
+\newblock \url{https://pixhawk.org/dev/know-how/frames_of_reference}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{vicon}
+{Vicon website}.
+\newblock \url{http://www.vicon.com/}, 2015.
+\newblock Accessed: 18-08-2015.
+
+\bibitem{Altug2002}
+E.~Altug, J.~Ostrowski, and R.~Mahony.
+\newblock {Control of a quadrotor helicopter using visual feedback}.
+\newblock {\em Proceedings of IEEE International Conference on Robotics and
+  Automation}, 1, 2002.
+
+\bibitem{Algorithms2014}
+S.~J. Andrew~Zulu.
+\newblock {A Review of Control Algorithms for Autonomous Quadrotors}.
+\newblock {\em Open Journal of Applied Sciences}, pages 547--556, 2014.
+
+\bibitem{Antonelli2013}
+G.~Antonelli, E.~Cataldi, P.~R. Giordano, S.~Chiaverini, and A.~Franchi.
+\newblock {Experimental validation of a new adaptive control scheme for
+  quadrotors MAVs}.
+\newblock {\em IEEE/RSJ International Conference on Intelligent Robots and
+  Systems}, pages 2439--2444, 2013.
+
+\bibitem{Baird2013}
+E.~Baird.
+\newblock {A universal strategy for visually guided landing}.
+\newblock {\em Proceedings of the National Academy of Sciences}, pages 1--15,
+  2013.
+
+\bibitem{Blanco2010}
+J.~Blanco.
+\newblock {A tutorial on se (3) transformation parameterizations and
+  on-manifold optimization}.
+\newblock Technical report, University of Malaga, Tech. Rep, 2010.
+
+\bibitem{Bouabdallah2007}
+S.~Bouabdallah.
+\newblock {Design and Control of Quadrotors With Application To Autonomous
+  Flying}.
+\newblock Master's thesis, ÉCOLE POLYTECHNIQUE FÉDÉRALE DE LAUSANNE, 2007.
+
+\bibitem{BouabdallahLQR}
+S.~Bouabdallah, a.~Noth, and R.~Siegwart.
+\newblock {PID vs LQ control techniques applied to an indoor micro quadrotor}.
+\newblock {\em IEEE/RSJ International Conference on Intelligent Robots and
+  Systems (IROS)}, 3:2451--2456, 2004.
+
+\bibitem{Bouabdallah2}
+S.~Bouabdallah and R.~Siegwart.
+\newblock {Full control of a quadrotor}.
+\newblock {\em 2007 IEEE/RSJ International Conference on Intelligent Robots and
+  Systems}, (1):153--158, 2007.
+
+\bibitem{Bouadi2007}
+H.~Bouadi, M.~Bouchoucha, and M.~Tadjine.
+\newblock {Sliding mode control based on backstepping approach for an UAV
+  type-quadrotor}.
+\newblock {\em World Academy of Science}, 1:1--6, 2007.
+
+\bibitem{Croon2015}
+G.~De~Croon and M.~Ieee.
+\newblock {Controlling Spacecraft Landings With Constantly and Exponentially
+  Decreasing}.
+\newblock 51(2):1241--1252, 2015.
+
+\bibitem{Falchi2014}
+T.~F. Delitalia.
+\newblock {Modelling and control of 3DR IRIS Quadcopter}.
+\newblock Unpublished, November 2014.
+
+\bibitem{Diebel2006}
+J.~Diebel.
+\newblock {Representing attitude: Euler angles, unit quaternions, and rotation
+  vectors}.
+\newblock {\em Matrix}, 58:1--35, 2006.
+
+\bibitem{Erginer2007}
+B.~Erginer and E.~Altug.
+\newblock {Modeling and PD Control of a Quadrotor VTOL Vehicle}.
+\newblock {\em 2007 IEEE Intelligent Vehicles Symposium}, pages 894--899, 2007.
+
+\bibitem{Faessler2014}
+M.~Faessler, E.~Mueggler, K.~Schwabe, and D.~Scaramuzza.
+\newblock {A Monocular Pose Estimation System based on Infrared LEDs}.
+\newblock {\em ICRA}, 2014.
+
+\bibitem{Friis2009}
+J.~Friis, E.~Nielsen, R.~F. Andersen, and A.~Jochumsen.
+\newblock {Autonomous Landing on a Moving Platform}.
+\newblock Technical report, Aalborg University, Department of electronics
+  systems, 2009.
+
+\bibitem{Henderson1977}
+D.~Henderson.
+\newblock {Euler Angles, Quaternions, and Transformation Matrices}.
+\newblock {\em NASA JSC Report}, 1977.
+
+\bibitem{Herisse2010}
+B.~Herisse, T.~Hamel, R.~Mahony, and F.~X. Russotto.
+\newblock {The landing problem of a VTOL unmanned aerial vehicle on a moving
+  platform using optical flow}.
+\newblock {\em IEEE/RSJ International Conference on Intelligent Robots and
+  Systems, IROS}, 28(1):1600--1605, 2010.
+
+\bibitem{Hoffmann2007}
+G.~Hoffmann, H.~Huang, and S.~Waslander.
+\newblock {Quadrotor helicopter flight dynamics and control: Theory and
+  experiment}.
+\newblock {\em American Institute of Aeronautics and Astronautics}, pages
+  1--20, 2007.
+
+\bibitem{Huang2009}
+H.~Huang, G.~M. Hoffmann, S.~L. Waslander, and C.~J. Tomlin.
+\newblock {Aerodynamics and control of autonomous quadrotor helicopters in
+  aggressive maneuvering}.
+\newblock {\em Proceedings - IEEE International Conference on Robotics and
+  Automation}, pages 3277--3282, 2009.
+
+\bibitem{Izzo2012}
+D.~Izzo and G.~D. Croon.
+\newblock {Landing with Time-to-Contact and Ventral Optic Flow Estimates}.
+\newblock {\em Journal of Guidance, Control, and Dynamics}, 35:1362--1367,
+  2012.
+
+\bibitem{Kendoul2007}
+F.~Kendoul, D.~Lara, I.~Fantoni, and R.~Lozano.
+\newblock {Real-Time Nonlinear Embedded Control for an Autonomous Quadrotor
+  Helicopter}.
+\newblock {\em Journal of Guidance, Control, and Dynamics}, 30(4):1049--1061,
+  2007.
+
+\bibitem{Khalil2004}
+W.~Khalil.
+\newblock {\em {Modeling Identification and Control of Robots}}.
+
+\bibitem{Luukkonen2011}
+T.~Luukkonen.
+\newblock {Modeling and control of Quadcopter}.
+\newblock {\em Independent research project in applied mathematics},
+  22:1134--45, 2011.
+
+\bibitem{Mahony2012}
+R.~Mahony, V.~Kumar, and P.~Corke.
+\newblock {Multirotor Aerial Vehicles: Modeling, Estimation, and Control of
+  Quadrotor}.
+\newblock {\em IEEE Robotics \& Automation Magazine}, 19, 2012.
+
+\bibitem{Mellinger2012}
+D.~Mellinger.
+
+\bibitem{Michael2014}
+{Michael, Nathan}.
+\newblock {Quadrotor Modeling and Control}.
+\newblock
+  \url{http://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/16311/www/s15/syllabus/ppp/Lec08-Control3.pdf},
+  2014.
+\newblock Accessed: 17-08-2015.
+
+\bibitem{Montgomery1995}
+J.~F. Montgomery, A.~H. Fagg, and G.~a. Bekey.
+\newblock {USC AFV-I: a behavior-based entry in the 1994 international aerial
+  robotics competition}.
+\newblock {\em IEEE expert}, 10:16--22, 1995.
+
+\bibitem{Mueggler}
+E.~Mueggler, M.~Faessler, F.~Fontana, and D.~Scaramuzza.
+\newblock {Aerial-guided Navigation of a Ground Robot among Movable Obstacles}.
+\newblock {\em SSRR Conference}, 2014.
+
+\bibitem{Vendittelli}
+M.~Vendittelli.
+\newblock {Elective in Robotics Quadrotor Modeling, Control Problems and
+  approaches}.
+
+\bibitem{Holger2008}
+H.~Voos.
+\newblock {Nonlinear Landing Control for Quadrotor UAVs}.
+\newblock Technical report, University of Applied Sciences
+  Ravensburg-Weingarten, Mobile Robotics Lab, December 2008.
+
+\end{thebibliography}
