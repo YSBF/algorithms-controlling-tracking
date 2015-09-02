@@ -18,8 +18,50 @@ Due to the nature of the dynamics of the quadrotor, several control algorithms h
 The PX4 Flight Stack denotes the list of all the applications running on board the PixHawk. Those modules provide the services and methods which are necessary to manage the radio communications, inter process message pass-through, data logging, state estimation, control, high level states and low level communication with motors and sensors.
 
 \subsection{Message pass-through}
-The core on board applications are started at system startup, others can be started via the NuttShell or forced to startup by inserting them in the start boot file. Every application runs independently with its own frequency; the interfaces between processes are managed by \textit{uOrb} middleware (Micro Orb) which, with the use of topics, guarantees the message pass-through for data packets over named buses. Those topics encode structs and they are pre defined. In PX4, a topic (often called node) contains only one message type, e.g. the \textit{vehicle attitude} topic transports a message containing the attitude struct (roll, pitch and yaw estimates).\par Nodes can publish a message on a bus/topic or subscribe to a bus/topic. They are not aware of who they are communicating with. There can be multiple publishers and multiple subscribers to a topic. This design pattern prevents locking issues and is very common in robotics. \textbf{To make this efficient, there is always only one message on the bus and no queue is kept}. The total list of \textit{uOrb} topics can be found in the uOrb folder of the PX4 Firmware since the online documentation is not updated. \\
+The core on board applications are started at system startup, others can be started via the NuttShell or forced to startup by inserting them in the start boot file. Every application runs independently with its own frequency; the interfaces between processes are managed by \textit{uOrb} middleware (Micro Orb) which, with the use of topics, guarantees the message pass-through for data packets over named buses. Those topics encode structs and they are pre defined. In PX4, a topic (often called node) contains only one message type, e.g. the \textit{vehicle attitude} topic transports a message containing the attitude struct (roll, pitch and yaw estimates).\par Nodes can publish a message on a bus/topic or subscribe to a bus/topic. They are not aware of who they are communicating with. There can be multiple publishers and multiple subscribers to a topic. This design pattern prevents locking issues and is very common in robotics. \textbf{To make this efficient, there is always only one message on the bus and no queue is kept} \cite{uOrb}. The total list of \textit{uOrb} topics can be found in the uOrb folder of the PX4 Firmware since the online documentation is not updated. \\
 
 \noindent
 The external communication (through radio link) is managed by mavlink, previously presented in section \ref{sec:mavlink}, however Mav packets are translated in uOrb topics internally.   
-        
+
+\subsection{Onboard nodes}
+
+
+The most relevant apps that are started at boot can be divided in groups. \\
+
+\noindent
+\paragraph{System applications} Those kind of nodes manage the internal and external process communications , logging and testing. They provide the basic services on which the other modules rely:	
+\begin{itemize}
+	\item mavlink - is dedicated to pack and unpack mavlink messages.
+	\item sdlog2 - takes relevant topics and creates a log file on sd card at every flight.
+	\item test - mainly used for troubleshooting.
+	\item uOrb - inter-process communication middleware .
+\end{itemize}
+\paragraph{Drivers} As one may imagine, those nodes represent the layer between hardware and software. They manage the communication with sensors, ports and buses:
+\begin{itemize}
+	\item esc\_calib - calibration of the electronic speed controllers for motors.
+	\item fmu - manages the board input and output pins.
+	\item GPS - GPS reciever driver
+	\item pwm - command the pwm to be sent to motor controllers
+	\item sensor - communication with various sensors (inertial, baro)
+\end{itemize}
+\paragraph{Attitude and position estimators} Those modules are responsible for position and attitude estimation, they are part of the core of the flight stack:
+\begin{itemize}
+	\item position\_estimator\_inav - estimates position with inertial sensor, gps and mocap measuraments.
+	\item att\_estimator\_ekf - estimates attitude using inertial sensors.
+\end{itemize}
+\paragraph{Multirotor Attitude and Position Controllers} Those are the key modules regarding this thesis. They implements the algorithms for position and attitude control:
+\begin{itemize}
+	\item mc\_pos\_control - position controller
+	\item mc\_att\_control - attitude controller
+\end{itemize}
+
+\paragraph{Flight safety and navigation} Those are the key modules regarding this thesis. They implements the algorithms for position and attitude control:
+\begin{itemize}
+	\item commander - internal state machine which determine system states for safety (flying, idle , emergency , on ground)
+	\item navigator - highest level of abstraction, it implements mission following and failsafe
+\end{itemize}
+
+
+
+
+
