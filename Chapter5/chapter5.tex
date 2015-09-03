@@ -96,17 +96,65 @@ The position estimator is based on inertial model and optimized for multirotors.
 		\centering
 	\begin{tabular}{l l r}
 		\textbf{Sensor} & \textbf{ID} & \textbf{Gain} \\ \hline
-		Accelerometer (for altitude) & INAV\_W\_Z\_ACC & 50 \\
-		Barometer (gives absolute altitude)  & INAV\_W\_Z\_BARO & 50  \\
-		Accelerometer (for x and y) & INAV\_W\_XY\_ACC & 10 \\
+		Accelerometer (for altitude) & Used as an absolute measure & - \\
+		Barometer (gives absolute altitude)  & INAV\_W\_Z\_BARO & 0.0001  \\
+		Accelerometer (for x and y) & Used as an absolute measure & - \\
+		GPS altitude & INAV\_W\_Z\_GPS\_P & 0.005 \\
 		GPS Position & INAV\_W\_XY\_GPS\_P & 1 \\
 		GPS Velocity & INAV\_W\_XY\_GPS\_V & 2 \\
+	    GPS climb rate & INAV\_W\_Z\_GPS\_V & 2 \\	
 		Mocap estimate ( altitude ) & INAV\_W\_Z\_VIS\_P & 5 \\
 		Mocap estimate ( altitude ) & INAV\_W\_XY\_VIS\_P & 7 \\
 	\end{tabular}
+	\caption{Correction gains and available measures}
+	\label{tab:corrgain}
 \end{table}
-%CORREGGI VALORI GUADAGNI
- 
+\textbf{Note}: the accelerometers are used as an absolute measure, thus treated as the input of the system used for prediction (equation \ref{eq:prediction}). Moreover I changed the gain \textit{INAV\_W\_Z\_BARO} from 50 to 0.0001 because the sensor gives the absolute altitude above sea level while the mocap gives the height respect to the earth frame (the floor of the room). This causes a mismatch in the two measures leading to false prediction with a constant offset, hence the gain for the barometer is set very low.
+
+\subsubsection*{Working principle of position estimator}
+The algorithm for position estimation is divided in two phases: prediction and update. The model used for \textbf{prediction} is the following: 
+
+\begin{equation}
+	\begin{aligned}
+	\boldsymbol{x_k}(\boldsymbol{x_{k-1}}, dt , \boldsymbol{a})& = \boldsymbol{x_{k-1}} + \boldsymbol{v_k}dt + \frac{1}{2}\boldsymbol{a}) dt^2 \\
+	 \boldsymbol{v_k} ( \boldsymbol{v_{k-1}} ,\boldsymbol{a} , dt)& = \boldsymbol{v_{k-1}} + \boldsymbol{a}dt
+	\end{aligned}
+	\label{eq:prediction}
+\end{equation}
+where the vector $\boldsymbol{x_k}$ encodes the position in earth frame, the vector $a$ represent the acceleration in each axis given by the accelerometer, $v_k$ is the vector of velocities and $dt$ is the time different between the steo $k$ and $k-1$.\\
+
+\noindent
+In compact form the we can write the system as the following:
+\begin{equation}
+	\begin{aligned}
+	\boldsymbol{F_k}(\boldsymbol{x_{k-1}}, dt ,\boldsymbol{v_{k-1}}, \boldsymbol{a})& = \begin{bmatrix}\boldsymbol{x_k}\\\boldsymbol{v_k}\end{bmatrix}\\
+	\boldsymbol{y_k}& = H \boldsymbol{F_k}
+	\end{aligned}
+	\label{eq:predictioncompact}
+	\end{equation}
+where $\boldsymbol{y_k}$ is the output  (from sensors) and the H matrix relates the state with the measurements. \\
+
+\noindent
+Equation \ref{eq:predictioncompact} is usually called \textbf{prediction}. It means that with the last available estimate of  $[\boldsymbol{x_{k-1}},\boldsymbol{v_{k-1}}]$ and the actual value of the acceleration $\boldsymbol{a}$ (input of the model) given by the accelerometers, we can predict what could be the next value for $\boldsymbol{F_k}$ and by consequence the output vector $\boldsymbol{y_k}$. \\
+
+\noindent
+The last item is the \textbf{correction} or the calculation of the actual estimated value for the state. The correction equation takes the following form:
+\begin{equation}
+	\boldsymbol{F_k^{est}} = \boldsymbol{F_k^p}(\boldsymbol{x_{k-1}}, dt ,\boldsymbol{v_{k-1}}, \boldsymbol{a}) + L(\boldsymbol{y_k} - \boldsymbol{y_k^p})
+	\label{eq:observer}
+\end{equation}
+meaning that the estimated (corrected) state $\boldsymbol{F_k^{est}}$ is equal to the \textbf{prediction} calculated in equation \ref{eq:predictioncompact} (the superscript p stands for prediction) plus the \textbf{innovation} $L(\boldsymbol{y_k} - \boldsymbol{y_k^p})$. The innovation term is composed by $L$ which is a diagonal matrix with the values of the correction gains listed in table \ref{tab:corrgain} for each sensor and the difference of the \textbf{actual measure read by the sensor}, namely $\boldsymbol{y_k}$, with the predicted output $\boldsymbol{y_k^p}$ calculated in \ref{eq:predictioncompact}. \\
+
+\noindent
+At the end the results are  published on \textit{vehicle\_local\_position} topic.
+
+\subsection{Attitude estimator}
+
+
+
+
+
+
 
 
 
