@@ -229,9 +229,9 @@ Velocity control occurs in two stages. First a desired thrust vector is calculat
 \end{equation}
 and the desired thrust vector in earth frame
 \begin{equation}
- \boldsymbol{th_{sp}} = K_p^{vel}  \boldsymbol{e_v} + K_d^{vel} \dot{ \boldsymbol{e_v}} + K_i^{vel} \int  \boldsymbol{e_v}
+ \boldsymbol{th_{sp}} = K_p^{vel}  \boldsymbol{e_v} + K_d^{vel}  \boldsymbol{\dot{e}_v} + K_i^{vel} \int  \boldsymbol{e_v}
 \end{equation}
-At this point we can calculate attitude set points, in the form of rotation matrix to avoid singularities, from thrust vector. The desired z axis of the robot is
+with $ [K_p^{vel} ,  K_d^{vel} ,  K_i^{vel}] = [0,0,0]$  and gains are diagonal matrices with the values for x y and z in order to be able to set different gains for different dynamics. At this point we can calculate attitude set points, in the form of rotation matrix to avoid singularities, from thrust vector. The desired z axis of the robot is
 \begin{equation}
 	\boldsymbol{z^B_{des}} = - \frac{\boldsymbol{th_{sp}}}{\lVert\boldsymbol{th_{sp}}\rVert} 
 \end{equation}
@@ -276,7 +276,29 @@ c  && 0  && -a \\
 \begin{equation}
 	S^{\wedge} = \begin{bmatrix}a\\b\\c\end{bmatrix}
 \end{equation}
-and the operator $\wedge$ is called vee map. 
+and the operator $\wedge$ is called vee map. Then we can define the error vector as the following:
+\begin{equation}
+	\boldsymbol{e_r} = \frac{1}{2} (R^T_{des} R - R^TR_{des} )^\wedge
+\end{equation}
+Next, similarly to the position controller, we introduce the desired angular rater in body frame as
+\begin{equation}
+	\boldsymbol{\Omega^B_{des}} = K_p^{rot} \boldsymbol{e_r} 
+\end{equation}
+and right after the angular rate error is 
+\begin{equation}
+	\boldsymbol{e_\omega} = \Omega^B_{des} - \Omega^B
+\end{equation}
+with $\Omega^B$ and $R$ given by the attitude estimator.
+Finally, through PIDs controller, the command torques are generated and:
+
+\begin{equation}
+	\begin{bmatrix}
+	U_2\\U_3\\U_4
+	\end{bmatrix} =  K_p^{\omega}  \boldsymbol{e_\omega} + K_d^{\omega} { \boldsymbol{\dot{e}_\omega}} + K_i^{\omega} \int \boldsymbol{e_\omega}
+\end{equation}
+where the gains are diagonal matrices with the value of the gain of eac dynamics (roll, pitch and yaw rates).
+
+
 \section{Results and validation}
 
 
