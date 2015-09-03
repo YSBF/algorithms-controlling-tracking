@@ -109,6 +109,7 @@ The position estimator is based on inertial model and optimized for multirotors.
 	\caption{Correction gains and available measures}
 	\label{tab:corrgain}
 \end{table}
+\noindent
 \textbf{Note}: the accelerometers are used as an absolute measure, thus treated as the input of the system used for prediction (equation \ref{eq:prediction}). Moreover I changed the gain \textit{INAV\_W\_Z\_BARO} from 50 to 0.0001 because the sensor gives the absolute altitude above sea level while the mocap gives the height respect to the earth frame (the floor of the room). This causes a mismatch in the two measures leading to false prediction with a constant offset, hence the gain for the barometer is set very low.
 
 \subsubsection*{Working principle of position estimator}
@@ -150,6 +151,133 @@ At the end the results are  published on \textit{vehicle\_local\_position} topic
 
 \subsection{Attitude estimator}
 
+Attitude estimation is a bit more complex being a faster dynamics and accurate results are needed. This module relies on an extended Kalman filter, which is the non linear version of the very famous linear quadratic estimator. The model is of the form:
+\begin{equation}
+	\begin{aligned}
+	\boldsymbol{x_{k+1}}& = \boldsymbol{f(\boldsymbol{x_k}, \boldsymbol{u_k})} + \boldsymbol{\xi_k} \\
+	\boldsymbol{y_k}& = \boldsymbol{ g(\boldsymbol{x_k}) } + \boldsymbol{\eta_k}
+	\end{aligned}
+\end{equation}
+where $[\boldsymbol{\xi_k} \sim N(0,Q), \boldsymbol{\eta_k} \sim N(0,R) ]$ are gaussian noises on the system and on the measurements with zero mean and [Q,R] covariances. The available sensors used are: \begin{itemize}
+	\item magnetometer - for calculating magnetic field on the three robot axis (in robot frame).
+	\item gyroscope - for the calculation of angular rates in body frame (p,q,r).
+	\item accelerometer - for retrieving the value of the acceleration (e.g estimation of the vertical through gravity).
+	\end{itemize}
+
+\noindent
+The model used is the rotational part of the system \ref{eq:mathfullmodel} (last six equations) with the angular accelerations plus the three value of the magnetic field given by the magnetometer. A well detailed description of the algorithm for this particular case is given in \cite{attekf}.
+
+\noindent
+\paragraph{Yaw estimation} The lab environment presented a couple of issues regarding the measure of the magnetic field. Being indoor, with electronic equipments and with electrical cables passing under the floor, the magnetic field is not constant along the room volume. This causes bad estimates for the yaw given by the magnetometer. Being yaw dynamics pretty slow with respect to roll and pitch, we can estimate it off board with a simple trick.\\
+
+\noindent
+Let $\boldsymbol{mag}^B = \begin{bmatrix}mag_x\\mag_y\\mag_z\end{bmatrix}$ the magnetic field vector in body frame given by the magnetometer and fed to the attitude estimator. Since the earth magnetic field is inclined by almost 30 degrees downwards and pointing north, we can fake it and decide ourself where the north is. Hence let $\boldsymbol{mag^E}$ = $\begin{bmatrix}1\\0\\0.4\end{bmatrix}$ meaning that $x^E$ becomes the north. The attitude estimator accept the magnetometer output in body frame hence the "fake" value we provide, by hacking in the module source file, becomes:
+\begin{equation}
+	 \boldsymbol{mag^B} = {}^BR_E \boldsymbol{mag^E}
+\end{equation}
+where  ${}^BR_E$ is the transpose of $R$ which depends on attitude angles. Roll and Pitch are estimated on board but the yaw is obtained by the mocap measure, thus we can construct the rotation matrix and calculate the rotate magnetic field in body frame. This approach works, is simple and gives us the possibility to choose where the north( yaw = 0) is without having the problem of alignment of $x^E$ with the North-South line.
+
+\section{Controller architecture}
+
+As stated in chapter \ref{chap:second}, those modules implement PIDs controller. The architecture is in the form of what is called a cascaded structure, a very common practice in control design for flying vehicles. 
+
+The basic idea is to break up the dynamics of the quadrotor and face the problem piece by piece \cite{Mellinger2012}. Thus, the design is divided in four sub controllers placed in a cascaded fashion one after the other. Each controller generates the input for the next one and takes the output of the previous. From the highest to the lowest level we have:\textit{ position control}, \textit{velocity control}, \textit{attitude control} and\textit{ motor control}. In the purpose of this thesis, dynamics of motor control are not analyzed but just a brief overview is given. 
+
+The \textbf{position controller} calculates the velocities set points in the three directions which are fed to the velocity controller. The task of the \textbf{velocity controller} is to track those set points by generating attitude reference signals and total thrust. The desired angular pose is tracked by the \textbf{attitude controller} which generates the desired torques as input of the \textbf{mixer}. The role of the mixer is to calculate each rotor angular speed in order to track the desired signal. This is simply done by inverting equation \ref{eq:inputmixmatrix} and expressing the angular speed vector in function of the input vector $U$ obtaining:\begin{equation}
+H^{-1}\begin{bmatrix}
+T^B\\\tau_\phi\\\tau_\theta\\\tau_\psi
+\end{bmatrix} = \begin{bmatrix}
+\omega_1^2\\\omega_2^2\\\omega_3^2\\\omega_4^2
+\end{bmatrix}
+\end{equation}
+where the left hand side vector is the output of the attitude (for torques) and position (for thrust) controllers while the right hand side vector is the square of the desired rotor angular speeds. The matrix $H$ is the mixer matrix, it is specific for the robot configurations and it is usually given as a parameter file from the quadcopter designer. At the end of the chain there is the motor controller which, through PWM, assures the convergence to the desired spinning velocity. 
+
+Note that those controllers run at different rates, from the position controller which has the lowest rate to the attitude controller which have the highest. Moreover the following assumption is made: \textbf{in the chain, one controller converges faster than its previous one}. This is necessary otherwise the cascade will not work properly. Those concepts are represented in figure \ref{figure:controlarch}.
+
+\begin{figure}[h]
+	\centering
+	\noindent
+	\includegraphics[width=1\textwidth]{control_arch.png}
+	\caption{Controller overall structure}
+	\label{figure:controlarch}
+\end{figure}
+
+\noindent
+For the IRIS, three main modes are available: \begin{itemize}
+	\item manual - the signals from the radio command are fed directly into the mixer
+	\item altitude stabilized - throttle signal is calculated by the controller in order to track an altitude set point given by the user with the radio command. Attitude is still manual.
+	\item position stabilized - the full position set point, \textbf{given by the software architecture}, is tracked by the controller chain.
+\end{itemize}
+\noindent
+\textbf{Note:} in position stabilized usually the  set point is given by the radio command, I changed the autopilot in order to bypass the radio and send set points with the software architecture. Altitude stabilized is used for emergency since one can easily switch mode with a button on the radio.
+
+
+\subsection{Position controller}
+The position control is straightforward. First the position error is calculated with the feedback from the inertial estimator \begin{equation}
+	\boldsymbol{e_p} =\boldsymbol{pos_{sp}} - \boldsymbol{pos}
+\end{equation}
+and then the desired velocity vector is generated with a proportional control law having:
+\begin{equation}
+	\boldsymbol{vel_{sp}} = K_p \boldsymbol{e_p}
+\end{equation}
+where $K_p = 1$ is the proportional gain. $\boldsymbol{pos}$, $\boldsymbol{pos_{sp}}$ and $\boldsymbol{v_{sp}}$ are 3-elements vectors and they represent respectively the actual robot position in earth frame, the position target set by the software architecture and the generated velocity setpoint.
+
+\subsection{Velocity controller}
+Velocity control occurs in two stages. First a desired thrust vector is calculated with a PID control law and then the desired attitude is generated from the thrust vector. The velocity error is defined as:
+\begin{equation}
+ \boldsymbol{e_v} =  \boldsymbol{vel_{sp}} - \boldsymbol{vel}
+\end{equation}
+and the desired thrust vector in earth frame
+\begin{equation}
+ \boldsymbol{th_{sp}} = K_p^{vel}  \boldsymbol{e_v} + K_d^{vel} \dot{ \boldsymbol{e_v}} + K_i^{vel} \int  \boldsymbol{e_v}
+\end{equation}
+At this point we can calculate attitude set points, in the form of rotation matrix to avoid singularities, from thrust vector. The desired z axis of the robot is
+\begin{equation}
+	\boldsymbol{z^B_{des}} = - \frac{\boldsymbol{th_{sp}}}{\lVert\boldsymbol{th_{sp}}\rVert} 
+\end{equation}
+since the thrust vector points up and z down. Next, from the yaw value $\psi$ given by the attitude estimator, we calculate the intermediate vector for axis y in XY plane
+\begin{equation}
+	\boldsymbol{y_c} = [-sin(\psi) , cos(\psi),0]^T
+\end{equation}
+and then with the cross product the desired robot x axis is calculated
+\begin{equation}
+	\boldsymbol{x^B_{des}} = \boldsymbol{y_c} \times \boldsymbol{z^B_{des}}
+\end{equation}
+As consequence the desired robot y axis is
+\begin{equation}
+\vspace{2ex}
+\boldsymbol{y^B_{des}} = \boldsymbol{z^B_{des}} \times \boldsymbol{x^B_{des}}
+\end{equation}
+\noindent
+The desired rotation matrix, ready to be sent to the attitude controller is
+
+\begin{equation}
+\boldsymbol{R_{des}} = \begin{bmatrix}
+\boldsymbol{x^B_{des}} && \boldsymbol{y^B_{des}} && \boldsymbol{z^B_{des}}
+\end{bmatrix}
+\end{equation}
+where $[\boldsymbol{x^B_{des}} , \boldsymbol{y^B_{des}} , \boldsymbol{z^B_{des}}]$ are 3-dimensional column vectors expressed in earth frame denoting the desired axis of the body.
+
+\noindent
+Finally the total thrust $U_1$ is calculated, the first element of the input vector which is directly sent to the mixer is
+\begin{equation}
+	U_1 =  {\lVert\boldsymbol{th_{sp}}\rVert}
+\end{equation}
+
+
+
+\subsection{Attitude controller}
+
+In order to calculate the last three element of the input vector $\boldsymbol{U}$, the attitude controller takes place. First thing to do is to define the rotation error between the desired rotation matrix and the actual one. Let $S = \begin{bmatrix}
+0  && -c && b  \\
+c  && 0  && -a \\
+-b && a  && 0 
+\end{bmatrix}$ be a general skew-symmetric matrix, the following is true
+\begin{equation}
+	S^{\wedge} = \begin{bmatrix}a\\b\\c\end{bmatrix}
+\end{equation}
+and the operator $\wedge$ is called vee map. 
+\section{Results and validation}
 
 
 
