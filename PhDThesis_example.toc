@@ -38,9 +38,31 @@
 \contentsline {chapter}{\numberline {5}Control and state estimation}{46}{chapter.5}
 \contentsline {section}{\numberline {5.1}Introduction to the PX4 Flight Stack}{46}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Message pass-through}{46}{subsection.5.1.1}
-\contentsline {chapter}{\numberline {6}Software architecture}{48}{chapter.6}
-\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{49}{chapter.7}
-\contentsline {chapter}{\numberline {8}Results}{50}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusions}{51}{chapter.9}
-\contentsline {chapter}{\numberline {A}Extra}{52}{appendix.A}
-\contentsline {chapter}{References}{57}{appendix*.16}
+\contentsline {subsection}{\numberline {5.1.2}Onboard nodes}{47}{subsection.5.1.2}
+\contentsline {paragraph}{System applications}{47}{section*.13}
+\contentsline {paragraph}{Drivers}{48}{section*.14}
+\contentsline {paragraph}{Attitude and position estimators}{48}{section*.15}
+\contentsline {paragraph}{Multirotor Attitude and Position Controllers}{48}{section*.16}
+\contentsline {paragraph}{Flight safety and navigation}{48}{section*.17}
+\contentsline {subsection}{\numberline {5.1.3}State machine overview}{49}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Estimation modules}{50}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Position estimator}{50}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Attitude estimator}{51}{subsection.5.2.2}
+\contentsline {paragraph}{Yaw estimation}{52}{section*.19}
+\contentsline {section}{\numberline {5.3}Controller architecture}{53}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Position controller}{54}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Velocity controller}{55}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Attitude controller}{56}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Results and validation}{57}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Estimator validation}{57}{subsection.5.4.1}
+\contentsline {paragraph}{Roll estimation}{57}{section*.20}
+\contentsline {paragraph}{Pitch estimation}{58}{section*.21}
+\contentsline {paragraph}{Yaw estimation}{58}{section*.22}
+\contentsline {subsection}{\numberline {5.4.2}Controller results}{59}{subsection.5.4.2}
+\contentsline {paragraph}{X and Y position}{59}{section*.23}
+\contentsline {chapter}{\numberline {6}Software architecture}{60}{chapter.6}
+\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{61}{chapter.7}
+\contentsline {chapter}{\numberline {8}Results}{62}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusions}{63}{chapter.9}
+\contentsline {chapter}{\numberline {A}Extra}{64}{appendix.A}
+\contentsline {chapter}{References}{69}{appendix*.27}

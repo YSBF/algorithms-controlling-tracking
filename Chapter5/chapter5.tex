@@ -301,6 +301,57 @@ where the gains are diagonal matrices with the value of the gain of eac dynamics
 
 \section{Results and validation}
 
+Some preliminary tests were done in order to evaluate the performances of the controller and the estimator modules. The results are presented in plots taken from the on board logging module and then visualized with FlightPlot , an open source tool available on PixHawk website \cite{FPlot}.   
+
+\subsection{Estimator validation}
+
+The validation of the estimation is the first test made before flying. The robot was turned on and moved around the room by hands with the motors unarmed for safety. The on board estimation of the attitude was copared with the vision estimate from the mocap. \\
+
+\noindent
+\paragraph{Roll estimation} 
+
+The estimation for the roll is very good. The vision signal is delayed respect to the on board estimation due to the radio link. At almost 15 seconds there is a spike due to the cameras losing track of the object.
+
+\begin{figure}[H]
+	\centering
+	\noindent
+	\includegraphics[width=1\textwidth]{roll_esti.png}
+	\caption[Roll estimation]{Estimation for the roll angle, in black the mocap value while in red the estimated value. Roll is measured in radiants}
+	\label{figure:rollesti}
+\end{figure}
+
+\paragraph{Pitch estimation}
+
+As for roll, the estimation of the pitch il consistent. Similar spike appears at 15 seconds.
+
+\begin{figure}[H]
+	\centering
+	\noindent
+	\includegraphics[width=1\textwidth]{pitch_esti.png}
+	\caption[Roll estimation]{Estimation for the pitch angle, in black the mocap value while in green the estimated value. Pitch is measured in radiants}
+	\label{figure:pitchesti}
+\end{figure}
+
+
+\paragraph{Yaw estimation}
+
+The yaw estimation is nearly perfect. It does not present the same delay as for Roll and Pitch mainly because it relies mostly on the mocap feedback. At 44 seconds a jump is present because is the point in which the angle abruptly changes from $\pi$ to $\-pi$. However this does not affect the robot dynamics.
+
+\begin{figure}[H]
+	\centering
+	\noindent
+	\includegraphics[width=1\textwidth]{yaw_esti.png}
+	\caption[Roll estimation]{Estimation for the yaw angle, in black the mocap value while in blue the estimated value. Yaw is measured in radiants}
+	\label{figure:pitchesti}
+\end{figure}
+\noindent
+Position estimation results are not present because they are optimal and the two curves are perfectly superimposed.
+
+\subsection{Controller results}
+
+The preliminary test to evaluate the controller performance wa to pass to the robot variable set points in a square wave fashion, in other words to move between the corners of a square. The plots for the position and the yaw are presented since they are the most relevant.
+
+\paragraph{X and Y position} The performance over the horizontal plane 
 
 
 

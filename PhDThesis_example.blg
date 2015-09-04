@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: PhDThesis_example.aux
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: PhDThesis_example.aux
 A level-1 auxiliary file: Acknowledgement/acknowledgement.aux
 A level-1 auxiliary file: Dedication/dedication.aux
 A level-1 auxiliary file: Abstract/abstract.aux
@@ -26,6 +28,7 @@ I was expecting a `,' or a `}'---line 453 of file References/references.bib
  :  title = {Minimum Snap Trajectory Generation and Control for Quadrotors}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "attekf"
 Warning--to sort, need author or key in Heli
 Warning--to sort, need author or key in gyro
 Warning--to sort, need author or key in Ascend
@@ -49,9 +52,9 @@ Warning--to sort, need author or key in Nutty
 Warning--to sort, need author or key in MAVLink
 Warning--to sort, need author or key in PX4Build
 Warning--to sort, need author or key in FrameRef
+Warning--to sort, need author or key in uOrb
+Warning--to sort, need author or key in FPlot
 Warning--to sort, need author or key in OptiHub
-Warning--to sort, need author or key in lumenier
-Warning--to sort, need author or key in mikrocop
 Warning--to sort, need author or key in Pred
 Warning--to sort, need author or key in PixETH
 Warning--there's a number but no volume in Bouabdallah2
@@ -63,4 +66,45 @@ Warning--empty journal in Mellinger2012
 Warning--empty year in Mellinger2012
 Warning--empty journal in Vendittelli
 Warning--empty year in Vendittelli
+You've used 58 entries,
+            2118 wiz_defined-function locations,
+            813 strings with 11424 characters,
+and the built_in function-call counts, 14131 in all, are:
+= -- 1448
+> -- 445
+< -- 6
++ -- 194
+- -- 136
+* -- 775
+:= -- 2151
+add.period$ -- 171
+call.type$ -- 58
+change.case$ -- 243
+chr.to.int$ -- 0
+cite$ -- 95
+duplicate$ -- 549
+empty$ -- 1331
+format.name$ -- 136
+if$ -- 3118
+int.to.chr$ -- 0
+int.to.str$ -- 58
+missing$ -- 25
+newline$ -- 290
+num.names$ -- 60
+pop$ -- 375
+preamble$ -- 1
+purify$ -- 184
+quote$ -- 0
+skip$ -- 432
+stack$ -- 0
+substring$ -- 725
+swap$ -- 100
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 230
+warning$ -- 37
+while$ -- 98
+width$ -- 60
+write$ -- 594
 (There were 2 error messages)

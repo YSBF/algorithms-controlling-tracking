@@ -52,6 +52,11 @@
   2015.
 \newblock Accessed: 19-08-2015.
 
+\bibitem{FPlot}
+{FlightPlot visualizaion tool}.
+\newblock \url{https://pixhawk.org/dev/flightplot}, 2015.
+\newblock Accessed: 18-08-2015.
+
 \bibitem{Heli}
 {Helicopter hisorical website}.
 \newblock \url{http://www.helicopter-history.org/ }, 2015.
@@ -62,20 +67,10 @@
 \newblock \url{https://store.3drobotics.com/products/iris}, 2015.
 \newblock Accessed: 15-08-2015.
 
-\bibitem{lumenier}
-{Lumenier website}.
-\newblock \url{http://www.lumenier.com/products/multirotors/qav500}, 2015.
-\newblock Accessed: 18-08-2015.
-
 \bibitem{MAVLink}
 {MAVLink protocol description}.
 \newblock \url{http://qgroundcontrol.org/mavlink/start}, 2015.
 \newblock Accessed: 15-08-2015.
-
-\bibitem{mikrocop}
-{Mikrocopter website}.
-\newblock \url{http://www.mikrokopter.de/en/home}, 2015.
-\newblock Accessed: 18-08-2015.
 
 \bibitem{Nutty}
 {NuttX website}.
@@ -139,6 +134,11 @@
 {Reference frames}.
 \newblock \url{https://pixhawk.org/dev/know-how/frames_of_reference}, 2015.
 \newblock Accessed: 16-08-2015.
+
+\bibitem{uOrb}
+{uOrb user guide}.
+\newblock \url{https://pixhawk.org/dev/shared_object_communication}, 2015.
+\newblock Accessed: 18-08-2015.
 
 \bibitem{vicon}
 {Vicon website}.
