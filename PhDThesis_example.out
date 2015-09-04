@@ -48,8 +48,12 @@
 \BOOKMARK [2][]{subsection.5.4.1}{5.4.1 Estimator validation}{section.5.4}% 48
 \BOOKMARK [2][]{subsection.5.4.2}{5.4.2 Controller results}{section.5.4}% 49
 \BOOKMARK [0][]{chapter.6}{6 Software architecture}{}% 50
-\BOOKMARK [0][]{chapter.7}{7 Landing on a mobile platform}{}% 51
-\BOOKMARK [0][]{chapter.8}{8 Results}{}% 52
-\BOOKMARK [0][]{chapter.9}{9 Conclusions}{}% 53
-\BOOKMARK [0][]{appendix.A}{A Extra}{}% 54
-\BOOKMARK [0][]{appendix*.30}{References}{}% 55
+\BOOKMARK [1][]{section.6.1}{6.1 Introduction to the proposed architecture}{chapter.6}% 51
+\BOOKMARK [1][]{section.6.2}{6.2 Design patterns}{chapter.6}% 52
+\BOOKMARK [1][]{section.6.3}{6.3 Software description}{chapter.6}% 53
+\BOOKMARK [1][]{section.6.4}{6.4 Experiments and results}{chapter.6}% 54
+\BOOKMARK [0][]{chapter.7}{7 Landing on a mobile platform}{}% 55
+\BOOKMARK [0][]{chapter.8}{8 Results}{}% 56
+\BOOKMARK [0][]{chapter.9}{9 Conclusions}{}% 57
+\BOOKMARK [0][]{appendix.A}{A Extra}{}% 58
+\BOOKMARK [0][]{appendix*.30}{References}{}% 59

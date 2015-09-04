@@ -37,9 +37,9 @@ The IRIS quadcopter is flying robot manufactured by 3D Robotics and commercially
  \caption{The IRIS quad copter}
  \label{figure:iris}
 \end{figure}
-
+\noindent
 The main distinct components of the IRIS quadcopter are the airframe (central body, arms, motors and legs), four 850 kV DC brushless motors controlled in open-loop through PWM, one 11.1 V LiPo battery and control electronics.\\ 
-The use is mainly commercial, it is optimized for aerial shooting and provides a lot of features the user can play with. IRIS can be easily setup to follow any GPS-enabled Android device with OTG compatibility, this technology controls also the gimbal to keep the camera centered on the target capturing videos and actually becoming a free hand camera. Using the free DroidPlanner app, the user can plan flights by simply drawing a flight plan on any Android tablet or phone. This allows for hands free flight control with virtually unlimited waypoints even keeping IRIS pointing to the same location via a Region of Interest (ROI) waypoint throughout the entire flight \cite{IRIS}. \\*
+The use is mainly commercial, it is optimized for aerial shooting and provides a lot of features the user can play with. IRIS can be easily setup to follow any GPS-enabled Android device with OTG compatibility, this technology controls also the gimbal to keep the camera centered on the target capturing videos and actually becoming a free hand camera. Using the free DroidPlanner app, the user can plan flights by simply drawing a flight plan on any Android tablet or phone. This allows for hands free flight control with virtually unlimited waypoints even keeping IRIS pointing to the same location via a Region of Interest (ROI) waypoint throughout the entire flight \cite{IRIS}.
 
 
 \begin{figure}[h]
@@ -48,8 +48,6 @@ The use is mainly commercial, it is optimized for aerial shooting and provides a
  \caption[IRIS and control devices]{IRIS and control devices.}
  \label{figure:iris_planner}
 \end{figure}
-
-
 It is easy to understand that this device is designed to fly outdoor, nevertheless it is possible with some software tuning to use the IRIS in indoor scenarios. The component which make this possible is the actual brain of the robot: the PixHawk board with PX4 software. The radio link communications use the MAVlink protocol explained in this section.
 
 \subsubsection{PixHawk board}
@@ -141,9 +139,9 @@ Regarding the packets size we have that:
 \item The maximum packet length is 263 bytes for full payload
 \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[h]
  \centering
- \includegraphics[width=1\textwidth]{MAVPack.PNG}
+ \includegraphics[width=0.8\textwidth]{MAVPack.PNG}
  \caption[MAVLink package anatomy]{MAVLink package anatomy.}
  \label{figure:MAV_anatomy}
 \end{figure}
@@ -151,16 +149,14 @@ Regarding the packets size we have that:
 \newpage
 \subsection{Motion capture system}
 \label{sec:mocap}
-The localization of the robot in the 3D space relies on the OptiTrack FLEX 13 motion capture syestem, composed by 8 infrared cameras (Fig. \ref{figure:flex13}) mounted on the roof of the laboratory in a squared fashion around the flight perimeter. Is the mid level product in OptitTrack catalogue (1000 dollars per camera \cite{OptiT}) capable of tracking multiple objects in a medium volume space of about 4 X 4 X 4 meters.\\*
+The localization of the robot in the 3D space relies on the OptiTrack FLEX 13 motion capture syestem, composed by 8 infrared cameras (Fig. \ref{figure:flex13}) mounted on the roof of the laboratory in a squared fashion around the flight perimeter. Is the mid level product in OptitTrack catalogue (1000 dollars per camera \cite{OptiT}) capable of tracking multiple objects in a medium volume space of about 4 X 4 X 4 meters.
 
-\begin{figure}[H]
+\begin{figure}[h]
  \centering
  \includegraphics[width=0.6\textwidth]{flex13.PNG}
  \caption[Flex 13 Cameras]{Flex 13 camera and dimensions.}
  \label{figure:flex13}
 \end{figure}
-\noindent
-This camera features a status LED and a 2 digits numerical screen for diagnostics, mounting supports, an image sensor and a lens.\\*
 
 
 \subsubsection{Image sensor specifications and performances}
@@ -170,7 +166,7 @@ This camera features a status LED and a 2 digits numerical screen for diagnostic
 \item Imager Resolution: 1280 X 1024 (1.3 Megapixels).
 \end{itemize}
 \noindent
-A 28 LED ring around the lens ensures the required IR (Infra Red) illumination both in stroboscopic and continuous modes. \\*
+This camera features a status LED and a 2 digits numerical screen for diagnostics, mounting supports, an image sensor and a lens. A 28 LED ring around the lens ensures the required IR (Infra Red) illumination both in stroboscopic and continuous modes.
 
 Object are defined by attaching to them at least 3 \textbf {passive infrared markers} (Figure \ref{figure:marker}) able to reflect infrared light, solving rigid bodies and ensure tracking. The number of markers that the OptiTrack is capable of tracking depends on the size of the markers and the distance they are from the camera. This number may change from model to model but is about 100 in our case, more than enough for this project.\par The 3D location of markers can be resolved with millimeter accuracy and resolution depending on capture volume size and camera configuration. Increasing the number of cameras can help improve the tracking performance if needed and in this case 0.3 mm of error for each marker is achieved. \\* 
 
@@ -184,8 +180,7 @@ Object are defined by attaching to them at least 3 \textbf {passive infrared mar
 
 \subsubsection{Software, cameras layout and requirements} 
 
-The system uses the proprietary software Motive \cite{OptiT}, an Optical motion capture software which incorporates many features such as rigid body solving and marker tracking. Motive is able to manage every camera parameter such as exposure, brightness and gain as well as the overall calibration.\\ 
-
+The system uses the proprietary software Motive \cite{OptiT}, an Optical motion capture software which incorporates many features such as rigid body solving and marker tracking. Motive is able to manage every camera parameter such as exposure, brightness and gain as well as the overall calibration.
 Two USB hubs divide the eight cameras in two groups collecting four USB cables each coming from each sensor. Both hubs are connected through USB cables to the Windows machine where Motive is installed, moreover a sync cable responsible for the synchronization runs from one hub to the other.
 Figure \ref{figure:hub} explains the connections of a single hub.
 \\*
@@ -203,6 +198,7 @@ Figure \ref{figure:hub} explains the connections of a single hub.
  \caption[IRIS Rigid body]{IRIS Rigid body created with Motive software.}
  \label{figure:motivescreen}
 \end{figure}
+\noindent
 The reader must note that in order to have good tracking performances, the setup needs to assure some properties during the experiments:
 
 \begin{itemize}
@@ -222,10 +218,8 @@ Regarding the robot, with 5 markers placed in a 3D asymmetrical configuration  o
  \label{figure:markedIRIS}
 \end{figure}
 
-
-
 \subsection{Flight Arena}
-The flight arena is the stage of the setup. Since the laboratory where this thesis has taken place is new, one task was the relocation of the equipment from the old to the new lab. Next I attached every camera to the supports previously drilled one the roof and after I took care of the cables management. Since the maximum allowed length of the camera cables is 5 meters, I managed to place the hubs on the top at two opposite edges of the square (the ones intersecting x axis). By that, the available length is sufficient to connect three cameras of one edge and one from the adjacent edge to on hub and the rest to the other. The sync and the two hubs cables are running on the roof and crossing the room while the camera cables are displaced on the perimeter.   
+The flight arena is the stage of the setup. Since the laboratory where this thesis has taken place is new, I was involved in the relocation of the equipment from the old to the new lab. Next I attached every camera to the supports previously drilled one the roof and after I took care of the cables management. Since the maximum allowed length of the camera cables is 5 meters, I managed to place the hubs on the top at two opposite edges of the square (the ones intersecting x axis). By that, the available length is sufficient to connect three cameras of one edge and one from the adjacent edge to on hub and the rest to the other. The sync and the two hubs cables are running on the roof and crossing the room while the camera cables are displaced on the perimeter. Finally I oriented each camera towards the center of the room in order to have the highest coverage possible and calibrated the system.
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.6\textwidth]{flight_arena.png}
