@@ -27,7 +27,7 @@ The external communication (through radio link) is managed by mavlink, previousl
 	\centering
 	\noindent
 	\includegraphics[width=0.6\textwidth]{pub_sub.PNG}
-	\caption{Publish/Subscribe design pattern}
+	\caption{Publish/Subscribe design pattern.}
 	\label{figure:pubsub}
 \end{figure}
 
@@ -198,7 +198,7 @@ Note that those controllers run at different rates, from the position controller
 	\centering
 	\noindent
 	\includegraphics[width=1\textwidth]{control_arch.png}
-	\caption{Controller overall structure}
+	\caption{Controller overall structure.}
 	\label{figure:controlarch}
 \end{figure}
 
@@ -267,7 +267,7 @@ Finally the total thrust $U_1$ is calculated, the first element of the input vec
 
 
 \subsection{Attitude controller}
-
+\label{sec:attcontrol}
 In order to calculate the last three element of the input vector $\boldsymbol{U}$, the attitude controller takes place. First thing to do is to define the rotation error between the desired rotation matrix and the actual one. Let $S = \begin{bmatrix}
 0  && -c && b  \\
 c  && 0  && -a \\
@@ -305,7 +305,7 @@ Some preliminary tests were done in order to evaluate the performances of the co
 
 \subsection{Estimator validation}
 
-The validation of the estimation is the first test made before flying. The robot was turned on and moved around the room by hands with the motors unarmed for safety. The on board estimation of the attitude was copared with the vision estimate from the mocap. \\
+The validation of the estimation is the first test made before flying. The robot was turned on and moved around the room by hands with the motors unarmed for safety. The on board estimation of the attitude was compared with the vision estimate from the mocap. \\
 
 \noindent
 \paragraph{Roll estimation} 
@@ -315,8 +315,8 @@ The estimation for the roll is very good. The vision signal is delayed respect t
 \begin{figure}[H]
 	\centering
 	\noindent
-	\includegraphics[width=1\textwidth]{roll_esti.png}
-	\caption[Roll estimation]{Estimation for the roll angle, in black the mocap value while in red the estimated value. Roll is measured in radiants}
+	\includegraphics[width=0.9\textwidth]{roll_esti.png}
+	\caption[Roll estimation]{Estimation for the roll angle, in black the mocap value while in red the estimated value. Roll is measured in radiants.}
 	\label{figure:rollesti}
 \end{figure}
 
@@ -327,31 +327,84 @@ As for roll, the estimation of the pitch il consistent. Similar spike appears at
 \begin{figure}[H]
 	\centering
 	\noindent
-	\includegraphics[width=1\textwidth]{pitch_esti.png}
-	\caption[Roll estimation]{Estimation for the pitch angle, in black the mocap value while in green the estimated value. Pitch is measured in radiants}
+	\includegraphics[width=0.9\textwidth]{pitch_esti.png}
+	\caption[Roll estimation]{Estimation for the pitch angle, in black the mocap value while in green the estimated value. Pitch is measured in radiants.}
 	\label{figure:pitchesti}
 \end{figure}
 
 
 \paragraph{Yaw estimation}
 
-The yaw estimation is nearly perfect. It does not present the same delay as for Roll and Pitch mainly because it relies mostly on the mocap feedback. At 44 seconds a jump is present because is the point in which the angle abruptly changes from $\pi$ to $\-pi$. However this does not affect the robot dynamics.
+The yaw estimation is nearly perfect. It does not 
+ the same delay as for Roll and Pitch mainly because it relies mostly on the mocap feedback. At 44 seconds a jump is present because is the point in which the angle abruptly changes from $-\pi$ to $\pi$. However this does not affect the robot dynamics because internal computations are done with rotation matrix representation(see section \ref{sec:attcontrol}).
 
 \begin{figure}[H]
 	\centering
 	\noindent
-	\includegraphics[width=1\textwidth]{yaw_esti.png}
-	\caption[Roll estimation]{Estimation for the yaw angle, in black the mocap value while in blue the estimated value. Yaw is measured in radiants}
-	\label{figure:pitchesti}
+	\includegraphics[width=0.9\textwidth]{yaw_esti.png}
+	\caption[Roll estimation]{Estimation for the yaw angle, in black the mocap value while in blue the estimated value. Yaw is measured in radiants.}
+	\label{figure:yawesti}
 \end{figure}
 \noindent
-Position estimation results are not present because they are optimal and the two curves are perfectly superimposed.
+Position estimation results are not shown because they are optimal and the two curves are perfectly superimposed.
 
 \subsection{Controller results}
 
-The preliminary test to evaluate the controller performance wa to pass to the robot variable set points in a square wave fashion, in other words to move between the corners of a square. The plots for the position and the yaw are presented since they are the most relevant.
+During the preliminary test,in order to evaluate the controller performances, we pass to the robot variable set points in a square wave fashion. The plots for the position and the yaw are presented since they are the most relevant.
 
-\paragraph{X and Y position} The performance over the horizontal plane 
+\paragraph{X and Y position} The performance over the horizontal plane is decent. Oscillations are mainly induced by the wind generated by the rotors, bouncing on the walls and back to the robot.
+
+\begin{figure}[H]
+	\centering
+	\noindent
+	\includegraphics[width=0.9\textwidth]{x_conv.png}
+	\caption[Convergence on x]{Convergence on x, the red plot is the robot position while the black is the set point. Position is measured in meters.}
+	\label{figure:xconv}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\noindent
+	\includegraphics[width=0.9\textwidth]{y_conv.png}
+	\caption[Convergence on y]{Convergence on y, the green plot is the robot position while the black is the set point. Position is measured in meters.}
+	\label{figure:yconv}
+\end{figure}
+The maximum error is about 10 centimeter in hovering.\\
+\paragraph{Z position} The z converges more slowly when the robot starts, this is because the integrator in the desired thrust vector need to be saturated. By putting as initial condition of the integrator the value of the gravity force one can avoid this problem which appears only at the beginning during flight. At 70 seconds the landing maneuver starts.
+
+\begin{figure}[H]
+	\centering
+	\noindent
+	\includegraphics[width=0.9\textwidth]{z_conv.png}
+	\caption[Convergence on z]{Convergence on z, the blue plot is the robot position while the black is the set point. Position is measured in meters. Note that with negative z the robot goes actually up.}
+	\label{figure:zconv}
+\end{figure}
+
+
+\paragraph{Yaw convergence} The yaw is commanded by sending yaw setpoints in a ramp fashion. The ramp appears segmented to the robot since the sending fequence is much lower than the processing rate on the board.
+
+\begin{figure}[H]
+	\centering
+	\noindent
+	\includegraphics[width=1\textwidth]{yaw_conv.png}
+	\caption[Yaw tracking]{Yaw set point tracking, the blue is the real value while the black is the setpoint}
+	\label{figure:yawconv}
+\end{figure}
+
+\noindent
+The last experiment (figure \ref{figure:hover}) consists in letting the robot hover on a point and perturbing it by pushing and pulling with a stick. At each spike on x, y and z an external force is applied.
+
+\begin{figure}[h]
+	\centering
+	\noindent
+	\includegraphics[width=1\textwidth]{perturbation.png}
+	\caption[Static hover with external perturbations]{Red plot is x, green is is y and blue is z. The horizontal setpoint is at (0 , 0) and the height is variable. Light blue represent the setpoint on z.}
+	\label{figure:hover}
+\end{figure}
+
+
+
+
 
 
 

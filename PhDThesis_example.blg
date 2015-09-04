@@ -23,11 +23,8 @@ I was expecting a `,' or a `}'---line 374 of file References/references.bib
  : year = {2004}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 453 of file References/references.bib
- :  
- :  title = {Minimum Snap Trajectory Generation and Control for Quadrotors}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
+Warning--I'm ignoring Mellinger2012's extra "title" field
+--line 455 of file References/references.bib
 Warning--I didn't find a database entry for "attekf"
 Warning--to sort, need author or key in Heli
 Warning--to sort, need author or key in gyro
@@ -61,50 +58,48 @@ Warning--there's a number but no volume in Bouabdallah2
 Warning--empty journal in Croon2015
 Warning--empty publisher in Khalil2004
 Warning--empty year in Khalil2004
-Warning--empty title in Mellinger2012
 Warning--empty journal in Mellinger2012
-Warning--empty year in Mellinger2012
 Warning--empty journal in Vendittelli
 Warning--empty year in Vendittelli
 You've used 58 entries,
             2118 wiz_defined-function locations,
-            813 strings with 11424 characters,
-and the built_in function-call counts, 14131 in all, are:
-= -- 1448
+            816 strings with 11545 characters,
+and the built_in function-call counts, 14362 in all, are:
+= -- 1481
 > -- 445
-< -- 6
+< -- 7
 + -- 194
 - -- 136
-* -- 775
-:= -- 2151
-add.period$ -- 171
+* -- 782
+:= -- 2174
+add.period$ -- 173
 call.type$ -- 58
-change.case$ -- 243
+change.case$ -- 244
 chr.to.int$ -- 0
-cite$ -- 95
-duplicate$ -- 549
-empty$ -- 1331
+cite$ -- 93
+duplicate$ -- 561
+empty$ -- 1349
 format.name$ -- 136
-if$ -- 3118
+if$ -- 3181
 int.to.chr$ -- 0
 int.to.str$ -- 58
 missing$ -- 25
-newline$ -- 290
+newline$ -- 292
 num.names$ -- 60
-pop$ -- 375
+pop$ -- 371
 preamble$ -- 1
 purify$ -- 184
 quote$ -- 0
-skip$ -- 432
+skip$ -- 449
 stack$ -- 0
-substring$ -- 725
-swap$ -- 100
-text.length$ -- 6
+substring$ -- 765
+swap$ -- 111
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 230
-warning$ -- 37
-while$ -- 98
+warning$ -- 35
+while$ -- 101
 width$ -- 60
-write$ -- 594
-(There were 2 error messages)
+write$ -- 599
+(There was 1 error message)

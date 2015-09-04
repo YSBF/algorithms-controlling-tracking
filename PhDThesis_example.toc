@@ -56,13 +56,15 @@
 \contentsline {section}{\numberline {5.4}Results and validation}{57}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Estimator validation}{57}{subsection.5.4.1}
 \contentsline {paragraph}{Roll estimation}{57}{section*.20}
-\contentsline {paragraph}{Pitch estimation}{58}{section*.21}
+\contentsline {paragraph}{Pitch estimation}{57}{section*.21}
 \contentsline {paragraph}{Yaw estimation}{58}{section*.22}
 \contentsline {subsection}{\numberline {5.4.2}Controller results}{59}{subsection.5.4.2}
 \contentsline {paragraph}{X and Y position}{59}{section*.23}
-\contentsline {chapter}{\numberline {6}Software architecture}{60}{chapter.6}
-\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{61}{chapter.7}
-\contentsline {chapter}{\numberline {8}Results}{62}{chapter.8}
-\contentsline {chapter}{\numberline {9}Conclusions}{63}{chapter.9}
-\contentsline {chapter}{\numberline {A}Extra}{64}{appendix.A}
-\contentsline {chapter}{References}{69}{appendix*.27}
+\contentsline {paragraph}{Z position}{61}{section*.24}
+\contentsline {paragraph}{Yaw convergence}{61}{section*.25}
+\contentsline {chapter}{\numberline {6}Software architecture}{64}{chapter.6}
+\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{65}{chapter.7}
+\contentsline {chapter}{\numberline {8}Results}{66}{chapter.8}
+\contentsline {chapter}{\numberline {9}Conclusions}{67}{chapter.9}
+\contentsline {chapter}{\numberline {A}Extra}{68}{appendix.A}
+\contentsline {chapter}{References}{73}{appendix*.29}
