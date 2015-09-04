@@ -46,6 +46,11 @@
 \newblock \url{http://www.dji.com}, 2015.
 \newblock Accessed: 15-08-2015.
 
+\bibitem{attekf}
+{Extended Kalman Filter for the PX4 autopilot}.
+\newblock \url{https://pixhawk.org/firmware/apps/attitude_estimator_ekf}, 2015.
+\newblock Accessed: 16-08-2015.
+
 \bibitem{Flamewheel}
 {Flamewheel built by Lorenz Meier}.
 \newblock \url{https://pixhawk.org/platforms/multicopters/dji_flamewheel_450},

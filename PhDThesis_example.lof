@@ -31,8 +31,8 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces IRIS state machine}}{49}{figure.5.2}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Controller overall structure.}}{54}{figure.5.3}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Roll estimation}}{57}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Roll estimation}}{58}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Roll estimation}}{59}{figure.5.6}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Pitch estimation}}{58}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Yaw estimation}}{59}{figure.5.6}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Convergence on x}}{60}{figure.5.7}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Convergence on y}}{60}{figure.5.8}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Convergence on z}}{61}{figure.5.9}

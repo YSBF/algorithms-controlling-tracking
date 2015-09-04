@@ -17,15 +17,14 @@ A level-1 auxiliary file: Appendix1/appendix1.aux
 The style file: abbrv.bst
 Database file #1: References/references.bib
 Warning--I'm ignoring Algorithms2014's extra "title" field
---line 283 of file References/references.bib
-I was expecting a `,' or a `}'---line 374 of file References/references.bib
+--line 290 of file References/references.bib
+I was expecting a `,' or a `}'---line 381 of file References/references.bib
  : 
  : year = {2004}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I'm ignoring Mellinger2012's extra "title" field
---line 455 of file References/references.bib
-Warning--I didn't find a database entry for "attekf"
+--line 462 of file References/references.bib
 Warning--to sort, need author or key in Heli
 Warning--to sort, need author or key in gyro
 Warning--to sort, need author or key in Ascend
@@ -50,6 +49,7 @@ Warning--to sort, need author or key in MAVLink
 Warning--to sort, need author or key in PX4Build
 Warning--to sort, need author or key in FrameRef
 Warning--to sort, need author or key in uOrb
+Warning--to sort, need author or key in attekf
 Warning--to sort, need author or key in FPlot
 Warning--to sort, need author or key in OptiHub
 Warning--to sort, need author or key in Pred
@@ -61,45 +61,45 @@ Warning--empty year in Khalil2004
 Warning--empty journal in Mellinger2012
 Warning--empty journal in Vendittelli
 Warning--empty year in Vendittelli
-You've used 58 entries,
+You've used 59 entries,
             2118 wiz_defined-function locations,
-            816 strings with 11545 characters,
-and the built_in function-call counts, 14362 in all, are:
-= -- 1481
-> -- 445
+            818 strings with 11653 characters,
+and the built_in function-call counts, 14534 in all, are:
+= -- 1499
+> -- 446
 < -- 7
-+ -- 194
++ -- 195
 - -- 136
-* -- 782
-:= -- 2174
-add.period$ -- 173
-call.type$ -- 58
-change.case$ -- 244
+* -- 788
+:= -- 2194
+add.period$ -- 176
+call.type$ -- 59
+change.case$ -- 247
 chr.to.int$ -- 0
-cite$ -- 93
-duplicate$ -- 561
-empty$ -- 1349
+cite$ -- 95
+duplicate$ -- 568
+empty$ -- 1372
 format.name$ -- 136
-if$ -- 3181
+if$ -- 3224
 int.to.chr$ -- 0
-int.to.str$ -- 58
+int.to.str$ -- 59
 missing$ -- 25
-newline$ -- 292
+newline$ -- 297
 num.names$ -- 60
-pop$ -- 371
+pop$ -- 379
 preamble$ -- 1
-purify$ -- 184
+purify$ -- 186
 quote$ -- 0
-skip$ -- 449
+skip$ -- 455
 stack$ -- 0
-substring$ -- 765
-swap$ -- 111
+substring$ -- 770
+swap$ -- 112
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 230
-warning$ -- 35
+type$ -- 234
+warning$ -- 36
 while$ -- 101
-width$ -- 60
-write$ -- 599
+width$ -- 61
+write$ -- 609
 (There was 1 error message)
