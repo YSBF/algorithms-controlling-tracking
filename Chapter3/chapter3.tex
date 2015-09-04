@@ -155,11 +155,11 @@ The localization of the robot in the 3D space relies on the OptiTrack FLEX 13 mo
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.8\textwidth]{flex13.PNG}
+ \includegraphics[width=0.6\textwidth]{flex13.PNG}
  \caption[Flex 13 Cameras]{Flex 13 camera and dimensions.}
  \label{figure:flex13}
 \end{figure}
-
+\noindent
 This camera features a status LED and a 2 digits numerical screen for diagnostics, mounting supports, an image sensor and a lens.\\*
 
 
@@ -169,7 +169,7 @@ This camera features a status LED and a 2 digits numerical screen for diagnostic
 \item Frame Rate: 30-120 FPS (adjustable).
 \item Imager Resolution: 1280 X 1024 (1.3 Megapixels).
 \end{itemize}
-
+\noindent
 A 28 LED ring around the lens ensures the required IR (Infra Red) illumination both in stroboscopic and continuous modes. \\*
 
 Object are defined by attaching to them at least 3 \textbf {passive infrared markers} (Figure \ref{figure:marker}) able to reflect infrared light, solving rigid bodies and ensure tracking. The number of markers that the OptiTrack is capable of tracking depends on the size of the markers and the distance they are from the camera. This number may change from model to model but is about 100 in our case, more than enough for this project.\par The 3D location of markers can be resolved with millimeter accuracy and resolution depending on capture volume size and camera configuration. Increasing the number of cameras can help improve the tracking performance if needed and in this case 0.3 mm of error for each marker is achieved. \\* 
@@ -217,27 +217,34 @@ Regarding the robot, with 5 markers placed in a 3D asymmetrical configuration  o
 
 \begin{figure}[h]
 \centering
- \includegraphics[width=0.7\textwidth]{irismarker.jpg}
+ \includegraphics[width=0.6\textwidth]{irismarker.jpg}
  \caption[Marker placement on IRIS]{Markers placed on IRIS in asymmetrical 3D positions.}
  \label{figure:markedIRIS}
 \end{figure}
 
-\newpage
+
 
 \subsection{Flight Arena}
-The flight arena is the stage of the setup. The flying space measures approximately 3 x 3 meters and 1.5 meters high defined by the capture volume of the mocap. Outside there is a security perimeter enclosing cameras made by a nylon net of about 4 x 4 meters till the roof. The origin of the position measures is at the center of the room placed on the floor with the z axis going downwards as shown in figure \ref{figure:arena}.
-
+The flight arena is the stage of the setup. Since the laboratory where this thesis has taken place is new, one task was the relocation of the equipment from the old to the new lab. Next I attached every camera to the supports previously drilled one the roof and after I took care of the cables management. Since the maximum allowed length of the camera cables is 5 meters, I managed to place the hubs on the top at two opposite edges of the square (the ones intersecting x axis). By that, the available length is sufficient to connect three cameras of one edge and one from the adjacent edge to on hub and the rest to the other. The sync and the two hubs cables are running on the roof and crossing the room while the camera cables are displaced on the perimeter.   
 \begin{figure}[h]
 \centering
- \includegraphics[width=0.8\textwidth]{flight_arena.png}
+ \includegraphics[width=0.6\textwidth]{flight_arena.png}
  \caption[Flight arena]{A scheme of the flight arena. In red there are the cameras, the yellow part is the flying space while the outer square is the protective net.}
  \label{figure:arena}
 \end{figure}
+\noindent
+The flying space measures approximately 3 x 3 meters and 1.5 meters high defined by the capture volume of the mocap. Outside there is a security perimeter enclosing cameras made by a nylon net of about 4 x 4 meters till the roof. The origin of the position measures is at the center of the room placed on the floor with the z axis going downwards as shown in figure \ref{figure:arena}. A panoramic view of the arena, taken from the top left corner, is shown in figure \ref{figure:arenapano}. 
 
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{panoramic.jpg}
+ \caption[Flight arena panoramic]{Panoramic view of the flying space.}
+ \label{figure:arenapano}
+\end{figure}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{motiv_panorama.PNG}
+	\includegraphics[width=0.6\textwidth]{motiv_panorama.PNG}
 	\caption[Flight arena from motive]{Flight arena seen by Motive with a couple of rigid bodies and cameras.}
 	\label{figure:arenamotive}
 \end{figure}
@@ -304,9 +311,8 @@ Moreover, IRIS features a standard RC transmitter, shown in figure \ref{figure:i
 
 \subsection{Software interfaces}
 
-Motive has the feature to transmit the pose of every tracked rigid bodies through a multicast IP. By this option, the raw pose of the robot is transmitted to the Linux machine. The software architecture running on Linux reads data coming directly from Motive through a \textit{Receiver component}. Without the use of an \textit{adapter component}, since the program is specific for this application, data from Motive is processed as explained in section \ref{sec:adaptframes} at the moment it arrives. In the mean while a position set point is generated inside the architecture, both pose estimation and position set point are packed using MAVLink protocol. At the end data is sent through a socket interface an the telemetry module takes care of transmitting everything to IRIS with a rate of approximately 10Hz. \\*
+Motive has the feature to transmit the pose of every tracked rigid bodies through a multicast IP. By this option, the raw pose of the robot is transmitted to the Linux machine. The software architecture running on Linux reads data coming directly from Motive through a \textit{Receiver component}. Without the use of an \textit{adapter component}, since the program is specific for this application, data from Motive is processed as explained in section \ref{sec:adaptframes} at the moment it arrives. In the mean while a position set point is generated inside the architecture, both pose estimation and position set point are packed using MAVLink protocol. At the end data is sent through a socket interface an the telemetry module takes care of transmitting everything to IRIS with a rate of approximately 10Hz.
 
-\noindent
 Figure \ref{figure:integration} sums up in a scheme the relation between each part. 
 
 \begin{figure}[h]

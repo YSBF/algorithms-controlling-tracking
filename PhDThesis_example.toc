@@ -1,6 +1,6 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introductory}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Overview}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Hosting laboratories}{2}{subsection.1.1.1}
 \contentsline {section}{\numberline {1.2}Problem statement}{3}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Work plan}{3}{subsection.1.2.1}
@@ -20,11 +20,11 @@
 \contentsline {subsection}{\numberline {3.1.2}Motion capture system}{23}{subsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.2.1}Image sensor specifications and performances}{23}{subsubsection.3.1.2.1}
 \contentsline {subsubsection}{\numberline {3.1.2.2}Software, cameras layout and requirements}{24}{subsubsection.3.1.2.2}
-\contentsline {subsection}{\numberline {3.1.3}Flight Arena}{27}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Overall Integration}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.1.3}Flight Arena}{26}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Overall Integration}{27}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Hardware interfaces}{28}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Software interfaces}{30}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Adapting reference frames}{30}{subsubsection.3.2.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Adapting reference frames}{31}{subsubsection.3.2.2.1}
 \contentsline {chapter}{\numberline {4}Modeling IRIS}{34}{chapter.4}
 \contentsline {section}{\numberline {4.1}Generalities}{34}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Reference frames}{34}{subsection.4.1.1}
@@ -56,15 +56,16 @@
 \contentsline {section}{\numberline {5.4}Results and validation}{57}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Estimator validation}{57}{subsection.5.4.1}
 \contentsline {paragraph}{Roll estimation}{57}{section*.20}
-\contentsline {paragraph}{Pitch estimation}{57}{section*.21}
+\contentsline {paragraph}{Pitch estimation}{58}{section*.21}
 \contentsline {paragraph}{Yaw estimation}{58}{section*.22}
 \contentsline {subsection}{\numberline {5.4.2}Controller results}{59}{subsection.5.4.2}
 \contentsline {paragraph}{X and Y position}{59}{section*.23}
-\contentsline {paragraph}{Z position}{60}{section*.24}
+\contentsline {paragraph}{Z position}{61}{section*.24}
 \contentsline {paragraph}{Yaw convergence}{61}{section*.25}
+\contentsline {paragraph}{Hovering with disturbances}{62}{section*.26}
 \contentsline {chapter}{\numberline {6}Software architecture}{64}{chapter.6}
 \contentsline {chapter}{\numberline {7}Landing on a mobile platform}{65}{chapter.7}
 \contentsline {chapter}{\numberline {8}Results}{66}{chapter.8}
 \contentsline {chapter}{\numberline {9}Conclusions}{67}{chapter.9}
 \contentsline {chapter}{\numberline {A}Extra}{68}{appendix.A}
-\contentsline {chapter}{References}{73}{appendix*.29}
+\contentsline {chapter}{References}{73}{appendix*.30}
