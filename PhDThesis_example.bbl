@@ -135,6 +135,11 @@
 \newblock \url{http://qgroundcontrol.org/}, 2015.
 \newblock Accessed: 19-08-2015.
 
+\bibitem{qt}
+{Qt libraries}.
+\newblock \url{http://www.qt.io/developers/}, 2015.
+\newblock Accessed: 2-09-2015.
+
 \bibitem{qualisys}
 {qualisys website}.
 \newblock \url{http://www.qualisys.com/}, 2015.
@@ -149,6 +154,11 @@
 {Ros org}.
 \newblock \url{http://www.ros.org/}, 2015.
 \newblock Accessed: 16-08-2015.
+
+\bibitem{msdn}
+{Software architectures and behavioral systems, motivation and use cases}.
+\newblock \url{https://msdn.microsoft.com/en-us/library/bb245656.aspx}, 2015.
+\newblock Accessed: 2-09-2015.
 
 \bibitem{uOrb}
 {uOrb user guide}.

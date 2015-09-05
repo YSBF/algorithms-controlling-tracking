@@ -29,7 +29,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Publish/Subscribe design pattern.}}{46}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces IRIS state machine}}{48}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Controller overall structure.}}{53}{figure.5.3}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Controller overall structure. In red external signals}}{53}{figure.5.3}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Roll estimation}}{56}{figure.5.4}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Pitch estimation}}{57}{figure.5.5}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Yaw estimation}}{58}{figure.5.6}
@@ -39,6 +39,8 @@
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Yaw tracking}}{61}{figure.5.10}
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Static hover with external perturbations}}{62}{figure.5.11}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces In-out relation}}{67}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces In-out relation for the nested arch}}{67}{figure.6.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

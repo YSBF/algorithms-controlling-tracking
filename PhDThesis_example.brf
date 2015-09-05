@@ -65,5 +65,7 @@
 \backcite {attekf}{{51}{5.2.2}{equation.5.2.4}}
 \backcite {Mellinger2012}{{52}{5.3}{section.5.3}}
 \backcite {FPlot}{{56}{5.4}{section.5.4}}
-\backcite {ROS}{{64}{6.1.2}{subsection.6.1.2}}
+\backcite {msdn}{{63}{6.1}{section.6.1}}
+\backcite {ROS}{{65}{6.1.2}{subsection.6.1.2}}
 \backcite {optiros}{{65}{6.1.2}{subsection.6.1.2}}
+\backcite {qt}{{65}{6.1.2}{subsection.6.1.2}}

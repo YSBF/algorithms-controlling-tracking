@@ -12,12 +12,12 @@
 % short summary of the chapter
 \section*{Summary}
 
-This chapter introduces the reader to the software architecture running off board on Linux. The introduction presents a  general overview on software architectures, expressed the needs of such a system and in particular it describes the environment and software tools involved. Next section presents the design pattern according to which the sofware is organized explaining its advantages and limitations. Then the software components are described with more detail one by one and the results of the experiments are reported.
+This chapter introduces the reader to the software architecture running off board on Linux. The introduction presents a  general overview on software architectures, expressed the needs of such a system and in particular it describes the environment and software tools involved. Next section presents the design pattern according to which the sofware is organized explaining its advantages and limitations. Then the software components are described with more detail one by one and the results of the experiments are reported. 
 \section{Introduction to the proposed architecture}
 
-Architecture in usually intended as the process or product of planning, designing and constructing entities. Usually those entities refer to buildings and structure but the concept can be extended to vehicles, electrical and electronics components or softwares. The architect decides where to locate different elements such as walls, doors columns and windows and connect them in harmony with structural consistency. In the same way the software engineer connect, design and locate different software components. A component could be a program implementing an algorithm, some conversion or a graphical user interface.
+Architecture is usually intended as the process or product of planning, designing and constructing entities. Usually those entities refer to buildings and structure but the concept can be extended to vehicles, electrical and electronics components or softwares. The architect decides where to locate different elements such as walls, doors columns and windows and connect them in harmony with structural consistency. In the same way the software engineer connect, design and locate different software components. A component could be a program implementing an algorithm, some conversion or a graphical user interface. The basic idea of architecture definition is to design software structure and object interaction before the detailed design phase. Although serious architecture definition is being suggested for large projects only, arguably any software construction or implementation work must be preceded by an architectural design \cite{msdn}.
  \subsection{Motivations}
- At this point one may ask: why do we need to define an architecture? The answer is pretty simple: it makes things easier,more clear and simpler. A software architecture is an abstract view of a software system distinct from the details of implementation, algorithms, and data representation. Thus it gives an organizational map we may follow during the design flow. A well written software architecture should:
+At this point one may ask: why do we need to define an architecture? The answer is pretty simple: it makes things easier,more clear and simpler. A software architecture is an abstract view of a software system distinct from the details of implementation, algorithms, and data representation. Thus it gives an organizational map we may follow during the design flow. A well written software architecture should:
  \begin{itemize}
  \item Provide flexibility and adaptability.
  \item Allow for interoperability with other softwares and elements in general.
@@ -36,15 +36,78 @@ Every job has its own tools. In order to implement what we theorized in the intr
  
  However there are three main reason which made me discard ROS as a choice. First of all, as stated in chapter \ref{chap:second}, most of the control stations are written with Qt libraries. Since one may thing to include this architecture in one of them in the future, could be an idea to go in the same direction. The second one is that the very first module of this architecture was written by a PhD student, Tommaso Falchi Delitalia, using the Qt framework. It was nice to have a base starting point and expand from that. The last reason, but not the least, is that ROS gave me important delay problems when I tried to integrate mavlink in it. Mavlink is not fully supported but some packages, in development, are out there and they simplify the design such as the acquisition of data from Motive \cite{optiros}.
 
-Hence the used tools are \textbf{Qt libraries} while the chosen programming language is C++, widely used and a standard in robotics. Qt is a powerful framework that let the user create user interfaces with good performance. It packs a set of classes, functions and libraries for almost any kind of needs. Moreover is portable on different platforms such as tablets, smartphones and the most important operative systems. for this reason it is used to implement control station, applications like navigators and vehicles control panels.
+Hence the used tools are \textbf{Qt libraries} \cite{qt} while the chosen programming language is C++, widely used and a standard in robotics. Qt is a powerful framework that let the user create user interfaces with good performance. It packs a set of classes, functions and libraries for almost any kind of needs. Moreover is portable on different platforms such as tablets, smartphones and the most important operative systems. for this reason it is used to implement control station, applications like navigators and vehicles control panels.
 
-The functions and classes used for this project are debugging functions to print logs, multi-threading classes to implement parallel modules, sockets interfaces classes and system functions to manage lo level services. Qt seems perfect, it provides a very easy access to many features, the documentation is very clear and the learning time is pretty low. The very big disadvantage is the lacking of inter process communication support. The pub/sub design is perfect for robotics application but Qt does not provide any help on that, at least for now. Thus the drawbacks of using this kind of framework is that we need to manage inter process message pass-through in some way. This is done and explained in section \ref{sec:sofdescrip}. A porting on ROS could be interesting in the future, after solving delay related issues, for research interests.
+The functions and classes used for this project are debugging functions to print logs, multi-threading classes to implement parallel modules, sockets interfaces classes and system functions to manage lower level services.By far Qt seems perfect, it provides a very easy access to many features, the documentation is very clear and the learning time is pretty low. The very big disadvantage is the lacking of inter process communication support. The pub/sub design is perfect for robotics application but Qt does not provide any help on that, at least for now. Thus the drawbacks of using this kind of framework is that we need to manage inter process message pass-through in some way. This is done and explained in section \ref{sec:sofdescrip}. A porting on ROS could be interesting in the future, after solving delay related issues, for research interests.
 \section{Design patterns}
 \label{sec:patterns}
-%  intro su desired patterns, analogia con monumenti e porhiddii.
-%  parla di behaviors, schema generale a blocchi e perchè.
-%  spiega task e behavior, elenca behavior implementati.
-% % bella pe voi
+In the course of history the concept of \textit{style} was born and developed. An architectural style is characterized by the features that make a building or other structure notable and historically identifiable. The style identifies a common trend, elements or rules that are used in a particular period or by a group of people during the design flow. The same concept evolved to various disciplines; in computer science, the architecture "style" is often called \textbf{Design Pattern}. The analogy with building design is strong, the formal definition of design pattern is the following: 
+\paragraph{Definition of Design Pattern}:  \textit{a design pattern is a general reusable solution to a commonly occurring problem within a given context in software design.} \\
+
+\noindent
+The pattern is a description or template for how to solve a problem that can be used in many different situations, usually for groups of problems. Similarly to the architecural style, the software pattern is defined by common structures, participants, communications, protocols and standards. Design patterns can speed up the development process by providing tested, proven paradigms. Thus the software architecture is defined by its style, namely design pattern, which is chosen among the available ones. First step to follow during the prototyping of the software is to have clear in mind which kind of problem we are facing and which are the constraints of the system. 
+
+At this point the reader should ask how is the software interfacing with the robot and which kind of control does it have on the system. As stated in chapter \ref{chap:fifth}, the external signals that are input of the on board flight stack are the 4-D position value from the mocap and the 4-D position set point. By 4-D we mean a vector composed with [x, y, z, yaw] since roll and pith are estimated on board (see figure \ref{figure:controlarch}). Moreover the following goal is set:
+\paragraph{Goal:} \textit{The robot must be able to perform some kind of tasks provided by the user and in the most autonomous way possible.} \\
+
+\noindent
+In other words, the user provides a list of tasks he wants to perform with the robot and the software architecture guide the system by sending mocap values and position set points. The first scheme of the software is represented in figure \ref{figure:inout}. 
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{first_arch.png}
+ \caption[In-out relation]{Input / Output relation of the software architecture.}
+ \label{figure:inout}
+\end{figure}
+The scheme explains the input output relation, where as input there is a C-struct describing the task and as output MavLink messages for mocap estimate and position set point. Nevertheless, the real structure is a bit different. I decided to put the task list inside the software architecture as a nested component. The main reason for that is simplicity, in the future one may encode the list in a text file as input of the software. See figure \ref{figure:inoutnest} for the actual implementation.
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{nested_arch.png}
+ \caption[In-out relation for the nested arch]{Input / Output relation of the software architecture with nested component.}
+ \label{figure:inoutnest}
+\end{figure}
+
+\subsection{Behavioral architecture}
+At this point, a way to model the problem is necessary. Let us start from the goal: there a list of tasks and the robot must executes them sequentially and autonomously. Thus, the concept of task arises. The task is defined as \textit{a definite piece of work assigned to the robot and performed by acting on the environment}. 
+
+\paragraph{Defined tasks} Which kind of tasks may be performed by IRIS? The first step is to define the essential tasks of navigation which are:
+\begin{itemize}
+\item Take off - from the ground or an horizontal plane.
+\item Land - land on actual position.
+\item Move - go to a target point in 3-D space.
+\item Rotate - Change yaw value to a desired one.
+\end{itemize}
+Moreover a fifth task is added but discussed in \ref{chap:seventh} which is land on a mobile platform. \newline \\
+In order to make things more flexible, each task has a set of parameters used to influence the performance during the execution and to adapt to the environment. A detailed explanation is given in \ref{sec:auto}. Furthermore, it is evident that most of the tasks described involve in some way a location in space. Hence the task is modeled in a C-struct with two elements: position and action. In the software the task takes the name \textbf{node} which is often used in control stations and graph based application.
+
+ Table \ref{tab:node} describes the node struct. The position \textit{p} is itself a struct with four elements (x,y,z,yaw) encoding the 4-D pose in space. The action \textit{a} is another stuct with a char value to identify the type of action and a parameter array which can be filled with values. The meaning of the parameter array changes depending on the action.
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\multicolumn{4}{c}{\textbf{Node} struct} \\
+\hline
+position \textit{p} &     &       &           \\
+           & \textit{x}   & double & meters    \\
+           & \textit{y}   & double & meters    \\
+           & \textit{z}   & double & meters    \\
+           & \textit{yaw} & double & radiants  \\ \hline
+action \textit{a}   &     &       &           \\
+           & \textit{id}  & char  &           \\
+           & \textit{params}    &  double[4]     & \\
+\end{tabular}
+\label{tab:node}
+\caption{Node struct descripton}
+\end{table}
+Those elements are necessary in order to choose which design pattern is suitable in this environment.
+\newline \\
+\noindent
+Taking inspiration from biology and observing how simple animals interacts with the environment, robotic schemes and models may be derived. Biologist discovered that animals like frogs, pigeons insects and fishes exhibit different behaviors depending on the sensory inputs they receive from the environment. With this simple method they are able to survive, hunt and navigate. Two different examples explain the concept very well.
+
+Frogs eyes are able to detect movement. In particular on layer detects small moving objects like flies and another layers detects big object, for example predators. The two layers work in parallel. When the first one is activated, meaning that there is food in the proximity, the frogs jumps towards the pray. On the other hand, when the second layer is triggered 
+
+
+
+
 
 
 \section{Software description}
@@ -56,6 +119,7 @@ The functions and classes used for this project are debugging functions to print
 \subsubsection{Position Dispatcher}
 \subsection{Manual Control}
 \subsection{Automatic Control}
-\subsection {Executor}
+\label{sec:auto}
+\subsection {Executioner}
 
 \section{Experiments and results}

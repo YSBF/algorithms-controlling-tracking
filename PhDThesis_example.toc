@@ -65,20 +65,24 @@
 \contentsline {paragraph}{Hovering with disturbances}{61}{section*.26}
 \contentsline {chapter}{\numberline {6}Software architecture}{63}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introduction to the proposed architecture}{63}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Motivations}{63}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.1}Motivations}{64}{subsection.6.1.1}
 \contentsline {paragraph}{Note:}{64}{section*.28}
-\contentsline {subsection}{\numberline {6.1.2}Programming environment and tools}{64}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.2}Programming environment and tools}{65}{subsection.6.1.2}
 \contentsline {section}{\numberline {6.2}Design patterns}{66}{section.6.2}
-\contentsline {section}{\numberline {6.3}Software description}{66}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}General scheme}{66}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Service modules}{66}{subsection.6.3.2}
-\contentsline {subsubsection}{\numberline {6.3.2.1}NatNet Reciever}{66}{subsubsection.6.3.2.1}
-\contentsline {subsubsection}{\numberline {6.3.2.2}Position Dispatcher}{66}{subsubsection.6.3.2.2}
-\contentsline {subsection}{\numberline {6.3.3}Manual Control}{66}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Automatic Control}{66}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Executor}{66}{subsection.6.3.5}
-\contentsline {section}{\numberline {6.4}Experiments and results}{66}{section.6.4}
-\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{67}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{68}{chapter.8}
-\contentsline {chapter}{\numberline {A}Extra}{69}{appendix.A}
-\contentsline {chapter}{References}{74}{appendix*.30}
+\contentsline {paragraph}{Definition of Design Pattern}{66}{section*.29}
+\contentsline {paragraph}{Goal:}{66}{section*.30}
+\contentsline {subsection}{\numberline {6.2.1}Behavioral architecture}{68}{subsection.6.2.1}
+\contentsline {paragraph}{Defined tasks}{68}{section*.31}
+\contentsline {section}{\numberline {6.3}Software description}{69}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}General scheme}{69}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Service modules}{69}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}NatNet Reciever}{69}{subsubsection.6.3.2.1}
+\contentsline {subsubsection}{\numberline {6.3.2.2}Position Dispatcher}{69}{subsubsection.6.3.2.2}
+\contentsline {subsection}{\numberline {6.3.3}Manual Control}{69}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Automatic Control}{69}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Executioner}{69}{subsection.6.3.5}
+\contentsline {section}{\numberline {6.4}Experiments and results}{69}{section.6.4}
+\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{70}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{71}{chapter.8}
+\contentsline {chapter}{\numberline {A}Extra}{72}{appendix.A}
+\contentsline {chapter}{References}{77}{appendix*.33}
