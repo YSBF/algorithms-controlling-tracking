@@ -48,7 +48,7 @@ In the course of history the concept of \textit{style} was born and developed. A
 The pattern is a description or template for how to solve a problem that can be used in many different situations, usually for groups of problems. Similarly to the architecural style, the software pattern is defined by common structures, participants, communications, protocols and standards. Design patterns can speed up the development process by providing tested, proven paradigms. Thus the software architecture is defined by its style, namely design pattern, which is chosen among the available ones. First step to follow during the prototyping of the software is to have clear in mind which kind of problem we are facing and which are the constraints of the system. 
 
 At this point the reader should ask how is the software interfacing with the robot and which kind of control does it have on the system. As stated in chapter \ref{chap:fifth}, the external signals that are input of the on board flight stack are the 4-D position value from the mocap and the 4-D position set point. By 4-D we mean a vector composed with [x, y, z, yaw] since roll and pith are estimated on board (see figure \ref{figure:controlarch}). Moreover the following goal is set:
-\paragraph{Goal:} \textit{The robot must be able to perform some kind of tasks provided by the user and in the most autonomous way possible.} \\
+\paragraph{Goal:} \textit{The robot must be able to perform some kind of tasks provided by the user in the most autonomous way possible.} \\
 
 \noindent
 In other words, the user provides a list of tasks he wants to perform with the robot and the software architecture guide the system by sending mocap values and position set points. The first scheme of the software is represented in figure \ref{figure:inout}. 
@@ -76,11 +76,12 @@ At this point, a way to model the problem is necessary. Let us start from the go
 \item Land - land on actual position.
 \item Move - go to a target point in 3-D space.
 \item Rotate - Change yaw value to a desired one.
+\item Follow trajectory - Perform a circle around an arbitrary center set in the parameters.
 \end{itemize}
 Moreover a fifth task is added but discussed in \ref{chap:seventh} which is land on a mobile platform. \newline \\
-In order to make things more flexible, each task has a set of parameters used to influence the performance during the execution and to adapt to the environment. A detailed explanation is given in \ref{sec:auto}. Furthermore, it is evident that most of the tasks described involve in some way a location in space. Hence the task is modeled in a C-struct with two elements: position and action. In the software the task takes the name \textbf{node} which is often used in control stations and graph based application.
+In order to make things more flexible, each task has a set of parameters used to influence the performance during the execution and to adapt to the environment. A detailed explanation is given in \ref{sec:auto}. Furthermore, it is evident that most of the tasks described involve in some way a location in space. Hence the task is modeled in a C-struct with two elements: position and action. In the software the task takes the name \textbf{node} which is often used in control stations and graph based applications.
 
- Table \ref{tab:node} describes the node struct. The position \textit{p} is itself a struct with four elements (x,y,z,yaw) encoding the 4-D pose in space. The action \textit{a} is another stuct with a char value to identify the type of action and a parameter array which can be filled with values. The meaning of the parameter array changes depending on the action.
+Table \ref{tab:node} describes the node struct. The position \textit{p} is itself a struct with four elements (x,y,z,yaw) encoding the 4-D pose in space. The action \textit{a} is another stuct with a char value to identify the type of action and a parameter array which can be filled with values. The meaning of the parameter array changes depending on the action.
 \begin{table}[h]
 \centering
 \begin{tabular}{llll}
@@ -103,7 +104,55 @@ Those elements are necessary in order to choose which design pattern is suitable
 \noindent
 Taking inspiration from biology and observing how simple animals interacts with the environment, robotic schemes and models may be derived. Biologist discovered that animals like frogs, pigeons insects and fishes exhibit different behaviors depending on the sensory inputs they receive from the environment. With this simple method they are able to survive, hunt and navigate. Two different examples explain the concept very well.
 
-Frogs eyes are able to detect movement. In particular on layer detects small moving objects like flies and another layers detects big object, for example predators. The two layers work in parallel. When the first one is activated, meaning that there is food in the proximity, the frogs jumps towards the pray. On the other hand, when the second layer is triggered 
+Frogs eyes are able to detect movement. In particular on layer detects small moving objects like flies and another layers detects big object, for example predators. The two layers work in parallel. When the first one is activated, meaning that there is food in the proximity, the frogs jumps towards the pray. On the other hand, when the second layer is triggered, the frogs run away from the object. 
+
+The second example involves the navigation of pigeons. When it is sunny, the bird uses the sun to locate himself (behavior 1). When it is cloudy they use the magnetic field of the earth to detect the north (behavior 2). By disturbing the pigeon with artificial light, it get confused only in sunny days. Vice versa, if disturbed with a magnet, it get confused only in cloudy days. This simple experiment lead to an important result: the pigeon switch behavior depending on some triggering inputs just like the frog. More over only one behavior is active. 
+\paragraph{Behavior definition} \textit{A behavior is a mapping of sensory inputs to a pattern of motor actions that are used to achieve a task.} \newline
+
+\noindent
+For the frog, the sensory inputs are be the position of the moving objects while for the pigeon they are the position of the sun and the value of the magnetic field. Moreover, a trigger is present. Those triggers are of different nature depending on the animal, they activate the behaviors or switch from one to the other. Figure \ref{figure:behavior} shows the basic model of the behavior. Inputs and output may be more than one while the activation trigger is always a single signal. 
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{behavior.png}
+ \caption[Behavior definition]{Scheme of the behavior.}
+ \label{figure:behavior}
+\end{figure}
+From an engineering point of view, imagine the behavior like a process, an algorithm, a thread or a module. Inputs and outputs may be variables, signals or parameters. The triggers are often booleans. The logic that manage the triggers is called \textbf{switching logic} and it is a key aspect in the architecture. The switching logic is usually a module that takes inputs from perception modules, and outputs the boolean values of each trigger. Figure \ref{figure:switch} describes a behavioral machine, n behaviors are connected to n trigger signals coming out from the switching module. The logic can be implemented in different ways. It could be a combinatorial circuit made by logical ports, some mathematical functions or a state machine but its output must be a set of n boolean values. 
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{switch.png}
+ \caption[Switching logic]{Behavioral system with switching logic.}
+ \label{figure:switch}
+\end{figure}
+
+\paragraph{Concurrent behaviors} One aspect I find very interesting is the concept of concurrent behaviors. Two or more behaviors are concurrent when they are active at the same time. This approach may solve elegantly different problems but we must pay some attention. Imagine the frog looking around. At some point an insect and a predator appear together in the field of view activating two behaviors. She is hungry, but more important, she does not want to be the meal of someone else. In this case behaviors can be prioritized (the most important is executed). A second way is to include this scene in the switching logic where behaviors inhibit others. Moving may inhibit landing for example. 
+
+On the other hand let us picture the following situation: a mobile robot moving on the ground and going towards a target. The behavior \textit{move straight} is activated and the robot goes in the direction of the goal. At certain point the perception module senses an obstacle in front and activates the behavior \textit{avoid obstacle}. The two behaviors are concurrent since we assume that there is no inhibition in the switching logic. The first output is to spin the wheels with the same speed (move straight) but the second behavior commands the steering wheels to turn and avoid the collision. The to outputs add up and the result is the robot avoiding the obstacle. When the perception module does not sense anymore the obstruction, the second behavior is turned off and the robot continues moving towards the target. 
+
+It seems pretty trivial but this approach has a lot of potential. It saves resources turning off and on different modules depending on the situation. Switching logic can be implemented on hardware thus optimizing the performances. Moreover the combinations of simple behaviors may solve complex tasks. 
+
+For this case, in order to solve concurrency issues, I used a simple rule: \textbf{concurrent behaviors are possible only if they act on different dynamics}. For example, move and rotate can be activated together because one changes x, y and z while the other changes yaw set points. Follow trajectory and move cannot be concurrent because they act on the same dynamics. One may need to follow a trajectory, like a circle around a point of interest, and film with the camera the center thus keeping the nose always pointing to the target. This is solved combining \textit{follow trajectory} with \textit{rotate}. Although it is not implemented in this way, potentially the landing on a mobile platform task may be defined by two concurrent behaviors. The first is \textit{move} or track the platform, and the second is \textit{land}. The more behaviors are added, the more combinations are possible.
+
+\paragraph{Behaviors }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
