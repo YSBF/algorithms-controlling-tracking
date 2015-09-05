@@ -15,13 +15,47 @@
 This chapter introduces the reader to the software architecture running off board on Linux. The introduction presents a  general overview on software architectures, expressed the needs of such a system and in particular it describes the environment and software tools involved. Next section presents the design pattern according to which the sofware is organized explaining its advantages and limitations. Then the software components are described with more detail one by one and the results of the experiments are reported.
 \section{Introduction to the proposed architecture}
 
+Architecture in usually intended as the process or product of planning, designing and constructing entities. Usually those entities refer to buildings and structure but the concept can be extended to vehicles, electrical and electronics components or softwares. The architect decides where to locate different elements such as walls, doors columns and windows and connect them in harmony with structural consistency. In the same way the software engineer connect, design and locate different software components. A component could be a program implementing an algorithm, some conversion or a graphical user interface.
+ \subsection{Motivations}
+ At this point one may ask: why do we need to define an architecture? The answer is pretty simple: it makes things easier,more clear and simpler. A software architecture is an abstract view of a software system distinct from the details of implementation, algorithms, and data representation. Thus it gives an organizational map we may follow during the design flow. A well written software architecture should:
+ \begin{itemize}
+ \item Provide flexibility and adaptability.
+ \item Allow for interoperability with other softwares and elements in general.
+ \item Provide control on the system.
+ \item Reduce maintenance time and cost.
+ \item Help developers improving the software.
+ \end{itemize}
+Reusability is a key aspect in design of this kind of systems. One software may be used for a different application changing only few parameters or modules. Each module should be self contained and work as a \textit{black box}, meaning that once the input and output are defined, the actual implementation has no importance. Standardization clearly takes an important role, the way components communicate for example must be known by the developer. If different modules speak the same \textit{language} or \textbf{protocol} (e.g. the MavLink standard) in engineering terms, it is simpler to interface them. Moreover, a self contained module is more easy to maintain and expand because developers can focus on that specific aspect without knowing what is happening outside. In that way specialist in different fields can cooperate designing each own part. The role of the software engineer is on one hand to design software components, and on the other to integrate them with modules written by others. Finally, it seems trivial to point it out, but the architecture must work respecting the specifications and providing the needed control on the system. 
 
+\paragraph{Note:}This software was designed ad-hoc for indoor flight because there were not any other alternatives. Every control station is specialized for outdoor flight which is not our case. Moreover this software aims to become a research platform for controlled environments (e.g. indoor flight) for anyone who wants to contribute.
+\subsection{Programming environment and tools}
 
+Every job has its own tools. In order to implement what we theorized in the introduction of this chapter we need to rely on software tools. There are many different frameworks which helps developers in implementing their own ideas.
 
+ The state of the art and widely used framework in robotics is ROS or Robotic Operative System \cite{ROS}. ROS is a publish/subscrbe middleware meaning that it packs function classes and features which provide inter process communication. It supports most of the libraries used in robotics for path planning, computer vision, control and so on. The main feature is that ROS is very easy to use and let the user create different parallel processes (or nodes) without focusing on low level aspects. As consequence of that, the designer can concentrate on the actual problem he is working on and leave lower level managing such as shared variables, timing or buffers to ROS. This feature increase exponentially the productivity while writing a program. Moreover, ROS is becoming a standard in research and also industry. That means that many packages are available online that one can use, the community and the documentation are superb and it is open source. This framework has all the features needed for a good base of a software architecture.
+ 
+ However there are three main reason which made me discard ROS as a choice. First of all, as stated in chapter \ref{chap:second}, most of the control stations are written with Qt libraries. Since one may thing to include this architecture in one of them in the future, could be an idea to go in the same direction. The second one is that the very first module of this architecture was written by a PhD student, Tommaso Falchi Delitalia, using the Qt framework. It was nice to have a base starting point and expand from that. The last reason, but not the least, is that ROS gave me important delay problems when I tried to integrate mavlink in it. Mavlink is not fully supported but some packages, in development, are out there and they simplify the design such as the acquisition of data from Motive \cite{optiros}.
+
+Hence the used tools are \textbf{Qt libraries} while the chosen programming language is C++, widely used and a standard in robotics. Qt is a powerful framework that let the user create user interfaces with good performance. It packs a set of classes, functions and libraries for almost any kind of needs. Moreover is portable on different platforms such as tablets, smartphones and the most important operative systems. for this reason it is used to implement control station, applications like navigators and vehicles control panels.
+
+The functions and classes used for this project are debugging functions to print logs, multi-threading classes to implement parallel modules, sockets interfaces classes and system functions to manage lo level services. Qt seems perfect, it provides a very easy access to many features, the documentation is very clear and the learning time is pretty low. The very big disadvantage is the lacking of inter process communication support. The pub/sub design is perfect for robotics application but Qt does not provide any help on that, at least for now. Thus the drawbacks of using this kind of framework is that we need to manage inter process message pass-through in some way. This is done and explained in section \ref{sec:sofdescrip}. A porting on ROS could be interesting in the future, after solving delay related issues, for research interests.
 \section{Design patterns}
 \label{sec:patterns}
+%  intro su desired patterns, analogia con monumenti e porhiddii.
+%  parla di behaviors, schema generale a blocchi e perchè.
+%  spiega task e behavior, elenca behavior implementati.
+% % bella pe voi
+
 
 \section{Software description}
+\label{sec:sofdescrip}
 
+\subsection{General scheme}
+\subsection{Service modules}
+\subsubsection{NatNet Reciever}
+\subsubsection{Position Dispatcher}
+\subsection{Manual Control}
+\subsection{Automatic Control}
+\subsection {Executor}
 
 \section{Experiments and results}

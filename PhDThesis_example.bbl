@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{optiros}
+{Mocap Optitrack ROS package}.
+\newblock \url{http://wiki.ros.org/mocap_optitrack}, note = {Accessed:
+  18-08-2015}, year = {2015},.
+
 \bibitem{gyro}
 {Gyroscopic stabilizer}.
 \newblock The Sperry Gyroscopic Stabilizer, 1915.
@@ -138,6 +143,11 @@
 \bibitem{FrameRef}
 {Reference frames}.
 \newblock \url{https://pixhawk.org/dev/know-how/frames_of_reference}, 2015.
+\newblock Accessed: 16-08-2015.
+
+\bibitem{ROS}
+{Ros org}.
+\newblock \url{http://www.ros.org/}, 2015.
 \newblock Accessed: 16-08-2015.
 
 \bibitem{uOrb}

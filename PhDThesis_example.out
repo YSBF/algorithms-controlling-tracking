@@ -49,11 +49,19 @@
 \BOOKMARK [2][]{subsection.5.4.2}{5.4.2 Controller results}{section.5.4}% 49
 \BOOKMARK [0][]{chapter.6}{6 Software architecture}{}% 50
 \BOOKMARK [1][]{section.6.1}{6.1 Introduction to the proposed architecture}{chapter.6}% 51
-\BOOKMARK [1][]{section.6.2}{6.2 Design patterns}{chapter.6}% 52
-\BOOKMARK [1][]{section.6.3}{6.3 Software description}{chapter.6}% 53
-\BOOKMARK [1][]{section.6.4}{6.4 Experiments and results}{chapter.6}% 54
-\BOOKMARK [0][]{chapter.7}{7 Landing on a mobile platform}{}% 55
-\BOOKMARK [0][]{chapter.8}{8 Results}{}% 56
-\BOOKMARK [0][]{chapter.9}{9 Conclusions}{}% 57
-\BOOKMARK [0][]{appendix.A}{A Extra}{}% 58
-\BOOKMARK [0][]{appendix*.30}{References}{}% 59
+\BOOKMARK [2][]{subsection.6.1.1}{6.1.1 Motivations}{section.6.1}% 52
+\BOOKMARK [2][]{subsection.6.1.2}{6.1.2 Programming environment and tools}{section.6.1}% 53
+\BOOKMARK [1][]{section.6.2}{6.2 Design patterns}{chapter.6}% 54
+\BOOKMARK [1][]{section.6.3}{6.3 Software description}{chapter.6}% 55
+\BOOKMARK [2][]{subsection.6.3.1}{6.3.1 General scheme}{section.6.3}% 56
+\BOOKMARK [2][]{subsection.6.3.2}{6.3.2 Service modules}{section.6.3}% 57
+\BOOKMARK [3][]{subsubsection.6.3.2.1}{6.3.2.1 NatNet Reciever}{subsection.6.3.2}% 58
+\BOOKMARK [3][]{subsubsection.6.3.2.2}{6.3.2.2 Position Dispatcher}{subsection.6.3.2}% 59
+\BOOKMARK [2][]{subsection.6.3.3}{6.3.3 Manual Control}{section.6.3}% 60
+\BOOKMARK [2][]{subsection.6.3.4}{6.3.4 Automatic Control}{section.6.3}% 61
+\BOOKMARK [2][]{subsection.6.3.5}{6.3.5 Executor}{section.6.3}% 62
+\BOOKMARK [1][]{section.6.4}{6.4 Experiments and results}{chapter.6}% 63
+\BOOKMARK [0][]{chapter.7}{7 Landing on a mobile platform}{}% 64
+\BOOKMARK [0][]{chapter.8}{8 Conclusions}{}% 65
+\BOOKMARK [0][]{appendix.A}{A Extra}{}% 66
+\BOOKMARK [0][]{appendix*.30}{References}{}% 67

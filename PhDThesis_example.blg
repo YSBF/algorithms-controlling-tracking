@@ -16,15 +16,20 @@ A level-1 auxiliary file: Conclusions/conclusions.aux
 A level-1 auxiliary file: Appendix1/appendix1.aux
 The style file: abbrv.bst
 Database file #1: References/references.bib
+I was expecting a `,' or a `}'---line 185 of file References/references.bib
+ : 
+ : @misc{FPlot,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I'm ignoring Algorithms2014's extra "title" field
---line 290 of file References/references.bib
-I was expecting a `,' or a `}'---line 381 of file References/references.bib
+--line 304 of file References/references.bib
+I was expecting a `,' or a `}'---line 395 of file References/references.bib
  : 
  : year = {2004}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I'm ignoring Mellinger2012's extra "title" field
---line 462 of file References/references.bib
+--line 476 of file References/references.bib
 Warning--to sort, need author or key in Heli
 Warning--to sort, need author or key in gyro
 Warning--to sort, need author or key in Ascend
@@ -51,6 +56,8 @@ Warning--to sort, need author or key in FrameRef
 Warning--to sort, need author or key in uOrb
 Warning--to sort, need author or key in attekf
 Warning--to sort, need author or key in FPlot
+Warning--to sort, need author or key in ROS
+Warning--to sort, need author or key in optiros
 Warning--to sort, need author or key in OptiHub
 Warning--to sort, need author or key in Pred
 Warning--to sort, need author or key in PixETH
@@ -61,45 +68,45 @@ Warning--empty year in Khalil2004
 Warning--empty journal in Mellinger2012
 Warning--empty journal in Vendittelli
 Warning--empty year in Vendittelli
-You've used 59 entries,
+You've used 61 entries,
             2118 wiz_defined-function locations,
-            818 strings with 11653 characters,
-and the built_in function-call counts, 14534 in all, are:
-= -- 1499
-> -- 446
+            825 strings with 11817 characters,
+and the built_in function-call counts, 14865 in all, are:
+= -- 1532
+> -- 448
 < -- 7
-+ -- 195
++ -- 197
 - -- 136
-* -- 788
-:= -- 2194
-add.period$ -- 176
-call.type$ -- 59
-change.case$ -- 247
+* -- 799
+:= -- 2231
+add.period$ -- 181
+call.type$ -- 61
+change.case$ -- 253
 chr.to.int$ -- 0
-cite$ -- 95
-duplicate$ -- 568
-empty$ -- 1372
+cite$ -- 99
+duplicate$ -- 582
+empty$ -- 1418
 format.name$ -- 136
-if$ -- 3224
+if$ -- 3307
 int.to.chr$ -- 0
-int.to.str$ -- 59
+int.to.str$ -- 61
 missing$ -- 25
-newline$ -- 297
+newline$ -- 306
 num.names$ -- 60
-pop$ -- 379
+pop$ -- 395
 preamble$ -- 1
-purify$ -- 186
+purify$ -- 190
 quote$ -- 0
-skip$ -- 455
+skip$ -- 469
 stack$ -- 0
-substring$ -- 770
-swap$ -- 112
+substring$ -- 780
+swap$ -- 114
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 234
-warning$ -- 36
+type$ -- 242
+warning$ -- 38
 while$ -- 101
-width$ -- 61
-write$ -- 609
-(There was 1 error message)
+width$ -- 63
+write$ -- 626
+(There were 2 error messages)
