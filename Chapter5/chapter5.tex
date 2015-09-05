@@ -178,7 +178,7 @@ where  ${}^BR_E$ is the transpose of $R$ which depends on attitude angles. Roll 
 
 \section{Controller architecture}
 
-As stated in chapter \ref{chap:second}, those modules implement PIDs controller. The architecture is in the form of what is called a cascaded structure, a very common practice in control design for flying vehicles. 
+As stated in Chapter \ref{chap:second}, those modules implement PIDs controller. The architecture is in the form of what is called a cascaded structure, a very common practice in control design for flying vehicles. 
 
 The basic idea is to break up the dynamics of the quadrotor and face the problem piece by piece \cite{Mellinger2012}. Thus, the design is divided in four sub controllers placed in a cascaded fashion one after the other. Each controller generates the input for the next one and takes the output of the previous. From the highest to the lowest level we have:\textit{ position control}, \textit{velocity control}, \textit{attitude control} and\textit{ motor control}. In the context of this thesis, dynamics of motor control are not analyzed but just a brief overview is given. 
 

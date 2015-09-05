@@ -12,7 +12,7 @@
 % short summary of the chapter
 \section*{Summary}
 
-This chapter introduces the reader to the software architecture running off board on Linux. The introduction presents a  general overview on software architectures, expressed the needs of such a system and in particular it describes the environment and software tools involved. Next section presents the design pattern according to which the sofware is organized explaining its advantages and limitations. Then the software components are described with more detail one by one and the results of the experiments are reported. 
+This Chapter introduces the reader to the software architecture running off board on Linux. The introduction presents a  general overview on software architectures, expressed the needs of such a system and in particular it describes the environment and software tools involved. Next section presents the design pattern according to which the software is organized explaining its advantages and limitations. Then the software components are described with more detail one by one and the results of the experiments are reported. 
 \section{Introduction to the proposed architecture}
 
 Architecture is usually intended as the process or product of planning, designing and constructing entities. Usually those entities refer to buildings and structure but the concept can be extended to vehicles, electrical and electronics components or softwares. The architect decides where to locate different elements such as walls, doors columns and windows and connect them in harmony with structural consistency. In the same way the software engineer connect, design and locate different software components. A component could be a program implementing an algorithm, some conversion or a graphical user interface. The basic idea of architecture definition is to design software structure and object interaction before the detailed design phase. Although serious architecture definition is being suggested for large projects only, arguably any software construction or implementation work must be preceded by an architectural design \cite{msdn}.
@@ -30,11 +30,11 @@ Reusability is a key aspect in design of this kind of systems. One software may 
 \paragraph{Note:}This software was designed ad-hoc for indoor flight because there were not any other alternatives. Every control station is specialized for outdoor flight which is not our case. Moreover this software aims to become a research platform for controlled environments (e.g. indoor flight) for anyone who wants to contribute.
 \subsection{Programming environment and tools}
 
-Every job has its own tools. In order to implement what we theorized in the introduction of this chapter we need to rely on software tools. There are many different frameworks which helps developers in implementing their own ideas.
+Every job has its own tools. In order to implement what we theorized in the introduction of this Chapter we need to rely on software tools. There are many different frameworks which helps developers in implementing their own ideas.
 
  The state of the art and widely used framework in robotics is ROS or Robotic Operative System \cite{ROS}. ROS is a publish/subscrbe middleware meaning that it packs function classes and features which provide inter process communication. It supports most of the libraries used in robotics for path planning, computer vision, control and so on. The main feature is that ROS is very easy to use and let the user create different parallel processes (or nodes) without focusing on low level aspects. As consequence of that, the designer can concentrate on the actual problem he is working on and leave lower level managing such as shared variables, timing or buffers to ROS. This feature increase exponentially the productivity while writing a program. Moreover, ROS is becoming a standard in research and also industry. That means that many packages are available online that one can use, the community and the documentation are superb and it is open source. This framework has all the features needed for a good base of a software architecture.
  
- However there are three main reason which made me discard ROS as a choice. First of all, as stated in chapter \ref{chap:second}, most of the control stations are written with Qt libraries. Since one may thing to include this architecture in one of them in the future, could be an idea to go in the same direction. The second one is that the very first module of this architecture was written by a PhD student, Tommaso Falchi Delitalia, using the Qt framework. It was nice to have a base starting point and expand from that. The last reason, but not the least, is that ROS gave me important delay problems when I tried to integrate mavlink in it. Mavlink is not fully supported but some packages, in development, are out there and they simplify the design such as the acquisition of data from Motive \cite{optiros}.
+ However there are three main reason which made me discard ROS as a choice. First of all, as stated in Chapter \ref{chap:second}, most of the control stations are written with Qt libraries. Since one may thing to include this architecture in one of them in the future, could be an idea to go in the same direction. The second one is that the very first module of this architecture was written by a PhD student, Tommaso Falchi Delitalia, using the Qt framework. It was nice to have a base starting point and expand from that. The last reason, but not the least, is that ROS gave me important delay problems when I tried to integrate mavlink in it. Mavlink is not fully supported but some packages, in development, are out there and they simplify the design such as the acquisition of data from Motive \cite{optiros}.
 
 Hence the used tools are \textbf{Qt libraries} \cite{qt} while the chosen programming language is C++, widely used and a standard in robotics. Qt is a powerful framework that let the user create user interfaces with good performance. It packs a set of classes, functions and libraries for almost any kind of needs. Moreover is portable on different platforms such as tablets, smartphones and the most important operative systems. for this reason it is used to implement control station, applications like navigators and vehicles control panels.
 
@@ -47,7 +47,7 @@ In the course of history the concept of \textit{style} was born and developed. A
 \noindent
 The pattern is a description or template for how to solve a problem that can be used in many different situations, usually for groups of problems. Similarly to the architecural style, the software pattern is defined by common structures, participants, communications, protocols and standards. Design patterns can speed up the development process by providing tested, proven paradigms. Thus the software architecture is defined by its style, namely design pattern, which is chosen among the available ones. First step to follow during the prototyping of the software is to have clear in mind which kind of problem we are facing and which are the constraints of the system. 
 
-At this point the reader should ask how is the software interfacing with the robot and which kind of control does it have on the system. As stated in chapter \ref{chap:fifth}, the external signals that are input of the on board flight stack are the 4-D position value from the mocap and the 4-D position set point. By 4-D we mean a vector composed with [x, y, z, yaw] since roll and pith are estimated on board (see figure \ref{figure:controlarch}). Moreover the following goal is set:
+At this point the reader should ask how is the software interfacing with the robot and which kind of control does it have on the system. As stated in Chapter \ref{chap:fifth}, the external signals that are input of the on board flight stack are the 4-D position value from the mocap and the 4-D position set point. By 4-D we mean a vector composed with [x, y, z, yaw] since roll and pith are estimated on board (see figure \ref{figure:controlarch}). Moreover the following goal is set:
 \paragraph{Goal:} \textit{The robot must be able to perform some kind of tasks provided by the user in the most autonomous way possible.} \\
 
 \noindent
@@ -133,29 +133,30 @@ It seems pretty trivial but this approach has a lot of potential. It saves resou
 
 For this case, in order to solve concurrency issues, I used a simple rule: \textbf{concurrent behaviors are possible only if they act on different dynamics}. For example, move and rotate can be activated together because one changes x, y and z while the other changes yaw set points. Follow trajectory and move cannot be concurrent because they act on the same dynamics. One may need to follow a trajectory, like a circle around a point of interest, and film with the camera the center thus keeping the nose always pointing to the target. This is solved combining \textit{follow trajectory} with \textit{rotate}. Although it is not implemented in this way, potentially the landing on a mobile platform task may be defined by two concurrent behaviors. The first is \textit{move} or track the platform, and the second is \textit{land}. The more behaviors are added, the more combinations are possible.
 
-\paragraph{Behaviors }
+\paragraph{Implementing behaviors} The switching logic is implemented as a finite state machine which is presented in section \ref{sec:exec}. Behaviors are functions with the following inputs: the robot state (x,y,z,yaw), the actual position setpoint(x,y,z,yaw) and the node value. As output they give the new position setpoint which is updated. Figure \ref{chap:fifth} shows the data flow for general set of behaviors, the switching logic is not shown for simplicity. 
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{behav_flow.png}
+ \caption[Behavior data flow]{Input/Output relations with particular adopted scheme. Switching logic is not depicted.}
+ \label{figure:flow}
+\end{figure}
+Regarding implemented behaviors, the switching logic is almost a one to one map. Each presented task has its own behavior called with the same name. In this version of the software, the only concurrency appears in \textit{follow trajectory} task which performs a circle and keeps the nose always at the center. Depending on the actual task, the switching module activates different behaviors and the map is shown in table \ref{tab:map}.
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c}
+Actual task               & Activated behaviors   \\ \hline
+take off                  & take\_off             \\
+land                      & land                  \\
+move                      & move                  \\
+follow trajectory         & follow\_traj ; rotate \\
+rotate                    & rotate                \\
+land on a mobile platform & plat\_land           
+\end{tabular}
+\caption{Switching logic mapping.}
+\label{tab:map}
+\end{table}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+For prototyping and simplicity reasons, the mobile landing has its own behavior but two concurrent behaviors can be assigned to it, namely \textit{move} and \textit{land}. Moreover, many improvements can be done. For example one can decide to activate or not the \textit{rotate} behavior in the follow trajectory task by passing a value in the params array. This architecture can be largely expanded from its actual state by adding behaviors, concurrencies and tasks.
 
 
 
@@ -170,5 +171,6 @@ For this case, in order to solve concurrency issues, I used a simple rule: \text
 \subsection{Automatic Control}
 \label{sec:auto}
 \subsection {Executioner}
+\label{sec:exec}
 
 \section{Experiments and results}
