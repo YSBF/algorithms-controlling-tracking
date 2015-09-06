@@ -133,7 +133,7 @@ It seems pretty trivial but this approach has a lot of potential. It saves resou
 
 For this case, in order to solve concurrency issues, I used a simple rule: \textbf{concurrent behaviors are possible only if they act on different dynamics}. For example, move and rotate can be activated together because one changes x, y and z while the other changes yaw set points. Follow trajectory and move cannot be concurrent because they act on the same dynamics. One may need to follow a trajectory, like a circle around a point of interest, and film with the camera the center thus keeping the nose always pointing to the target. This is solved combining \textit{follow trajectory} with \textit{rotate}. Although it is not implemented in this way, potentially the landing on a mobile platform task may be defined by two concurrent behaviors. The first is \textit{move} or track the platform, and the second is \textit{land}. The more behaviors are added, the more combinations are possible.
 
-\paragraph{Implementing behaviors} The switching logic is implemented as a finite state machine which is presented in section \ref{sec:exec}. Behaviors are functions with the following inputs: the robot state (x,y,z,yaw), the actual position setpoint(x,y,z,yaw) and the node value. As output they give the new position setpoint which is updated. Figure \ref{chap:fifth} shows the data flow for general set of behaviors, the switching logic is not shown for simplicity. 
+\paragraph{Implementing behaviors} The switching logic is implemented as a finite state machine which is presented in section \ref{sec:exec}. Behaviors are functions with the following inputs: the robot state (x,y,z,yaw), the actual position setpoint(x,y,z,yaw) and the node value. As output they give the new position setpoint which is updated. Figure \ref{figure:flow} shows the data flow for general set of behaviors, the switching logic is not shown for simplicity. 
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.8\textwidth]{behav_flow.png}
@@ -162,11 +162,73 @@ For prototyping and simplicity reasons, the mobile landing has its own behavior 
 
 \section{Software description}
 \label{sec:sofdescrip}
+At this stage, the actual implementation of the concepts explained previously can be described. The structure of the application is a multi-threaded scheme. A thread of execution is a sequence of programmed instructions that can be managed independently by a scheduler. Different threads implement different modules or processes running simultaneously and independently. Within the Qt environment, multi-threading is easily implemented through the QThread class. By inheriting its properties we can redefine its \textit{run()} method and design the wanted algorithm. The advantages of having a multi-threaded architecture are several. Threads can be started and stopped as many times we need. Moreover, if a thread fails or get stuck, the others continue running since they are all independent. This is a key aspect in consideration of the fact that there are essential modules which cannot be blocked by other threads. 
+
+This scheme presents also a main drawback. When two or more threads are running in parallel, they may need to access to the same variable. As result they could interfere with each other, thus synchronization is essential and some precaution is a must. 
+
+To summarize, we can write threads by inheriting properties by the QThread class and overloading its \textit{run()} function with our custom code. By calling the start method, the thread is started and \textit{run()} is executed, usually an infinite loop is implemented with a custom rate. Each loop runs in parallel, hence if one gets stuck the others continue spinning. 
+
+Another powerful tool is the connect method. This method is member of each class in Qt since they are derived from the same one. Every class has signals and slots. Slots are just methods while signals are booleans. With connect, we can relate the signal of one class with the slot of another class. Meaning that, if the signal of the first class at certain point goes up then the slot of the second class is executed. It can be done within threads so callbacks can be partially simulated. 
+With this first overview, the reader should have a rough idea on the working principle of the system. Infinite loops are running simultaneously and independently and each one represent a module. The following custom module are implemented, they represent the main ingredients and the core of the application: \begin{itemize}
+\item NatNet Reciever
+\item Position Dispacher 
+\item Manual Control
+\item Automatic Control 
+\item Executioner
+\item Commander
+\end{itemize}
+The \textit{NatNet Reciever} and \textit{Position Dispatcher} are also called service module. The Reciever task is to read the value of the mocap estimate and save it on a global variable. The Dispatcher takes the estimate and the position set point, packs them in MavLink messages and send them trough a socket interface via usb to the radio module. 
+
+\textit{Manual Control} module incorporates an user interface through which the user can change manually position set point during flight. It runs on the same thread of the service modules, namely the main thread which is created at the starting of the entire application. 
+
+\textit{Automatic Control} stores the algorithms for every behavior and execute them depending on the switching logic. It is the central member of the application.
+
+\textit{Executioner} module implements the switching logic as a finite state machine.
+
+\textit{Commander} is the lower level module. It is the only one which has the permission to update the position set point value.
+
+\paragraph{Communication} Communication between modules is done with a simple method. Every common data is stored as a global variable. Producers update the variable while consumers read it from the global space. This approach is not optimal but very simple to implement. With the use of the QMutex class we are able to lock and unlock variables in the read/write operations.
+
+\paragraph{Note: } service modules were previously implemented by Tommaso Falchi Delitalia, in his PhD work, and slightly modified by me in order to adapt them with the rest of the application.
 
 \subsection{General scheme}
+
+More technical details can now be presented. As already mentioned, the design started with service modules implemented. In that implementation the communication management with global variables was used and I continued on that direction. 
+
+\paragraph{Implementation} The actual implementation is explained in this section. First of all, let us introduce the class MavState. This class is used to store mocap values and position set points. The elements of the class are 3 coordinates of the position in space, 4 values for the quaternion orientation and one value for the yaw in radians. The class with members and methods is shown in table \ref{tab:mavstate}.
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+members &                        &                                                      &            \\
+        & x , y , z              & position in 3D space                                                                                        & meters     \\
+        & yaw                    & value for the yaw                                                                                           & radians    \\
+        & qw , qx ,qy qz         & values for the orientation                                                                                  & quaternion \\ \hline
+methods &  & &  \\
+& setPosition(x,y,z)     & set values for the position                                                                                 &            \\
+        & setOrientation()       & \begin{tabular}[c]{@{}l@{}}set values for orientation passed like \\ quaternions or RPY angles\end{tabular} &            \\
+        & getPosition(x , y , z) & get value of position                                                                                       &            \\
+        & getOrientation()& get value of quaternion or RPY angles                                                                                                             &           
+\end{tabular}
+\caption{MavState Class}
+\label{tab:mavstate}
+\end{table}
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=\textwidth]{arch_scheme.png}
+ \caption[Achtitecture scheme]{Implementation of the system.}
+ \label{figure:archscheme}
+\end{figure}
+The full scheme is represented in figure \ref{figure:archscheme}. We must give some consideration on the full implemented system. The mocap estimate is saved in a MavState global variable, potentially every module may access it. The user entries are position (x , y , z) and yaw.
+
+The automatic Control implements the behavioral part and calculates a new position set point ( position and yaw). The new setpoint is pushed in a vector called auto command. In the same way, Manual control pushes the new set point in the auto command vector. The Commander module checks both vector and evaluate which command is good to be sent. This rule is used: \textbf{if the two vectors are non empty, then the command sent will be the one in the manual vector}. It basically prioritize the manual command over the automatic ones and update the position set point in the global space. The executioner implements the switching logic; according to the actual state of the robot and the actual action to be performed it decides whether stay in the same node or switch to the next one. It updates then the values of every triggering signal which are saved in the global space. In order to be more clear, in figure \ref{figure:archscheme}, messages are represented by arrows. The connections are only logical because potentially every module can access those signals since they are stored in global space. In addition, also the node list defied by the user and the number of the actual node which is executing are stored globally.
+
+
+
+
 \subsection{Service modules}
-\subsubsection{NatNet Reciever}
-\subsubsection{Position Dispatcher}
+\subsubsection*{NatNet Reciever}
+\subsubsection*{Position Dispatcher}
 \subsection{Manual Control}
 \subsection{Automatic Control}
 \label{sec:auto}

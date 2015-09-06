@@ -15,7 +15,8 @@ This chapter introduces to the reader the current laboratory setup. The first se
 
 \section{The setup}
 \label{sec:setup}
-This section introduces and explains the tools, both hardware and software, that are used in the experiments. \\*
+This section introduces and explains the tools, both hardware and software, that are used in the experiments. 
+
 We can identify five distinct parts:
 \begin{itemize}
 \item  IRIS quadcopter from 3d robotics
@@ -24,7 +25,7 @@ We can identify five distinct parts:
 \item  Windows machine
 \item  Flight arena
 \end{itemize}
-While IRIS, the mocap system and the flight arena deserve three separate sections the two machines are described together since they play a central role in the integration part (see \ref{sec:integration}).
+While IRIS, the mocap system and the flight arena deserve three separate sections, the two machines are described together since they play a central role in the integration part (see \ref{sec:integration}).
 
 \subsection{IRIS Quadcopter}
 
@@ -48,7 +49,7 @@ The use is mainly commercial, it is optimized for aerial shooting and provides a
  \caption[IRIS and control devices]{IRIS and control devices.}
  \label{figure:iris_planner}
 \end{figure}
-It is easy to understand that this device is designed to fly outdoor, nevertheless it is possible with some software tuning to use the IRIS in indoor scenarios. The component which make this possible is the actual brain of the robot: the PixHawk board with PX4 software. The radio link communications use the MAVlink protocol explained in this section.
+This device is designed to fly outdoor, nevertheless it is possible with some software tuning to use the IRIS in indoor scenarios. The component which make this possible is the actual brain of the robot: the PixHawk board with PX4 software. 
 
 \subsubsection{PixHawk board}
 \label{sec:pixboard}
@@ -91,10 +92,8 @@ PX4 \cite{PX4} is the software stack running on the autopilot board, it was a ma
 
 \subsubsection{MAVLink Protocol}
 \label{sec:mavlink}
-MAVLink is a very lightweight, header-only message marshalling library for micro air vehicles created and released under LGPL licence by Lorenz Meier in 2009.
-It can pack, with very little overhead, C-structs over serial channels with high effiency and send these packets to the ground control station (Fig. \ref{figure:controlstation}). It is extensively tested on the PX4, PIXHAWK, APM and Parrot AR.Drone platforms and serves there as communication backbone for the MCU/IMU communication as well as for Linux interprocess and ground link communication. It has the possibility to be used with at maximum 255 vehicles on the same control station, it runs on multiple microcontrollers and OS such as  ARM7, ATMega, dsPic, STM32 or Windows, Linux, MacOS and iOS with only 8 byte of overhead. \\ 
-The intense testing of this protocol made it the most used communication protocol in aerial robotics due to his effectiveness. \\*
-
+MAVLink is a very lightweight, header-only message for micro air vehicles created and released under LGPL licence by Lorenz Meier in 2009.
+It can pack, with very little overhead, C-structs over serial channels with high effiency and send these packets to the ground control station (Fig. \ref{figure:controlstation}). It is extensively tested on the PX4, PIXHAWK, APM and Parrot AR.Drone platforms. It has the possibility to be used with at maximum 255 vehicles on the same control station, it runs on multiple microcontrollers and OS such as  ARM7, ATMega, dsPic, STM32 or Windows, Linux, MacOS and iOS with only 8 byte of overhead. The intense testing of this protocol made it the most used communication protocol in aerial robotics due to his effectiveness. Mavlink is used to send message over radio link in this project.
 \begin{figure}[H]
  \centering
  \includegraphics[width=0.9\textwidth]{groundcontrol.jpg}
@@ -103,10 +102,8 @@ The intense testing of this protocol made it the most used communication protoco
 \end{figure}
 
 
-\noindent
-\textbf{Supported data types} \\* 
-\noindent
-MAVLink supports fixed-size integer data types, IEEE 754 single precision floating point numbers, arrays of these data types and the special mavlink version field, which is added automatically by the protocol. Table \ref{tab:mavlink} contains a list of every data type that can be transported by mavlink packets \cite{MAVLink}.\par
+\paragraph{Supported data types}
+MavLink supports fixed-size integer data types, IEEE 754 single precision floating point numbers, arrays of these data types and the special MavLink version field, which is added automatically by the protocol. Table \ref{tab:mavlink} contains a list of every data type that can be transported by MavLink packets \cite{MAVLink}.\par
 \begin{table}
 \centering
 \begin{tabular}{c | p{6cm}}
@@ -130,9 +127,7 @@ MAVLink supports fixed-size integer data types, IEEE 754 single precision floati
 \caption[Mavlink types]{Mavlink supported data types.}
 \label{tab:mavlink}
 \end{table}
-This protocol was designed towards two properties: transmission speed and safety. It allows to check the message content, it also allows to detect lost messages but still only needs six bytes overhead for each packet as illustrated in figure \ref{figure:MAV_anatomy}. \\*
-\noindent
-Regarding the packets size we have that:
+This protocol was designed towards two properties: transmission speed and safety. It allows to check the message content, it also allows to detect lost messages but still only needs six bytes overhead for each packet as illustrated in figure \ref{figure:MAV_anatomy}. Regarding the packets size we have that:
 
 \begin{itemize}
 \item The minimum packet length is 8 bytes for acknowledge packets without payload
@@ -149,7 +144,7 @@ Regarding the packets size we have that:
 \newpage
 \subsection{Motion capture system}
 \label{sec:mocap}
-The localization of the robot in the 3D space relies on the OptiTrack FLEX 13 motion capture syestem, composed by 8 infrared cameras (Fig. \ref{figure:flex13}) mounted on the roof of the laboratory in a squared fashion around the flight perimeter. Is the mid level product in OptitTrack catalogue (1000 dollars per camera \cite{OptiT}) capable of tracking multiple objects in a medium volume space of about 4 X 4 X 4 meters.
+The localization of the robot in the 3D space relies on the OptiTrack FLEX 13 motion capture syestem, composed by 8 infrared cameras (Fig. \ref{figure:flex13}) mounted on the roof of the laboratory in a squared fashion around the flight perimeter. It is the mid level product in OptitTrack catalog (1000 dollars per camera \cite{OptiT}) capable of tracking multiple objects in a medium volume space of about 4 X 4 X 4 meters.
 
 \begin{figure}[h]
  \centering
@@ -208,8 +203,9 @@ The reader must note that in order to have good tracking performances, the setup
 \item Occlusions are not taken into account by Motive \cite{OptiT}.
 \item Rigid bodies with symmetric shapes induce big uncertainties in attitude estimation.
 \end{itemize}
-I solved this problems mainly in two ways. Pointing each camera to the center of the flight space approximately at 0.5 meters from the ground gives the best coverage and few unseen areas at the margins.\\*
-Regarding the robot, with 5 markers placed in a 3D asymmetrical configuration  on the body frame as in figure \ref{figure:markedIRIS}, assures that at least 3 markers are visible always and there are no singularity regarding attitude.
+I solved this problems mainly in two ways. Pointing each camera to the center of the flight space approximately at 0.5 meters from the ground gives the best coverage and few unseen areas at the margins.
+
+Regarding the robot, with 5 markers placed in a 3D asymmetrical configuration  on the body frame as in figure \ref{figure:markedIRIS},is assured that at least 3 markers are always visible and there are no singularity regarding attitude.
 
 \begin{figure}[h]
 \centering
@@ -219,7 +215,7 @@ Regarding the robot, with 5 markers placed in a 3D asymmetrical configuration  o
 \end{figure}
 
 \subsection{Flight Arena}
-The flight arena is the stage of the setup. Since the laboratory where this thesis has taken place is new, I was involved in the relocation of the equipment from the old to the new lab. Next I attached every camera to the supports previously drilled one the roof and after I took care of the cables management. Since the maximum allowed length of the camera cables is 5 meters, I managed to place the hubs on the top at two opposite edges of the square (the ones intersecting x axis). By that, the available length is sufficient to connect three cameras of one edge and one from the adjacent edge to on hub and the rest to the other. The sync and the two hubs cables are running on the roof and crossing the room while the camera cables are displaced on the perimeter. Finally I oriented each camera towards the center of the room in order to have the highest coverage possible and calibrated the system.
+The flight arena is the stage of the setup. Since the laboratory where this thesis has taken place is new, I was involved in the relocation of the equipment from the old to the new lab. Next I attached every camera to the supports previously drilled on the roof and after I took care of the cables management. Since the maximum allowed length of the camera cables is 5 meters, I managed to place the hubs on the top at two opposite edges of the square (the ones intersecting x axis). By that, the available length is sufficient to connect three cameras of one edge and one from the adjacent edge to on hub and the rest to the other. The sync and the two hubs cables are running on the roof and crossing the room while the camera cables are displaced on the perimeter. Finally I oriented each camera towards the center of the room in order to have the highest coverage possible and calibrated the system.
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.6\textwidth]{flight_arena.png}
@@ -227,7 +223,7 @@ The flight arena is the stage of the setup. Since the laboratory where this thes
  \label{figure:arena}
 \end{figure}
 \noindent
-The flying space measures approximately 3 x 3 meters and 1.5 meters high defined by the capture volume of the mocap. Outside there is a security perimeter enclosing cameras made by a nylon net of about 4 x 4 meters till the roof. The origin of the position measures is at the center of the room placed on the floor with the z axis going downwards as shown in figure \ref{figure:arena}. A panoramic view of the arena, taken from the top left corner, is shown in figure \ref{figure:arenapano}. 
+The flying space measures approximately 3 x 3 meters and 2 meters high defined by the capture volume of the mocap. Outside there is a security perimeter enclosing cameras made by a nylon net of about 4 x 4 meters till the roof. The origin of the position measures is at the center of the room placed on the floor with the z axis going downwards as shown in figure \ref{figure:arena}. A panoramic view of the arena, taken from the top left corner, is shown in figure \ref{figure:arenapano}. 
 
 \begin{figure}[h]
 \centering
@@ -305,7 +301,7 @@ Moreover, IRIS features a standard RC transmitter, shown in figure \ref{figure:i
 
 \subsection{Software interfaces}
 
-Motive has the feature to transmit the pose of every tracked rigid bodies through a multicast IP. By this option, the raw pose of the robot is transmitted to the Linux machine. The software architecture running on Linux reads data coming directly from Motive through a \textit{Receiver component}. Without the use of an \textit{adapter component}, since the program is specific for this application, data from Motive is processed as explained in section \ref{sec:adaptframes} at the moment it arrives. In the mean while a position set point is generated inside the architecture, both pose estimation and position set point are packed using MAVLink protocol. At the end data is sent through a socket interface an the telemetry module takes care of transmitting everything to IRIS with a rate of approximately 10Hz.
+Motive has the feature to transmit the pose of every tracked rigid bodies through a multicast IP. By this option, the raw pose of the robot is transmitted to the Linux machine. The software architecture running on Linux reads data coming directly from Motive through a \textit{Receiver component}. Without the use of an \textit{adapter component}, since the program is specific for this application, data from Motive is processed as explained in section \ref{sec:adaptframes} at the moment it arrives. In the mean while a position set point is generated inside the architecture, both pose estimation and position set point are packed using MavLink protocol. At the end data is sent through a socket interface an the telemetry module takes care of transmitting everything to IRIS with a rate of approximately 10Hz.
 
 Figure \ref{figure:integration} sums up in a scheme the relation between each part. 
 
@@ -328,7 +324,7 @@ Q^m
  where $P^m\ = \begin{bmatrix}x\\y\\z\end{bmatrix}$ is the position vector and $Q^m =\begin{bmatrix}w\\x\\y\\z\end{bmatrix}$ is the rotation quaternion, everything expressed in Motive reference frame $\Re^m$. \\
  
  \noindent
-Now let's define a second reference frame, in this case is a North-East-Down frame \cite{FrameRef}  mainly used in aeronautics and aerial robotics, namely  $\Re^E$. The peculiarity of this reference is that:
+Now let us define a second reference frame, in this case is a North-East-Down frame \cite{FrameRef}  mainly used in aeronautics and aerial robotics, namely  $\Re^E$. The peculiarity of this reference is that:
 
 \begin{itemize}
 \item x axis is aligned with North.
