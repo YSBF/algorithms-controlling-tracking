@@ -68,6 +68,7 @@ The scheme explains the input output relation, where as input there is a C-struc
 \end{figure}
 
 \subsection{Behavioral architecture}
+\label{sec:behav}
 At this point, a way to model the problem is necessary. Let us start from the goal: there a list of tasks and the robot must executes them sequentially and autonomously. Thus, the concept of task arises. The task is defined as \textit{a definite piece of work assigned to the robot and performed by acting on the environment}. 
 
 \paragraph{Defined tasks} Which kind of tasks may be performed by IRIS? The first step is to define the essential tasks of navigation which are:
@@ -215,24 +216,119 @@ methods &  & &  \\
 
 \begin{figure}[h]
 \centering
- \includegraphics[width=\textwidth]{arch_scheme.png}
+ \includegraphics[width=1\textwidth]{arch_scheme.png}
  \caption[Achtitecture scheme]{Implementation of the system.}
  \label{figure:archscheme}
 \end{figure}
-The full scheme is represented in figure \ref{figure:archscheme}. We must give some consideration on the full implemented system. The mocap estimate is saved in a MavState global variable, potentially every module may access it. The user entries are position (x , y , z) and yaw.
+The full scheme is represented in figure \ref{figure:archscheme}. We must give some consideration on the implementation of system. The mocap estimate is saved in a MavState global variable, potentially every module may access it. The used entries are position (x , y , z) and yaw (retrieved from quaternion).
 
-The automatic Control implements the behavioral part and calculates a new position set point ( position and yaw). The new setpoint is pushed in a vector called auto command. In the same way, Manual control pushes the new set point in the auto command vector. The Commander module checks both vector and evaluate which command is good to be sent. This rule is used: \textbf{if the two vectors are non empty, then the command sent will be the one in the manual vector}. It basically prioritize the manual command over the automatic ones and update the position set point in the global space. The executioner implements the switching logic; according to the actual state of the robot and the actual action to be performed it decides whether stay in the same node or switch to the next one. It updates then the values of every triggering signal which are saved in the global space. In order to be more clear, in figure \ref{figure:archscheme}, messages are represented by arrows. The connections are only logical because potentially every module can access those signals since they are stored in global space. In addition, also the node list defied by the user and the number of the actual node which is executing are stored globally.
+The automatic Control implements the behavioral part and calculates a new position set point (position and yaw). The new setpoint is pushed in a vector called auto command. In the same way, Manual control pushes the new set point in the manual command vector. The Commander module checks both vector and evaluate which command is good to be sent. This rule is used: \textbf{if the two vectors are non empty, then the command sent will be the one in the manual vector}. It basically prioritize the manual command over the automatic ones and update the position set point in the global space. The executioner implements the switching logic; according to the actual state of the robot and the actual action to be performed it decides whether stay in the same node or switch to the next one. It then updates the values of every triggering signal which are saved in the global space.
 
-
-
+For sake of clarity, in figure \ref{figure:archscheme} messages are represented by arrows. The connections are only logical because potentially every module can access those signals since they are stored in global space. In addition, the node list defined by the user and the id of the actual node which is executing are stored globally.
 
 \subsection{Service modules}
+
+Those modules run on the main thread and they use the signal/slot feature embedded in Qt. 
+
 \subsubsection*{NatNet Reciever}
+
+Using the proprietary SDK from NaturalPoint, this module parses the position of the center of mass and the orientation of every rigid body tracked by motive. In the actual state of implementation, only two bodies are saved. The value is saved in MAvState classes contained in the  namespace \textit{g} with the following convention: \begin{itemize}
+\item Rigid body number 1 is saved in g::state 
+\item Rigid body number 2 is saved in g::platform
+\end{itemize}
+The order is very important, the robot must be labeled as one and the mobile platform as two. This is easy to check with motive. Every time g::state is saved, the signal dataUpdate is emitted.
 \subsubsection*{Position Dispatcher}
+
+The signal dataUpdate is connected to the slot sendPosition() of the Position Dispatcher. As consequence, every time the robot state is updated, sendPosition() is executed. This function takes the state and the postition setpoint (saved by the commander in g::setPoint variable) and fills two mavlink packages. The state MavLink package is predefined for Optitrack, while for the set point I used the Vicon dedicated package. The same message cannot be used since PX4 creates a uOrb topic for each mavLink type received, thus they would be written on the same topic. 
+
+When the messages are ready, trough a socket interface, they are sent to the radio module. The radio has a dispatch interval of 100 ms, meaning that after sending data, we must wait 100 ms. If messages arrive in this interval they are ignored. 
+
 \subsection{Manual Control}
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.3\textwidth]{mangui.png}
+ \caption{Manual user interface.}
+ \label{figure:mangui}
+\end{figure}
+
+Manual Control is started at the beginning in the main thread. It features a simple user interface shown in figure \ref{figure:mangui} which translates the position set point on three axis and rotates th yaw. The home button issues a setpoint in the center of the room. The starting setpoint is $[0,0,-1]$ for position and $\pi$ for the yaw. Thus, \textbf{the robot must be placed on that location} on the horizontal plane and yaw if one wants to fly it by manual control. If not placed correctly, the take off could be dangerous. The start and stop button run an auxiliary thread which I used for prototyping and testing. 
+
+Each time the user click on a translational button, the set point is moved by $0.1$ meters on that direction in earth frame. The yaw is changed by steps of $\pi/18$ radians.
+
+
 \subsection{Automatic Control}
 \label{sec:auto}
+This module is the core of the application. It implements the behavioral pattern explained in section \ref{sec:behav}. It is defined with the class \textit{Automatic} and it has one member: \textit{AutoThread}. This thread implements a \textit{run()} function which is started by clicking on the button AUTO. The loop runs at 10 Hz. When the thread starts the system is in automatic mode, thus it executes the nodes present in the list (stored globally) in succession. Every behavior is implemented as a function and the structure of the loop is:
+\begin{algorithm}
+\begin{algorithmic} [1]
+\WHILE{true}
+\STATE{$comm = g::setPoint$ } \COMMENT{save previous set point}
+\IF{take\_off\_sig}			  
+\STATE{$take\_off();$}
+\ENDIF
+\IF{move\_sig}			  
+\STATE{$move();$}    
+\ENDIF
+\IF{land\_sig}			  
+\STATE{$land();$}
+\ENDIF
+\IF{rotate\_sig}		  
+\STATE{$rotate();$}
+\ENDIF
+\IF{follow\_traj\_sig}			  
+\STATE{$rotate();$}
+\STATE{$follow\_traj()$}
+\ENDIF
+\IF{land\_plat\_sig}			  
+\STATE{$land\_plat();$}
+\ENDIF
+\STATE $autoCommand.pushback(comm)$ \COMMENT{fill the command vector}
+\STATE publish()
+\ENDWHILE
+\end{algorithmic}
+\label{alg:autothread}
+\caption{Brief overview of the automatic thread.}
+\end{algorithm}
+The structure is simple, while spinning, we read each value of *task*\_sig coming from the switching logic and activate different portion of code. In particular, we run specific functions depending on the behavior. Those function modify the $comm$ variable which is then published in the command vector. The signal publish() at line 23 is connected with the commander slot which is asked to check to check the command vectors. 
+
+At this point we can explore deeply how behaviors are implemented.
+
+\paragraph{Take off} Taking off is pretty simple. When the behavior is activated for the first iteration, it saves the actual horizontal position and yaw. Then a set point is issued on the vertical of the starting position at a fixed altitude with the initial yaw. 
+
+\paragraph{Move} 
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.45\textwidth]{move1.eps}\hspace{0.05\textwidth}
+ \includegraphics[width=0.45\textwidth]{move2.eps}\\[2em]
+ \caption[Move function.]{Move function. On the left the limited position set point in blue, on the right the case with no scaling.}
+  \label{figure:move}
+\end{figure}
+
+The move action is a bit more complex. At each loop spin the 3D position error is calculated, namely the difference between the goal and the actual position.  This difference results in a vector $\boldsymbol{V_e} = \boldsymbol{P_g} - \boldsymbol{P_r}$ originating on the robot position $\boldsymbol{P_r}$ and going towards the goal $P_g$. Let us define a positive constant $\alpha$ and let $\boldsymbol{u_e} = 	\frac{\boldsymbol{V_e}}{\lVert\boldsymbol{V_e}\rVert}$. Then the following method is used to calculate the position set point $P_{sp}$ to be sent to the commander: 
+\begin{equation}
+\boldsymbol{P_{sp}} = 
+\begin{cases}
+    \boldsymbol{P_g}, & \text{if } \lVert\boldsymbol{V_e} \rVert \leq \alpha \\
+    \boldsymbol{P_r} + \alpha \boldsymbol{u_e},&    \text{if } \lVert\boldsymbol{V_e}\rVert > \alpha
+\end{cases}
+\label{eq:move}
+\end{equation}
+The principle of this function is depicted in figure . The reason why we limit the position set point is because of the effect of the proportional term in the position controller. Issuing a far set point, the error is high and the desired velocity becomes big. Hence, in order to avoid this kind of effect, which results in bad flight dynamics, we limit the distance of the issued position set point from the robot by a distance $\alpha$.
+
+\paragraph{Land} Landing maneuver consists in landing on the horizontal coordinates of the last position set point(where the robot is). Thus, only z coordinate of g::stePoint is changed. The trick used simulates  kind of velocity control. The z coordinate of the set point is calculated depending on the horizontal error between the robot and the vertical of the target landing point and it is given at a fixed vertical distance with the robot. That means that when the robot descend, the set point maintain a fixed distance with robot position. This results in a fixed vertical error an a constant vertical velocity. Let $h_e$ being the horizontal error of the robot from the landing vertical and $P_r(3)$ the z coordinate of the robot, then the following empirical value are found to be good:
+\begin{equation}
+z_{sp} = 
+\begin{cases}
+    P_r(3) + 0.3 , & \text{if } 0.5 <  h_e\ \leq 0.8 \\
+    P_r(3) + 0.5  , & \text{if }  h_e\ \leq 0.5
+\end{cases}
+\label{eq:land}
+\end{equation}
+When the height of the robot is sufficiently small, the rotor are set to idle by issuing a set point under the ground and the robots land. Note that the vertical set point sums up with the robot position because z axis is pointing towards earth.
 \subsection {Executioner}
 \label{sec:exec}
+The last component is the Executioner. This module implements the switching logic and it is where the node list is created. It is defined by a class with one member: ExecThread. This thread is started together with the automatic thread and it runs a loop until all the tasks are performed. The position of the actual node is stored in and integer variable &i& in the global space. At the beginning $i = 0$, the executioner increases this variable 
 
 \section{Experiments and results}
