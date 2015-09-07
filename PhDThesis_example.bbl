@@ -46,6 +46,12 @@
 \newblock \url{http://www.asctec.de/en/}, 2015.
 \newblock Accessed: 18-08-2015.
 
+\bibitem{listcomplex}
+{Complex list integrating different behavios}.
+\newblock
+  \url{https://www.dropbox.com/s/41kpdlm5svm9iir/circle_final.MP4?dl=0}, 2015.
+\newblock Accessed: 2-09-2015.
+
 \bibitem{DJI}
 {DJI website}.
 \newblock \url{http://www.dji.com}, 2015.
@@ -81,6 +87,12 @@
 {MAVLink protocol description}.
 \newblock \url{http://qgroundcontrol.org/mavlink/start}, 2015.
 \newblock Accessed: 15-08-2015.
+
+\bibitem{multiland}
+{Multi platform landing video}.
+\newblock \url{https://www.dropbox.com/s/vsub85qwvnx45um/multiland.MP4?dl=0 },
+  2015.
+\newblock Accessed: 2-09-2015.
 
 \bibitem{Nutty}
 {NuttX website}.

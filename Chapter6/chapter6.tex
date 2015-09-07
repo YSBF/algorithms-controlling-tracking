@@ -408,8 +408,44 @@ The move behavior is also partially tested and analyzed in section \ref{sec:conr
  \caption{Move with alpha 0.6}
  \label{figure:xalpha06}
 \end{figure}
-We can easily see the difference between the two experiments. The gap between the position and the set point is bigger with higher scaling factor but the maneuver is faster with more oscillations. The small oscillations of the  set points are due to the fact that the error takes into account the robot position, which oscillates by definition inducing this phenomenon. From second 65 the landing procedure begins, the oscillations of the set point the set point compensation for more accuracy explained in the landing section. 
+We can easily see the difference between the two experiments. The gap between the position and the set point is bigger with higher scaling factor but the maneuver is faster with more oscillations. The small oscillations of the  set points are due to the fact that the error takes into account the robot position, which oscillates by definition inducing this phenomenon. From second 65 the landing procedure begins, the oscillations of the set point the set point compensation for more accuracy explained in the landing section. Figure \ref{figure:takeland} show the altitude profile, from take off to landing, during previous experiments. 
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{takeland.png}
+ \caption{Height profile}
+ \label{figure:takeland}
+\end{figure}
 
 This experiment validates two aspects. The move function works as expected but, more important, the procedure is done autonomously validating the whole architecture at least for simple node lists. 
 
 % % pure y e z?
+
+Next experiment evaluates the landing precision. We let the robot take of, reach a point and land. This for forty times in different directions. After each land the horizontal error was measured and the results are reported in figure \ref{figure:takeland}. The mean error is about 3 cm for both axis, more than acceptable for landing precisely on different platforms.
+
+
+% % METTI GRAFICO MATLAB
+
+The third experiment is qualitative. We let the robot take off, land on a table, take off again and land on another platform with different height. This procedure is done just by filling the node list and set nodes parameters properly. Platform height were measured with the mocap. The result video can be viewed here \url{https://www.dropbox.com/s/vsub85qwvnx45um/multiland.MP4?dl=0 }. 
+
+The last experiment consists in a more complex lists which incorporate every designed behavior. The output of the program is shown in figure \ref{figure:snip} where we can see every successfully node executed. The full video can be viewed here \url{https://www.dropbox.com/s/41kpdlm5svm9iir/circle_final.MP4?dl=0}. 
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.5\textwidth]{snippet.png}
+ \caption{Output for the last experiment}
+ \label{figure:snip}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+

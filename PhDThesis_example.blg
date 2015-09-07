@@ -59,9 +59,13 @@ Warning--to sort, need author or key in msdn
 Warning--to sort, need author or key in ROS
 Warning--to sort, need author or key in optiros
 Warning--to sort, need author or key in qt
+Warning--to sort, need author or key in multiland
 Warning--to sort, need author or key in OptiHub
 Warning--to sort, need author or key in Pred
 Warning--to sort, need author or key in PixETH
+Warning--to sort, need author or key in mobiland2
+Warning--to sort, need author or key in mobiland
+Warning--to sort, need author or key in listcomplex
 Warning--there's a number but no volume in Bouabdallah2
 Warning--empty journal in Croon2015
 Warning--empty publisher in Khalil2004
@@ -69,45 +73,45 @@ Warning--empty year in Khalil2004
 Warning--empty journal in Mellinger2012
 Warning--empty journal in Vendittelli
 Warning--empty year in Vendittelli
-You've used 63 entries,
+You've used 67 entries,
             2118 wiz_defined-function locations,
-            831 strings with 12002 characters,
-and the built_in function-call counts, 15209 in all, are:
-= -- 1568
-> -- 450
+            843 strings with 12478 characters,
+and the built_in function-call counts, 15897 in all, are:
+= -- 1640
+> -- 454
 < -- 7
-+ -- 199
++ -- 203
 - -- 136
-* -- 811
-:= -- 2271
-add.period$ -- 187
-call.type$ -- 63
-change.case$ -- 259
+* -- 835
+:= -- 2351
+add.period$ -- 199
+call.type$ -- 67
+change.case$ -- 271
 chr.to.int$ -- 0
-cite$ -- 103
-duplicate$ -- 596
-empty$ -- 1464
+cite$ -- 111
+duplicate$ -- 624
+empty$ -- 1556
 format.name$ -- 136
-if$ -- 3393
+if$ -- 3565
 int.to.chr$ -- 0
-int.to.str$ -- 63
+int.to.str$ -- 67
 missing$ -- 25
-newline$ -- 316
+newline$ -- 336
 num.names$ -- 60
-pop$ -- 411
+pop$ -- 443
 preamble$ -- 1
-purify$ -- 194
+purify$ -- 202
 quote$ -- 0
-skip$ -- 481
+skip$ -- 505
 stack$ -- 0
-substring$ -- 790
-swap$ -- 116
+substring$ -- 810
+swap$ -- 120
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 250
-warning$ -- 40
+type$ -- 266
+warning$ -- 44
 while$ -- 101
-width$ -- 65
-write$ -- 646
+width$ -- 69
+write$ -- 686
 (There were 2 error messages)
