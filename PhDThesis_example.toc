@@ -63,7 +63,7 @@
 \contentsline {paragraph}{X and Y position}{59}{section*.24}
 \contentsline {paragraph}{Z position}{61}{section*.25}
 \contentsline {paragraph}{Yaw convergence}{61}{section*.26}
-\contentsline {paragraph}{Hovering with disturbances}{62}{section*.27}
+\contentsline {paragraph}{Hovering with disturbances}{61}{section*.27}
 \contentsline {chapter}{\numberline {6}Software architecture}{64}{chapter.6}
 \contentsline {section}{\numberline {6.1}Introduction to the proposed architecture}{64}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Motivations}{65}{subsection.6.1.1}
@@ -90,8 +90,16 @@
 \contentsline {paragraph}{Land}{81}{section*.43}
 \contentsline {paragraph}{Rotate}{82}{section*.44}
 \contentsline {subsection}{\numberline {6.3.5}Executioner}{83}{subsection.6.3.5}
-\contentsline {section}{\numberline {6.4}Experiments and results}{84}{section.6.4}
-\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{88}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{89}{chapter.8}
-\contentsline {chapter}{\numberline {A}Extra}{90}{appendix.A}
-\contentsline {chapter}{References}{95}{appendix*.46}
+\contentsline {section}{\numberline {6.4}Experiments and results}{85}{section.6.4}
+\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{89}{chapter.7}
+\contentsline {section}{\numberline {7.1}Brief Introduction}{89}{section.7.1}
+\contentsline {paragraph}{Problem statement}{90}{section*.46}
+\contentsline {subsection}{\numberline {7.1.1}General assumptions}{90}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Experimental setup}{91}{section.7.2}
+\contentsline {section}{\numberline {7.3}Tracking and landing}{92}{section.7.3}
+\contentsline {paragraph}{Controller design}{93}{section*.47}
+\contentsline {paragraph}{Landing}{95}{section*.48}
+\contentsline {section}{\numberline {7.4}Experimental results}{95}{section.7.4}
+\contentsline {chapter}{\numberline {8}Conclusions}{96}{chapter.8}
+\contentsline {chapter}{\numberline {A}Extra}{97}{appendix.A}
+\contentsline {chapter}{References}{102}{appendix*.49}

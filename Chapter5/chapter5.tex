@@ -369,9 +369,9 @@ The preliminary test, in order to evaluate the controller performances, is to se
 \end{figure}
 \noindent
 The maximum error is about 10 centimeter in hovering. The overshoot recalls a second order system response \\
-\paragraph{Z position} The z converges more slowly when the robot starts (see figure \ref{figure:zconv}), this is because the integrator in the desired thrust vector needs to be saturated. By putting as initial condition of the integrator the value of the gravity force one can avoid this problem, which appears only at the beginning during flight. After 70 seconds the landing maneuver starts.
+\paragraph{Z position} The z converges more slowly when the robot starts (see figure \ref{figure:zconv}), this is because the integrator in the desired thrust vector needs to be saturated. In \cite{Mellinger2012} the author compensate this phenomenon substituting the integral with the value of the gravitational force $m\boldsymbol{g}$. This helps a lot since we do not have to wait for the saturation. The big drawback is that the mass of the robot must be known. Since we are working on a general autopilot, it is better to compensate to uncertainties on the system. Thus we leave the integrator and wait the saturation time. A good idea could be to put as initial condition of the integrator an estimate of the value of the gravity force. After 70 seconds the landing maneuver starts.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\noindent
 	\includegraphics[width=0.9\textwidth]{z_conv.png}
@@ -382,10 +382,10 @@ The maximum error is about 10 centimeter in hovering. The overshoot recalls a se
 
 \paragraph{Yaw convergence} The yaw is commanded by sending yaw set points in a ramp fashion. The ramp appears segmented to the robot since the sending frequency is much lower than the processing rate on the board. In this particular experiment, the robot is asked to look at a specific point. The software architecture send to the robot a desired point (x,y) on the horizontal plane, the robot calculates the yaw needed to face at that particular location and then the controller tracks it. Two different points were chosen, that is why we have two ramps (see figure \ref{figure:yawconv}).
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\noindent
-	\includegraphics[width=1\textwidth]{yaw_conv.png}
+	\includegraphics[width=0.9\textwidth]{yaw_conv.png}
 	\caption[Yaw tracking]{Yaw set point tracking, the blue is the real value while the black is the set point}
 	\label{figure:yawconv}
 \end{figure}
@@ -394,10 +394,10 @@ The maximum error is about 10 centimeter in hovering. The overshoot recalls a se
 \paragraph{Hovering with disturbances}
 The last experiment consists in asking the robot to hover (stay still) on a point and perturbing it by pushing and pulling with a stick. Thus an external disturbing force, which is represented by arrows in figure figure \ref{figure:hover}, is applied.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\noindent
-	\includegraphics[width=1\textwidth]{perturbation2.eps}
+	\includegraphics[width=0.9\textwidth]{perturbation2.eps}
 	\caption[Static hover with external perturbations]{Static hover with external perturbations. Red plot is x, green is is y and blue is z. The horizontal set point is at (0 , 0) and the height is variable. Light blue represent the set point on z.}
 	\label{figure:hover}
 \end{figure}

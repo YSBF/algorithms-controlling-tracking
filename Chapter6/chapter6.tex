@@ -333,9 +333,9 @@ When the height of the robot is sufficiently small, the rotor are set to idle by
 \end{equation}
 Where $K_p$ is the correction gain and $\boldsymbol{e_p} = \boldsymbol{P_t} - \boldsymbol{P_r}$ with $\boldsymbol{P_r}$ the robot horizontal position. In this way we increase the landing precision emulating an increase on position gains.
 
-\paragraph{Rotate} Rotate action is done by sending yaw set points in radians. Let us define two functions: \textit{increase\_yaw()} and \textit{decrease\_yaw()}. The actual implementation is not discussed but a brief presentation is given. The first function issue a yaw set point which is equal to the actual yaw plus a delta (rotate a bit clockwise), on the other hand \textit{decrease\_yaw()} rotate a bit counterclockwise. With those two elementary methods we can design an algorithm which, given a generic yaw set point in radians, rotates the robot in the direction which spans the smallest angle to the target. 
+\paragraph{Rotate} Rotate action is done by sending yaw set points in radians. Let us define two functions: \textit{increase\_yaw()} and \textit{decrease\_yaw()}. The actual implementation is not discussed but a brief presentation is given. The first function issues a yaw set point which is equal to the actual yaw plus a delta (rotate a bit clockwise), on the other hand \textit{decrease\_yaw()} rotates a bit counterclockwise. With those two elementary methods we can design an algorithm which, given a generic yaw set point in radians, rotates the robot in the direction which spans the smallest angle to the target. 
 
-Firs of all, we must recall few concepts. In section \ref{sec:trasfmatrix} the yaw angle is defined as $-\pi < \psi < \pi$. Imagine a top view of the earth frame with x axis vertical and going upwards and y axis horizontal pointing to the right. The yaw is the angle is positive on the right half of the plane and negative on the left half. This property works also in body frame meaning that: each direction on the right side of the robot has a positive yaw and each direction on the left side of the robot has a negative yaw (in body frame, be careful). Positive yaw in robot frame means a clockwise rotation while negative yaw means a counterclockwise rotation (we have functions for that). 
+Firs of all, we must recall few concepts. In section \ref{sec:trasfmatrix} the yaw angle is defined as $-\pi < \psi < \pi$. Imagine a top view of the earth frame with x axis vertical and going upwards and y axis horizontal pointing to the right. The yaw  angle is positive on the right half of the plane and negative on the left half. This property works also in body frame meaning that: each direction on the right side of the robot has a positive yaw and each direction on the left side of the robot has a negative yaw (in body frame, be careful). Positive yaw in robot frame means a clockwise rotation while negative yaw means a counterclockwise rotation (we have functions for that). 
 
 That said, the idea is simple. First we express the desired direction (yaw set point) in robot frame and then we check whether it lies on the right or left side by looking at the yaw sign. For expressing these procedure in equations let $R_z(\psi)$ be the rotation matrix on z by an angle $\psi$ and $\boldsymbol{V_{sp}^E} = [\cos(\psi_{sp}),\sin(\psi_{sp}),0]^T$ a unit vector encoding the desired direction in earth frame calculated from the yaw set point $\psi_ {sp}$, then the desired direction in body frame is:
 \begin{equation}
@@ -417,14 +417,22 @@ We can easily see the difference between the two experiments. The gap between th
  \label{figure:takeland}
 \end{figure}
 
-This experiment validates two aspects. The move function works as expected but, more important, the procedure is done autonomously validating the whole architecture at least for simple node lists. 
+This experiment validates two aspects. The move function works as expected but, more important, the procedure is done autonomously validating the whole architecture at least for simple node lists. \\
+
+\noindent
+\textbf{Note:} the y dynamic is not reported since the behavior is the same as x.
 
 % % pure y e z?
 
-Next experiment evaluates the landing precision. We let the robot take of, reach a point and land. This for forty times in different directions. After each land the horizontal error was measured and the results are reported in figure \ref{figure:takeland}. The mean error is about $-0.005$ on x and $-0.01$ on y for both axis, more than acceptable for landing precisely on different platforms.
+Next experiment evaluates the landing precision. We let the robot take of, reach a point and land. This for forty times in different directions. After each land the horizontal error was measured and the results are reported in figure \ref{figure:takeland}. The mean error is about $-0.005$ on x and $-0.01$ on y , more than acceptable for landing precisely on different platforms. Figure \ref{figure:landerr} reports the value for the error on x and y for each landing attempt.
 
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.6\textwidth]{landing.png}
+ \caption{Landing error in meters}
+ \label{figure:landerr}
+\end{figure}
 
-% % METTI GRAFICO MATLAB
 
 The third experiment is qualitative. We let the robot take off, land on a table, take off again and land on another platform with different height. This procedure is done just by filling the node list and set nodes parameters properly. Platform height were measured with the mocap. The result video can be viewed here \url{https://www.dropbox.com/s/vsub85qwvnx45um/multiland.MP4?dl=0 }. 
 
