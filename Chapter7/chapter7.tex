@@ -69,7 +69,7 @@ The robot is controlled by a computer placed on board within a Linux environment
 Moreover, since the experiment takes place in a close and controlled environment, the labmate at a certain point changes abruptly direction going to the opposite way. This goes against one of the assumptions but the problem is avoided. We assume to know the external points of the path, then when the robot approaches those location we can inhibit the landing procedure prevent the danger of landing when the platform changes direction.  Thus, we define a landing window, along the path, on which the robot can perform the landing operation. Outside the window, the robot will raise to a maximum height. Figure \ref{figure:window} shows the geometry of the experiment. The diagonal path has colored segments. The green segment represent the landing window, while the red segments are the prohibited sections. The landing window is approximately 1 meter long. 
 \begin{figure}[h]
  \centering
-   \includegraphics[width = 0.8\textwidth ]{landwindow.eps}
+   \includegraphics[width = 0.8\textwidth ]{landwindow3.eps}
     \caption[Experiment geometry]{Moving platform defined by H. Green is landing window while red are prohibited segments.}
    \label{figure:landwindow}
 \end{figure}
@@ -83,7 +83,7 @@ First we divide the problem in two subproblems, in fact vertical and horizontal 
 The first treated part is tracking. By \textbf{tracking} we mean the act of forcing the output signal of the system to a reference signal and minimizing the error between the two. Applied to this case, we can refer to the output signal $\boldsymbol{P_r}$ as the 2-D horizontal position of the center of mass of the robot. The tracking reference signal 
 $\boldsymbol{P_t}$ is defined as the horizontal 2-D position  of the platform center of mass. Both signals are provided as feedback from the mocap and acting on the inputs (position set points) with a suitable control law, one should minimize the error.
 
-\paragraph{Controller design} I would like to stress out the fact that the only way we can act on the system is by issuing position set points $\boldsymbol{P_{sp}}$. They could be coincident with the target or not, it depends on the control law. Let us consider a 2-D position set point for now.
+\paragraph{Tracker design} I would like to stress out the fact that the only way we can act on the system is by issuing position set points $\boldsymbol{P_{sp}}$. They could be coincident with the target or not, it depends on the control law. Let us consider a 2-D position set point for now.
 
 With an initial guess we may design the first controller by setting set point equal to the target which may be logical. Chapter \ref{chap:fifth} exploits a position controller designed in order to track position set points, thus it seems reasonable to proceed in this way. Hence the very first design is of the form:
 \begin{equation}
@@ -119,8 +119,9 @@ There are drawbacks to this approach. When the platform suddenly changes directi
 
 At this moment, the tracking problem is solved. A way to safely land on the platform must be designed. Moreover, the procedure should be robust enough to detect horizontal error and decide whether land or not. In this case I used a very simple but surprisingly effective method. 
 
+Let us consider just the vertical dynamics and forgot about the rest. The goal is to decrease the height in order to approach the platform and land without missing. The parameter which gives an idea on how it is safe to land is the horizontal distance to the robot, namely $\lVert \boldsymbol{P_e} \rVert = d$. Depending on the value of d, the robot may decide to land or go up. Thus, the involved variables are the vertical set point $z_{sp}$ and the horizontal distance $d$. 
 
-
+The relation between distance and set point are many and up to designer. I used the simplest curve one may think, the line. A linear relationship between $z_{sp}$ and $d$ is used. Let 
 
 
 \section{Experimental results}

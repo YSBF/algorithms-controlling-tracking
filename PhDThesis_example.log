@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  7 SEP 2015 17:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  7 SEP 2015 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2125,25 +2125,26 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: Reference `figure:window' on page 91 undefined on input line 69.
 
 
-Package epstopdf Info: Source file: <Chapter7/Figures/landwindow.eps>
-(epstopdf)                    date: 2015-09-07 15:44:55
-(epstopdf)                    size: 819805 bytes
-(epstopdf)             Output file: <Chapter7/Figures/landwindow-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2015-09-07 16:05:57
-(epstopdf)                    size: 71644 bytes
+Package epstopdf Info: Source file: <Chapter7/Figures/landwindow3.eps>
+(epstopdf)                    date: 2015-09-07 20:26:28
+(epstopdf)                    size: 37983 bytes
+(epstopdf)             Output file: <Chapter7/Figures/landwindow3-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2015-09-07 20:27:43
+(epstopdf)                    size: 5478 bytes
 (epstopdf)             Command: <repstopdf --outfile=Chapter7/Figures/landwindo
-w-eps-converted-to.pdf Chapter7/Figures/landwindow.eps>
+w3-eps-converted-to.pdf Chapter7/Figures/landwindow3.eps>
 (epstopdf)             \includegraphics on input line 72.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/landwindow-eps-converted-to.pdf, id=1450, 598.235pt x 371.387
-5pt>
-File: Chapter7/Figures/landwindow-eps-converted-to.pdf Graphic file (type pdf)
- <use Chapter7/Figures/landwindow-eps-converted-to.pdf>
-Package pdftex.def Info: Chapter7/Figures/landwindow-eps-converted-to.pdf used 
-on input line 72.
-(pdftex.def)             Requested size: 330.05322pt x 204.89844pt.
+<Chapter7/Figures/landwindow3-eps-converted-to.pdf, id=1450, 387.4475pt x 387.4
+475pt>
+File: Chapter7/Figures/landwindow3-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use Chapter7/Figures/landwindow3-eps-converted-to.pdf>
+Package pdftex.def Info: Chapter7/Figures/landwindow3-eps-converted-to.pdf used
+ on input line 72.
+(pdftex.def)             Requested size: 330.05322pt x 330.0591pt.
  [91]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2154,9 +2155,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.87 
-      <./Chapter7/Figures/labmate.png>]
+      <./Chapter7/Figures/labmate.png>] [93pdfTeX warning (ext4): destination w
+ith the same identifier (name{figure.7.4}) has been already used, duplicate ign
+ored
 
-LaTeX Warning: Reference `figure:nogain' on page 93 undefined on input line 95.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.94 
+      <./Chapter7/Figures/landwindow3-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `figure:nogain' on page 94 undefined on input line 95.
 
 
 Package epstopdf Info: Source file: <Chapter7/Figures/tracknogain2.eps>
@@ -2171,7 +2179,7 @@ in2-eps-converted-to.pdf Chapter7/Figures/tracknogain2.eps>
 (epstopdf)             \includegraphics on input line 98.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/tracknogain2-eps-converted-to.pdf, id=1461, 598.235pt x 371.3
+<Chapter7/Figures/tracknogain2-eps-converted-to.pdf, id=1474, 598.235pt x 371.3
 875pt>
 File: Chapter7/Figures/tracknogain2-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2179,25 +2187,14 @@ File: Chapter7/Figures/tracknogain2-eps-converted-to.pdf Graphic file (type pdf
 Package pdftex.def Info: Chapter7/Figures/tracknogain2-eps-converted-to.pdf use
 d on input line 98.
 (pdftex.def)             Requested size: 330.05322pt x 204.89844pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[93pdfTeX warning (ext4): destination with the same identifier (name{figure.7.4
-}) has been already used, duplicate ignored
+ [94pdfTeX warning (ext4): destination with the same identifier (name{figure.7.
+5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.103 \begin{equation}
-                       <./Chapter7/Figures/landwindow-eps-converted-to.pdf>]
-[94pdfTeX warning (ext4): destination with the same identifier (name{figure.7.5
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.118 \paragraph
-                {Landing} <./Chapter7/Figures/tracknogain2-eps-converted-to.pdf
->]) [95]
+l.113 \end{equation}
+                     <./Chapter7/Figures/tracknogain2-eps-converted-to.pdf>])
+[95]
 \openout2 = `Conclusions/conclusions.aux'.
 
  (./Conclusions/conclusions.tex
@@ -2288,17 +2285,11 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
 (./Conclusions/conclusions.aux) (./Appendix1/appendix1.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
-
-
-Package rerunfilecheck Warning: File `PhDThesis_example.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `PhDThesis_example.out':
-(rerunfilecheck)             Before: 47984F017D03175FC6E45CC821C0273A;5171
-(rerunfilecheck)             After:  5A569D4A492C4109307C10C6E90F62E8;5171.
+Package rerunfilecheck Info: File `PhDThesis_example.out' has not changed.
+(rerunfilecheck)             Checksum: 5A569D4A492C4109307C10C6E90F62E8;5171.
 Package rerunfilecheck Info: File `PhDThesis_example.brf' has not changed.
 (rerunfilecheck)             Checksum: DFE6F68B5927098BB9879914EC55E210;3360.
+
 
 LaTeX Warning: There were undefined references.
 
@@ -2308,38 +2299,35 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 98.
  ) 
 Here is how much of TeX's memory you used:
- 9239 strings out of 493304
- 134867 string characters out of 6139872
- 228522 words of memory out of 5000000
+ 9238 strings out of 493304
+ 134860 string characters out of 6139872
+ 228513 words of memory out of 5000000
  11899 multiletter control sequences out of 15000+600000
  14033 words of font info for 51 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  39i,17n,45p,2455b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{appendix*.48} has been referenced but does not ex
-ist, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PhDThesis_example.pdf (112 pages, 11659677 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PhDThesis_example.pdf (112 pages, 11593915 bytes).
 PDF statistics:
- 1804 PDF objects out of 2073 (max. 8388607)
+ 1803 PDF objects out of 2073 (max. 8388607)
  1574 compressed objects within 16 object streams
- 451 named destinations out of 1000 (max. 500000)
+ 450 named destinations out of 1000 (max. 500000)
  889 words of extra memory for PDF output out of 10000 (max. 10000000)
 
