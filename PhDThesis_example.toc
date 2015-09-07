@@ -77,20 +77,21 @@
 \contentsline {paragraph}{Behavior definition}{70}{section*.33}
 \contentsline {paragraph}{Concurrent behaviors}{71}{section*.34}
 \contentsline {paragraph}{Implementing behaviors}{72}{section*.35}
-\contentsline {section}{\numberline {6.3}Software description}{73}{section.6.3}
+\contentsline {section}{\numberline {6.3}Software description}{74}{section.6.3}
 \contentsline {paragraph}{Communication}{75}{section*.36}
 \contentsline {paragraph}{Note: }{75}{section*.37}
-\contentsline {subsection}{\numberline {6.3.1}General scheme}{75}{subsection.6.3.1}
-\contentsline {paragraph}{Implementation}{75}{section*.38}
-\contentsline {subsection}{\numberline {6.3.2}Service modules}{76}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Manual Control}{77}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Automatic Control}{78}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.1}General scheme}{76}{subsection.6.3.1}
+\contentsline {paragraph}{Implementation}{76}{section*.38}
+\contentsline {subsection}{\numberline {6.3.2}Service modules}{77}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Manual Control}{78}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Automatic Control}{79}{subsection.6.3.4}
 \contentsline {paragraph}{Take off}{79}{section*.41}
 \contentsline {paragraph}{Move}{79}{figure.6.8}
-\contentsline {paragraph}{Land}{79}{section*.43}
-\contentsline {subsection}{\numberline {6.3.5}Executioner}{80}{subsection.6.3.5}
-\contentsline {section}{\numberline {6.4}Experiments and results}{80}{section.6.4}
-\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{83}{chapter.7}
-\contentsline {chapter}{\numberline {8}Conclusions}{84}{chapter.8}
-\contentsline {chapter}{\numberline {A}Extra}{85}{appendix.A}
-\contentsline {chapter}{References}{90}{appendix*.45}
+\contentsline {paragraph}{Land}{81}{section*.43}
+\contentsline {paragraph}{Rotate}{82}{section*.44}
+\contentsline {subsection}{\numberline {6.3.5}Executioner}{83}{subsection.6.3.5}
+\contentsline {section}{\numberline {6.4}Experiments and results}{84}{section.6.4}
+\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{87}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusions}{88}{chapter.8}
+\contentsline {chapter}{\numberline {A}Extra}{89}{appendix.A}
+\contentsline {chapter}{References}{94}{appendix*.46}

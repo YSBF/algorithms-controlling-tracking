@@ -137,7 +137,7 @@ For this case, in order to solve concurrency issues, I used a simple rule: \text
 \paragraph{Implementing behaviors} The switching logic is implemented as a finite state machine which is presented in section \ref{sec:exec}. Behaviors are functions with the following inputs: the robot state (x,y,z,yaw), the actual position setpoint(x,y,z,yaw) and the node value. As output they give the new position setpoint which is updated. Figure \ref{figure:flow} shows the data flow for general set of behaviors, the switching logic is not shown for simplicity. 
 \begin{figure}[h]
 \centering
- \includegraphics[width=0.8\textwidth]{behav_flow.png}
+ \includegraphics[width=\textwidth]{behav_flow.png}
  \caption[Behavior data flow]{Input/Output relations with particular adopted scheme. Switching logic is not depicted.}
  \label{figure:flow}
 \end{figure}
@@ -216,7 +216,7 @@ methods &  & &  \\
 
 \begin{figure}[h]
 \centering
- \includegraphics[width=1\textwidth]{arch_scheme.png}
+ \includegraphics[width=0.9\textwidth]{arch_scheme.png}
  \caption[Achtitecture scheme]{Implementation of the system.}
  \label{figure:archscheme}
 \end{figure}
@@ -247,7 +247,7 @@ When the messages are ready, trough a socket interface, they are sent to the rad
 
 \begin{figure}[h]
 \centering
- \includegraphics[width=0.3\textwidth]{mangui.png}
+ \includegraphics[width=0.4\textwidth]{mangui.png}
  \caption{Manual user interface.}
  \label{figure:mangui}
 \end{figure}
@@ -290,7 +290,7 @@ This module is the core of the application. It implements the behavioral pattern
 \label{alg:autothread}
 \caption{Brief overview of the automatic thread.}
 \end{algorithm}
-The structure is simple, while spinning, we read each value of *task*\_sig coming from the switching logic and activate different portion of code. In particular, we run specific functions depending on the behavior. Those function modify the $comm$ variable which is then published in the command vector. The signal publish() at line 23 is connected with the commander slot which is asked to check to check the command vectors. 
+The structure is simple, while spinning, we read each value of <\textit{task>\_sig} coming from the switching logic and activate different portion of code. In particular, we run specific functions depending on the behavior. Those function modify the $comm$ variable which is then published in the command vector. The signal publish() at line 23 is connected with the commander slot which is asked to check to check the command vectors. 
 
 At this point we can explore deeply how behaviors are implemented.
 
@@ -300,8 +300,8 @@ At this point we can explore deeply how behaviors are implemented.
 
 \begin{figure}[h]
 \centering
- \includegraphics[width=0.45\textwidth]{move1.eps}\hspace{0.05\textwidth}
- \includegraphics[width=0.45\textwidth]{move2.eps}\\[2em]
+ \includegraphics[width=0.4\textwidth]{move1.eps}\hspace{0.1\textwidth}
+ \includegraphics[width=0.4\textwidth]{move2.eps}\\[1em]
  \caption[Move function.]{Move function. On the left the limited position set point in blue, on the right the case with no scaling.}
   \label{figure:move}
 \end{figure}
@@ -317,7 +317,7 @@ The move action is a bit more complex. At each loop spin the 3D position error i
 \end{equation}
 The principle of this function is depicted in figure . The reason why we limit the position set point is because of the effect of the proportional term in the position controller. Issuing a far set point, the error is high and the desired velocity becomes big. Hence, in order to avoid this kind of effect, which results in bad flight dynamics, we limit the distance of the issued position set point from the robot by a distance $\alpha$.
 
-\paragraph{Land} Landing maneuver consists in landing on the horizontal coordinates of the last position set point(where the robot is). Thus, only z coordinate of g::stePoint is changed. The trick used simulates  kind of velocity control. The z coordinate of the set point is calculated depending on the horizontal error between the robot and the vertical of the target landing point and it is given at a fixed vertical distance with the robot. That means that when the robot descend, the set point maintain a fixed distance with robot position. This results in a fixed vertical error an a constant vertical velocity. Let $h_e$ being the horizontal error of the robot from the landing vertical and $P_r(3)$ the z coordinate of the robot, then the following empirical value are found to be good:
+\paragraph{Land} Landing maneuver consists in slowly increasing the z (the z axis is upside down, increasing z the height decreases) while maintaining the horizontal coordinates of the last position set point(where the robot is). Thus, only z coordinate of g::setPoint is changed. The trick used simulates  kind of velocity control. The z coordinate of the set point is calculated depending on the horizontal error between the robot and the vertical of the target landing point and it is given at a fixed vertical distance with the robot. That means that when the robot descend, the set point maintain a fixed distance with robot position. This results in a fixed vertical error an a constant vertical velocity. Let $h_e$ being the horizontal error of the robot from the landing vertical and $P_r(3)$ the z coordinate of the robot, then the following empirical value are found to be good:
 \begin{equation}
 z_{sp} = 
 \begin{cases}
@@ -326,9 +326,90 @@ z_{sp} =
 \end{cases}
 \label{eq:land}
 \end{equation}
-When the height of the robot is sufficiently small, the rotor are set to idle by issuing a set point under the ground and the robots land. Note that the vertical set point sums up with the robot position because z axis is pointing towards earth.
+When the height of the robot is sufficiently small, the rotor are set to idle by issuing a set point under the ground and the robots land. Note that the vertical set point sums up with the robot position because z axis is pointing towards earth. Moreover, horizontal set points are slightly compensated in order to increase precision. Let $\boldsymbol{P_t} = [x ,y]^T$ the landing target on the horizontal plane and $\boldsymbol{P_{sp}} = [x_{sp} ,y_{sp}]^T$ the actual set point command, then the compensation is the following:
+
+\begin{equation}
+\boldsymbol{P_{sp}} = \boldsymbol{P_t} + K_p\boldsymbol{e_p}
+\end{equation}
+Where $K_p$ is the correction gain and $\boldsymbol{e_p} = \boldsymbol{P_t} - \boldsymbol{P_r}$ with $\boldsymbol{P_r}$ the robot horizontal position. In this way we increase the landing precision emulating an increase on position gains.
+
+\paragraph{Rotate} Rotate action is done by sending yaw set points in radians. Let us define two functions: \textit{increase\_yaw()} and \textit{decrease\_yaw()}. The actual implementation is not discussed but a brief presentation is given. The first function issue a yaw set point which is equal to the actual yaw plus a delta (rotate a bit clockwise), on the other hand \textit{decrease\_yaw()} rotate a bit counterclockwise. With those two elementary methods we can design an algorithm which, given a generic yaw set point in radians, rotates the robot in the direction which spans the smallest angle to the target. 
+
+Firs of all, we must recall few concepts. In section \ref{sec:trasfmatrix} the yaw angle is defined as $-\pi < \psi < \pi$. Imagine a top view of the earth frame with x axis vertical and going upwards and y axis horizontal pointing to the right. The yaw is the angle is positive on the right half of the plane and negative on the left half. This property works also in body frame meaning that: each direction on the right side of the robot has a positive yaw and each direction on the left side of the robot has a negative yaw (in body frame, be careful). Positive yaw in robot frame means a clockwise rotation while negative yaw means a counterclockwise rotation (we have functions for that). 
+
+That said, the idea is simple. First we express the desired direction (yaw set point) in robot frame and then we check whether it lies on the right or left side by looking at the yaw sign. For expressing these procedure in equations let $R_z(\psi)$ be the rotation matrix on z by an angle $\psi$ and $\boldsymbol{V_{sp}^E} = [\cos(\psi_{sp}),\sin(\psi_{sp}),0]^T$ a unit vector encoding the desired direction in earth frame calculated from the yaw set point $\psi_ {sp}$, then the desired direction in body frame is:
+\begin{equation}
+\boldsymbol{V_{sp}^B} = R_z(\psi) ^T \boldsymbol{V_{sp}^E}
+\end{equation}
+where $\psi$ is the actual yaw of the robot. Next step is to extract the yaw of the vector $\boldsymbol{V_{sp}^B}$ which is expressed in body frame by the following expression:
+\begin{equation}
+\psi_{sp} ^ B = atan2(V_{sp}^B[1],V_{sp}^B[0])
+\end{equation}
+if $\psi_{sp} ^ B > 0$ it means that the shortest path to point at the desired yaw is to rotate clockwise, otherwise the rotation is counterclockwise. Figure \ref{figure:rotate} shows the quantities involved in the procedure. In the case of the figure we have a negative desired yaw in earth frame but positive in body frame. That means that the shortest path is clockwise and it is easily verifiable just looking at the image.
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{rotate.eps}
+ \caption{Involved frames in rotation task.}
+  \label{figure:rotate}
+\end{figure}
+Moreover, the yaw set point can be provided in radians or  as a directional vector.
+
+
 \subsection {Executioner}
 \label{sec:exec}
-The last component is the Executioner. This module implements the switching logic and it is where the node list is created. It is defined by a class with one member: ExecThread. This thread is started together with the automatic thread and it runs a loop until all the tasks are performed. The position of the actual node is stored in and integer variable &i& in the global space. At the beginning $i = 0$, the executioner increases this variable 
+The last component is the Executioner. This module implements the switching logic and it contains the definition of each nodes. It is defined by a class with one member: ExecThread. This thread is started together with the automatic thread and it runs a loop until all the tasks are performed. The position of the actual node is stored in an integer variable $i$ in the global space. At the beginning $i = 0$, the executioner increases this variable every time an action is completed. The automatic thread reads $i$ and looks in the list what is the actual node, from which it reads the value of position and parameters. Those value correspond to the sensory inputs of the activated behavior.
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{executioner.png}
+ \caption[Executioner sate machine.]{State machine diagram of the executioner module.}
+  \label{figure:exec}
+\end{figure}
+ 
+This process can be explained clearly using a state machine diagram. The machine has two states, one is called \textit{ACTUAL} in which the output is the actual value $i$ and the other is \textit{NEXT} in which $i$ is increased by 1, meaning that we can pass to next node. The initial state is \textit{ACTUAL}; until the function checkActions() returns false, the state remains the same. When checkActions() returns true the state changes to \textit{NEXT}, \textit{i} is increased and then it switches back to \textit{ACTUAL}. Those operations are done at 10 Hz. The function \textit{checkActions()} reads the actual state of the system and, depending on the actual action, checks a number of stopping conditions (i.e. when te robot is near the target point, move task finishes. When the vertical velocity is zero and the robot is close to the ground, land task is performed.) returning ture if they are satisfied, false otherwise. 
+
+The state machine relies on boolean signals to communicate with other modules. Those signals are organized in global namespaces, one for each action. For example, the namespace \textit{executioner::move} has two important boolean members: one is \textit{move\_sig} and the other is\textit{ move\_done}. The first one correspond to the behavior trigger (see algorithm \ref{alg:autothread}), this signal is set to true when the index $i$ points to a node in which the move action is encoded, to false otherwise. Figure \ref{figure:exec} explains those concepts. 
+
+Informations on actions are given in table \ref{tab:actions}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|cl}
+Action            & id (char) & parameters (double{[}4{]})                                                                              \\ \hline
+take off          & 't'       & params{[}0{]} = final height                                                                            \\ \hline
+move              & 'm'       & \begin{tabular}[c]{@{}l@{}}params{[}0{]} = alpha\\ params{[}1{]} = hovering time on target\end{tabular} \\ \hline
+rotate            & 'r'       & params{[}0{]} = angle valid                                                                             \\ \hline
+land              & 'l'       & \begin{tabular}[c]{@{}l@{}}params{[}0{]} = touchdown speed\\ params{[}1{]} = ground height\end{tabular} \\ \hline
+follow trajectory & 'c'       &                                                                                                        
+\end{tabular}
+\caption{Actions coding and parameters}
+\label{tab:actions}
+\end{table}
+
 
 \section{Experiments and results}
+
+The first experimental stage was to test each behavior singularly, after some more complex node lists were tested successfully. 
+
+The performances of the task rotate and take off are already presented in section \ref{sec:conresults}. Figure \ref{figure:zconv} shows the take off maneuver; as already pointed out, the response is very slow at the first takeoff of the flight since the saturation of the integral on z axis, which compensates for gravity, is pretty slow. Figure \ref{figure:yawconv} show the rotation maneuver in which a constant yaw rate is implicitly set being the yaw set point a line over time. The convergence is very good. 
+
+The move behavior is also partially tested and analyzed in section \ref{sec:conresults}. Figure \ref{figure:xconv} and \ref{figure:xconv} shows the move maneuver with no scaling factor $\alpha$ but what happens if we introduce it? The expectation is to see the set point with the shape of a ramp depending on the scaling factor value. Four move nodes were placed in the node list (beside take off and land), each node is the vertex of a square centered in (0,0) with the edge 1.6 meters long. Image \ref{figure:xalpha1} shows the move function with the scaling term $\alpha = 1$ while figure \ref{figure:xalpha06} represent the same experiment with $\alpha = 0.6$. 
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{xalpha1.png}
+ \caption{Move with alpha 1}
+ \label{figure:xalpha1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{xalpha06.png}
+ \caption{Move with alpha 0.6}
+ \label{figure:xalpha06}
+\end{figure}
+We can easily see the difference between the two experiments. The gap between the position and the set point is bigger with higher scaling factor but the maneuver is faster with more oscillations. The small oscillations of the  set points are due to the fact that the error takes into account the robot position, which oscillates by definition inducing this phenomenon. From second 65 the landing procedure begins, the oscillations of the set point the set point compensation for more accuracy explained in the landing section. 
+
+This experiment validates two aspects. The move function works as expected but, more important, the procedure is done autonomously validating the whole architecture at least for simple node lists. 
+
+% % pure y e z?
