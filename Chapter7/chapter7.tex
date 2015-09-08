@@ -97,7 +97,7 @@ Figure \ref{figure:nogain} represents an actual trial in the lab. The implemente
  \centering
    \includegraphics[width = 0.8\textwidth ]{tracknogain2.eps}
     \caption[Tracking with no gain]{Tracking of the moving platform by following its position. A static error appears.}
-   \label{figure:landwindow}
+   \label{figure:static}
 \end{figure}
 The control can be improved by adding  another source for feedback, the position error which can be measured by $\boldsymbol{P_e} = \boldsymbol{P_{t}} - \boldsymbol{P_{r}}$. By observing the phenomenon we can think of issuing a position set point a bit ahead the robotic platform so that, even if the robot does not converges to $\boldsymbol{P_{sp}}$, we can in some way anticipare the platform. That said, the controller is modified to the following:
 \begin{equation}
@@ -153,7 +153,7 @@ Figure \ref{figure:profile} shows the descending profile in function of the desi
  \centering
    \includegraphics[width = 0.7\textwidth ]{profile.eps}
     \caption[Descent profile]{Profile of the issued vertical set point respect to the horizontal error. The bold line represent the clipped profile by height imposed limits. Values are expressed in meters.}
-   \label{figure:landwindow}
+   \label{figure:profile}
 \end{figure}
 
 \noindent
@@ -170,9 +170,9 @@ This section presents the results obtained in the experiment. First, the trackin
 \end{figure}
 
 \noindent
- The complete test consists in letting the labmate move back an forth on the trajectory line and then starting the automatic procedure from the software architecture. The process is autonomous, the task list is filled with a take off task, move at (0,0,-0.8) and start with the mobile landing task. 
+The complete test consists in letting the labmate move back an forth on the trajectory line and then starting the automatic procedure from the software architecture. The process is autonomous, the task list is filled with a take off task, move at (0,0,-0.8) and start with the mobile landing task. 
  
- The results are shown respect to the direction of motion of the platform thus a change of coordinates is performed. A frame $\Re^W$ is placed on the platform path in the middle. This auxiliary frame has the z axis on the same direction of earth frame but the x axis is along the platform path. Expressing the position measurements respect to the frame $\Re ^W$ by applying a transformation on the collected data in earth frame, a better understanding of the result is given. Figure \ref{figure:w} shows the new frame.
+The results are shown respect to the direction of motion of the platform thus a change of coordinates is performed. A frame $\Re^W$ is placed on the platform path in the middle. This auxiliary frame has the z axis on the same direction of earth frame but the x axis is along the platform path. Expressing the position measurements respect to the frame $\Re ^W$ by applying a transformation on the collected data in earth frame, a better understanding of the result is given. Figure \ref{figure:w} shows the new frame.
  
  \begin{figure}[H]
   \centering
@@ -181,38 +181,42 @@ This section presents the results obtained in the experiment. First, the trackin
     \label{figure:w}
  \end{figure}
  
- \noindent
- While the platform moves, the quadcopter performs a series of landing by taking off again at the limits of platform path. Hence, the altitude profile result in a periodic signal highlighting the multiple landings a take off in this routine. Figure \ref{figure:zpro} represent the inverted z profile. The inversion is done in order to make more visible the plot since z points downwards. Each descend corresponds with a touchdown which are highlighted by arrows. On this plot appears also the first take off maneuver from the ground. The measured high at landing is fixed and corresponds to the height of the labmate respect to earth frame.
+ \noindent 
+While the platform moves, the quadcopter performs a series of landing by taking off again at the limits of platform path. Hence, the altitude profile result in a periodic signal highlighting the multiple landings a take off in this routine. Figure \ref{figure:zpro} represent the inverted z profile. The inversion is done in order to make more visible the plot since z points downwards. Each descend corresponds with a touchdown which are highlighted by arrows. On this plot appears also the first take off maneuver from the ground. The measured high at landing is fixed and corresponds to the height of the labmate respect to earth frame. There is a point in the figure where the touchdown did not occur since the robot was near the limits.
   \begin{figure}[H]
    \centering
-     \includegraphics[width = 0.8\textwidth ]{w.eps}
-      \caption{Vertical profile. }
+     \includegraphics[width = 0.9\textwidth ]{zb.eps}
+      \caption[Vertical profile]{Value for the z axis. Touchdown points are red, time in seconds. After 180 seconds a bump appears, we were changing batteries thus lifting the robot.}
      \label{figure:zpro}
   \end{figure}
- Next we can compare the position of the platform with the actual position of the quadcopter and evaluate the performances. Figure \ref{figure:forward} shows the position of the robot along $x^W$. From this plot we observe that when the platform changes direction, an overshoot of the robot position appears due to the integral factor. Moreover we can see the position converging quickly after sometimes. 
+  
+\noindent
+Next we can compare the position of the platform with the actual position of the quadcopter and evaluate the performances. Figure \ref{figure:forward} shows the position of the robot along $x^W$. From this plot we observe that when the platform changes direction, an overshoot of the robot position appears due to the integral factor. Moreover we can see the position converging quickly after sometimes. 
  
    \begin{figure}[h]
     \centering
-      \includegraphics[width = 0.8\textwidth ]{w.eps}
-       \caption{Vertical profile. }
+      \includegraphics[width = 0.9\textwidth ]{wy.eps}
+       \caption[Lateral movement]{Forward movement. Position of the platform in red while position of the robot in blue. Value of $y^W$.}
       \label{figure:forward}
    \end{figure}
- 
- In the same way, we can express the lateral motion (the position of the robot in $\Re^W$ frame on $y^W$). Figure \ref{figure:lateral} presents this motion. Although the position of the platform should be zero along this direction, since the labmate is not perfect the line is not straight but deviates with time.
-  \begin{figure}[h]
+   
+\noindent
+In the same way, we can express the lateral motion (the position of the robot in $\Re^W$ frame on $y^W$). Figure \ref{figure:lateral} presents this motion. Although the position of the platform should be zero along this direction, since the labmate is not perfect the line is not straight but deviates with time.
+  \begin{figure}[H]
     \centering
-      \includegraphics[width = 0.8\textwidth ]{w.eps}
-       \caption{Vertical profile. }
+      \includegraphics[width = 0.9\textwidth ]{wx.eps}
+       \caption[Lateral movement]{Lateral movement. Position of the platform in red while position of the robot in blue. Value of $y^W$.}
       \label{figure:lateral}
    \end{figure}
    
- The total horizontal error $d$ is shown in Figure \ref{figure:err}
-
-  \begin{figure}[h]
+\noindent
+The total horizontal error $d$ is shown in Figure \ref{figure:err}.
+\begin{figure}[h]
     \centering
-      \includegraphics[width = 0.8\textwidth ]{w.eps}
-       \caption{Vertical profile. }
+      \includegraphics[width = 0.9\textwidth]{d.eps}
+       \caption{Horizontal error }
       \label{figure:err}
-   \end{figure}
-   
+\end{figure}
+
+
 We may conclude that this procedure is suitable for straight motion with a reasonably constant velocity. Some deviation along the linear path is still allowed and the controller is able to converge.

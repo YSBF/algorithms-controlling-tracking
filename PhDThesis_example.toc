@@ -108,6 +108,5 @@
 \contentsline {paragraph}{Tracker design}{96}{section*.54}
 \contentsline {paragraph}{Landing}{98}{section*.55}
 \contentsline {section}{\numberline {7.4}Experimental results}{100}{section.7.4}
-\contentsline {chapter}{\numberline {8}Conclusions}{107}{chapter.8}
-\contentsline {chapter}{\numberline {A}Extra}{108}{appendix.A}
-\contentsline {chapter}{References}{113}{appendix*.56}
+\contentsline {chapter}{\numberline {8}Conclusions}{105}{chapter.8}
+\contentsline {chapter}{References}{110}{chapter*.56}
