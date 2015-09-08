@@ -12,7 +12,7 @@
 % short summary of the chapter
 \section*{Summary}
 
-This Chapter introduces the reader to the software architecture running off board on Linux. The introduction presents a  general overview on software architectures, expressed the needs of such a system and in particular it describes the environment and software tools involved. Next section presents the design pattern according to which the software is organized explaining its advantages and limitations. Then the software components are described with more detail one by one and the results of the experiments are reported. 
+This Chapter introduces the reader to the software architecture running off board on Linux. The introduction presents a  general overview on software architectures, expresses the needs of such a system and in particular it describes the environment and software tools involved. Next section presents the design pattern according to which the software is organized explaining its advantages and limitations. Then the software components are described with more detail one by one and the results of the experiments are reported. 
 \section{Introduction to the proposed architecture}
 
 Architecture is usually intended as the process or product of planning, designing and constructing entities. Usually those entities refer to buildings and structure but the concept can be extended to vehicles, electrical and electronics components or softwares. The architect decides where to locate different elements such as walls, doors columns and windows and connect them in harmony with structural consistency. In the same way the software engineer connect, design and locate different software components. A component could be a program implementing an algorithm, some conversion or a graphical user interface. The basic idea of architecture definition is to design software structure and object interaction before the detailed design phase. Although serious architecture definition is being suggested for large projects only, arguably any software construction or implementation work must be preceded by an architectural design \cite{msdn}.
@@ -418,6 +418,14 @@ We can easily see the difference between the two experiments. The gap between th
  \label{figure:takeland}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.3\textwidth]{multi1.png}\hspace{0.01\textwidth}
+ \includegraphics[width=0.3154\textwidth]{multi2.png}\\[1em]
+ \caption{Landing on each platform.}
+ \label{figure:mulland}
+\end{figure}
+
 This experiment validates two aspects. The move function works as expected but, more important, the procedure is done autonomously validating the whole architecture at least for simple node lists. \\
 
 \noindent
@@ -429,34 +437,37 @@ Next experiment evaluates the landing precision. We let the robot take of, reach
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.6\textwidth]{landing.png}
- \caption{Landing error in meters}
+ \caption{Landing error in meters.}
  \label{figure:landerr}
 \end{figure}
 
 
-The third experiment is qualitative. We let the robot take off, land on a table, take off again and land on another platform with different height. This procedure is done just by filling the node list and set nodes parameters properly. Platform height were measured with the mocap. The result video can be viewed here: \url{https://www.dropbox.com/s/vsub85qwvnx45um/multiland.MP4?dl=0 }. \\
+The third experiment is qualitative. We let the robot take off, land on a table, take off again and land on another platform with different height. This procedure is done just by filling the node list and set nodes parameters properly. Platform height were measured with the mocap. The result video can be viewed here: \url{https://www.dropbox.com/s/vsub85qwvnx45um/multiland.MP4?dl=0 }. Two platforms represent the landing sites. The heights are estimated by placing the robot on the platform and checking with the mocap. The height is added as a parameter in the task placed in the list. The sequence is the following: take off, move over the table, land, take off, move near the second platform, rotate, move over the platform and then land. Figure \ref{figure:multiland} shows the setup.
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{multiland.png}
+ \caption{Land on two platforms with variable height.}
+ \label{figure:multiland}
+\end{figure}
 
 \noindent
 The last experiment consists in a more complex list which incorporates every designed behavior. The output of the program is shown in Figure \ref{figure:snip} where we can see every successfully node executed. The full video can be viewed here \url{https://www.dropbox.com/s/41kpdlm5svm9iir/circle_final.MP4?dl=0}. 
 
-The robot takes off, rotates and performs a circle around a cylinder pointing the nose at the center of the trajectory simulating an inspection. The behavior \textit{follow trajectory} and \textit{rotate} execute concurrently and independently. The circular trajectory lasts for 8 seconds. After there is a sequence of move actions. Since there is the possibility to set as parameter a waiting time for action move, we can generate some sort of waypoints by setting this value to zero. The three orange markers on the ground represent the way points, move actions with no waiting time and higher scaling factor alpha. On the black marker is executed a a move action with longer waiting time. Next, the robot flies in front of the camera with low scaling factor thus moving slowly and higher waiting time. After a rotation, the robot flies back to the landing site. This experiment demonstrates the ability of the architecture of executing more complex lists in a totally autonomous way. Moreover, it dshows how behaviors can be parametrized depending on the need. A move action, for example, could be a waypoint or a slow inspection.
+The robot takes off, rotates and performs a circle around a cylinder pointing the nose at the center of the trajectory simulating an inspection. The behavior \textit{follow trajectory} and \textit{rotate} execute concurrently and independently. The circular trajectory lasts for 8 seconds. After there is a sequence of move actions. Since there is the possibility to set as parameter a waiting time for action move, we can generate some sort of waypoints by setting this value to zero. The three orange markers on the ground represent the way points, move actions with no waiting time and higher scaling factor alpha. On the black marker is executed a a move action with longer waiting time. Next, the robot flies in front of the camera with low scaling factor thus moving slowly and higher waiting time. After a rotation, the robot flies back to the landing site. This experiment demonstrates the ability of the architecture of executing more complex lists in a totally autonomous way. Moreover, it dshows how behaviors can be parametrized depending on the need. A move action, for example, could be a waypoint or a slow inspection. Figure \ref{figure:circle} shows the scene of this experiment. The central cylinder is the axis of the center of the circle, the orange markser are are the waypoints and the black marker is a hovering task (longer waiting time).
 
-\begin{verbatim}
-	
-	d
-	dd
-	d
-	
-	d
-	d
-	d
-	
-\end{verbatim}
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{circle.png}
+ \caption{Scene of the third experiment.}
+ \label{figure:circle}
+\end{figure}
+
 
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.5\textwidth]{snippet.png}
- \caption{Output for the last experiment}
+ \caption{Output for the third experiment.}
  \label{figure:snip}
 \end{figure}
 

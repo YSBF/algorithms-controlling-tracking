@@ -4,102 +4,110 @@
 \contentsline {subsection}{\numberline {1.1.1}Hosting laboratories}{2}{subsection.1.1.1}
 \contentsline {section}{\numberline {1.2}Problem statement}{3}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Work plan}{3}{subsection.1.2.1}
-\contentsline {chapter}{\numberline {2}Related work}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Quadrotor platform}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}Motion capture systems}{7}{section.2.2}
-\contentsline {section}{\numberline {2.3}Current autopilots}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}Modeling and control}{9}{section.2.4}
-\contentsline {section}{\numberline {2.5}Software architectures and control stations}{12}{section.2.5}
-\contentsline {section}{\numberline {2.6}Landing on a moving platform}{13}{section.2.6}
-\contentsline {chapter}{\numberline {3}System description}{16}{chapter.3}
-\contentsline {section}{\numberline {3.1}The setup}{16}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}IRIS Quadcopter}{17}{subsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.1.1}PixHawk board}{18}{subsubsection.3.1.1.1}
-\contentsline {subsubsection}{\numberline {3.1.1.2}PX4 Autopilot}{19}{subsubsection.3.1.1.2}
-\contentsline {subsubsection}{\numberline {3.1.1.3}MAVLink Protocol}{20}{subsubsection.3.1.1.3}
-\contentsline {paragraph}{Supported data types}{20}{section*.6}
-\contentsline {subsection}{\numberline {3.1.2}Motion capture system}{23}{subsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.2.1}Image sensor specifications and performances}{23}{subsubsection.3.1.2.1}
-\contentsline {subsubsection}{\numberline {3.1.2.2}Software, cameras layout and requirements}{24}{subsubsection.3.1.2.2}
-\contentsline {subsection}{\numberline {3.1.3}Flight Arena}{26}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Overall Integration}{27}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Hardware interfaces}{28}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Software interfaces}{30}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Adapting reference frames}{31}{subsubsection.3.2.2.1}
-\contentsline {chapter}{\numberline {4}Modeling IRIS}{34}{chapter.4}
-\contentsline {section}{\numberline {4.1}Generalities}{34}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Reference frames}{34}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}General assumptions}{35}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Transformation matrices}{36}{section.4.2}
-\contentsline {section}{\numberline {4.3}Propulsion and controls}{38}{section.4.3}
-\contentsline {section}{\numberline {4.4}Complete model}{40}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Rigid body equations}{40}{subsection.4.4.1}
-\contentsline {paragraph}{Equations for translation}{42}{section*.9}
-\contentsline {paragraph}{Equations for rotation}{43}{section*.10}
-\contentsline {chapter}{\numberline {5}Control and state estimation}{46}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction to the PX4 Flight Stack}{46}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Message pass-through}{46}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Onboard nodes}{47}{subsection.5.1.2}
-\contentsline {paragraph}{System applications}{47}{section*.14}
-\contentsline {paragraph}{Drivers}{48}{section*.15}
-\contentsline {paragraph}{Attitude and position estimators}{48}{section*.16}
-\contentsline {paragraph}{Multirotor Attitude and Position Controllers}{48}{section*.17}
-\contentsline {paragraph}{Flight safety and navigation}{48}{section*.18}
-\contentsline {subsection}{\numberline {5.1.3}State machine overview}{49}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Estimation modules}{50}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Position estimator}{50}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Attitude estimator}{51}{subsection.5.2.2}
-\contentsline {paragraph}{Yaw estimation}{52}{section*.20}
-\contentsline {section}{\numberline {5.3}Controller architecture}{53}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Position controller}{54}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Velocity controller}{55}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Attitude controller}{56}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Results and validation}{56}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Estimator validation}{57}{subsection.5.4.1}
-\contentsline {paragraph}{Roll estimation}{57}{section*.21}
-\contentsline {paragraph}{Pitch estimation}{57}{section*.22}
-\contentsline {paragraph}{Yaw estimation}{57}{section*.23}
-\contentsline {subsection}{\numberline {5.4.2}Controller results}{59}{subsection.5.4.2}
-\contentsline {paragraph}{X and Y position}{59}{section*.24}
-\contentsline {paragraph}{Z position}{60}{section*.25}
-\contentsline {paragraph}{Yaw convergence}{60}{section*.26}
-\contentsline {paragraph}{Hovering with disturbances}{61}{section*.27}
-\contentsline {chapter}{\numberline {6}Software architecture}{63}{chapter.6}
-\contentsline {section}{\numberline {6.1}Introduction to the proposed architecture}{63}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Motivations}{64}{subsection.6.1.1}
-\contentsline {paragraph}{Note:}{64}{section*.29}
-\contentsline {subsection}{\numberline {6.1.2}Programming environment and tools}{65}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Design patterns}{66}{section.6.2}
-\contentsline {paragraph}{Definition of Design Pattern}{66}{section*.30}
-\contentsline {paragraph}{Goal:}{66}{section*.31}
-\contentsline {subsection}{\numberline {6.2.1}Behavioral architecture}{68}{subsection.6.2.1}
-\contentsline {paragraph}{Defined tasks}{68}{section*.32}
-\contentsline {paragraph}{Behavior definition}{69}{section*.33}
-\contentsline {paragraph}{Concurrent behaviors}{70}{section*.34}
-\contentsline {paragraph}{Implementing behaviors}{71}{section*.35}
-\contentsline {section}{\numberline {6.3}Software description}{73}{section.6.3}
-\contentsline {paragraph}{Communication}{74}{section*.36}
-\contentsline {paragraph}{Note: }{74}{section*.37}
-\contentsline {subsection}{\numberline {6.3.1}General scheme}{75}{subsection.6.3.1}
-\contentsline {paragraph}{Implementation}{75}{section*.38}
-\contentsline {subsection}{\numberline {6.3.2}Service modules}{76}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Manual Control}{77}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Automatic Control}{78}{subsection.6.3.4}
-\contentsline {paragraph}{Take off}{78}{section*.41}
-\contentsline {paragraph}{Move}{78}{figure.6.8}
-\contentsline {paragraph}{Land}{80}{section*.43}
-\contentsline {paragraph}{Rotate}{81}{section*.44}
-\contentsline {subsection}{\numberline {6.3.5}Executioner}{82}{subsection.6.3.5}
-\contentsline {section}{\numberline {6.4}Experiments and results}{84}{section.6.4}
-\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{88}{chapter.7}
-\contentsline {section}{\numberline {7.1}Brief Introduction}{88}{section.7.1}
-\contentsline {paragraph}{Problem statement}{89}{section*.46}
-\contentsline {subsection}{\numberline {7.1.1}General assumptions}{89}{subsection.7.1.1}
-\contentsline {section}{\numberline {7.2}Experimental setup}{90}{section.7.2}
-\contentsline {section}{\numberline {7.3}Tracking and landing}{91}{section.7.3}
-\contentsline {paragraph}{Tracker design}{92}{section*.47}
-\contentsline {paragraph}{Landing}{94}{section*.48}
-\contentsline {section}{\numberline {7.4}Experimental results}{96}{section.7.4}
-\contentsline {chapter}{\numberline {8}Conclusions}{97}{chapter.8}
-\contentsline {chapter}{\numberline {A}Extra}{98}{appendix.A}
-\contentsline {chapter}{References}{103}{appendix*.49}
+\contentsline {subsection}{\numberline {1.2.2}Thesis structure}{3}{subsection.1.2.2}
+\contentsline {paragraph}{Chapter 2}{4}{section*.4}
+\contentsline {paragraph}{Chapter 3}{4}{section*.5}
+\contentsline {paragraph}{Chapter 4}{4}{section*.6}
+\contentsline {paragraph}{Chapter 5}{4}{section*.7}
+\contentsline {paragraph}{Chapter 6}{4}{section*.8}
+\contentsline {paragraph}{Chapter 7}{4}{section*.9}
+\contentsline {paragraph}{Chapter 8}{5}{section*.10}
+\contentsline {chapter}{\numberline {2}Related work}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Quadrotor platform}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Motion capture systems}{9}{section.2.2}
+\contentsline {section}{\numberline {2.3}Current autopilots}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}Modeling and control}{11}{section.2.4}
+\contentsline {section}{\numberline {2.5}Software architectures and control stations}{14}{section.2.5}
+\contentsline {section}{\numberline {2.6}Landing on a moving platform}{15}{section.2.6}
+\contentsline {chapter}{\numberline {3}System description}{18}{chapter.3}
+\contentsline {section}{\numberline {3.1}The setup}{18}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}IRIS Quadcopter}{19}{subsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.1}PixHawk board}{20}{subsubsection.3.1.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.2}PX4 Autopilot}{21}{subsubsection.3.1.1.2}
+\contentsline {subsubsection}{\numberline {3.1.1.3}MAVLink Protocol}{22}{subsubsection.3.1.1.3}
+\contentsline {paragraph}{Supported data types}{22}{section*.13}
+\contentsline {subsection}{\numberline {3.1.2}Motion capture system}{25}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Image sensor specifications and performances}{25}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {3.1.2.2}Software, cameras layout and requirements}{26}{subsubsection.3.1.2.2}
+\contentsline {subsection}{\numberline {3.1.3}Flight Arena}{28}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Overall Integration}{29}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Hardware interfaces}{30}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Software interfaces}{32}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Adapting reference frames}{33}{subsubsection.3.2.2.1}
+\contentsline {chapter}{\numberline {4}Modeling IRIS}{36}{chapter.4}
+\contentsline {section}{\numberline {4.1}Generalities}{36}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Reference frames}{36}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}General assumptions}{37}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Transformation matrices}{38}{section.4.2}
+\contentsline {section}{\numberline {4.3}Propulsion and controls}{40}{section.4.3}
+\contentsline {section}{\numberline {4.4}Complete model}{42}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Rigid body equations}{42}{subsection.4.4.1}
+\contentsline {paragraph}{Equations for translation}{44}{section*.16}
+\contentsline {paragraph}{Equations for rotation}{45}{section*.17}
+\contentsline {chapter}{\numberline {5}Control and state estimation}{48}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction to the PX4 Flight Stack}{48}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Message pass-through}{48}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Onboard nodes}{49}{subsection.5.1.2}
+\contentsline {paragraph}{System applications}{49}{section*.21}
+\contentsline {paragraph}{Drivers}{50}{section*.22}
+\contentsline {paragraph}{Attitude and position estimators}{50}{section*.23}
+\contentsline {paragraph}{Multirotor Attitude and Position Controllers}{50}{section*.24}
+\contentsline {paragraph}{Flight safety and navigation}{50}{section*.25}
+\contentsline {subsection}{\numberline {5.1.3}State machine overview}{51}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Estimation modules}{52}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Position estimator}{52}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Attitude estimator}{53}{subsection.5.2.2}
+\contentsline {paragraph}{Yaw estimation}{54}{section*.27}
+\contentsline {section}{\numberline {5.3}Controller architecture}{55}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Position controller}{56}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Velocity controller}{57}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Attitude controller}{58}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Results and validation}{58}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Estimator validation}{59}{subsection.5.4.1}
+\contentsline {paragraph}{Roll estimation}{59}{section*.28}
+\contentsline {paragraph}{Pitch estimation}{59}{section*.29}
+\contentsline {paragraph}{Yaw estimation}{59}{section*.30}
+\contentsline {subsection}{\numberline {5.4.2}Controller results}{61}{subsection.5.4.2}
+\contentsline {paragraph}{X and Y position}{61}{section*.31}
+\contentsline {paragraph}{Z position}{62}{section*.32}
+\contentsline {paragraph}{Yaw convergence}{62}{section*.33}
+\contentsline {paragraph}{Hovering with disturbances}{63}{section*.34}
+\contentsline {chapter}{\numberline {6}Software architecture}{65}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction to the proposed architecture}{65}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Motivations}{66}{subsection.6.1.1}
+\contentsline {paragraph}{Note:}{66}{section*.36}
+\contentsline {subsection}{\numberline {6.1.2}Programming environment and tools}{67}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Design patterns}{68}{section.6.2}
+\contentsline {paragraph}{Definition of Design Pattern}{68}{section*.37}
+\contentsline {paragraph}{Goal:}{68}{section*.38}
+\contentsline {subsection}{\numberline {6.2.1}Behavioral architecture}{70}{subsection.6.2.1}
+\contentsline {paragraph}{Defined tasks}{70}{section*.39}
+\contentsline {paragraph}{Behavior definition}{71}{section*.40}
+\contentsline {paragraph}{Concurrent behaviors}{72}{section*.41}
+\contentsline {paragraph}{Implementing behaviors}{73}{section*.42}
+\contentsline {section}{\numberline {6.3}Software description}{75}{section.6.3}
+\contentsline {paragraph}{Communication}{76}{section*.43}
+\contentsline {paragraph}{Note: }{76}{section*.44}
+\contentsline {subsection}{\numberline {6.3.1}General scheme}{77}{subsection.6.3.1}
+\contentsline {paragraph}{Implementation}{77}{section*.45}
+\contentsline {subsection}{\numberline {6.3.2}Service modules}{78}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Manual Control}{79}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Automatic Control}{80}{subsection.6.3.4}
+\contentsline {paragraph}{Take off}{80}{section*.48}
+\contentsline {paragraph}{Move}{80}{figure.6.8}
+\contentsline {paragraph}{Land}{82}{section*.50}
+\contentsline {paragraph}{Rotate}{83}{section*.51}
+\contentsline {subsection}{\numberline {6.3.5}Executioner}{84}{subsection.6.3.5}
+\contentsline {section}{\numberline {6.4}Experiments and results}{86}{section.6.4}
+\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{92}{chapter.7}
+\contentsline {section}{\numberline {7.1}Brief Introduction}{92}{section.7.1}
+\contentsline {paragraph}{Problem statement}{93}{section*.53}
+\contentsline {subsection}{\numberline {7.1.1}General assumptions}{93}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Experimental setup}{94}{section.7.2}
+\contentsline {section}{\numberline {7.3}Tracking and landing}{95}{section.7.3}
+\contentsline {paragraph}{Tracker design}{96}{section*.54}
+\contentsline {paragraph}{Landing}{98}{section*.55}
+\contentsline {section}{\numberline {7.4}Experimental results}{100}{section.7.4}
+\contentsline {chapter}{\numberline {8}Conclusions}{107}{chapter.8}
+\contentsline {chapter}{\numberline {A}Extra}{108}{appendix.A}
+\contentsline {chapter}{References}{113}{appendix*.56}

@@ -29,7 +29,7 @@ In the latest years, aerial robotics has grown so fast both in technology and po
  \label{figure:applications}
 \end{figure}
 
-
+\noindent
 As stated before, the uses of this platform are many and limited
 only by the imagination of the designers. Figure \ref{figure:applications} illustrates various application going from search and rescue to public defense, most of them in outdoor scenarios. Very interesting is to investigate the possible use of this technology in an indoor scene where the comforting signal of the GPS is not present and analyze every aspect of flight going from state estimation, control and stability to autonomy, path planning and high level automation. \\*
 
@@ -48,7 +48,7 @@ The goal of this master thesis to develop algorithms for UAV trajectory planning
 The above stated, is formulated in to the following problem statement for the project: \\*
 
 \noindent
-\textbf{It is possible, through position feedback given from a motion capture system, to design a set of algorithms and SW components enabling the IRIS to achieve stability and perform different tasks in an indoor scenario? }
+\textit{We want to design a set of algorithms and SW components enabling a quadrotor to achieve stability, through position feedback given from a motion capture system, and perform different tasks in an indoor scenario. }
 
 \subsection{Work plan}
 The work got through several tasks covering all aspects, they can be distinctly divided in main blocks hence defining the work plan.
@@ -73,11 +73,36 @@ The work got through several tasks covering all aspects, they can be distinctly 
 
 \end{enumerate}
 
+\subsection{Thesis structure}
+The thesis presents procedures, techniques, comments and results obtained during the work. The document is divided in chapters dedicated to particular aspects of the project, the structure is the following: 
+
+\paragraph{Chapter 2} Synthesizes the preliminary literature review explaining existing research, products and systems and analyzes some robotics platforms and tools. A suitable modeling technique for this kind of vehicles is described introducing additional non linearities and explaining when the model uses them.
+Moreover it introduces a survey on various control techniques that are currently used highlighting pros and cons. At the end some comments are given about software architecture trends which are used in this field. 
 
 
+\paragraph{Chapter 3}
+
+This chapter introduces the reader the current laboratory setup illustrating which kind of tools are used as well as the specifications of each component. Then it presents the integration both at hardware and software levels of each part of the system. 
+
+\paragraph{Chapter 4}
+This part concerns the modeling of the IRIS quad rotor. A model of the quadrotor is necessary to develop a controller and understand better its dynamics. The first part presents some generalities including the reference frames used in order to define the world and the robot. It also contains a list of assumptions done to simplify the model. After, the involved physical principles and the actual derivation of the model are explained.
+
+\paragraph{Chapter 5}
+
+This chapter presents the techniques that are used to estimate the system's states and to stabilize the IRIS robot which are currently implemented in the PX4 Firmware. After a quick overview of the estimator modules, the controller architecture is presented. Moreover, this chapter explains in details how the on board autopilot interfaces with the software architecture and which modules are involved.
+
+\paragraph{Chapter 6}
+
+This Chapter introduces the reader to the software architecture running off board on Linux. The introduction presents a  general overview on software architectures, expresses the needs of such a system and in particular it describes the environment and software tools involved. Next section presents the design pattern according to which the software is organized explaining its advantages and limitations. Then the software components are described with more detail one by one and the results of the experiments are reported. 
 
 
+\paragraph{Chapter 7}
 
+This chapter concerns with the task of landing on a platform of arbitrary height while it is moving on the horizontal plane. After a brief introduction to the topic and the statement of general assumptions, the experimental setup is described. Later on the solution to the problem is presented and the control algorithm described. Last section presents and comments experiment results.
+
+\paragraph{Chapter 8}
+
+The last chapter presents the conclusions of this work. It highlights the most relevant steps and summarizes what has been done. Then it points out what could be improved and gives a number of ideas relating the future work.
 
 
 

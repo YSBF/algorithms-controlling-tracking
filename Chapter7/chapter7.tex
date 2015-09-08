@@ -149,8 +149,70 @@ With this procedure we can generate two different points in space: $P_1 = \left(
 What the controller does, is to issue altitude set points following the calculated profile (a line). Moreover, the profile is clipped by $H_{max}$ and $H_{min}$. When the robot reaches the minimum height and the error is less than $\tau$, the rotors are set to idle and the robot performs the touchdown. Moreover, the issued set points are with negative signe due to the inversion of axis z.
 Figure \ref{figure:profile} shows the descending profile in function of the design parameters. The origin is on the platform surface, thus for z = 0 , the point is at a fixed height in earth frame depending on the eight of the platform.\\
 
+\begin{figure}[h]
+ \centering
+   \includegraphics[width = 0.7\textwidth ]{profile.eps}
+    \caption[Descent profile]{Profile of the issued vertical set point respect to the horizontal error. The bold line represent the clipped profile by height imposed limits. Values are expressed in meters.}
+   \label{figure:landwindow}
+\end{figure}
+
 \noindent
 \textbf{Note: } this procedures calculate altitude set points (references) according to horizontal error. If a the beginning of the task the horizontal error is close to zero, a set point corresponding to the minimum height plus platform height is issued. Thus we do not control the descending velocity in any manner, we assume that the on board position controller does its job.
 
 \section{Experimental results}
 
+This section presents the results obtained in the experiment. First, the tracking algorithm is tested. We issue a fixed set point on z and let the controller track the horizontal position of the platform which is moving. Figure \ref{figure:track} shows the same experiment in phases. In the first picture, we are sending the position of the platform as set point but in the second the controller is activated. The difference is evident since the horizontal error is nullified when the tracker is activated. 
+\begin{figure}[H]
+ \centering
+   \includegraphics[width = 0.6\textwidth ]{trackcompare.png}
+    \caption[Tracking comparison]{Comparison of tracking performances. In the first picture, the robot uses the position of the platform as set point while in the second the horizontal error is used to calculate a more proper input. The motion of the platform is from right to left. }
+   \label{figure:track}
+\end{figure}
+
+\noindent
+ The complete test consists in letting the labmate move back an forth on the trajectory line and then starting the automatic procedure from the software architecture. The process is autonomous, the task list is filled with a take off task, move at (0,0,-0.8) and start with the mobile landing task. 
+ 
+ The results are shown respect to the direction of motion of the platform thus a change of coordinates is performed. A frame $\Re^W$ is placed on the platform path in the middle. This auxiliary frame has the z axis on the same direction of earth frame but the x axis is along the platform path. Expressing the position measurements respect to the frame $\Re ^W$ by applying a transformation on the collected data in earth frame, a better understanding of the result is given. Figure \ref{figure:w} shows the new frame.
+ 
+ \begin{figure}[H]
+  \centering
+    \includegraphics[width = 0.6\textwidth ]{w.eps}
+     \caption{Auxiliary frame use for visualizing results. }
+    \label{figure:w}
+ \end{figure}
+ 
+ \noindent
+ While the platform moves, the quadcopter performs a series of landing by taking off again at the limits of platform path. Hence, the altitude profile result in a periodic signal highlighting the multiple landings a take off in this routine. Figure \ref{figure:zpro} represent the inverted z profile. The inversion is done in order to make more visible the plot since z points downwards. Each descend corresponds with a touchdown which are highlighted by arrows. On this plot appears also the first take off maneuver from the ground. The measured high at landing is fixed and corresponds to the height of the labmate respect to earth frame.
+  \begin{figure}[H]
+   \centering
+     \includegraphics[width = 0.8\textwidth ]{w.eps}
+      \caption{Vertical profile. }
+     \label{figure:zpro}
+  \end{figure}
+ Next we can compare the position of the platform with the actual position of the quadcopter and evaluate the performances. Figure \ref{figure:forward} shows the position of the robot along $x^W$. From this plot we observe that when the platform changes direction, an overshoot of the robot position appears due to the integral factor. Moreover we can see the position converging quickly after sometimes. 
+ 
+   \begin{figure}[h]
+    \centering
+      \includegraphics[width = 0.8\textwidth ]{w.eps}
+       \caption{Vertical profile. }
+      \label{figure:forward}
+   \end{figure}
+ 
+ In the same way, we can express the lateral motion (the position of the robot in $\Re^W$ frame on $y^W$). Figure \ref{figure:lateral} presents this motion. Although the position of the platform should be zero along this direction, since the labmate is not perfect the line is not straight but deviates with time.
+  \begin{figure}[h]
+    \centering
+      \includegraphics[width = 0.8\textwidth ]{w.eps}
+       \caption{Vertical profile. }
+      \label{figure:lateral}
+   \end{figure}
+   
+ The total horizontal error $d$ is shown in Figure \ref{figure:err}
+
+  \begin{figure}[h]
+    \centering
+      \includegraphics[width = 0.8\textwidth ]{w.eps}
+       \caption{Vertical profile. }
+      \label{figure:err}
+   \end{figure}
+   
+We may conclude that this procedure is suitable for straight motion with a reasonably constant velocity. Some deviation along the linear path is still allowed and the controller is able to converge.
