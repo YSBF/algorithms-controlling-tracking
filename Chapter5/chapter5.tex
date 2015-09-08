@@ -10,14 +10,14 @@
 
 % short summary of the chapter
 \section*{Summary}
-Due to the nature of the dynamics of the quadrotor, several control algorithms have been applied to it. As to be expected, each control scheme has its advantages and disadvantages. This chapter presents the techniques that are used to estimate the system's states and to stabilize IRIS which are currently implemented in the PX4 Firmware.\par After a quick overview of the estimator modules, the controller architecture is presented. Moreover, this chapter explains in details how the on board autopilot interfaces with the software architecture and which modules are involved.
+Due to the nature of the dynamics of the quadrotor, several control algorithms have been applied to it. As to be expected, each control scheme has its advantages and disadvantages. This chapter presents the techniques that are used to estimate the system's states and to stabilize the IRIS robot which are currently implemented in the PX4 Firmware.\par After a quick overview of the estimator modules, the controller architecture is presented. Moreover, this chapter explains in details how the on board autopilot interfaces with the software architecture and which modules are involved.
 
 \section{Introduction to the PX4 Flight Stack}
 
 The PX4 Flight Stack denotes the list of all the applications running on board the PixHawk. Those modules provide the services and methods which are necessary to manage the radio communications, inter process message pass-through, data logging, state estimation, control, high level states and low level communication with motors and sensors.
 
 \subsection{Message pass-through}
-The core on board applications are started at system startup, others can be started via the NuttShell or forced to startup by inserting them in the start boot file. Every application runs independently with its own frequency; the interfaces between processes are managed by \textit{uOrb} middleware (Micro Orb) which, with the use of topics, guarantees the message pass-through for data packets over named buses. Those topics encode structs and they are pre defined. In PX4, a topic (often called node) contains only one message type, e.g. the \textit{vehicle attitude} topic transports a message containing the attitude struct (roll, pitch and yaw estimates).\par Nodes can publish a message on a bus/topic or subscribe to a bus/topic. They are not aware of who they are communicating with. There can be multiple publishers and multiple subscribers to a topic (Figure \ref{figure:pubsub}). This design pattern prevents locking issues and is very common in robotics. \textbf{To make this efficient, there is always only one message on the bus and no queue is kept} \cite{uOrb}. The total list of \textit{uOrb} topics can be found in the uOrb folder of the PX4 Firmware since the online documentation is not updated. \\
+The core on board applications are started at system startup, others can be started via the NuttShell or forced to startup by inserting them in the start boot file. Every application runs independently with its own frequency; the interfaces between processes are managed by the \textit{uOrb} middleware (Micro Orb) which, with the use of topics, guarantees the message pass-through for data packets over named buses. Those topics encode structs and they are pre defined. In PX4, a topic (often called node) contains only one message type, e.g. the \textit{vehicle attitude} topic transports a message containing the attitude struct (roll, pitch and yaw estimates).\par Nodes can publish a message on a bus/topic or subscribe to a bus/topic. They are not aware of who they are communicating with. There can be multiple publishers and multiple subscribers to a topic (Figure \ref{figure:pubsub}). This design pattern prevents locking issues and is very common in robotics. \textbf{To make this efficient, there is always only one message on the bus and no queue is kept} \cite{uOrb}. The total list of \textit{uOrb} topics can be found in the uOrb folder of the PX4 Firmware since the online documentation is not updated. \\
 
 \noindent
 The external communication (through radio link) is managed by mavlink, previously presented in Section \ref{sec:mavlink}, however Mav packets are translated in uOrb topics internally.   
@@ -41,7 +41,7 @@ The most relevant apps that are started at boot can be divided in groups. \\
 	\item mavlink - is dedicated to pack and unpack mavlink messages.
 	\item sdlog2 - takes relevant topics and creates a log file on sd card at every flight.
 	\item test - mainly used for troubleshooting.
-	\item uOrb - inter-process communication middleware .
+	\item uOrb - inter-process communication middleware.
 \end{itemize}
 \paragraph{Drivers} As one may imagine, those nodes represent the layer between hardware and software. They manage the communication with sensors, ports and buses:
 \begin{itemize}
@@ -64,7 +64,7 @@ The most relevant apps that are started at boot can be divided in groups. \\
 
 \paragraph{Flight safety and navigation} Those are the key modules regarding this thesis. They implements the algorithms for position and attitude control:
 \begin{itemize}
-	\item commander - internal state machine which determine system states for safety (flying, idle , emergency , on ground)
+	\item commander - internal state machine which determine system states for safety (flying, idle, emergency, on ground)
 	\item navigator - highest level of abstraction, it implements mission following and failsafe
 \end{itemize}
 
@@ -73,7 +73,7 @@ The most relevant apps that are started at boot can be divided in groups. \\
 The system relies on a state machine in order to manage what it can and cannot do at a particular moment. The main task of this module is to assure safety from an high level point of view. Other safety procedures are implemented also on a lower level on hardware. \\
 
 \noindent
-The main states are \textit{ARMED , STAND-BY , INIT , ERROR} and \textit{UNLOCKED}. At the moment the user turns on the robot, the state machine is in \textit{INIT} state. Here all the procedure for sensor initialization and checklists are done. The next state then becomes \textit{STAND-BY} where IRIS waits for orders. By manually pressing a safety button, the state changes to UNLOCKED and back to STAND-BY by pressing again the button. In UNLOCKED state, the motor are electrically connected to the power source thus they can be armed. With a button on the remote control, the motors are armed and start spinning with idle velocity and the robot can fly. From any state, an error signal may arrive changing the actual configuration to ERROR. Here the motors are turned off after the automatic landing procedure and the robot must be rebooted. Those concept are depicted in Figure \ref{figure:iris_state}.
+The main states are \textit{ARMED, STAND-BY, INIT, ERROR} and \textit{UNLOCKED}. At the moment the user turns on the robot, the state machine is in \textit{INIT} state. Here all the procedures for sensor initialization and checklists are done. The next state then becomes \textit{STAND-BY} where IRIS waits for orders. By manually pressing a safety button, the state changes to UNLOCKED and back to STAND-BY by pressing again the button. In UNLOCKED state, the motor are electrically connected to the power source thus they can be armed. With a button on the remote control, the motors are armed and start spinning with idle velocity and the robot can fly. From any state, an error signal may arrive changing the actual configuration to ERROR. Here the motors are turned off after the automatic landing procedure and the robot must be rebooted. Those concepts are depicted in Figure \ref{figure:iris_state}.
 
 \begin{figure}[h]
 	\centering
@@ -109,14 +109,14 @@ The position estimator is based on inertial model and optimized for multirotors.
 	\label{tab:corrgain}
 \end{table}
 \noindent
-\textbf{Note}: the accelerometers are used as an absolute measure, thus treated as the input of the system used for prediction (equation \eqref{eq:prediction}). Moreover I changed the gain \textit{INAV\_W\_Z\_BARO} from 50 to 0.0001 because the sensor gives the absolute altitude above sea level while the mocap gives the height respect to the earth frame (the floor of the room). This causes a mismatch in the two measures leading to false prediction with a constant offset, hence the gain for the barometer is set very low.
+\textbf{Note}: the accelerometers are used as an absolute measure, thus treated as the input of the system used for prediction (\eqref{eq:prediction}). Moreover I changed the gain \textit{INAV\_W\_Z\_BARO} from 50 to 0.0001 because the sensor gives the absolute altitude above sea level while the mocap gives the height respect to the earth frame (the floor of the room). This causes a mismatch in the two measures leading to false prediction with a constant offset, hence the gain for the barometer is set very low.
 
 \subsubsection*{Working principle of position estimator}
 The algorithm for position estimation is divided in two phases: prediction and update. The model used for \textbf{prediction} is the following: 
 
 \begin{equation}
 	\begin{aligned}
-	\boldsymbol{x_k}(\boldsymbol{x_{k-1}}, dt , \boldsymbol{a})& = \boldsymbol{x_{k-1}} + \boldsymbol{v_k}dt + \frac{1}{2}\boldsymbol{a}) dt^2 \\
+	\boldsymbol{x_k}(\boldsymbol{x_{k-1}}, dt , \boldsymbol{a})& = \boldsymbol{x_{k-1}} + \boldsymbol{v_k}dt + \frac{1}{2}\boldsymbol{a} dt^2 \\
 	 \boldsymbol{v_k} ( \boldsymbol{v_{k-1}} ,\boldsymbol{a} , dt)& = \boldsymbol{v_{k-1}} + \boldsymbol{a}dt
 	\end{aligned}
 	\label{eq:prediction}
@@ -170,19 +170,19 @@ The model used is the rotational part of the system \eqref{eq:mathfullmodel} (la
 \paragraph{Yaw estimation} The lab environment presented a couple of issues regarding the measure of the magnetic field. Being indoor, with electronic equipments and with electrical cables passing under the floor, the magnetic field is not constant along the room volume. This causes bad estimates for the yaw. Being yaw dynamics pretty slow with respect to roll and pitch, we can estimate it off board with a simple trick.\\
 
 \noindent
-Let $\boldsymbol{mag}^B = \begin{bmatrix}mag_x\\mag_y\\mag_z\end{bmatrix}$ the magnetic field vector in body frame given by the magnetometer and fed to the attitude estimator. Since the earth magnetic field is inclined by almost 30 degrees downwards and pointing north, we can fake it and decide ourself where the north is. Hence let $\boldsymbol{mag^E}$ = $\begin{bmatrix}1\\0\\0.4\end{bmatrix}$ meaning that $x^E$ becomes the north. The attitude estimator accepts the magnetometer output in body frame hence the "fake" value we provide, by hacking in the module source file, becomes:
+Let $\boldsymbol{mag}^B = \begin{bmatrix}mag_x && mag_y && mag_z\end{bmatrix}^T$ the magnetic field vector in body frame given by the magnetometer and fed to the attitude estimator. Since the earth magnetic field is inclined by almost 30 degrees downwards and pointing north, we can fake it and decide ourself where the north is. Hence let $\boldsymbol{mag^E}$ = $\begin{bmatrix}1&& 0 && 0.4\end{bmatrix}^T$ meaning that $x^E$ becomes the north. The attitude estimator accepts the magnetometer output in body frame hence the "fake" value we provide, by hacking in the module source file, becomes:
 \begin{equation}
 	 \boldsymbol{mag^B} = {}^BR_E \boldsymbol{mag^E}
 \end{equation}
-where  ${}^BR_E$ is the transpose of $R$ which depends on attitude angles. Roll and Pitch are estimated on board but the yaw is obtained by the mocap measure, thus we can construct the rotation matrix and calculate the rotated magnetic field in body frame. This approach works, is simple and gives us the possibility to choose where the north( yaw = 0) is without having the problem of alignment of $x^E$ with the North-South line.
+where  ${}^BR_E$ is the transpose of $R$ which depends on attitude angles. Roll and Pitch are estimated on board but the yaw is obtained by the mocap measure, thus we can construct the rotation matrix and calculate the rotated magnetic field in body frame. This approach works, is simple and gives us the possibility to choose where the north (direction for which yaw = 0) is without having the problem of alignment of $x^E$ with the North-South line.
 
 \section{Controller architecture}
 
-As stated in Chapter \ref{chap:second}, those modules implement PIDs controller. The architecture is in the form of what is called a cascaded structure, a very common practice in control design for flying vehicles. 
+As stated in Chapter \ref{chap:second}, those modules implement a PID controller. The architecture is in the form of what is called a cascaded structure, a very common practice in control design for flying vehicles. 
 
 The basic idea is to break up the dynamics of the quadrotor and face the problem piece by piece \cite{Mellinger2012}. Thus, the design is divided in four sub controllers placed in a cascaded fashion one after the other. Each controller generates the input for the next one and takes the output of the previous. From the highest to the lowest level we have:\textit{ position control}, \textit{velocity control}, \textit{attitude control} and\textit{ motor control}. In the context of this thesis, dynamics of motor control are not analyzed but just a brief overview is given. 
 
-The \textbf{position controller} calculates the velocities set points in the three directions which are fed to the velocity controller. The task of the \textbf{velocity controller} is to track those set points by generating attitude reference signals and total thrust. The desired angular pose is tracked by the \textbf{attitude controller} which generates the desired torques as input of the \textbf{mixer}. The role of the mixer is to calculate each rotor angular speed in order to track the desired signal. This is simply done by inverting equation \eqref{eq:inputmixmatrix} and expressing the angular speed vector in function of the input vector $U$ obtaining:\begin{equation}
+The \textbf{position controller} calculates the velocitiy set points in the three directions which are fed to the velocity controller. The task of the \textbf{velocity controller} is to track those set points by generating attitude reference signals and total thrust. The desired angular pose is tracked by the \textbf{attitude controller} which generates the desired torques as input of the \textbf{mixer}. The role of the mixer is to calculate each rotor angular speed in order to track the desired signal. This is simply done by inverting  \eqref{eq:inputmixmatrix} and expressing the angular speed vector in function of the input vector $U$ obtaining:\begin{equation}
 H^{-1}\begin{bmatrix}
 T^B\\\tau_\phi\\\tau_\theta\\\tau_\psi
 \end{bmatrix} = \begin{bmatrix}
@@ -251,7 +251,7 @@ As consequence the desired robot y axis is
 The desired rotation matrix, ready to be sent to the attitude controller is
 
 \begin{equation}
-\boldsymbol{R_{des}} = \begin{bmatrix}
+R_{des} = \begin{bmatrix}
 \boldsymbol{x^B_{des}} && \boldsymbol{y^B_{des}} && \boldsymbol{z^B_{des}}
 \end{bmatrix}
 \end{equation}
@@ -267,7 +267,7 @@ Finally the total thrust $U_1$ is calculated, the first element of the input vec
 
 \subsection{Attitude controller}
 \label{sec:attcontrol}
-In order to calculate the last three element of the input vector $\boldsymbol{U}$, the attitude controller takes place. First thing to do is to define the rotation error between the desired rotation matrix and the actual one. Let $S = \begin{bmatrix}
+In order to calculate the last three element of the input vector $\boldsymbol{U}$, the attitude controller takes place. The first thing to do is to define the rotation error between the desired rotation matrix and the actual one. Let $S = \begin{bmatrix}
 0  && -c && b  \\
 c  && 0  && -a \\
 -b && a  && 0 

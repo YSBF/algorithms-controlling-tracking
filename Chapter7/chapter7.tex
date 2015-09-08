@@ -119,10 +119,38 @@ There are drawbacks to this approach. When the platform suddenly changes directi
 
 At this moment, the tracking problem is solved. A way to safely land on the platform must be designed. Moreover, the procedure should be robust enough to detect horizontal error and decide whether land or not. In this case I used a very simple but surprisingly effective method. 
 
-Let us consider just the vertical dynamics and forgot about the rest. The goal is to decrease the height in order to approach the platform and land without missing. The parameter which gives an idea on how it is safe to land is the horizontal distance to the robot, namely $\lVert \boldsymbol{P_e} \rVert = d$. Depending on the value of d, the robot may decide to land or go up. Thus, the involved variables are the vertical set point $z_{sp}$ and the horizontal distance $d$. 
+Let us consider just the vertical dynamics and forgot about the rest. The goal is to decrease the height in order to approach the platform and land without missing. The parameter which gives an idea on how it is safe to land is the horizontal distance to the robot, namely $\lVert \boldsymbol{P_e} \rVert = d$. Depending on the value of d, the robot may decide to land or go back up. Thus, the involved variables are the vertical set point $z_{sp}$ and the horizontal distance $d$. 
 
-The relation between distance and set point are many and up to designer. I used the simplest curve one may think, the line. A linear relationship between $z_{sp}$ and $d$ is used. Let 
+Through the control signal $z_{sp}$ and the measure of $d$ we are able to ensure the descend. A linear relationship between $z_{sp}$ and $d$ is used resulting in a very simple but effective way to tackle the problem.\\
 
+\noindent
+\textbf{Important}: it has been pointed out several times that the z axis of body and world frame are pointing downwards, thus reversing the plots for the value of z. \textcolor{red}{The derivation of the descending law assumes that z is pointing upwards in order to have a more clear view}. At the end , before issuing the command, the value is reversed by simply taking its negative. \\
+
+\noindent
+Moreover, from now on, we are going to refer everything on the platform frame. This frame results only in one fixed translation on the z since the labmate has a certain height. In other words, \textbf{the z value represent the vertical distance from the platform plane and not more from the floor}. 
+
+At this design phase we have the following value for the input:
+\begin{equation}
+	z_{sp} = M d + Q
+	\label{eq:line}
+\end{equation}
+where $M$ and $Q$ are the coefficients of the line to be estimated. The estimation of the coefficients is the consequence of the descending flow design. I decided to split the design phase in different steps resulting in a procedure. 
+
+The \textbf{first step} is to choose the maximum height $H_{max}$. This quantity is a positive (remember that later on we are going to invert the result) value in meters. It represent the maximum height at with the landing procedure occurs or may be performed. Beside convenience, it is used to simulate a couple of factors in a real application. If the robot is carrying sensors for landing such as camera, a range sensor, or an optical flow sensor, then there is a maximum height at which the measurements with those devices are possible. This value may be also used by higher level modules in order to inhibit landing behavior if the robot is flying too high. 
+
+The \textbf{second step is} to define a minimum positive height $H_{min}$ at which the descending profile ends respect to the platform. This value has pure practical purposes, it is used to stop the descending maneuver over the platform. It represent the distance from which the final landing is performed by setting the motors to idle speed in order to catch the platform. Lower $H_{min}$ lead to a gentle landing but the maneuver needs more time. On the other hand, higher $H_{min}$ may results in a faster maneuver but a harder landing.
+
+The \textbf{third step} is to define the radius of influence $\rho$. This value represents the maximum horizontal distance from the platform which is needed to start the descending maneuver.  Higher values for  $\rho$ results in more flat descent profiles since the maneuver begins far before the tracker converges. Lower values for  $\rho$ leads to a faster descend.
+
+The \textbf{fourth step} is the final one. What is done here is to define the tolerance $\tau$. This value represents the maximum horizontal error we allow at the very last touchdown phase. Higher values results in easier landings.
+
+With this procedure we can generate two different points in space: $P_1 = \left(\rho , H_{max}\right)$ and  $P_2 = \left(\tau , H_{min}\right)$. By inserting $P_1$ and $P_2$ in \eqref{eq:line} the calculation of $M$ and $Q$ is trivial.
+
+What the controller does, is to issue altitude set points following the calculated profile (a line). Moreover, the profile is clipped by $H_{max}$ and $H_{min}$. When the robot reaches the minimum height and the error is less than $\tau$, the rotors are set to idle and the robot performs the touchdown. Moreover, the issued set points are with negative signe due to the inversion of axis z.
+Figure \ref{figure:profile} shows the descending profile in function of the design parameters. The origin is on the platform surface, thus for z = 0 , the point is at a fixed height in earth frame depending on the eight of the platform.\\
+
+\noindent
+\textbf{Note: } this procedures calculate altitude set points (references) according to horizontal error. If a the beginning of the task the horizontal error is close to zero, a set point corresponding to the minimum height plus platform height is issued. Thus we do not control the descending velocity in any manner, we assume that the on board position controller does its job.
 
 \section{Experimental results}
 
