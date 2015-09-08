@@ -20,7 +20,7 @@ The PX4 Flight Stack denotes the list of all the applications running on board t
 The core on board applications are started at system startup, others can be started via the NuttShell or forced to startup by inserting them in the start boot file. Every application runs independently with its own frequency; the interfaces between processes are managed by \textit{uOrb} middleware (Micro Orb) which, with the use of topics, guarantees the message pass-through for data packets over named buses. Those topics encode structs and they are pre defined. In PX4, a topic (often called node) contains only one message type, e.g. the \textit{vehicle attitude} topic transports a message containing the attitude struct (roll, pitch and yaw estimates).\par Nodes can publish a message on a bus/topic or subscribe to a bus/topic. They are not aware of who they are communicating with. There can be multiple publishers and multiple subscribers to a topic (Figure \ref{figure:pubsub}). This design pattern prevents locking issues and is very common in robotics. \textbf{To make this efficient, there is always only one message on the bus and no queue is kept} \cite{uOrb}. The total list of \textit{uOrb} topics can be found in the uOrb folder of the PX4 Firmware since the online documentation is not updated. \\
 
 \noindent
-The external communication (through radio link) is managed by mavlink, previously presented in section \ref{sec:mavlink}, however Mav packets are translated in uOrb topics internally.   
+The external communication (through radio link) is managed by mavlink, previously presented in Section \ref{sec:mavlink}, however Mav packets are translated in uOrb topics internally.   
 
 \begin{figure}[h]
 	\centering
@@ -73,7 +73,7 @@ The most relevant apps that are started at boot can be divided in groups. \\
 The system relies on a state machine in order to manage what it can and cannot do at a particular moment. The main task of this module is to assure safety from an high level point of view. Other safety procedures are implemented also on a lower level on hardware. \\
 
 \noindent
-The main states are \textit{ARMED , STAND-BY , INIT , ERROR} and \textit{UNLOCKED}. At the moment the user turns on the robot, the state machine is in \textit{INIT} state. Here all the procedure for sensor initialization and checklists are done. The next state then becomes \textit{STAND-BY} where IRIS waits for orders. By manually pressing a safety button, the state changes to UNLOCKED and back to STAND-BY by pressing again the button. In UNLOCKED state, the motor are electrically connected to the power source thus they can be armed. With a button on the remote control, the motors are armed and start spinning with idle velocity and the robot can fly. From any state, an error signal may arrive changing the actual configuration to ERROR. Here the motors are turned off after the automatic landing procedure and the robot must be rebooted. Those concept are depicted in figure \ref{figure:iris_state}.
+The main states are \textit{ARMED , STAND-BY , INIT , ERROR} and \textit{UNLOCKED}. At the moment the user turns on the robot, the state machine is in \textit{INIT} state. Here all the procedure for sensor initialization and checklists are done. The next state then becomes \textit{STAND-BY} where IRIS waits for orders. By manually pressing a safety button, the state changes to UNLOCKED and back to STAND-BY by pressing again the button. In UNLOCKED state, the motor are electrically connected to the power source thus they can be armed. With a button on the remote control, the motors are armed and start spinning with idle velocity and the robot can fly. From any state, an error signal may arrive changing the actual configuration to ERROR. Here the motors are turned off after the automatic landing procedure and the robot must be rebooted. Those concept are depicted in Figure \ref{figure:iris_state}.
 
 \begin{figure}[h]
 	\centering
@@ -109,7 +109,7 @@ The position estimator is based on inertial model and optimized for multirotors.
 	\label{tab:corrgain}
 \end{table}
 \noindent
-\textbf{Note}: the accelerometers are used as an absolute measure, thus treated as the input of the system used for prediction (equation \ref{eq:prediction}). Moreover I changed the gain \textit{INAV\_W\_Z\_BARO} from 50 to 0.0001 because the sensor gives the absolute altitude above sea level while the mocap gives the height respect to the earth frame (the floor of the room). This causes a mismatch in the two measures leading to false prediction with a constant offset, hence the gain for the barometer is set very low.
+\textbf{Note}: the accelerometers are used as an absolute measure, thus treated as the input of the system used for prediction (equation \eqref{eq:prediction}). Moreover I changed the gain \textit{INAV\_W\_Z\_BARO} from 50 to 0.0001 because the sensor gives the absolute altitude above sea level while the mocap gives the height respect to the earth frame (the floor of the room). This causes a mismatch in the two measures leading to false prediction with a constant offset, hence the gain for the barometer is set very low.
 
 \subsubsection*{Working principle of position estimator}
 The algorithm for position estimation is divided in two phases: prediction and update. The model used for \textbf{prediction} is the following: 
@@ -135,7 +135,7 @@ In compact form the we can write the system as the following:
 where $\boldsymbol{y_k}$ is the output  (from sensors) and the H matrix relates the state with the measurements. \\
 
 \noindent
-Equation \ref{eq:predictioncompact} is usually called \textbf{prediction}. It means that with the last available estimate of  $[\boldsymbol{x_{k-1}},\boldsymbol{v_{k-1}}]$ and the actual value of the acceleration $\boldsymbol{a}$ (input of the model) given by the accelerometers, we can predict what could be the next value for $\boldsymbol{F_k}$ and by consequence the output vector $\boldsymbol{y_k}$. \\
+Equation \eqref{eq:predictioncompact} is usually called \textbf{prediction}. It means that with the last available estimate of  $[\boldsymbol{x_{k-1}},\boldsymbol{v_{k-1}}]$ and the actual value of the acceleration $\boldsymbol{a}$ (input of the model) given by the accelerometers, we can predict what could be the next value for $\boldsymbol{F_k}$ and by consequence the output vector $\boldsymbol{y_k}$. \\
 
 \noindent
 The last item is the \textbf{correction} or the calculation of the actual estimated value for the state. The correction equation takes the following form:
@@ -143,7 +143,7 @@ The last item is the \textbf{correction} or the calculation of the actual estima
 	\boldsymbol{F_k^{est}} = \boldsymbol{F_k^p}(\boldsymbol{x_{k-1}}, dt ,\boldsymbol{v_{k-1}}, \boldsymbol{a}) + L(\boldsymbol{y_k} - \boldsymbol{y_k^p})
 	\label{eq:observer}
 \end{equation}
-meaning that the estimated (corrected) state $\boldsymbol{F_k^{est}}$ is equal to the \textbf{prediction} calculated in equation \ref{eq:predictioncompact} (the superscript p stands for prediction) plus the \textbf{innovation} $L(\boldsymbol{y_k} - \boldsymbol{y_k^p})$. The innovation term is composed by $L$ which is a diagonal matrix with the values of the correction gains listed in table \ref{tab:corrgain} for each sensor and the difference of the \textbf{actual measure read by the sensor}, namely $\boldsymbol{y_k}$, with the predicted output $\boldsymbol{y_k^p}$ calculated in \ref{eq:predictioncompact}. \\
+meaning that the estimated (corrected) state $\boldsymbol{F_k^{est}}$ is equal to the \textbf{prediction} calculated in equation \eqref{eq:predictioncompact} (the superscript p stands for prediction) plus the \textbf{innovation} $L(\boldsymbol{y_k} - \boldsymbol{y_k^p})$. The innovation term is composed by $L$ which is a diagonal matrix with the values of the correction gains listed in table \ref{tab:corrgain} for each sensor and the difference of the \textbf{actual measure read by the sensor}, namely $\boldsymbol{y_k}$, with the predicted output $\boldsymbol{y_k^p}$ calculated in \eqref{eq:predictioncompact}. \\
 
 \noindent
 At the end the results are  published on \textit{vehicle\_local\_position} topic.
@@ -164,7 +164,7 @@ where $[\boldsymbol{\xi_k} \sim N(0,Q), \boldsymbol{\eta_k} \sim N(0,R) ]$ are g
 	\end{itemize}
 
 \noindent
-The model used is the rotational part of the system \ref{eq:mathfullmodel} (last six equations) with the angular accelerations plus the three value of the magnetic field given by the magnetometer. A well detailed description of the algorithm for this particular case is given in \cite{attekf}.
+The model used is the rotational part of the system \eqref{eq:mathfullmodel} (last six equations) with the angular accelerations plus the three value of the magnetic field given by the magnetometer. A well detailed description of the algorithm for this particular case is given in \cite{attekf}.
 
 \noindent
 \paragraph{Yaw estimation} The lab environment presented a couple of issues regarding the measure of the magnetic field. Being indoor, with electronic equipments and with electrical cables passing under the floor, the magnetic field is not constant along the room volume. This causes bad estimates for the yaw. Being yaw dynamics pretty slow with respect to roll and pitch, we can estimate it off board with a simple trick.\\
@@ -182,7 +182,7 @@ As stated in Chapter \ref{chap:second}, those modules implement PIDs controller.
 
 The basic idea is to break up the dynamics of the quadrotor and face the problem piece by piece \cite{Mellinger2012}. Thus, the design is divided in four sub controllers placed in a cascaded fashion one after the other. Each controller generates the input for the next one and takes the output of the previous. From the highest to the lowest level we have:\textit{ position control}, \textit{velocity control}, \textit{attitude control} and\textit{ motor control}. In the context of this thesis, dynamics of motor control are not analyzed but just a brief overview is given. 
 
-The \textbf{position controller} calculates the velocities set points in the three directions which are fed to the velocity controller. The task of the \textbf{velocity controller} is to track those set points by generating attitude reference signals and total thrust. The desired angular pose is tracked by the \textbf{attitude controller} which generates the desired torques as input of the \textbf{mixer}. The role of the mixer is to calculate each rotor angular speed in order to track the desired signal. This is simply done by inverting equation \ref{eq:inputmixmatrix} and expressing the angular speed vector in function of the input vector $U$ obtaining:\begin{equation}
+The \textbf{position controller} calculates the velocities set points in the three directions which are fed to the velocity controller. The task of the \textbf{velocity controller} is to track those set points by generating attitude reference signals and total thrust. The desired angular pose is tracked by the \textbf{attitude controller} which generates the desired torques as input of the \textbf{mixer}. The role of the mixer is to calculate each rotor angular speed in order to track the desired signal. This is simply done by inverting equation \eqref{eq:inputmixmatrix} and expressing the angular speed vector in function of the input vector $U$ obtaining:\begin{equation}
 H^{-1}\begin{bmatrix}
 T^B\\\tau_\phi\\\tau_\theta\\\tau_\psi
 \end{bmatrix} = \begin{bmatrix}
@@ -191,7 +191,7 @@ T^B\\\tau_\phi\\\tau_\theta\\\tau_\psi
 \end{equation}
 where the left hand side vector is the output of the attitude (for torques) and position (for thrust) controllers while the right hand side vector is the square of the desired rotor angular speeds. The matrix $H$ is the mixer matrix, it is specific for the robot configurations and it is usually given as a parameter file from the quadcopter designer. At the end of the chain there is the motor controller which, through PWM, assures the convergence to the desired spinning velocity. 
 
-Note that those controllers run at different rates, from the position controller which has the lowest rate to the attitude controller which have the highest. Moreover the following assumption is made: \textbf{in the chain, one controller converges faster than its previous one}. This is necessary otherwise the cascade will not work properly. Those concepts are represented in figure \ref{figure:controlarch}.
+Note that those controllers run at different rates, from the position controller which has the lowest rate to the attitude controller which have the highest. Moreover the following assumption is made: \textbf{in the chain, one controller converges faster than its previous one}. This is necessary otherwise the cascade will not work properly. Those concepts are represented in Figure \ref{figure:controlarch}.
 
 \begin{figure}[h]
 	\centering
@@ -308,7 +308,7 @@ The validation of the estimation is the first test made before flying. The robot
 
 \noindent
 \paragraph{Roll estimation} 
-The estimation for the roll is very good. The vision signal is delayed respect to the on board estimation due to the radio link delay. In this particular experiment, at second 15, the robot orientation was lost for a moment by the cameras probably because of an occlusion. At that moment a spike appears and it is visible on the plot in figure \ref{figure:rollesti}.
+The estimation for the roll is very good. The vision signal is delayed respect to the on board estimation due to the radio link delay. In this particular experiment, at second 15, the robot orientation was lost for a moment by the cameras probably because of an occlusion. At that moment a spike appears and it is visible on the plot in Figure \ref{figure:rollesti}.
 \begin{figure}[h]
 	\centering
 	\noindent
@@ -319,7 +319,7 @@ The estimation for the roll is very good. The vision signal is delayed respect t
 
 \paragraph{Pitch estimation}
 \ref{figure:pitchesti}
-As for roll, the estimation of the pitch il consistent. Similar spike appears after 15 seconds (figure \ref{figure:pitchesti}).
+As for roll, the estimation of the pitch il consistent. Similar spike appears after 15 seconds (Figure \ref{figure:pitchesti}).
 
 \begin{figure}[h]
 	\centering
@@ -332,7 +332,7 @@ As for roll, the estimation of the pitch il consistent. Similar spike appears af
 
 \paragraph{Yaw estimation}
 
-The yaw estimation is nearly perfect (see figure \ref{figure:yawesti}). It does not present the same delay as for roll and pitch because it relies mostly on the mocap feedback. After 43 seconds a jump appears because angle abruptly changed from $-\pi$ to $\pi$. However this does not affect the robot dynamics because internal computations are done with rotation matrix representation(see section \ref{sec:attcontrol}).
+The yaw estimation is nearly perfect (see Figure \ref{figure:yawesti}). It does not present the same delay as for roll and pitch because it relies mostly on the mocap feedback. After 43 seconds a jump appears because angle abruptly changed from $-\pi$ to $\pi$. However this does not affect the robot dynamics because internal computations are done with rotation matrix representation(see Section \ref{sec:attcontrol}).
 
 \begin{figure}[H]
 	\centering
@@ -369,7 +369,7 @@ The preliminary test, in order to evaluate the controller performances, is to se
 \end{figure}
 \noindent
 The maximum error is about 10 centimeter in hovering. The overshoot recalls a second order system response \\
-\paragraph{Z position} The z converges more slowly when the robot starts (see figure \ref{figure:zconv}), this is because the integrator in the desired thrust vector needs to be saturated. In \cite{Mellinger2012} the author compensate this phenomenon substituting the integral with the value of the gravitational force $m\boldsymbol{g}$. This helps a lot since we do not have to wait for the saturation. The big drawback is that the mass of the robot must be known. Since we are working on a general autopilot, it is better to compensate to uncertainties on the system. Thus we leave the integrator and wait the saturation time. A good idea could be to put as initial condition of the integrator an estimate of the value of the gravity force. After 70 seconds the landing maneuver starts.
+\paragraph{Z position} The z converges more slowly when the robot starts (see Figure \ref{figure:zconv}), this is because the integrator in the desired thrust vector needs to be saturated. In \cite{Mellinger2012} the author compensate this phenomenon substituting the integral with the value of the gravitational force $m\boldsymbol{g}$. This helps a lot since we do not have to wait for the saturation. The big drawback is that the mass of the robot must be known. Since we are working on a general autopilot, it is better to compensate to uncertainties on the system. Thus we leave the integrator and wait the saturation time. A good idea could be to put as initial condition of the integrator an estimate of the value of the gravity force. After 70 seconds the landing maneuver starts.
 
 \begin{figure}[h]
 	\centering
@@ -380,7 +380,7 @@ The maximum error is about 10 centimeter in hovering. The overshoot recalls a se
 \end{figure}
 
 
-\paragraph{Yaw convergence} The yaw is commanded by sending yaw set points in a ramp fashion. The ramp appears segmented to the robot since the sending frequency is much lower than the processing rate on the board. In this particular experiment, the robot is asked to look at a specific point. The software architecture send to the robot a desired point (x,y) on the horizontal plane, the robot calculates the yaw needed to face at that particular location and then the controller tracks it. Two different points were chosen, that is why we have two ramps (see figure \ref{figure:yawconv}).
+\paragraph{Yaw convergence} The yaw is commanded by sending yaw set points in a ramp fashion. The ramp appears segmented to the robot since the sending frequency is much lower than the processing rate on the board. In this particular experiment, the robot is asked to look at a specific point. The software architecture send to the robot a desired point (x,y) on the horizontal plane, the robot calculates the yaw needed to face at that particular location and then the controller tracks it. Two different points were chosen, that is why we have two ramps (see Figure \ref{figure:yawconv}).
 
 \begin{figure}[h]
 	\centering
@@ -392,7 +392,7 @@ The maximum error is about 10 centimeter in hovering. The overshoot recalls a se
 
 \noindent
 \paragraph{Hovering with disturbances}
-The last experiment consists in asking the robot to hover (stay still) on a point and perturbing it by pushing and pulling with a stick. Thus an external disturbing force, which is represented by arrows in figure figure \ref{figure:hover}, is applied.
+The last experiment consists in asking the robot to hover (stay still) on a point and perturbing it by pushing and pulling with a stick. Thus an external disturbing force, which is represented by arrows in Figure \ref{figure:hover}, is applied.
 
 \begin{figure}[h]
 	\centering

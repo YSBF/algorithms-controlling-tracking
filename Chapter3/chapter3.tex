@@ -11,7 +11,7 @@
 % short summary of the chapter
 \section*{Summary}
 
-This chapter introduces to the reader the current laboratory setup. The first section illustrates which kind of tools are used as well the specifications of each component. The second section instead will present the integration both hardware and software of each part of the system. 
+This chapter introduces the reader the current laboratory setup. The first section illustrates which kind of tools are used as well as the specifications of each component. The second section instead will present the integration both at hardware and software levels of each part of the system. 
 
 \section{The setup}
 \label{sec:setup}
@@ -19,13 +19,13 @@ This section introduces and explains the tools, both hardware and software, that
 
 We can identify five distinct parts:
 \begin{itemize}
-\item  IRIS quadcopter from 3d robotics
-\item  Motion Capture system from optitrack
-\item  Linux machine
+\item  IRIS quadcopter from 3D robotics
+\item  Motion Capture system from Optitrack
+\item  Linux workstation
 \item  Windows machine
 \item  Flight arena
 \end{itemize}
-While IRIS, the mocap system and the flight arena deserve three separate sections, the two machines are described together since they play a central role in the integration part (see \ref{sec:integration}).
+While IRIS, the mocap system and the flight arena deserve three separate sections, the role of two machines is described in the integration part (see Section \ref{sec:integration}).
 
 \subsection{IRIS Quadcopter}
 
@@ -49,7 +49,7 @@ The use is mainly commercial, it is optimized for aerial shooting and provides a
  \caption[IRIS and control devices]{IRIS and control devices.}
  \label{figure:iris_planner}
 \end{figure}
-This device is designed to fly outdoor, nevertheless it is possible with some software tuning to use the IRIS in indoor scenarios. The component which make this possible is the actual brain of the robot: the PixHawk board with PX4 software. 
+This device is designed to fly outdoor, nevertheless it is possible with some software tuning to use the IRIS in indoor scenarios. The component which makes this possible is the actual brain of the robot: the PixHawk board with PX4 software. 
 
 \subsubsection{PixHawk board}
 \label{sec:pixboard}
@@ -93,7 +93,7 @@ PX4 \cite{PX4} is the software stack running on the autopilot board, it was a ma
 \subsubsection{MAVLink Protocol}
 \label{sec:mavlink}
 MAVLink is a very lightweight, header-only message for micro air vehicles created and released under LGPL licence by Lorenz Meier in 2009.
-It can pack, with very little overhead, C-structs over serial channels with high effiency and send these packets to the ground control station (Fig. \ref{figure:controlstation}). It is extensively tested on the PX4, PIXHAWK, APM and Parrot AR.Drone platforms. It has the possibility to be used with at maximum 255 vehicles on the same control station, it runs on multiple microcontrollers and OS such as  ARM7, ATMega, dsPic, STM32 or Windows, Linux, MacOS and iOS with only 8 byte of overhead. The intense testing of this protocol made it the most used communication protocol in aerial robotics due to his effectiveness. Mavlink is used to send message over radio link in this project.
+It can pack, with very little overhead, C structs over serial channels with high effiency and send these packets to the ground control station (Fig. \ref{figure:controlstation}). It is extensively tested on the PX4, PIXHAWK, APM and Parrot AR.Drone platforms. It has the possibility to be used with at maximum of 255 vehicles on the same control station, it runs on multiple microcontrollers and OS such as  ARM7, ATMega, dsPic, STM32 or Windows, Linux, MacOS and iOS with only 8 byte of overhead. The intense testing of this protocol made it the most used communication protocol in aerial robotics due to his effectiveness. Mavlink is used to send message over radio link in this project.
 \begin{figure}[H]
  \centering
  \includegraphics[width=0.9\textwidth]{groundcontrol.jpg}
@@ -144,7 +144,7 @@ This protocol was designed towards two properties: transmission speed and safety
 \newpage
 \subsection{Motion capture system}
 \label{sec:mocap}
-The localization of the robot in the 3D space relies on the OptiTrack FLEX 13 motion capture syestem, composed by 8 infrared cameras (Fig. \ref{figure:flex13}) mounted on the roof of the laboratory in a squared fashion around the flight perimeter. It is the mid level product in OptitTrack catalog (1000 dollars per camera \cite{OptiT}) capable of tracking multiple objects in a medium volume space of about 4 X 4 X 4 meters.
+The localization of the robot in 3D space relies on the OptiTrack FLEX 13 motion capture system, composed by 8 infrared cameras (Fig. \ref{figure:flex13}) mounted on the roof of the laboratory in a squared fashion around the flight perimeter. It is the mid level product in OptitTrack catalog (1000 dollars per camera \cite{OptiT}) capable of tracking multiple objects in a medium volume space of about $4 \times 4 \times 4$ meters.
 
 \begin{figure}[h]
  \centering
@@ -194,7 +194,7 @@ Figure \ref{figure:hub} explains the connections of a single hub.
  \label{figure:motivescreen}
 \end{figure}
 \noindent
-The reader must note that in order to have good tracking performances, the setup needs to assure some properties during the experiments:
+The reader must note that in order to have a good tracking performance, the setup needs to assure some properties during the experiments:
 
 \begin{itemize}
 \item At least 3 markers must be present on the object.
@@ -287,7 +287,7 @@ Its main features are \cite{3Dr}:
 
 \begin{itemize}
 \item 433 MHz (for Europe).
-\item micro usb port: it can be used also from tablets.
+\item micro USB port: it can be used also from tablets.
 \item UART Interface.
 \item 2-way full-duplex communication.
 \item MAVLink protocol framing.
@@ -321,7 +321,7 @@ P^m\\
 Q^m
 \end{bmatrix}
 \end{equation}
- where $P^m\ = \begin{bmatrix}x\\y\\z\end{bmatrix}$ is the position vector and $Q^m =\begin{bmatrix}w\\x\\y\\z\end{bmatrix}$ is the rotation quaternion, everything expressed in Motive reference frame $\Re^m$. \\
+ where $P^m\ = \begin{bmatrix}x&&y&&z\end{bmatrix}^T$ is the position vector and $Q^m =\begin{bmatrix}w&&x&&y&&z\end{bmatrix}^T$ is the rotation quaternion, everything expressed in Motive reference frame $\Re^m$. \\
  
  \noindent
 Now let us define a second reference frame, in this case is a North-East-Down frame \cite{FrameRef}  mainly used in aeronautics and aerial robotics, namely  $\Re^E$. The peculiarity of this reference is that:
@@ -356,7 +356,7 @@ R_x(\theta) = \begin{bmatrix} 1 & 0            & 0 \\
 \label{eq:rotx}
 \end{equation}
 
-Putting $\theta = \pi/2$ inside \ref{eq:rotx},then \ref{eq:adaptframe} become:
+By putting $\theta = \pi/2$ inside \eqref{eq:rotx}, \eqref{eq:adaptframe} becomes:
 
 \begin{equation}
 \begin{bmatrix}x&y&z\end{bmatrix}\begin{bmatrix} 1 & 0 & 0 \\
@@ -387,5 +387,5 @@ w\\x\\z\\-y
 where $[w, x, y, z]$ are the elements of $Q^m$.\\
 
 \noindent
-Equations \ref{eq:translation} and \ref{eq:quaternion} describe the relation between $\Re^m$ and  $\Re^E$ in a simple but effective way in fact just by changing the order of the elements of the pose coming out Motive, a pose that IRIS can understand is generated. 
+Equations \eqref{eq:translation} and \eqref{eq:quaternion} describe the relation between $\Re^m$ and  $\Re^E$ in a simple but effective way in fact just by changing the order of the elements of the pose coming out Motive, a pose that IRIS can understand is generated. 
     
