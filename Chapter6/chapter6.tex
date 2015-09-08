@@ -393,7 +393,7 @@ follow trajectory & 'c'       &
 
 The first experimental stage was to test each behavior singularly, after some more complex node lists were tested successfully. 
 
-The performances of the task rotate and take off are already presented in section \ref{sec:conresults}. Figure \ref{figure:zconv} shows the take off maneuver; as already pointed out, the response is very slow at the first takeoff of the flight since the saturation of the integral on z axis, which compensates for gravity, is pretty slow. Figure \ref{figure:yawconv} show the rotation maneuver in which a constant yaw rate is implicitly set being the yaw set point a line over time. The convergence is very good. 
+The performances of the task rotate and take off are already presented in Section \ref{sec:conresults}. Figure \ref{figure:zconv} shows the take off maneuver; as already pointed out, the response is very slow at the first takeoff of the flight since the saturation of the integral on z axis, which compensates for gravity, is pretty slow. Figure \ref{figure:yawconv} show the rotation maneuver in which a constant yaw rate is implicitly set being the yaw set point a line over time. The convergence is very good. 
 
 The move behavior is also partially tested and analyzed in section \ref{sec:conresults}. Figure \ref{figure:xconv} and \ref{figure:xconv} shows the move maneuver with no scaling factor $\alpha$ but what happens if we introduce it? The expectation is to see the set point with the shape of a ramp depending on the scaling factor value. Four move nodes were placed in the node list (beside take off and land), each node is the vertex of a square centered in (0,0) with the edge 1.6 meters long. Image \ref{figure:xalpha1} shows the move function with the scaling term $\alpha = 1$ while figure \ref{figure:xalpha06} represent the same experiment with $\alpha = 0.6$. 
 \begin{figure}[h]
@@ -421,10 +421,9 @@ We can easily see the difference between the two experiments. The gap between th
 This experiment validates two aspects. The move function works as expected but, more important, the procedure is done autonomously validating the whole architecture at least for simple node lists. \\
 
 \noindent
-\textbf{Note:} the y dynamic is not reported since the behavior is the same as x.
+\textbf{Note:} the y dynamic is not reported since the behavior is the same as x. \\
 
-% % pure y e z?
-
+\noindent
 Next experiment evaluates the landing precision. We let the robot take of, reach a point and land. This for forty times in different directions. After each land the horizontal error was measured and the results are reported in figure \ref{figure:takeland}. The mean error is about $-0.005$ on x and $-0.01$ on y , more than acceptable for landing precisely on different platforms. Figure \ref{figure:landerr} reports the value for the error on x and y for each landing attempt.
 
 \begin{figure}[h]
@@ -435,9 +434,24 @@ Next experiment evaluates the landing precision. We let the robot take of, reach
 \end{figure}
 
 
-The third experiment is qualitative. We let the robot take off, land on a table, take off again and land on another platform with different height. This procedure is done just by filling the node list and set nodes parameters properly. Platform height were measured with the mocap. The result video can be viewed here: \url{https://www.dropbox.com/s/vsub85qwvnx45um/multiland.MP4?dl=0 }. 
+The third experiment is qualitative. We let the robot take off, land on a table, take off again and land on another platform with different height. This procedure is done just by filling the node list and set nodes parameters properly. Platform height were measured with the mocap. The result video can be viewed here: \url{https://www.dropbox.com/s/vsub85qwvnx45um/multiland.MP4?dl=0 }. \\
 
-The last experiment consists in a more complex lists which incorporate every designed behavior. The output of the program is shown in figure \ref{figure:snip} where we can see every successfully node executed. The full video can be viewed here \url{https://www.dropbox.com/s/41kpdlm5svm9iir/circle_final.MP4?dl=0}. 
+\noindent
+The last experiment consists in a more complex list which incorporates every designed behavior. The output of the program is shown in Figure \ref{figure:snip} where we can see every successfully node executed. The full video can be viewed here \url{https://www.dropbox.com/s/41kpdlm5svm9iir/circle_final.MP4?dl=0}. 
+
+The robot takes off, rotates and performs a circle around a cylinder pointing the nose at the center of the trajectory simulating an inspection. The behavior \textit{follow trajectory} and \textit{rotate} execute concurrently and independently. The circular trajectory lasts for 8 seconds. After there is a sequence of move actions. Since there is the possibility to set as parameter a waiting time for action move, we can generate some sort of waypoints by setting this value to zero. The three orange markers on the ground represent the way points, move actions with no waiting time and higher scaling factor alpha. On the black marker is executed a a move action with longer waiting time. Next, the robot flies in front of the camera with low scaling factor thus moving slowly and higher waiting time. After a rotation, the robot flies back to the landing site. This experiment demonstrates the ability of the architecture of executing more complex lists in a totally autonomous way. Moreover, it dshows how behaviors can be parametrized depending on the need. A move action, for example, could be a waypoint or a slow inspection.
+
+\begin{verbatim}
+	
+	d
+	dd
+	d
+	
+	d
+	d
+	d
+	
+\end{verbatim}
 
 \begin{figure}[h]
 \centering
