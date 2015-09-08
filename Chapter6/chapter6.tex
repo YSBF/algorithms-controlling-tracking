@@ -48,7 +48,7 @@ In the course of history the concept of \textit{style} was born and developed. A
 The pattern is a description or template for how to solve a problem that can be used in many different situations, usually for groups of problems. Similarly to the architecural style, the software pattern is defined by common structures, participants, communications, protocols and standards. Design patterns can speed up the development process by providing tested, proven paradigms. Thus the software architecture is defined by its style, namely design pattern, which is chosen among the available ones. First step to follow during the prototyping of the software is to have clear in mind which kind of problem we are facing and which are the constraints of the system. 
 
 At this point the reader should ask how is the software interfacing with the robot and which kind of control does it have on the system. As stated in Chapter \ref{chap:fifth}, the external signals that are input of the on board flight stack are the 4-D position value from the mocap and the 4-D position set point. By 4-D we mean a vector composed with [x, y, z, yaw] since roll and pith are estimated on board (see figure \ref{figure:controlarch}). Moreover the following goal is set:
-\paragraph{Goal:} \textit{The robot must be able to perform some kind of tasks provided by the user in the most autonomous way possible.} \\
+\paragraph{Goal:} \textit{The robot must be able to perform a number of tasks provided by the user in the most autonomous way possible.} \\
 
 \noindent
 In other words, the user provides a list of tasks he wants to perform with the robot and the software architecture guide the system by sending mocap values and position set points. The first scheme of the software is represented in figure \ref{figure:inout}. 
@@ -79,7 +79,7 @@ At this point, a way to model the problem is necessary. Let us start from the go
 \item Rotate - Change yaw value to a desired one.
 \item Follow trajectory - Perform a circle around an arbitrary center set in the parameters.
 \end{itemize}
-Moreover a fifth task is added but discussed in \ref{chap:seventh} which is land on a mobile platform. \newline \\
+Moreover a fifth task is added but discussed in Chapter \ref{chap:seventh} which is land on a mobile platform. \newline \\
 In order to make things more flexible, each task has a set of parameters used to influence the performance during the execution and to adapt to the environment. A detailed explanation is given in \ref{sec:auto}. Furthermore, it is evident that most of the tasks described involve in some way a location in space. Hence the task is modeled in a C-struct with two elements: position and action. In the software the task takes the name \textbf{node} which is often used in control stations and graph based applications.
 
 Table \ref{tab:node} describes the node struct. The position \textit{p} is itself a struct with four elements (x,y,z,yaw) encoding the 4-D pose in space. The action \textit{a} is another stuct with a char value to identify the type of action and a parameter array which can be filled with values. The meaning of the parameter array changes depending on the action.
@@ -366,7 +366,8 @@ The last component is the Executioner. This module implements the switching logi
  \caption[Executioner sate machine.]{State machine diagram of the executioner module.}
   \label{figure:exec}
 \end{figure}
- 
+
+\noindent
 This process can be explained clearly using a state machine diagram. The machine has two states, one is called \textit{ACTUAL} in which the output is the actual value $i$ and the other is \textit{NEXT} in which $i$ is increased by 1, meaning that we can pass to next node. The initial state is \textit{ACTUAL}; until the function checkActions() returns false, the state remains the same. When checkActions() returns true the state changes to \textit{NEXT}, \textit{i} is increased and then it switches back to \textit{ACTUAL}. Those operations are done at 10 Hz. The function \textit{checkActions()} reads the actual state of the system and, depending on the actual action, checks a number of stopping conditions (i.e. when te robot is near the target point, move task finishes. When the vertical velocity is zero and the robot is close to the ground, land task is performed.) returning ture if they are satisfied, false otherwise. 
 
 The state machine relies on boolean signals to communicate with other modules. Those signals are organized in global namespaces, one for each action. For example, the namespace \textit{executioner::move} has two important boolean members: one is \textit{move\_sig} and the other is\textit{ move\_done}. The first one correspond to the behavior trigger (see algorithm \ref{alg:autothread}), this signal is set to true when the index $i$ points to a node in which the move action is encoded, to false otherwise. Figure \ref{figure:exec} explains those concepts. 
