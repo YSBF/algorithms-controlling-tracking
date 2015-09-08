@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  9 SEP 2015 01:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  9 SEP 2015 01:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2363,13 +2363,10 @@ File: Chapter7/Figures/zb-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: Chapter7/Figures/zb-eps-converted-to.pdf used on input
  line 188.
 (pdftex.def)             Requested size: 371.30594pt x 152.01389pt.
- [102pdfTeX warning (ext4): destination with the same identifier (name{figure.7
-.8}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.192 
-       <./Chapter7/Figures/w-eps-converted-to.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package epstopdf Info: Source file: <Chapter7/Figures/wy.eps>
 (epstopdf)                    date: 2015-09-08 23:01:46
 (epstopdf)                    size: 29967 bytes
@@ -2380,14 +2377,17 @@ Package epstopdf Info: Source file: <Chapter7/Figures/wy.eps>
 nverted-to.pdf Chapter7/Figures/wy.eps>
 (epstopdf)             \includegraphics on input line 198.
 Package epstopdf Info: Output file is already uptodate.
-
-<Chapter7/Figures/wy-eps-converted-to.pdf, id=1582, 1446.40375pt x 461.725pt>
+<Chapter7/Figures/wy-eps-converted-to.pdf, id=1572, 1446.40375pt x 461.725pt>
 File: Chapter7/Figures/wy-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter7/Figures/wy-eps-converted-to.pdf>
 Package pdftex.def Info: Chapter7/Figures/wy-eps-converted-to.pdf used on input
  line 198.
 (pdftex.def)             Requested size: 371.30594pt x 118.53091pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Package epstopdf Info: Source file: <Chapter7/Figures/wx.eps>
 (epstopdf)                    date: 2015-09-08 23:00:08
 (epstopdf)                    size: 32477 bytes
@@ -2399,26 +2399,19 @@ nverted-to.pdf Chapter7/Figures/wx.eps>
 (epstopdf)             \includegraphics on input line 207.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/wx-eps-converted-to.pdf, id=1584, 1446.40375pt x 460.72125pt>
+<Chapter7/Figures/wx-eps-converted-to.pdf, id=1574, 1446.40375pt x 460.72125pt>
 File: Chapter7/Figures/wx-eps-converted-to.pdf Graphic file (type pdf)
 <use Chapter7/Figures/wx-eps-converted-to.pdf>
 Package pdftex.def Info: Chapter7/Figures/wx-eps-converted-to.pdf used on input
  line 207.
 (pdftex.def)             Requested size: 371.30594pt x 118.27324pt.
- [103pdfTeX warning (ext4): destination with the same identifier (name{figure.7
-.9}) has been already used, duplicate ignored
+ [102pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.211 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-7.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.211 
-       <./Chapter7/Figures/zb-eps-converted-to.pdf> <./Chapter7/Figures/wy-eps-
-converted-to.pdf>]
+       <./Chapter7/Figures/w-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Chapter7/Figures/d.eps>
 (epstopdf)                    date: 2015-09-08 23:14:32
 (epstopdf)                    size: 20727 bytes
@@ -2430,36 +2423,54 @@ verted-to.pdf Chapter7/Figures/d.eps>
 (epstopdf)             \includegraphics on input line 216.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/d-eps-converted-to.pdf, id=1599, 1446.40375pt x 442.65375pt>
+<Chapter7/Figures/d-eps-converted-to.pdf, id=1586, 1446.40375pt x 442.65375pt>
 File: Chapter7/Figures/d-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter7/Figures/d-eps-converted-to.pdf>
 Package pdftex.def Info: Chapter7/Figures/d-eps-converted-to.pdf used on input 
 line 216.
 (pdftex.def)             Requested size: 371.30594pt x 113.63507pt.
-) [104pdfTeX warning (ext4): destination with the same identifier (name{figure.
-7.11}) has been already used, duplicate ignored
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [103pdfTeX warning (ext4): destination with the same identifier (name{figure.
+7.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.86 \include{Chapter7/chapter7}
                                 pdfTeX warning (ext4): destination with the sam
-e identifier (name{figure.7.12}) has been already used, duplicate ignored
+e identifier (name{figure.7.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.86 \include{Chapter7/chapter7}
-                                 <./Chapter7/Figures/wx-eps-converted-to.pdf> <
-./Chapter7/Figures/d-eps-converted-to.pdf>]
+                                pdfTeX warning (ext4): destination with the sam
+e identifier (name{figure.7.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.86 \include{Chapter7/chapter7}
+                                 <./Chapter7/Figures/zb-eps-converted-to.pdf> <
+./Chapter7/Figures/wy-eps-converted-to.pdf> <./Chapter7/Figures/wx-eps-converte
+d-to.pdf>] [104pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.7.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.86 \include{Chapter7/chapter7}
+                                 <./Chapter7/Figures/d-eps-converted-to.pdf>]
 \openout2 = `Conclusions/conclusions.aux'.
 
- (./Conclusions/conclusions.tex
+
+(./Conclusions/conclusions.tex
 Chapter 8.
-) [105
+[105
 
 
 
-] (./PhDThesis_example.bbl (./PhDThesis_example.brf)
+]) [106] (./PhDThesis_example.bbl (./PhDThesis_example.brf)
 \tf@brf=\write7
 \openout7 = `PhDThesis_example.brf'.
 
@@ -2469,7 +2480,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 www . airware . com / products /
  []
 
-[106
+[107
 
 
 ]
@@ -2496,7 +2507,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--139
 pixhawk . org / dev / toolchain _
  []
 
-[107]
+[108]
 Underfull \hbox (badness 4084) in paragraph at lines 164--164
 []\OT1/cmr/m/n/12 Reference frames.  [][]$\OT1/cmtt/m/n/12 https : / / pixhawk 
 . org / dev / know-[]how / frames _ of _
@@ -2508,7 +2519,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--179
  org / dev / shared _ object _
  []
 
-[108] [109]
+[109] [110]
 Underfull \hbox (badness 7595) in paragraph at lines 339--339
 []\OT1/cmr/m/n/12 Michael, Nathan.  Quadro-tor Mod-el-ing and Con-trol.  [][]$\
 OT1/cmtt/m/n/12 http :
@@ -2522,7 +2533,7 @@ lass / 16311 / www / s15 /
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
- [110]
+ [111]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
  (./PhDThesis_example.aux (./Acknowledgement/acknowledgement.aux)
 (./Dedication/dedication.aux) (./Abstract/abstract.aux)
@@ -2546,8 +2557,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 9321 strings out of 493304
- 136964 string characters out of 6139872
+ 9322 strings out of 493304
+ 136972 string characters out of 6139872
  228606 words of memory out of 5000000
  11953 multiletter control sequences out of 15000+600000
  14033 words of font info for 51 fonts, out of 8000000 for 9000
@@ -2571,10 +2582,10 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PhDThesis_example.pdf (120 pages, 11627653 bytes).
+Output written on PhDThesis_example.pdf (121 pages, 11629645 bytes).
 PDF statistics:
- 1928 PDF objects out of 2073 (max. 8388607)
- 1675 compressed objects within 17 object streams
- 477 named destinations out of 1000 (max. 500000)
+ 1933 PDF objects out of 2073 (max. 8388607)
+ 1679 compressed objects within 17 object streams
+ 478 named destinations out of 1000 (max. 500000)
  944 words of extra memory for PDF output out of 10000 (max. 10000000)
 
