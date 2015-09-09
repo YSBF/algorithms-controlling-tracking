@@ -183,6 +183,7 @@ The results are shown respect to the direction of motion of the platform thus a 
  
  \noindent 
 While the platform moves, the quadcopter performs a series of landing by taking off again at the limits of platform path. Hence, the altitude profile result in a periodic signal highlighting the multiple landings a take off in this routine. Figure \ref{figure:zpro} represent the inverted z profile. The inversion is done in order to make more visible the plot since z points downwards. Each descend corresponds with a touchdown which are highlighted by arrows. On this plot appears also the first take off maneuver from the ground. The measured high at landing is fixed and corresponds to the height of the labmate respect to earth frame. There is a point in the figure where the touchdown did not occur since the robot was near the limits.
+
   \begin{figure}[h]
    \centering
      \includegraphics[width = 0.9\textwidth ]{zb.eps}
@@ -190,7 +191,7 @@ While the platform moves, the quadcopter performs a series of landing by taking 
      \label{figure:zpro}
   \end{figure}
   
-\noindent
+
 Next we can compare the position of the platform with the actual position of the quadcopter and evaluate the performances. Figure \ref{figure:forward} shows the position of the robot along $x^W$. From this plot we observe that when the platform changes direction, an overshoot of the robot position appears due to the integral factor. Moreover we can see the position converging quickly after sometimes. 
  
    \begin{figure}[h]
@@ -201,11 +202,11 @@ Next we can compare the position of the platform with the actual position of the
    \end{figure}
    
 \noindent
-In the same way, we can express the lateral motion (the position of the robot in $\Re^W$ frame on $y^W$). Figure \ref{figure:lateral} presents this motion. Although the position of the platform should be zero along this direction, since the labmate is not perfect the line is not straight but deviates with time.
+In the same way, we can express the lateral motion (the position of the robot in $\Re^W$ frame on $y^W$). Figure \ref{figure:lateral} presents this motion. Although the position of the platform should be zero along this direction, since the labmate is not perfect the line is not straight but deviates with time (see Figure \ref{figure:path}).
   \begin{figure}[H]
     \centering
       \includegraphics[width = 0.9\textwidth ]{wx.png}
-       \caption[Lateral movement]{Lateral movement. Position of the platform in red while position of the robot in blue. Value of $y^W$.}
+       \caption[Lateral movement]{Lateral movement. Position of the platform in red while position of the robot in blue. Value of $x^W$.}
       \label{figure:lateral}
    \end{figure}
    
@@ -220,3 +221,11 @@ The total horizontal error $d$ is shown in Figure \ref{figure:err}.
 
 \noindent
 We may conclude that this procedure is suitable for straight motion with a reasonably constant velocity. Some deviation along the linear path is still allowed and the controller is able to converge. Please check the following link for a video demo: \url{https://www.dropbox.com/s/thxc1l6vtk79vrr/platform%20landing_%20attempt2.MP4?dl=0}
+
+
+\begin{figure}[h]
+    \centering
+      \includegraphics[width = 0.8\textwidth]{platform.eps}
+       \caption{Real path of the mobile platform. Values are in meters }
+      \label{figure:path}
+\end{figure}
