@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  9 SEP 2015 01:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  9 SEP 2015 03:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1946,7 +1946,7 @@ s-converted-to.pdf Chapter6/Figures/rotate.eps>
 (epstopdf)             \includegraphics on input line 352.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter6/Figures/rotate-eps-converted-to.pdf, id=1411, 399.4925pt x 407.5225pt
+<Chapter6/Figures/rotate-eps-converted-to.pdf, id=1412, 399.4925pt x 407.5225pt
 >
 File: Chapter6/Figures/rotate-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter6/Figures/rotate-eps-converted-to.pdf>
@@ -1960,7 +1960,7 @@ nput line 352.
                                                   \fi \fi 
 l.362 
        <./Chapter6/Figures/rotate-eps-converted-to.pdf>]
-<Chapter6/Figures/executioner.png, id=1420, 514.92375pt x 307.1475pt>
+<Chapter6/Figures/executioner.png, id=1421, 514.92375pt x 307.1475pt>
 File: Chapter6/Figures/executioner.png Graphic file (type png)
 
 <use Chapter6/Figures/executioner.png>
@@ -1979,7 +1979,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 l.396 T
        he performances of the task rotate and take off are already presented...
  <./Chapter6/Figures/executioner.png>]
-<Chapter6/Figures/xalpha1.png, id=1437, 1587.9325pt x 870.25125pt>
+<Chapter6/Figures/xalpha1.png, id=1438, 1587.9325pt x 870.25125pt>
 File: Chapter6/Figures/xalpha1.png Graphic file (type png)
 
 <use Chapter6/Figures/xalpha1.png>
@@ -1989,7 +1989,7 @@ Package pdftex.def Info: Chapter6/Figures/xalpha1.png used on input line 401.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/xalpha06.png, id=1438, 1585.925pt x 878.28125pt>
+<Chapter6/Figures/xalpha06.png, id=1439, 1585.925pt x 878.28125pt>
 File: Chapter6/Figures/xalpha06.png Graphic file (type png)
 
 <use Chapter6/Figures/xalpha06.png>
@@ -1999,7 +1999,7 @@ Package pdftex.def Info: Chapter6/Figures/xalpha06.png used on input line 408.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/takeland.png, id=1440, 1590.94376pt x 874.26625pt>
+<Chapter6/Figures/takeland.png, id=1441, 1590.94376pt x 874.26625pt>
 File: Chapter6/Figures/takeland.png Graphic file (type png)
 
 <use Chapter6/Figures/takeland.png>
@@ -2009,14 +2009,14 @@ Package pdftex.def Info: Chapter6/Figures/takeland.png used on input line 416.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/multi1.png, id=1441, 568.1225pt x 612.2875pt>
+<Chapter6/Figures/multi1.png, id=1442, 568.1225pt x 612.2875pt>
 File: Chapter6/Figures/multi1.png Graphic file (type png)
 
 <use Chapter6/Figures/multi1.png>
 Package pdftex.def Info: Chapter6/Figures/multi1.png used on input line 423.
 (pdftex.def)             Requested size: 123.77074pt x 133.38634pt.
 
-<Chapter6/Figures/multi2.png, id=1442, 480.79625pt x 490.83376pt>
+<Chapter6/Figures/multi2.png, id=1443, 480.79625pt x 490.83376pt>
 File: Chapter6/Figures/multi2.png Graphic file (type png)
 
 <use Chapter6/Figures/multi2.png>
@@ -2042,7 +2042,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 431--433
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.433 
-      ] <Chapter6/Figures/landing.png, id=1449, 1179.40625pt x 694.595pt>
+      ] <Chapter6/Figures/landing.png, id=1450, 1179.40625pt x 694.595pt>
 File: Chapter6/Figures/landing.png Graphic file (type png)
 
 <use Chapter6/Figures/landing.png>
@@ -2052,7 +2052,7 @@ Package pdftex.def Info: Chapter6/Figures/landing.png used on input line 439.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/multiland.png, id=1452, 1421.31pt x 776.9025pt>
+<Chapter6/Figures/multiland.png, id=1453, 1421.31pt x 776.9025pt>
 File: Chapter6/Figures/multiland.png Graphic file (type png)
 
 <use Chapter6/Figures/multiland.png>
@@ -2070,7 +2070,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
                                                   \fi \fi 
 l.458 
        <./Chapter6/Figures/xalpha1.png>]
-<Chapter6/Figures/circle.png, id=1462, 1337.99875pt x 665.48625pt>
+<Chapter6/Figures/circle.png, id=1463, 1337.99875pt x 665.48625pt>
 File: Chapter6/Figures/circle.png Graphic file (type png)
 
 <use Chapter6/Figures/circle.png>
@@ -2080,7 +2080,7 @@ Package pdftex.def Info: Chapter6/Figures/circle.png used on input line 461.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/snippet.png, id=1463, 348.30125pt x 407.5225pt>
+<Chapter6/Figures/snippet.png, id=1464, 348.30125pt x 407.5225pt>
 File: Chapter6/Figures/snippet.png Graphic file (type png)
 
 <use Chapter6/Figures/snippet.png>
@@ -2142,7 +2142,7 @@ l.85 \include{Chapter6/chapter6}
 
 (./Chapter7/chapter7.tex
 Chapter 7.
-<Chapter7/Figures/couple.jpg, id=1481, 752.8125pt x 564.1075pt>
+<Chapter7/Figures/couple.jpg, id=1482, 752.8125pt x 564.1075pt>
 File: Chapter7/Figures/couple.jpg Graphic file (type jpg)
 
 <use Chapter7/Figures/couple.jpg>
@@ -2152,7 +2152,7 @@ Package pdftex.def Info: Chapter7/Figures/couple.jpg used on input line 22.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter7/Figures/spacex.png, id=1483, 1606.0pt x 770.88pt>
+<Chapter7/Figures/spacex.png, id=1484, 1606.0pt x 770.88pt>
 File: Chapter7/Figures/spacex.png Graphic file (type png)
 
 <use Chapter7/Figures/spacex.png>
@@ -2186,7 +2186,7 @@ has been already used, duplicate ignored
 l.51 \item T
             he trajectory of the platform is assumed to be mostly linear, no...
  <./Chapter7/Figures/couple.jpg> <./Chapter7/Figures/spacex.png (PNG copy)>]
-<Chapter7/Figures/labmate.png, id=1497, 608.2725pt x 509.905pt>
+<Chapter7/Figures/labmate.png, id=1498, 608.2725pt x 509.905pt>
 File: Chapter7/Figures/labmate.png Graphic file (type png)
 
 <use Chapter7/Figures/labmate.png>
@@ -2212,7 +2212,7 @@ w3-eps-converted-to.pdf Chapter7/Figures/landwindow3.eps>
 (epstopdf)             \includegraphics on input line 72.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/landwindow3-eps-converted-to.pdf, id=1498, 387.4475pt x 387.4
+<Chapter7/Figures/landwindow3-eps-converted-to.pdf, id=1499, 387.4475pt x 387.4
 475pt>
 File: Chapter7/Figures/landwindow3-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2254,7 +2254,7 @@ in2-eps-converted-to.pdf Chapter7/Figures/tracknogain2.eps>
 (epstopdf)             \includegraphics on input line 98.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/tracknogain2-eps-converted-to.pdf, id=1521, 598.235pt x 371.3
+<Chapter7/Figures/tracknogain2-eps-converted-to.pdf, id=1522, 598.235pt x 371.3
 875pt>
 File: Chapter7/Figures/tracknogain2-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2295,7 +2295,7 @@ ps-converted-to.pdf Chapter7/Figures/profile.eps>
 (epstopdf)             \includegraphics on input line 154.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/profile-eps-converted-to.pdf, id=1543, 434.62375pt x 395.4775
+<Chapter7/Figures/profile-eps-converted-to.pdf, id=1544, 434.62375pt x 395.4775
 pt>
 File: Chapter7/Figures/profile-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter7/Figures/profile-eps-converted-to.pdf>
@@ -2306,7 +2306,7 @@ input line 154.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[99] <Chapter7/Figures/trackcompare.png, id=1550, 572.1375pt x 828.09375pt>
+[99] <Chapter7/Figures/trackcompare.png, id=1551, 572.1375pt x 828.09375pt>
 File: Chapter7/Figures/trackcompare.png Graphic file (type png)
 
 <use Chapter7/Figures/trackcompare.png>
@@ -2331,7 +2331,7 @@ verted-to.pdf Chapter7/Figures/w.eps>
 (epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/w-eps-converted-to.pdf, id=1564, 258.9675pt x 258.9675pt>
+<Chapter7/Figures/w-eps-converted-to.pdf, id=1565, 258.9675pt x 258.9675pt>
 File: Chapter7/Figures/w-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter7/Figures/w-eps-converted-to.pdf>
@@ -2346,17 +2346,17 @@ line 179.
 l.182  \end{figure}
                     <./Chapter7/Figures/trackcompare.png>]
 Package epstopdf Info: Source file: <Chapter7/Figures/zb.eps>
-(epstopdf)                    date: 2015-09-09 01:01:05
-(epstopdf)                    size: 60726 bytes
+(epstopdf)                    date: 2015-09-09 01:52:53
+(epstopdf)                    size: 60731 bytes
 (epstopdf)             Output file: <Chapter7/Figures/zb-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-09 01:01:42
+(epstopdf)                    date: 2015-09-09 02:02:50
 (epstopdf)                    size: 96305 bytes
 (epstopdf)             Command: <repstopdf --outfile=Chapter7/Figures/zb-eps-co
 nverted-to.pdf Chapter7/Figures/zb.eps>
 (epstopdf)             \includegraphics on input line 188.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/zb-eps-converted-to.pdf, id=1570, 598.235pt x 244.915pt>
+<Chapter7/Figures/zb-eps-converted-to.pdf, id=1571, 598.235pt x 244.915pt>
 File: Chapter7/Figures/zb-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter7/Figures/zb-eps-converted-to.pdf>
@@ -2367,44 +2367,22 @@ Package pdftex.def Info: Chapter7/Figures/zb-eps-converted-to.pdf used on input
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package epstopdf Info: Source file: <Chapter7/Figures/wy.eps>
-(epstopdf)                    date: 2015-09-08 23:01:46
-(epstopdf)                    size: 29967 bytes
-(epstopdf)             Output file: <Chapter7/Figures/wy-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-08 23:29:39
-(epstopdf)                    size: 23143 bytes
-(epstopdf)             Command: <repstopdf --outfile=Chapter7/Figures/wy-eps-co
-nverted-to.pdf Chapter7/Figures/wy.eps>
-(epstopdf)             \includegraphics on input line 198.
-Package epstopdf Info: Output file is already uptodate.
-<Chapter7/Figures/wy-eps-converted-to.pdf, id=1572, 1446.40375pt x 461.725pt>
-File: Chapter7/Figures/wy-eps-converted-to.pdf Graphic file (type pdf)
+<Chapter7/Figures/wy.png, id=1573, 1437.37pt x 497.86pt>
+File: Chapter7/Figures/wy.png Graphic file (type png)
 
-<use Chapter7/Figures/wy-eps-converted-to.pdf>
-Package pdftex.def Info: Chapter7/Figures/wy-eps-converted-to.pdf used on input
- line 198.
-(pdftex.def)             Requested size: 371.30594pt x 118.53091pt.
+<use Chapter7/Figures/wy.png>
+Package pdftex.def Info: Chapter7/Figures/wy.png used on input line 198.
+(pdftex.def)             Requested size: 371.30594pt x 128.6049pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package epstopdf Info: Source file: <Chapter7/Figures/wx.eps>
-(epstopdf)                    date: 2015-09-08 23:00:08
-(epstopdf)                    size: 32477 bytes
-(epstopdf)             Output file: <Chapter7/Figures/wx-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-08 23:29:39
-(epstopdf)                    size: 23704 bytes
-(epstopdf)             Command: <repstopdf --outfile=Chapter7/Figures/wx-eps-co
-nverted-to.pdf Chapter7/Figures/wx.eps>
-(epstopdf)             \includegraphics on input line 207.
-Package epstopdf Info: Output file is already uptodate.
+<Chapter7/Figures/wx.png, id=1575, 1423.3175pt x 502.87875pt>
+File: Chapter7/Figures/wx.png Graphic file (type png)
 
-<Chapter7/Figures/wx-eps-converted-to.pdf, id=1574, 1446.40375pt x 460.72125pt>
-File: Chapter7/Figures/wx-eps-converted-to.pdf Graphic file (type pdf)
-<use Chapter7/Figures/wx-eps-converted-to.pdf>
-Package pdftex.def Info: Chapter7/Figures/wx-eps-converted-to.pdf used on input
- line 207.
-(pdftex.def)             Requested size: 371.30594pt x 118.27324pt.
+<use Chapter7/Figures/wx.png>
+Package pdftex.def Info: Chapter7/Figures/wx.png used on input line 207.
+(pdftex.def)             Requested size: 371.30594pt x 131.18277pt.
  [102pdfTeX warning (ext4): destination with the same identifier (name{figure.7
 .8}) has been already used, duplicate ignored
 
@@ -2412,65 +2390,73 @@ Package pdftex.def Info: Chapter7/Figures/wx-eps-converted-to.pdf used on input
                                                   \fi \fi 
 l.211 
        <./Chapter7/Figures/w-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <Chapter7/Figures/d.eps>
-(epstopdf)                    date: 2015-09-08 23:14:32
-(epstopdf)                    size: 20727 bytes
-(epstopdf)             Output file: <Chapter7/Figures/d-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-08 23:28:40
-(epstopdf)                    size: 14391 bytes
-(epstopdf)             Command: <repstopdf --outfile=Chapter7/Figures/d-eps-con
-verted-to.pdf Chapter7/Figures/d.eps>
-(epstopdf)             \includegraphics on input line 216.
-Package epstopdf Info: Output file is already uptodate.
+<Chapter7/Figures/d.png, id=1587, 1437.37pt x 484.81125pt>
+File: Chapter7/Figures/d.png Graphic file (type png)
 
-<Chapter7/Figures/d-eps-converted-to.pdf, id=1586, 1446.40375pt x 442.65375pt>
-File: Chapter7/Figures/d-eps-converted-to.pdf Graphic file (type pdf)
+<use Chapter7/Figures/d.png>
+Package pdftex.def Info: Chapter7/Figures/d.png used on input line 216.
+(pdftex.def)             Requested size: 371.30594pt x 125.2342pt.
+ [103pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+.9}) has been already used, duplicate ignored
 
-<use Chapter7/Figures/d-eps-converted-to.pdf>
-Package pdftex.def Info: Chapter7/Figures/d-eps-converted-to.pdf used on input 
-line 216.
-(pdftex.def)             Requested size: 371.30594pt x 113.63507pt.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+7.10}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+7.11}) has been already used, duplicate ignored
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [103pdfTeX warning (ext4): destination with the same identifier (name{figure.
-7.9}) has been already used, duplicate ignored
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 
+       <./Chapter7/Figures/zb-eps-converted-to.pdf> <./Chapter7/Figures/wy.png>
+ <./Chapter7/Figures/wx.png>]) [104pdfTeX warning (ext4): destination with the 
+same identifier (name{figure.7.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.86 \include{Chapter7/chapter7}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{figure.7.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.86 \include{Chapter7/chapter7}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{figure.7.11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.86 \include{Chapter7/chapter7}
-                                 <./Chapter7/Figures/zb-eps-converted-to.pdf> <
-./Chapter7/Figures/wy-eps-converted-to.pdf> <./Chapter7/Figures/wx-eps-converte
-d-to.pdf>] [104pdfTeX warning (ext4): destination with the same identifier (nam
-e{figure.7.12}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.86 \include{Chapter7/chapter7}
-                                 <./Chapter7/Figures/d-eps-converted-to.pdf>]
+                                 <./Chapter7/Figures/d.png>]
 \openout2 = `Conclusions/conclusions.aux'.
 
 
 (./Conclusions/conclusions.tex
 Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
 [105
 
 
 
-]) [106] (./PhDThesis_example.bbl (./PhDThesis_example.brf)
+]
+Underfull \hbox (badness 10000) in paragraph at lines 24--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+
+ []
+
+[106]) [107] (./PhDThesis_example.bbl (./PhDThesis_example.brf)
 \tf@brf=\write7
 \openout7 = `PhDThesis_example.brf'.
 
@@ -2480,7 +2466,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 www . airware . com / products /
  []
 
-[107
+[108
 
 
 ]
@@ -2507,7 +2493,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--139
 pixhawk . org / dev / toolchain _
  []
 
-[108]
+[109]
 Underfull \hbox (badness 4084) in paragraph at lines 164--164
 []\OT1/cmr/m/n/12 Reference frames.  [][]$\OT1/cmtt/m/n/12 https : / / pixhawk 
 . org / dev / know-[]how / frames _ of _
@@ -2519,7 +2505,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--179
  org / dev / shared _ object _
  []
 
-[109] [110]
+[110] [111]
 Underfull \hbox (badness 7595) in paragraph at lines 339--339
 []\OT1/cmr/m/n/12 Michael, Nathan.  Quadro-tor Mod-el-ing and Con-trol.  [][]$\
 OT1/cmtt/m/n/12 http :
@@ -2533,7 +2519,7 @@ lass / 16311 / www / s15 /
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
- [111]
+ [112]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
  (./PhDThesis_example.aux (./Acknowledgement/acknowledgement.aux)
 (./Dedication/dedication.aux) (./Abstract/abstract.aux)
@@ -2544,7 +2530,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `PhDThesis_example.out' has not changed.
-(rerunfilecheck)             Checksum: EBE7603980B5DC985A890D0ECF285CA5;5202.
+(rerunfilecheck)             Checksum: 3B32BE3BDC329C7A65AADF6CEEE2AC41;5202.
 Package rerunfilecheck Info: File `PhDThesis_example.brf' has not changed.
 (rerunfilecheck)             Checksum: 8048EEA9B865FFFFE90CFAF6A7292B56;3375.
 
@@ -2557,8 +2543,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 9322 strings out of 493304
- 136972 string characters out of 6139872
+ 9324 strings out of 493304
+ 136787 string characters out of 6139872
  228606 words of memory out of 5000000
  11953 multiletter control sequences out of 15000+600000
  14033 words of font info for 51 fonts, out of 8000000 for 9000
@@ -2582,10 +2568,10 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PhDThesis_example.pdf (121 pages, 11629645 bytes).
+Output written on PhDThesis_example.pdf (122 pages, 11647825 bytes).
 PDF statistics:
- 1933 PDF objects out of 2073 (max. 8388607)
- 1679 compressed objects within 17 object streams
- 478 named destinations out of 1000 (max. 500000)
+ 1923 PDF objects out of 2073 (max. 8388607)
+ 1671 compressed objects within 17 object streams
+ 480 named destinations out of 1000 (max. 500000)
  944 words of extra memory for PDF output out of 10000 (max. 10000000)
 

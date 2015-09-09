@@ -124,7 +124,7 @@ Let us consider just the vertical dynamics and forgot about the rest. The goal i
 Through the control signal $z_{sp}$ and the measure of $d$ we are able to ensure the descend. A linear relationship between $z_{sp}$ and $d$ is used resulting in a very simple but effective way to tackle the problem.\\
 
 \noindent
-\textbf{Important}: it has been pointed out several times that the z axis of body and world frame are pointing downwards, thus reversing the plots for the value of z. \textcolor{red}{The derivation of the descending law assumes that z is pointing upwards in order to have a more clear view}. At the end , before issuing the command, the value is reversed by simply taking its negative. \\
+\textbf{Important}: it has been pointed out several times that the z axis of body and world frame are pointing downwards, thus reversing the plots for the value of z. The derivation of the descending law assumes that z is pointing upwards in order to have a more clear view. At the end , before issuing the command, the value is reversed by simply taking its negative. \\
 
 \noindent
 Moreover, from now on, we are going to refer everything on the platform frame. This frame results only in one fixed translation on the z since the labmate has a certain height. In other words, \textbf{the z value represent the vertical distance from the platform plane and not more from the floor}. 
@@ -195,7 +195,7 @@ Next we can compare the position of the platform with the actual position of the
  
    \begin{figure}[h]
     \centering
-      \includegraphics[width = 0.9\textwidth ]{wy.eps}
+      \includegraphics[width = 0.9\textwidth ]{wy.png}
        \caption[Lateral movement]{Forward movement. Position of the platform in red while position of the robot in blue. Value of $y^W$.}
       \label{figure:forward}
    \end{figure}
@@ -204,7 +204,7 @@ Next we can compare the position of the platform with the actual position of the
 In the same way, we can express the lateral motion (the position of the robot in $\Re^W$ frame on $y^W$). Figure \ref{figure:lateral} presents this motion. Although the position of the platform should be zero along this direction, since the labmate is not perfect the line is not straight but deviates with time.
   \begin{figure}[H]
     \centering
-      \includegraphics[width = 0.9\textwidth ]{wx.eps}
+      \includegraphics[width = 0.9\textwidth ]{wx.png}
        \caption[Lateral movement]{Lateral movement. Position of the platform in red while position of the robot in blue. Value of $y^W$.}
       \label{figure:lateral}
    \end{figure}
@@ -213,10 +213,10 @@ In the same way, we can express the lateral motion (the position of the robot in
 The total horizontal error $d$ is shown in Figure \ref{figure:err}.
 \begin{figure}[h]
     \centering
-      \includegraphics[width = 0.9\textwidth]{d.eps}
+      \includegraphics[width = 0.9\textwidth]{d.png}
        \caption{Horizontal error }
       \label{figure:err}
 \end{figure}
 
-
-We may conclude that this procedure is suitable for straight motion with a reasonably constant velocity. Some deviation along the linear path is still allowed and the controller is able to converge.
+\noindent
+We may conclude that this procedure is suitable for straight motion with a reasonably constant velocity. Some deviation along the linear path is still allowed and the controller is able to converge. Please check the following link for a video demo: \url{https://www.dropbox.com/s/thxc1l6vtk79vrr/platform%20landing_%20attempt2.MP4?dl=0}
