@@ -101,7 +101,7 @@ Figure \ref{figure:nogain} represents an actual trial in the lab. The implemente
 \end{figure}
 The control can be improved by adding  another source for feedback, the position error which can be measured by $\boldsymbol{P_e} = \boldsymbol{P_{t}} - \boldsymbol{P_{r}}$. By observing the phenomenon we can think of issuing a position set point a bit ahead the robotic platform so that, even if the robot does not converges to $\boldsymbol{P_{sp}}$, we can in some way anticipare the platform. That said, the controller is modified to the following:
 \begin{equation}
-\boldsymbol{P_{sp}} = \boldsymbol{P_{r}} + K_p \boldsymbol{P_e} \boldsymbol{P_{r}}
+\boldsymbol{P_{sp}} = \boldsymbol{P_{r}} + K_p \boldsymbol{P_e} 
 \label{eq:contr2}
 \end{equation}
 Meaning that, depending on the actual horizontal error, the set point is accordingly issued, weighted by $K_p$ gain and placed ahead the mobile platform. 
@@ -197,7 +197,7 @@ Next we can compare the position of the platform with the actual position of the
    \begin{figure}[h]
     \centering
       \includegraphics[width = 0.9\textwidth ]{wy.png}
-       \caption[Lateral movement]{Forward movement. Position of the platform in red while position of the robot in blue. Value of $y^W$.}
+       \caption[Lateral movement]{Lateral movement. Position of the platform in red while position of the robot in blue. Value of $y^W$.}
       \label{figure:forward}
    \end{figure}
    
@@ -206,7 +206,7 @@ In the same way, we can express the lateral motion (the position of the robot in
   \begin{figure}[H]
     \centering
       \includegraphics[width = 0.9\textwidth ]{wx.png}
-       \caption[Lateral movement]{Lateral movement. Position of the platform in red while position of the robot in blue. Value of $x^W$.}
+       \caption[Lateral movement]{Forward movement. Position of the platform in red while position of the robot in blue. Value of $x^W$.}
       \label{figure:lateral}
    \end{figure}
    

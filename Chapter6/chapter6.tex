@@ -252,7 +252,7 @@ When the messages are ready, trough a socket interface, they are sent to the rad
  \label{figure:mangui}
 \end{figure}
 
-Manual Control is started at the beginning in the main thread. It features a simple user interface shown in Figure \ref{figure:mangui} which translates the position set point on three axis and rotates th yaw. The home button issues a setpoint in the center of the room. The starting setpoint is $[0,0,-1]$ for position and $\pi$ for the yaw. Thus, \textbf{the robot must be placed on that location} on the horizontal plane and yaw if one wants to fly it by manual control. If not placed correctly, the take off could be dangerous. The start and stop button run an auxiliary thread which I used for prototyping and testing. 
+Manual Control is started at the beginning in the main thread. It features a simple user interface shown in Figure \ref{figure:mangui} which translates the position set point on three axis and rotates the yaw. The home button issues a setpoint in the center of the room. The starting setpoint is $[0,0,-1]$ for position and $\pi$ for the yaw. Thus, \textbf{the robot must be placed on that location} on the horizontal plane and yaw if one wants to fly it by manual control. If not placed correctly, the take off could be dangerous. The start and stop button run an auxiliary thread which I used for prototyping and testing. 
 
 Each time the user click on a translational button, the set point is moved by $0.1$ meters on that direction in earth frame. The yaw is changed by steps of $\pi/18$ radians.
 
