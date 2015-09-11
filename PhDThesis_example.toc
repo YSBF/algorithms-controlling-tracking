@@ -62,51 +62,51 @@
 \contentsline {subsection}{\numberline {5.3.1}Position controller}{56}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Velocity controller}{57}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}Attitude controller}{58}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Results and validation}{58}{section.5.4}
+\contentsline {section}{\numberline {5.4}Results and validation}{59}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Estimator validation}{59}{subsection.5.4.1}
 \contentsline {paragraph}{Roll estimation}{59}{section*.28}
-\contentsline {paragraph}{Pitch estimation}{59}{section*.29}
-\contentsline {paragraph}{Yaw estimation}{59}{section*.30}
+\contentsline {paragraph}{Pitch estimation}{60}{section*.29}
+\contentsline {paragraph}{Yaw estimation}{60}{section*.30}
 \contentsline {subsection}{\numberline {5.4.2}Controller results}{61}{subsection.5.4.2}
 \contentsline {paragraph}{X and Y position}{61}{section*.31}
-\contentsline {paragraph}{Z position}{62}{section*.32}
-\contentsline {paragraph}{Yaw convergence}{62}{section*.33}
+\contentsline {paragraph}{Z position}{63}{section*.32}
+\contentsline {paragraph}{Yaw convergence}{63}{section*.33}
 \contentsline {paragraph}{Hovering with disturbances}{63}{section*.34}
-\contentsline {chapter}{\numberline {6}Software architecture}{65}{chapter.6}
-\contentsline {section}{\numberline {6.1}Introduction to the proposed architecture}{65}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Motivations}{66}{subsection.6.1.1}
-\contentsline {paragraph}{Note:}{66}{section*.36}
-\contentsline {subsection}{\numberline {6.1.2}Programming environment and tools}{67}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Design patterns}{68}{section.6.2}
-\contentsline {paragraph}{Definition of Design Pattern}{68}{section*.37}
-\contentsline {paragraph}{Goal:}{68}{section*.38}
-\contentsline {subsection}{\numberline {6.2.1}Behavioral architecture}{70}{subsection.6.2.1}
-\contentsline {paragraph}{Defined tasks}{70}{section*.39}
-\contentsline {paragraph}{Behavior definition}{71}{section*.40}
-\contentsline {paragraph}{Concurrent behaviors}{72}{section*.41}
-\contentsline {paragraph}{Implementing behaviors}{73}{section*.42}
-\contentsline {section}{\numberline {6.3}Software description}{75}{section.6.3}
-\contentsline {paragraph}{Communication}{76}{section*.43}
-\contentsline {paragraph}{Note: }{76}{section*.44}
-\contentsline {subsection}{\numberline {6.3.1}General scheme}{77}{subsection.6.3.1}
-\contentsline {paragraph}{Implementation}{77}{section*.45}
-\contentsline {subsection}{\numberline {6.3.2}Service modules}{78}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Manual Control}{79}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Automatic Control}{80}{subsection.6.3.4}
-\contentsline {paragraph}{Take off}{80}{section*.48}
-\contentsline {paragraph}{Move}{80}{figure.6.8}
-\contentsline {paragraph}{Land}{82}{section*.50}
-\contentsline {paragraph}{Rotate}{83}{section*.51}
-\contentsline {subsection}{\numberline {6.3.5}Executioner}{84}{subsection.6.3.5}
-\contentsline {section}{\numberline {6.4}Experiments and results}{86}{section.6.4}
-\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{92}{chapter.7}
-\contentsline {section}{\numberline {7.1}Brief Introduction}{92}{section.7.1}
-\contentsline {paragraph}{Problem statement}{93}{section*.53}
-\contentsline {subsection}{\numberline {7.1.1}General assumptions}{93}{subsection.7.1.1}
-\contentsline {section}{\numberline {7.2}Experimental setup}{94}{section.7.2}
-\contentsline {section}{\numberline {7.3}Tracking and landing}{95}{section.7.3}
-\contentsline {paragraph}{Tracker design}{96}{section*.54}
-\contentsline {paragraph}{Landing}{98}{section*.55}
-\contentsline {section}{\numberline {7.4}Experimental results}{100}{section.7.4}
-\contentsline {chapter}{\numberline {8}Conclusions}{105}{chapter.8}
-\contentsline {chapter}{References}{112}{chapter*.57}
+\contentsline {chapter}{\numberline {6}Software architecture}{66}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction to the proposed architecture}{66}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Motivations}{67}{subsection.6.1.1}
+\contentsline {paragraph}{Note:}{67}{section*.36}
+\contentsline {subsection}{\numberline {6.1.2}Programming environment and tools}{68}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Design patterns}{69}{section.6.2}
+\contentsline {paragraph}{Definition of Design Pattern}{69}{section*.37}
+\contentsline {paragraph}{Goal:}{69}{section*.38}
+\contentsline {subsection}{\numberline {6.2.1}Behavioral architecture}{71}{subsection.6.2.1}
+\contentsline {paragraph}{Defined tasks}{71}{section*.39}
+\contentsline {paragraph}{Behavior definition}{72}{section*.40}
+\contentsline {paragraph}{Concurrent behaviors}{73}{section*.41}
+\contentsline {paragraph}{Implementing behaviors}{74}{section*.42}
+\contentsline {section}{\numberline {6.3}Software description}{76}{section.6.3}
+\contentsline {paragraph}{Communication}{77}{section*.43}
+\contentsline {paragraph}{Note: }{77}{section*.44}
+\contentsline {subsection}{\numberline {6.3.1}General scheme}{78}{subsection.6.3.1}
+\contentsline {paragraph}{Implementation}{78}{section*.45}
+\contentsline {subsection}{\numberline {6.3.2}Service modules}{79}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Manual Control}{80}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Automatic Control}{81}{subsection.6.3.4}
+\contentsline {paragraph}{Take off}{81}{section*.48}
+\contentsline {paragraph}{Move}{81}{figure.6.8}
+\contentsline {paragraph}{Land}{83}{section*.50}
+\contentsline {paragraph}{Rotate}{84}{section*.51}
+\contentsline {subsection}{\numberline {6.3.5}Executioner}{85}{subsection.6.3.5}
+\contentsline {section}{\numberline {6.4}Experiments and results}{87}{section.6.4}
+\contentsline {chapter}{\numberline {7}Landing on a mobile platform}{93}{chapter.7}
+\contentsline {section}{\numberline {7.1}Brief Introduction}{93}{section.7.1}
+\contentsline {paragraph}{Problem statement}{94}{section*.53}
+\contentsline {subsection}{\numberline {7.1.1}General assumptions}{94}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Experimental setup}{95}{section.7.2}
+\contentsline {section}{\numberline {7.3}Tracking and landing}{96}{section.7.3}
+\contentsline {paragraph}{Tracker design}{97}{section*.54}
+\contentsline {paragraph}{Landing}{99}{section*.55}
+\contentsline {section}{\numberline {7.4}Experimental results}{101}{section.7.4}
+\contentsline {chapter}{\numberline {8}Conclusions}{106}{chapter.8}
+\contentsline {chapter}{References}{113}{chapter*.57}

@@ -32,43 +32,43 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Controller overall structure. In red external signals}}{56}{figure.5.3}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Roll estimation}}{59}{figure.5.4}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Pitch estimation}}{60}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Yaw estimation}}{60}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Convergence on x}}{61}{figure.5.7}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Yaw estimation}}{61}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Convergence on x}}{62}{figure.5.7}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Convergence on y}}{62}{figure.5.8}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Convergence on z}}{63}{figure.5.9}
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Yaw tracking}}{64}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Static hover with external perturbations}}{64}{figure.5.11}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Static hover with external perturbations}}{65}{figure.5.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces In-out relation}}{69}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces In-out relation for the nested arch}}{69}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Behavior definition}}{72}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Switching logic}}{72}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Behavior data flow}}{74}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Achtitecture scheme}}{78}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Manual user interface.}}{80}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Move function.}}{82}{figure.6.8}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Involved frames in rotation task.}}{84}{figure.6.9}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Executioner sate machine.}}{85}{figure.6.10}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Move with alpha 1}}{87}{figure.6.11}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Move with alpha 0.6}}{88}{figure.6.12}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Height profile}}{89}{figure.6.13}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Landing on each platform.}}{89}{figure.6.14}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Landing error in meters.}}{89}{figure.6.15}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Land on two platforms with variable height.}}{90}{figure.6.16}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Scene of the third experiment.}}{90}{figure.6.17}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Output for the third experiment.}}{91}{figure.6.18}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces In-out relation}}{70}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces In-out relation for the nested arch}}{70}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Behavior definition}}{73}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Switching logic}}{73}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Behavior data flow}}{75}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Achtitecture scheme}}{79}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Manual user interface.}}{81}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Move function.}}{83}{figure.6.8}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Involved frames in rotation task.}}{85}{figure.6.9}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Executioner sate machine.}}{86}{figure.6.10}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Move with alpha 1}}{88}{figure.6.11}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Move with alpha 0.6}}{89}{figure.6.12}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Height profile}}{90}{figure.6.13}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Landing on each platform.}}{90}{figure.6.14}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Landing error in meters.}}{90}{figure.6.15}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Land on two platforms with variable height.}}{91}{figure.6.16}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Scene of the third experiment.}}{91}{figure.6.17}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Output for the third experiment.}}{92}{figure.6.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Home made cooperative platform/quadrotor project}}{93}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Prototype of the SpaceX platform with rocket.}}{93}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Labmate mobile robot.}}{95}{figure.7.3}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Experiment geometry}}{96}{figure.7.4}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Tracking with no gain}}{97}{figure.7.5}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Descent profile}}{100}{figure.7.6}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Tracking comparison}}{101}{figure.7.7}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Auxiliary frame use for visualizing results. }}{102}{figure.7.8}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Vertical profile}}{103}{figure.7.9}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Lateral movement}}{103}{figure.7.10}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Lateral movement}}{103}{figure.7.11}
-\contentsline {figure}{\numberline {7.12}{\ignorespaces Horizontal error }}{104}{figure.7.12}
-\contentsline {figure}{\numberline {7.13}{\ignorespaces Real path of the mobile platform. Values are in meters }}{104}{figure.7.13}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Home made cooperative platform/quadrotor project}}{94}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Prototype of the SpaceX platform with rocket.}}{94}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Labmate mobile robot.}}{96}{figure.7.3}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Experiment geometry}}{97}{figure.7.4}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Tracking with no gain}}{98}{figure.7.5}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Descent profile}}{101}{figure.7.6}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Tracking comparison}}{102}{figure.7.7}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Auxiliary frame use for visualizing results. }}{103}{figure.7.8}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Vertical profile}}{104}{figure.7.9}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Lateral movement}}{104}{figure.7.10}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Lateral movement}}{104}{figure.7.11}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Horizontal error }}{105}{figure.7.12}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Real path of the mobile platform. Values are in meters }}{105}{figure.7.13}
 \addvspace {10\p@ }

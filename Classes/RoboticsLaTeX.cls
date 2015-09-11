@@ -183,7 +183,7 @@
     {{\@collegeordept} \par}
 \vspace*{1ex}
     {{\@university} \par}
-\vspace*{15mm}
+\vspace*{12mm}
     {{\submittedtext} \par}
 \vspace*{1ex}
     {\it {\@degree} \par}

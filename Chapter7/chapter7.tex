@@ -66,12 +66,12 @@ The designed experiment consists in landing on the platform while it is moving o
 
 The robot is controlled by a computer placed on board within a Linux environment. Through serial port, the computer is able to send commands to the robot which executes them. An application that manages the communications with the labmate was developed years ago in the university of Genova. In order to run the modules, ssh protocol is used to manage the starting of the robot from remote. 
 
-Moreover, since the experiment takes place in a close and controlled environment, the labmate at a certain point changes abruptly direction going to the opposite way. This goes against one of the assumptions but the problem is avoided. We assume to know the external points of the path, then when the robot approaches those location we can inhibit the landing procedure prevent the danger of landing when the platform changes direction.  Thus, we define a landing window, along the path, on which the robot can perform the landing operation. Outside the window, the robot will raise to a maximum height. Figure \ref{figure:window} shows the geometry of the experiment. The diagonal path has colored segments. The green segment represent the landing window, while the red segments are the prohibited sections. The landing window is approximately 1 meter long. 
+Moreover, since the experiment takes place in a close and controlled environment, the labmate at a certain point changes abruptly direction going to the opposite way. This goes against one of the assumptions but the problem is avoided. We assume to know the external points of the path, then when the robot approaches those location we can inhibit the landing procedure prevent the danger of landing when the platform changes direction.  Thus, we define a landing window, along the path, on which the robot can perform the landing operation. Outside the window, the robot will raise to a maximum height. Figure \ref{figure:window} shows the geometry of the experiment. The diagonal path has colored segments. The green segment represents the landing window, while the red segments are the prohibited sections. The landing window is approximately 1 meter long. 
 \begin{figure}[h]
  \centering
    \includegraphics[width = 0.8\textwidth ]{landwindow3.eps}
     \caption[Experiment geometry]{Moving platform defined by H. Green is landing window while red are prohibited segments.}
-   \label{figure:landwindow}
+   \label{figure:window}
 \end{figure}
 
 
@@ -81,9 +81,9 @@ This section describes the techniques involved in the designing of a method to a
 First we divide the problem in two subproblems, in fact vertical and horizontal dynamics are decoupled and treated separately. This is a common practice in system design. 
 
 The first treated part is tracking. By \textbf{tracking} we mean the act of forcing the output signal of the system to a reference signal and minimizing the error between the two. Applied to this case, we can refer to the output signal $\boldsymbol{P_r}$ as the 2-D horizontal position of the center of mass of the robot. The tracking reference signal 
-$\boldsymbol{P_t}$ is defined as the horizontal 2-D position  of the platform center of mass. Both signals are provided as feedback from the mocap and acting on the inputs (position set points) with a suitable control law, one should minimize the error.
+$\boldsymbol{P_t}$ is defined as the horizontal 2-D position  of the platform center of mass (x and y coordinates). Both signals are provided as feedback from the mocap and acting on the inputs (position set points) with a suitable control law, one should minimize the error.
 
-\paragraph{Tracker design} I would like to stress out the fact that the only way we can act on the system is by issuing position set points $\boldsymbol{P_{sp}}$. They could be coincident with the target or not, it depends on the control law. Let us consider a 2-D position set point for now.
+\paragraph{Tracker design} I would like to stress out the fact that the only way we can act on the system is by issuing position set points $\boldsymbol{P_{sp}}$. They could be coincident with the target or not, it depends on the control law. Let us consider a 2-D position set point  (x and y coordinates only) for now.
 
 With an initial guess we may design the first controller by setting set point equal to the target which may be logical. Chapter \ref{chap:fifth} exploits a position controller designed in order to track position set points, thus it seems reasonable to proceed in this way. Hence the very first design is of the form:
 \begin{equation}
@@ -97,7 +97,7 @@ Figure \ref{figure:nogain} represents an actual trial in the lab. The implemente
  \centering
    \includegraphics[width = 0.8\textwidth ]{tracknogain2.eps}
     \caption[Tracking with no gain]{Tracking of the moving platform by following its position. A static error appears.}
-   \label{figure:static}
+   \label{figure:nogain}
 \end{figure}
 The control can be improved by adding  another source for feedback, the position error which can be measured by $\boldsymbol{P_e} = \boldsymbol{P_{t}} - \boldsymbol{P_{r}}$. By observing the phenomenon we can think of issuing a position set point a bit ahead the robotic platform so that, even if the robot does not converges to $\boldsymbol{P_{sp}}$, we can in some way anticipare the platform. That said, the controller is modified to the following:
 \begin{equation}
@@ -106,7 +106,7 @@ The control can be improved by adding  another source for feedback, the position
 \end{equation}
 Meaning that, depending on the actual horizontal error, the set point is accordingly issued, weighted by $K_p$ gain and placed ahead the mobile platform. 
 
-This is a big improvement but it is still insufficient. Proportional controls are made to work with the presence of errors. If the target is reached, the error goes to zero and the equation \ref{eq:contr2} simply becomes \ref{eq:contr1}. As stated befor, the error is static, meaning that at regime it is constant. The best way to compensate for this kind of errors is to insert and integral action. Hence the third and final controller is:
+This is a big improvement but it is still insufficient. Proportional controls are made to work with the presence of errors. If the target is reached, the error goes to zero and the equation \ref{eq:contr2} simply becomes \ref{eq:contr1}. As stated before, the error is static, meaning that at regime it is constant. The best way to compensate for this kind of errors is to insert and integral action. Hence the third and final controller is:
 \begin{equation}
 \boldsymbol{P_{sp}} = \boldsymbol{P_{r}} + K_p \boldsymbol{P_e} +  K_i \int \boldsymbol{P_e}
 \label{eq:contr3}
@@ -136,7 +136,7 @@ At this design phase we have the following value for the input:
 \end{equation}
 where $M$ and $Q$ are the coefficients of the line to be estimated. The estimation of the coefficients is the consequence of the descending flow design. I decided to split the design phase in different steps resulting in a procedure. 
 
-The \textbf{first step} is to choose the maximum height $H_{max}$. This quantity is a positive (remember that later on we are going to invert the result) value in meters. It represent the maximum height at with the landing procedure occurs or may be performed. Beside convenience, it is used to simulate a couple of factors in a real application. If the robot is carrying sensors for landing such as camera, a range sensor, or an optical flow sensor, then there is a maximum height at which the measurements with those devices are possible. This value may be also used by higher level modules in order to inhibit landing behavior if the robot is flying too high. 
+The \textbf{first step} is to choose the maximum height $H_{max}$. This quantity is a positive value (remember that later on we are going to invert the result) in meters. It represent the maximum height at with the landing procedure occurs or may be performed. Beside convenience, it is used to simulate a couple of factors in a real application. If the robot is carrying sensors for landing such as camera, a range sensor, or an optical flow sensor, then there is a maximum height at which the measurements with those devices are possible. This value may be also used by higher level modules in order to inhibit landing behavior if the robot is flying too high. 
 
 The \textbf{second step is} to define a minimum positive height $H_{min}$ at which the descending profile ends respect to the platform. This value has pure practical purposes, it is used to stop the descending maneuver over the platform. It represent the distance from which the final landing is performed by setting the motors to idle speed in order to catch the platform. Lower $H_{min}$ lead to a gentle landing but the maneuver needs more time. On the other hand, higher $H_{min}$ may results in a faster maneuver but a harder landing.
 
