@@ -107,7 +107,7 @@ The general rotation matrix can be obtained by multiplying elemantary rotations,
 The most common sequence associated with the name \textit{Euler angles} is $(z, x, z)$ or ${}^ER_B = R_z(\phi)R_x(\theta)R_z(\psi)$.\\ 
 
 \noindent
-There is however a more suitable sequence with fits our case. The angles associated with the sequence $(x, y, z)$ are sometimes called \textit{Cardan angles} or \textit{Tait-Bryan angles}. Commonly used in aerospace where $\phi$, $\theta$, and $\psi$ are known respectively as\textbf{ roll}, \textbf{pitch}, and \textbf{yaw}. These angles describe a vehicle whose forward direction is along the positive body-fixed x-axis and the body-fixed z axis downward, like in the case of the quadrotor (see \ref{sec:refframes}). In such configuration, the home position $\begin{bmatrix}\phi\\ \theta \\ \psi \end{bmatrix} = \begin{bmatrix}0\\ 0 \\ 0 \end{bmatrix}$ , is flat and level pointing forward along the world x axis. The non intuitive downward pointing z axis is chosen in order to make a positive change in $\theta$ correspond to pitching upward \cite{Diebel2006}. \\
+There is however a more suitable sequence with fits our case. The angles associated with the sequence $(x, y, z)$ are sometimes called \textit{Cardan angles} or \textit{Tait-Bryan angles}. Commonly used in aerospace where $\phi$, $\theta$, and $\psi$ are known respectively as\textbf{ roll}, \textbf{pitch}, and \textbf{yaw}. These angles describe a vehicle whose forward direction is along the positive body-fixed x-axis and the body-fixed z axis downward, like in the case of the quadrotor (see Section \ref{sec:refframes}). In such configuration, the home position $\begin{bmatrix}\phi\\ \theta \\ \psi \end{bmatrix} = \begin{bmatrix}0\\ 0 \\ 0 \end{bmatrix}$ , is flat and level pointing forward along the world x axis. The non intuitive downward pointing z axis is chosen in order to make a positive change in $\theta$ correspond to pitching upward \cite{Diebel2006}. \\
 
 \noindent
 Having said that, the multiplication order used is $(x , y , z)$. Developing the calculations, the general rotation matrix becomes:\begin{equation}
@@ -143,7 +143,7 @@ f_i = k \omega_i ^ 2
 \tau_i = k_d \omega_i ^ 2
 \label{eq:taui}
 \end{equation}
-$k$ and $k_d$ are positive constants depending on atmospheric conditions and blade geometry. This constants can be identified through dynamical tests but in this case they are provided in the autopilot configuration file.\\
+$k$ and $k_d$ are positive constants depending on atmospheric conditions and blade geometry (\cite{Mahony2012} and \cite{Falchi2014}). This constants can be identified through dynamical tests but in this case they are provided in the autopilot configuration file.\\
 
 \begin{figure}[h]
 \centering
@@ -212,7 +212,7 @@ Figure \ref{figure:motorspin} shows how motors are labeled in IRIS and the respe
 
 \section{Complete model}
 
-Equation \eqref{eq:inputmix} shows the relation between the squared velocity of each rotor and the generated force and torques  . Hence the problem can be split in two parts, aerodynamics and equations of motion. Therefore, \textbf{the model is defined as a rigid body on which one external force $T^B$ and three external torques $[\tau_\phi ; \tau_\theta ; \tau_\psi]$ are applied.} Those external perturbations are calculated in \ref{sec:propulsion} and they correspond to the aerodynamic propulsion of the blades. 
+Equation \eqref{eq:inputmix} shows the relation between the squared velocity of each rotor and the generated force and torques  . Hence the problem can be split in two parts, aerodynamics and equations of motion. Therefore, \textbf{the model is defined as a rigid body on which one external force $T^B$ and three external torques $[\tau_\phi ; \tau_\theta ; \tau_\psi]$ are applied.} Those external perturbations are calculated in Section \ref{sec:propulsion} and they correspond to the aerodynamic propulsion of the blades. 
 
 \subsection{Rigid body equations}
 
@@ -225,11 +225,11 @@ T^B\\\tau_\phi \\ \tau_\theta \\ \tau_\psi
 \end{equation}
 Let us also approximate the inertia of the blades equal to zero for simplicity as in \cite{Vendittelli}. We can define the following quantities:\begin{itemize}
 \item $\boldsymbol{r}$ = $\begin{bmatrix} x\\y\\z\end{bmatrix}$ position of the robot in Earth frame.
-\item $\boldsymbol{\eta}$ = $\begin{bmatrix} \phi\\\theta\\\psi\end{bmatrix}$ attitude of the quadcopter respect to earth frame (roll, pitch, yaw) presented in \ref{sec:trasfmatrix}.
+\item $\boldsymbol{\eta}$ = $\begin{bmatrix} \phi\\\theta\\\psi\end{bmatrix}$ attitude of the quadcopter respect to earth frame (roll, pitch, yaw) presented in Section \ref{sec:trasfmatrix}.
 \item $\boldsymbol{\Omega}$ = $\begin{bmatrix} p\\q\\r\end{bmatrix}$ body angular speed respect to each axis in body frame.
-\item ${}^ER_B = R(\eta)$ rotation matrix encoding body attitude defined in \ref{sec:trasfmatrix} such that $\boldsymbol{x^E} =  R(\eta) \boldsymbol{x^B}$.
+\item ${}^ER_B = R(\eta)$ rotation matrix encoding body attitude defined in Section \ref{sec:trasfmatrix} such that $\boldsymbol{x^E} =  R(\eta) \boldsymbol{x^B}$.
 
-\item $W = W(\eta)$ Euler angle rate matrix defined in \ref{sec:trasfmatrix} relating $\boldsymbol{\Omega}$ with $\dot{\boldsymbol{\eta}}$ 
+\item $W = W(\eta)$ Euler angle rate matrix defined in Section \ref{sec:trasfmatrix} relating $\boldsymbol{\Omega}$ with $\dot{\boldsymbol{\eta}}$ 
 \end{itemize}
 The dynamics of the quadcopter can be described by the use of Newton-Euler cardinal equation for motion of a general 6 DOF rigid body suffering from an external force and torque. The four equations for the undergoing motion are defined as the following:
 

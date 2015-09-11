@@ -92,7 +92,7 @@ With an initial guess we may design the first controller by setting set point eq
 \end{equation}
 This control law is very simple but useless. Despite of what one may think, this approach will never work properly for a moving target. The gains of the controllers are not infinite and the response to a command is not immediate. The transient time adds delay resulting in the robot following the platform but not aligning properly with it. Is more or less like running after someone but never actually catching him.
 
-Figure \ref{figure:nogain} represents an actual trial in the lab. The implemented control law is the one explained in \ref{eq:contr1} while the purpose of the experiment was to qualitatively evaluate the position error. In this particular situation, the platform is moving with a velocity $\boldsymbol{V_t}$ to the left and the robot is following with a velocity $\boldsymbol{V_r}$. We can observe a position error vector $\boldsymbol{P_e}$ between the two vehicles approximately constant at steady state and with a variable module depending on the relative robot speed.
+Figure \ref{figure:nogain} represents an actual trial in the lab. The implemented control law is the one explained in \eqref{eq:contr1} while the purpose of the experiment was to qualitatively evaluate the position error. In this particular situation, the platform is moving with a velocity $\boldsymbol{V_t}$ to the left and the robot is following with a velocity $\boldsymbol{V_r}$. We can observe a position error vector $\boldsymbol{P_e}$ between the two vehicles approximately constant at steady state and with a variable module depending on the relative robot speed.
 \begin{figure}[h]
  \centering
    \includegraphics[width = 0.8\textwidth ]{tracknogain2.eps}
@@ -106,7 +106,7 @@ The control can be improved by adding  another source for feedback, the position
 \end{equation}
 Meaning that, depending on the actual horizontal error, the set point is accordingly issued, weighted by $K_p$ gain and placed ahead the mobile platform. 
 
-This is a big improvement but it is still insufficient. Proportional controls are made to work with the presence of errors. If the target is reached, the error goes to zero and the equation \ref{eq:contr2} simply becomes \ref{eq:contr1}. As stated before, the error is static, meaning that at regime it is constant. The best way to compensate for this kind of errors is to insert and integral action. Hence the third and final controller is:
+This is a big improvement but it is still insufficient. Proportional controls are made to work with the presence of errors. If the target is reached, the error goes to zero and the equation \eqref{eq:contr2} simply becomes \eqref{eq:contr1}. As stated before, the error is static, meaning that at regime it is constant. The best way to compensate for this kind of errors is to insert and integral action. Hence the third and final controller is:
 \begin{equation}
 \boldsymbol{P_{sp}} = \boldsymbol{P_{r}} + K_p \boldsymbol{P_e} +  K_i \int \boldsymbol{P_e}
 \label{eq:contr3}

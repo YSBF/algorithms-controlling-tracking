@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  11 SEP 2015 17:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  11 SEP 2015 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,6 +986,10 @@ File: Chapter3/Figures/iris.jpg Graphic file (type jpg)
 Package pdftex.def Info: Chapter3/Figures/iris.jpg used on input line 37.
 (pdftex.def)             Requested size: 330.05322pt x 253.59782pt.
 
+
+Package natbib Warning: Citation `Delitalia' on page 19 undefined on input line
+ 42.
+
 <Chapter3/Figures/iris_planner.jpg, id=743, 1236.62pt x 819.06pt>
 File: Chapter3/Figures/iris_planner.jpg Graphic file (type jpg)
 
@@ -1387,7 +1391,7 @@ eps-converted-to.pdf Chapter4/Figures/top_iris.eps>
 (epstopdf)             \includegraphics on input line 150.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter4/Figures/top_iris-eps-converted-to.pdf, id=967, 252.945pt x 251.94125p
+<Chapter4/Figures/top_iris-eps-converted-to.pdf, id=969, 252.945pt x 251.94125p
 t>
 File: Chapter4/Figures/top_iris-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter4/Figures/top_iris-eps-converted-to.pdf>
@@ -1406,7 +1410,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--176
                                                   \fi \fi 
 l.176 
        <./Chapter4/Figures/top_iris-eps-converted-to.pdf>]
-<Chapter4/Figures/forces.png, id=1002, 730.73pt x 553.06625pt>
+<Chapter4/Figures/forces.png, id=1005, 730.73pt x 553.06625pt>
 File: Chapter4/Figures/forces.png Graphic file (type png)
 
 <use Chapter4/Figures/forces.png>
@@ -1457,7 +1461,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-<Chapter5/Figures/pub_sub.PNG, id=1077, 340.27126pt x 196.48407pt>
+<Chapter5/Figures/pub_sub.PNG, id=1080, 340.27126pt x 196.48407pt>
 File: Chapter5/Figures/pub_sub.PNG Graphic file (type png)
 
 <use Chapter5/Figures/pub_sub.PNG>
@@ -1479,7 +1483,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
-[50] <Chapter5/Figures/iris_state.png, id=1094, 505.89pt x 460.72125pt>
+[50] <Chapter5/Figures/iris_state.png, id=1097, 505.89pt x 460.72125pt>
 File: Chapter5/Figures/iris_state.png Graphic file (type png)
 
 <use Chapter5/Figures/iris_state.png>
@@ -1537,7 +1541,7 @@ converted-to.pdf Chapter5/Figures/arch.eps>
 (epstopdf)             \includegraphics on input line 199.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter5/Figures/arch-eps-converted-to.pdf, id=1135, 598.235pt x 319.1925pt>
+<Chapter5/Figures/arch-eps-converted-to.pdf, id=1138, 598.235pt x 319.1925pt>
 File: Chapter5/Figures/arch-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter5/Figures/arch-eps-converted-to.pdf>
@@ -1560,7 +1564,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
-<Chapter5/Figures/roll_esti.png, id=1176, 1620.0525pt x 911.405pt>
+<Chapter5/Figures/roll_esti.png, id=1179, 1620.0525pt x 911.405pt>
 File: Chapter5/Figures/roll_esti.png Graphic file (type png)
 
 <use Chapter5/Figures/roll_esti.png>
@@ -1568,7 +1572,7 @@ Package pdftex.def Info: Chapter5/Figures/roll_esti.png used on input line 315.
 
 (pdftex.def)             Requested size: 371.30594pt x 208.88167pt.
 
-<Chapter5/Figures/pitch_esti.png, id=1178, 1599.9775pt x 873.2625pt>
+<Chapter5/Figures/pitch_esti.png, id=1181, 1599.9775pt x 873.2625pt>
 File: Chapter5/Figures/pitch_esti.png Graphic file (type png)
 
 <use Chapter5/Figures/pitch_esti.png>
@@ -1582,7 +1586,7 @@ Package pdftex.def Info: Chapter5/Figures/pitch_esti.png used on input line 327
                                                   \fi \fi 
 l.330 \end{figure}
                    <./Chapter5/Figures/roll_esti.png>]
-<Chapter5/Figures/yaw_esti.png, id=1187, 1597.97pt x 867.24pt>
+<Chapter5/Figures/yaw_esti.png, id=1190, 1597.97pt x 867.24pt>
 File: Chapter5/Figures/yaw_esti.png Graphic file (type png)
 
 <use Chapter5/Figures/yaw_esti.png>
@@ -1595,7 +1599,7 @@ Package pdftex.def Info: Chapter5/Figures/yaw_esti.png used on input line 340.
                                                   \fi \fi 
 l.344 \noindent
                 <./Chapter5/Figures/pitch_esti.png>]
-<Chapter5/Figures/x_conv.png, id=1196, 1591.9475pt x 874.26625pt>
+<Chapter5/Figures/x_conv.png, id=1199, 1591.9475pt x 874.26625pt>
 File: Chapter5/Figures/x_conv.png Graphic file (type png)
 
 <use Chapter5/Figures/x_conv.png>
@@ -1608,7 +1612,7 @@ Package pdftex.def Info: Chapter5/Figures/x_conv.png used on input line 358.
                                                   \fi \fi 
 l.362 
        <./Chapter5/Figures/yaw_esti.png>]
-<Chapter5/Figures/y_conv.png, id=1202, 1597.97pt x 875.27pt>
+<Chapter5/Figures/y_conv.png, id=1205, 1597.97pt x 875.27pt>
 File: Chapter5/Figures/y_conv.png Graphic file (type png)
 
 <use Chapter5/Figures/y_conv.png>
@@ -1632,14 +1636,14 @@ l.373
                                                   \fi \fi 
 l.373 
        <./Chapter5/Figures/x_conv.png> <./Chapter5/Figures/y_conv.png>]
-<Chapter5/Figures/z_conv.png, id=1209, 1598.97375pt x 875.27pt>
+<Chapter5/Figures/z_conv.png, id=1212, 1598.97375pt x 875.27pt>
 File: Chapter5/Figures/z_conv.png Graphic file (type png)
 
 <use Chapter5/Figures/z_conv.png>
 Package pdftex.def Info: Chapter5/Figures/z_conv.png used on input line 377.
 (pdftex.def)             Requested size: 371.30594pt x 203.24442pt.
 
-<Chapter5/Figures/yaw_conv.png, id=1211, 1591.9475pt x 884.30376pt>
+<Chapter5/Figures/yaw_conv.png, id=1214, 1591.9475pt x 884.30376pt>
 File: Chapter5/Figures/yaw_conv.png Graphic file (type png)
 
 <use Chapter5/Figures/yaw_conv.png>
@@ -1668,7 +1672,7 @@ ion2-eps-converted-to.pdf Chapter5/Figures/perturbation2.eps>
 (epstopdf)             \includegraphics on input line 400.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter5/Figures/perturbation2-eps-converted-to.pdf, id=1221, 598.235pt x 367.
+<Chapter5/Figures/perturbation2-eps-converted-to.pdf, id=1224, 598.235pt x 367.
 3725pt>
 File: Chapter5/Figures/perturbation2-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1713,7 +1717,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
-<Chapter6/Figures/first_arch.png, id=1260, 483.30562pt x 153.57375pt>
+<Chapter6/Figures/first_arch.png, id=1263, 483.30562pt x 153.57375pt>
 File: Chapter6/Figures/first_arch.png Graphic file (type png)
 
 <use Chapter6/Figures/first_arch.png>
@@ -1721,7 +1725,7 @@ Package pdftex.def Info: Chapter6/Figures/first_arch.png used on input line 57.
 
 (pdftex.def)             Requested size: 330.05322pt x 104.88103pt.
  [69]
-<Chapter6/Figures/nested_arch.png, id=1270, 447.17062pt x 248.42813pt>
+<Chapter6/Figures/nested_arch.png, id=1273, 447.17062pt x 248.42813pt>
 File: Chapter6/Figures/nested_arch.png Graphic file (type png)
 
 <use Chapter6/Figures/nested_arch.png>
@@ -1759,14 +1763,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-<Chapter6/Figures/behavior.png, id=1284, 334.24875pt x 162.6075pt>
+<Chapter6/Figures/behavior.png, id=1287, 334.24875pt x 162.6075pt>
 File: Chapter6/Figures/behavior.png Graphic file (type png)
 
 <use Chapter6/Figures/behavior.png>
 Package pdftex.def Info: Chapter6/Figures/behavior.png used on input line 117.
 (pdftex.def)             Requested size: 330.05322pt x 160.57996pt.
 
-<Chapter6/Figures/switch.png, id=1286, 452.13919pt x 234.42581pt>
+<Chapter6/Figures/switch.png, id=1289, 452.13919pt x 234.42581pt>
 File: Chapter6/Figures/switch.png Graphic file (type png)
 
 <use Chapter6/Figures/switch.png>
@@ -1795,7 +1799,7 @@ l.130
                                                   \fi \fi 
 l.130 
        <./Chapter6/Figures/behavior.png> <./Chapter6/Figures/switch.png>]
-<Chapter6/Figures/behav_flow.png, id=1300, 569.12625pt x 478.78876pt>
+<Chapter6/Figures/behav_flow.png, id=1303, 569.12625pt x 478.78876pt>
 File: Chapter6/Figures/behav_flow.png Graphic file (type png)
 
 <use Chapter6/Figures/behav_flow.png>
@@ -1834,7 +1838,7 @@ Overfull \hbox (40.17537pt too wide) in paragraph at lines 202--213
  [][] 
  []
 
-<Chapter6/Figures/arch_scheme.png, id=1324, 551.05875pt x 561.89925pt>
+<Chapter6/Figures/arch_scheme.png, id=1327, 551.05875pt x 561.89925pt>
 File: Chapter6/Figures/arch_scheme.png Graphic file (type png)
 
 <use Chapter6/Figures/arch_scheme.png>
@@ -1858,7 +1862,7 @@ gure.6.6}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.237 ...the following convention: \begin{itemize}
                                                    <./Chapter6/Figures/arch_sch
-eme.png>] <Chapter6/Figures/mangui.png, id=1337, 404.51125pt x 429.605pt>
+eme.png>] <Chapter6/Figures/mangui.png, id=1340, 404.51125pt x 429.605pt>
 File: Chapter6/Figures/mangui.png Graphic file (type png)
 
 <use Chapter6/Figures/mangui.png>
@@ -1883,7 +1887,7 @@ f>
 (epstopdf)             \includegraphics on input line 305.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter6/Figures/move1-eps-converted-to.pdf, id=1346, 300.12125pt x 206.7725pt
+<Chapter6/Figures/move1-eps-converted-to.pdf, id=1349, 300.12125pt x 206.7725pt
 >
 File: Chapter6/Figures/move1-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter6/Figures/move1-eps-converted-to.pdf>
@@ -1902,7 +1906,7 @@ f>
 (epstopdf)             \includegraphics on input line 306.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter6/Figures/move2-eps-converted-to.pdf, id=1347, 332.24126pt x 206.7725pt
+<Chapter6/Figures/move2-eps-converted-to.pdf, id=1350, 332.24126pt x 206.7725pt
 >
 File: Chapter6/Figures/move2-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter6/Figures/move2-eps-converted-to.pdf>
@@ -1940,7 +1944,7 @@ s-converted-to.pdf Chapter6/Figures/rotate.eps>
 (epstopdf)             \includegraphics on input line 354.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter6/Figures/rotate-eps-converted-to.pdf, id=1421, 399.4925pt x 407.5225pt
+<Chapter6/Figures/rotate-eps-converted-to.pdf, id=1424, 399.4925pt x 407.5225pt
 >
 File: Chapter6/Figures/rotate-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter6/Figures/rotate-eps-converted-to.pdf>
@@ -1954,7 +1958,7 @@ nput line 354.
                                                   \fi \fi 
 l.364 
        <./Chapter6/Figures/rotate-eps-converted-to.pdf>]
-<Chapter6/Figures/executioner.png, id=1430, 514.92375pt x 307.1475pt>
+<Chapter6/Figures/executioner.png, id=1433, 514.92375pt x 307.1475pt>
 File: Chapter6/Figures/executioner.png Graphic file (type png)
 
 <use Chapter6/Figures/executioner.png>
@@ -1973,7 +1977,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 l.398 T
        he performances of the task rotate and take off are already presented...
  <./Chapter6/Figures/executioner.png>]
-<Chapter6/Figures/xalpha1.png, id=1447, 1587.9325pt x 870.25125pt>
+<Chapter6/Figures/xalpha1.png, id=1450, 1587.9325pt x 870.25125pt>
 File: Chapter6/Figures/xalpha1.png Graphic file (type png)
 
 <use Chapter6/Figures/xalpha1.png>
@@ -1983,7 +1987,7 @@ Package pdftex.def Info: Chapter6/Figures/xalpha1.png used on input line 403.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/xalpha06.png, id=1448, 1585.925pt x 878.28125pt>
+<Chapter6/Figures/xalpha06.png, id=1451, 1585.925pt x 878.28125pt>
 File: Chapter6/Figures/xalpha06.png Graphic file (type png)
 
 <use Chapter6/Figures/xalpha06.png>
@@ -1993,7 +1997,7 @@ Package pdftex.def Info: Chapter6/Figures/xalpha06.png used on input line 410.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/takeland.png, id=1450, 1590.94376pt x 874.26625pt>
+<Chapter6/Figures/takeland.png, id=1453, 1590.94376pt x 874.26625pt>
 File: Chapter6/Figures/takeland.png Graphic file (type png)
 
 <use Chapter6/Figures/takeland.png>
@@ -2003,14 +2007,14 @@ Package pdftex.def Info: Chapter6/Figures/takeland.png used on input line 418.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/multi1.png, id=1451, 568.1225pt x 612.2875pt>
+<Chapter6/Figures/multi1.png, id=1454, 568.1225pt x 612.2875pt>
 File: Chapter6/Figures/multi1.png Graphic file (type png)
 
 <use Chapter6/Figures/multi1.png>
 Package pdftex.def Info: Chapter6/Figures/multi1.png used on input line 425.
 (pdftex.def)             Requested size: 123.77074pt x 133.38634pt.
 
-<Chapter6/Figures/multi2.png, id=1452, 480.79625pt x 490.83376pt>
+<Chapter6/Figures/multi2.png, id=1455, 480.79625pt x 490.83376pt>
 File: Chapter6/Figures/multi2.png Graphic file (type png)
 
 <use Chapter6/Figures/multi2.png>
@@ -2036,7 +2040,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--435
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.435 
-      ] <Chapter6/Figures/landing.png, id=1460, 1179.40625pt x 694.595pt>
+      ] <Chapter6/Figures/landing.png, id=1463, 1179.40625pt x 694.595pt>
 File: Chapter6/Figures/landing.png Graphic file (type png)
 
 <use Chapter6/Figures/landing.png>
@@ -2046,7 +2050,7 @@ Package pdftex.def Info: Chapter6/Figures/landing.png used on input line 441.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/multiland.png, id=1463, 1421.31pt x 776.9025pt>
+<Chapter6/Figures/multiland.png, id=1466, 1421.31pt x 776.9025pt>
 File: Chapter6/Figures/multiland.png Graphic file (type png)
 
 <use Chapter6/Figures/multiland.png>
@@ -2064,7 +2068,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
                                                   \fi \fi 
 l.460 
        <./Chapter6/Figures/xalpha1.png>]
-<Chapter6/Figures/circle.png, id=1472, 1337.99875pt x 665.48625pt>
+<Chapter6/Figures/circle.png, id=1475, 1337.99875pt x 665.48625pt>
 File: Chapter6/Figures/circle.png Graphic file (type png)
 
 <use Chapter6/Figures/circle.png>
@@ -2074,7 +2078,7 @@ Package pdftex.def Info: Chapter6/Figures/circle.png used on input line 463.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/snippet.png, id=1473, 348.30125pt x 407.5225pt>
+<Chapter6/Figures/snippet.png, id=1476, 348.30125pt x 407.5225pt>
 File: Chapter6/Figures/snippet.png Graphic file (type png)
 
 <use Chapter6/Figures/snippet.png>
@@ -2136,7 +2140,7 @@ l.85 \include{Chapter6/chapter6}
 
 (./Chapter7/chapter7.tex
 Chapter 7.
-<Chapter7/Figures/couple.jpg, id=1491, 752.8125pt x 564.1075pt>
+<Chapter7/Figures/couple.jpg, id=1495, 752.8125pt x 564.1075pt>
 File: Chapter7/Figures/couple.jpg Graphic file (type jpg)
 
 <use Chapter7/Figures/couple.jpg>
@@ -2146,7 +2150,7 @@ Package pdftex.def Info: Chapter7/Figures/couple.jpg used on input line 22.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter7/Figures/spacex.png, id=1493, 1606.0pt x 770.88pt>
+<Chapter7/Figures/spacex.png, id=1497, 1606.0pt x 770.88pt>
 File: Chapter7/Figures/spacex.png Graphic file (type png)
 
 <use Chapter7/Figures/spacex.png>
@@ -2180,7 +2184,7 @@ has been already used, duplicate ignored
 l.51 \item T
             he trajectory of the platform is assumed to be mostly linear, no...
  <./Chapter7/Figures/couple.jpg> <./Chapter7/Figures/spacex.png (PNG copy)>]
-<Chapter7/Figures/labmate.png, id=1507, 608.2725pt x 509.905pt>
+<Chapter7/Figures/labmate.png, id=1510, 608.2725pt x 509.905pt>
 File: Chapter7/Figures/labmate.png Graphic file (type png)
 
 <use Chapter7/Figures/labmate.png>
@@ -2202,7 +2206,7 @@ w3-eps-converted-to.pdf Chapter7/Figures/landwindow3.eps>
 (epstopdf)             \includegraphics on input line 72.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/landwindow3-eps-converted-to.pdf, id=1509, 387.4475pt x 387.4
+<Chapter7/Figures/landwindow3-eps-converted-to.pdf, id=1512, 387.4475pt x 387.4
 475pt>
 File: Chapter7/Figures/landwindow3-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2240,7 +2244,7 @@ in2-eps-converted-to.pdf Chapter7/Figures/tracknogain2.eps>
 (epstopdf)             \includegraphics on input line 98.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/tracknogain2-eps-converted-to.pdf, id=1533, 598.235pt x 371.3
+<Chapter7/Figures/tracknogain2-eps-converted-to.pdf, id=1536, 598.235pt x 371.3
 875pt>
 File: Chapter7/Figures/tracknogain2-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2281,7 +2285,7 @@ ps-converted-to.pdf Chapter7/Figures/profile.eps>
 (epstopdf)             \includegraphics on input line 154.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/profile-eps-converted-to.pdf, id=1556, 434.62375pt x 395.4775
+<Chapter7/Figures/profile-eps-converted-to.pdf, id=1559, 434.62375pt x 395.4775
 pt>
 File: Chapter7/Figures/profile-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter7/Figures/profile-eps-converted-to.pdf>
@@ -2292,7 +2296,7 @@ input line 154.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[100] <Chapter7/Figures/trackcompare.png, id=1562, 572.1375pt x 828.09375pt>
+[100] <Chapter7/Figures/trackcompare.png, id=1565, 572.1375pt x 828.09375pt>
 File: Chapter7/Figures/trackcompare.png Graphic file (type png)
 
 <use Chapter7/Figures/trackcompare.png>
@@ -2317,7 +2321,7 @@ verted-to.pdf Chapter7/Figures/w.eps>
 (epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/w-eps-converted-to.pdf, id=1576, 258.9675pt x 258.9675pt>
+<Chapter7/Figures/w-eps-converted-to.pdf, id=1579, 258.9675pt x 258.9675pt>
 File: Chapter7/Figures/w-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter7/Figures/w-eps-converted-to.pdf>
@@ -2342,7 +2346,7 @@ nverted-to.pdf Chapter7/Figures/zb.eps>
 (epstopdf)             \includegraphics on input line 189.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/zb-eps-converted-to.pdf, id=1582, 598.235pt x 244.915pt>
+<Chapter7/Figures/zb-eps-converted-to.pdf, id=1585, 598.235pt x 244.915pt>
 File: Chapter7/Figures/zb-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter7/Figures/zb-eps-converted-to.pdf>
@@ -2353,7 +2357,7 @@ Package pdftex.def Info: Chapter7/Figures/zb-eps-converted-to.pdf used on input
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter7/Figures/wy.png, id=1584, 1437.37pt x 497.86pt>
+<Chapter7/Figures/wy.png, id=1587, 1437.37pt x 497.86pt>
 File: Chapter7/Figures/wy.png Graphic file (type png)
 
 <use Chapter7/Figures/wy.png>
@@ -2363,7 +2367,7 @@ Package pdftex.def Info: Chapter7/Figures/wy.png used on input line 199.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter7/Figures/wx.png, id=1587, 1423.3175pt x 502.87875pt>
+<Chapter7/Figures/wx.png, id=1590, 1423.3175pt x 502.87875pt>
 File: Chapter7/Figures/wx.png Graphic file (type png)
 
 <use Chapter7/Figures/wx.png>
@@ -2376,7 +2380,7 @@ Package pdftex.def Info: Chapter7/Figures/wx.png used on input line 208.
                                                   \fi \fi 
 l.212 
        <./Chapter7/Figures/w-eps-converted-to.pdf>]
-<Chapter7/Figures/d.png, id=1599, 1437.37pt x 484.81125pt>
+<Chapter7/Figures/d.png, id=1602, 1437.37pt x 484.81125pt>
 File: Chapter7/Figures/d.png Graphic file (type png)
 
 <use Chapter7/Figures/d.png>
@@ -2414,7 +2418,7 @@ eps-converted-to.pdf Chapter7/Figures/platform.eps>
 (epstopdf)             \includegraphics on input line 228.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/platform-eps-converted-to.pdf, id=1610, 1446.40375pt x 458.71
+<Chapter7/Figures/platform-eps-converted-to.pdf, id=1613, 1446.40375pt x 458.71
 375pt>
 File: Chapter7/Figures/platform-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter7/Figures/platform-eps-converted-to.pdf>
@@ -2422,7 +2426,7 @@ Package pdftex.def Info: Chapter7/Figures/platform-eps-converted-to.pdf used on
  input line 228.
 (pdftex.def)             Requested size: 330.05322pt x 104.669pt.
 
-<Chapter7/Figures/sequence.png, id=1611, 453.695pt x 901.3675pt>
+<Chapter7/Figures/sequence.png, id=1614, 453.695pt x 901.3675pt>
 File: Chapter7/Figures/sequence.png Graphic file (type png)
 
 <use Chapter7/Figures/sequence.png>
@@ -2548,8 +2552,11 @@ lass / 16311 / www / s15 /
  []
 
 )
+
+Package natbib Warning: There were undefined citations.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
- [114]
+[114]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
  (./PhDThesis_example.aux (./Acknowledgement/acknowledgement.aux)
 (./Dedication/dedication.aux) (./Abstract/abstract.aux)
@@ -2562,7 +2569,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `PhDThesis_example.out' has not changed.
 (rerunfilecheck)             Checksum: 3B32BE3BDC329C7A65AADF6CEEE2AC41;5202.
 Package rerunfilecheck Info: File `PhDThesis_example.brf' has not changed.
-(rerunfilecheck)             Checksum: 0B312B4D33B2D2AC22F81168D54912D9;3375.
+(rerunfilecheck)             Checksum: E660033D447C1B380F524A626430CE66;3475.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2570,10 +2577,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 9338 strings out of 493304
- 137183 string characters out of 6139872
+ 9339 strings out of 493304
+ 137194 string characters out of 6139872
  228787 words of memory out of 5000000
- 11961 multiletter control sequences out of 15000+600000
+ 11962 multiletter control sequences out of 15000+600000
  14033 words of font info for 51 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  39i,17n,45p,2455b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2595,10 +2602,10 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PhDThesis_example.pdf (124 pages, 12541411 bytes).
+Output written on PhDThesis_example.pdf (124 pages, 12541806 bytes).
 PDF statistics:
- 1949 PDF objects out of 2073 (max. 8388607)
- 1692 compressed objects within 17 object streams
+ 1953 PDF objects out of 2073 (max. 8388607)
+ 1696 compressed objects within 17 object streams
  484 named destinations out of 1000 (max. 500000)
  954 words of extra memory for PDF output out of 10000 (max. 10000000)
 
