@@ -12,14 +12,8 @@ A level-1 auxiliary file: Chapter5/chapter5.aux
 A level-1 auxiliary file: Chapter6/chapter6.aux
 A level-1 auxiliary file: Chapter7/chapter7.aux
 A level-1 auxiliary file: Conclusions/conclusions.aux
-A level-1 auxiliary file: Appendix1/appendix1.aux
 The style file: abbrv.bst
 Database file #1: References/references.bib
-I was expecting a `,' or a `}'---line 185 of file References/references.bib
- : 
- : @misc{FPlot,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--I'm ignoring Algorithms2014's extra "title" field
 --line 304 of file References/references.bib
 I was expecting a `,' or a `}'---line 395 of file References/references.bib
@@ -29,6 +23,7 @@ I was expecting a `,' or a `}'---line 395 of file References/references.bib
 I'm skipping whatever remains of this entry
 Warning--I'm ignoring Mellinger2012's extra "title" field
 --line 476 of file References/references.bib
+Warning--I didn't find a database entry for "Delitalia"
 Warning--to sort, need author or key in Heli
 Warning--to sort, need author or key in gyro
 Warning--to sort, need author or key in Ascend
@@ -59,13 +54,9 @@ Warning--to sort, need author or key in msdn
 Warning--to sort, need author or key in ROS
 Warning--to sort, need author or key in optiros
 Warning--to sort, need author or key in qt
-Warning--to sort, need author or key in multiland
 Warning--to sort, need author or key in OptiHub
 Warning--to sort, need author or key in Pred
 Warning--to sort, need author or key in PixETH
-Warning--to sort, need author or key in mobiland2
-Warning--to sort, need author or key in mobiland
-Warning--to sort, need author or key in listcomplex
 Warning--there's a number but no volume in Bouabdallah2
 Warning--empty journal in Croon2015
 Warning--empty publisher in Khalil2004
@@ -73,45 +64,45 @@ Warning--empty year in Khalil2004
 Warning--empty journal in Mellinger2012
 Warning--empty journal in Vendittelli
 Warning--empty year in Vendittelli
-You've used 67 entries,
+You've used 63 entries,
             2118 wiz_defined-function locations,
-            843 strings with 12478 characters,
-and the built_in function-call counts, 15897 in all, are:
-= -- 1640
-> -- 454
+            832 strings with 11950 characters,
+and the built_in function-call counts, 15222 in all, are:
+= -- 1571
+> -- 450
 < -- 7
-+ -- 203
++ -- 199
 - -- 136
-* -- 835
-:= -- 2351
-add.period$ -- 199
-call.type$ -- 67
-change.case$ -- 271
+* -- 812
+:= -- 2274
+add.period$ -- 188
+call.type$ -- 63
+change.case$ -- 259
 chr.to.int$ -- 0
-cite$ -- 111
-duplicate$ -- 624
-empty$ -- 1556
+cite$ -- 103
+duplicate$ -- 596
+empty$ -- 1464
 format.name$ -- 136
-if$ -- 3565
+if$ -- 3396
 int.to.chr$ -- 0
-int.to.str$ -- 67
+int.to.str$ -- 63
 missing$ -- 25
-newline$ -- 336
+newline$ -- 317
 num.names$ -- 60
-pop$ -- 443
+pop$ -- 411
 preamble$ -- 1
-purify$ -- 202
+purify$ -- 194
 quote$ -- 0
-skip$ -- 505
+skip$ -- 479
 stack$ -- 0
-substring$ -- 810
-swap$ -- 120
+substring$ -- 790
+swap$ -- 116
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 266
-warning$ -- 44
+type$ -- 250
+warning$ -- 40
 while$ -- 101
-width$ -- 69
-write$ -- 686
-(There were 2 error messages)
+width$ -- 65
+write$ -- 649
+(There was 1 error message)
