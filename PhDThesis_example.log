@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  12 SEP 2015 19:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  13 SEP 2015 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -715,6 +715,14 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[2
+\FN@pp@footnotehinttrue 
+
+]
 \openout2 = `Dedication/dedication.aux'.
 
  (./Dedication/dedication.tex
@@ -722,10 +730,17 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[2
-
+[3
 
 ])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[4
+\FN@pp@footnotehinttrue 
+
+]
 \openout2 = `Abstract/abstract.aux'.
 
  (./Abstract/abstract.tex
@@ -733,10 +748,17 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[3
+[5
 
+])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
 
-]) (./PhDThesis_example.toc
+[6
+\FN@pp@footnotehinttrue 
+
+] (./PhDThesis_example.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -746,21 +768,24 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4
-\FN@pp@footnotehinttrue 
+) [7
 
-
-] [5])
+] [8])
 \tf@toc=\write5
 \openout5 = `PhDThesis_example.toc'.
 
- [6] (./PhDThesis_example.lof [7
+ [9]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[10] (./PhDThesis_example.lof [11
 
 ])
 \tf@lof=\write6
 \openout6 = `PhDThesis_example.lof'.
 
- [8]
+ [12]
 \openout2 = `Introduction/introduction.aux'.
 
  (./Introduction/introduction.tex
@@ -770,7 +795,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-<Introduction/Figures/amazon.jpg, id=552, 560.0925pt x 320.19624pt>
+<Introduction/Figures/amazon.jpg, id=569, 560.0925pt x 320.19624pt>
 File: Introduction/Figures/amazon.jpg Graphic file (type jpg)
 
 <use Introduction/Figures/amazon.jpg>
@@ -778,7 +803,7 @@ Package pdftex.def Info: Introduction/Figures/amazon.jpg used on input line 24.
 
 (pdftex.def)             Requested size: 165.02345pt x 94.3398pt.
 
-<Introduction/Figures/police-drone.jpg, id=553, 582.175pt x 326.21875pt>
+<Introduction/Figures/police-drone.jpg, id=570, 582.175pt x 326.21875pt>
 File: Introduction/Figures/police-drone.jpg Graphic file (type jpg)
 
 <use Introduction/Figures/police-drone.jpg>
@@ -786,14 +811,14 @@ Package pdftex.def Info: Introduction/Figures/police-drone.jpg used on input li
 ne 25.
 (pdftex.def)             Requested size: 165.02345pt x 92.46558pt.
 
-<Introduction/Figures/gopro.jpg, id=554, 285.065pt x 177.66376pt>
+<Introduction/Figures/gopro.jpg, id=571, 285.065pt x 177.66376pt>
 File: Introduction/Figures/gopro.jpg Graphic file (type jpg)
 
 <use Introduction/Figures/gopro.jpg>
 Package pdftex.def Info: Introduction/Figures/gopro.jpg used on input line 26.
 (pdftex.def)             Requested size: 165.02345pt x 102.84714pt.
 
-<Introduction/Figures/microcopter.jpg, id=555, 588.1975pt x 398.48875pt>
+<Introduction/Figures/microcopter.jpg, id=572, 588.1975pt x 398.48875pt>
 File: Introduction/Figures/microcopter.jpg Graphic file (type jpg)
 
 <use Introduction/Figures/microcopter.jpg>
@@ -844,23 +869,28 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
  [3] [4]) [5]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[6
+
+]
 \openout2 = `Chapter2/chapter2.aux'.
 
-
-(./Chapter2/chapter2.tex
+ (./Chapter2/chapter2.tex
 Chapter 2.
-<Chapter2/Figures/predator.jpg, id=593, 552.0625pt x 367.3725pt>
+<Chapter2/Figures/predator.jpg, id=614, 552.0625pt x 367.3725pt>
 File: Chapter2/Figures/predator.jpg Graphic file (type jpg)
 
 <use Chapter2/Figures/predator.jpg>
 Package pdftex.def Info: Chapter2/Figures/predator.jpg used on input line 25.
 (pdftex.def)             Requested size: 288.7942pt x 192.18954pt.
- [6
-
+ [7
 
 
 ]
-<Chapter2/Figures/Asctec_Falcon.jpg, id=601, 296.7888pt x 196.5744pt>
+<Chapter2/Figures/Asctec_Falcon.jpg, id=622, 296.7888pt x 196.5744pt>
 File: Chapter2/Figures/Asctec_Falcon.jpg Graphic file (type jpg)
 
 <use Chapter2/Figures/Asctec_Falcon.jpg>
@@ -872,7 +902,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 []|\OT1/cmr/m/n/12 Produced by As-cend-ing
  []
 
-<Chapter2/Figures/phantom.jpg, id=603, 1284.8pt x 722.7pt>
+<Chapter2/Figures/phantom.jpg, id=624, 1284.8pt x 722.7pt>
 File: Chapter2/Figures/phantom.jpg Graphic file (type jpg)
 
 <use Chapter2/Figures/phantom.jpg>
@@ -883,7 +913,7 @@ Underfull \hbox (badness 6978) in paragraph at lines 49--50
 []|\OT1/cmr/bx/n/12 Phantom 3\OT1/cmr/m/n/12 , ready to
  []
 
-<Chapter2/Figures/parrot.jpg, id=605, 855.195pt x 459.21562pt>
+<Chapter2/Figures/parrot.jpg, id=626, 855.195pt x 459.21562pt>
 File: Chapter2/Figures/parrot.jpg Graphic file (type jpg)
 
 <use Chapter2/Figures/parrot.jpg>
@@ -894,7 +924,7 @@ Underfull \hbox (badness 1412) in paragraph at lines 55--56
 []|\OT1/cmr/bx/n/12 AR.Drone\OT1/cmr/m/n/12 , ready to fly
  []
 
-<Chapter2/Figures/special_one.jpg, id=607, 1284.8pt x 963.6pt>
+<Chapter2/Figures/special_one.jpg, id=628, 1284.8pt x 963.6pt>
 File: Chapter2/Figures/special_one.jpg Graphic file (type jpg)
 
 <use Chapter2/Figures/special_one.jpg>
@@ -902,7 +932,7 @@ Package pdftex.def Info: Chapter2/Figures/special_one.jpg used on input line 60
 .
 (pdftex.def)             Requested size: 113.81102pt x 85.35284pt.
 
-<Chapter2/Figures/iri.jpg, id=610, 923.45pt x 615.29875pt>
+<Chapter2/Figures/iri.jpg, id=631, 923.45pt x 615.29875pt>
 File: Chapter2/Figures/iri.jpg Graphic file (type jpg)
 
 <use Chapter2/Figures/iri.jpg>
@@ -916,14 +946,14 @@ Overfull \hbox (23.3736pt too wide) in paragraph at lines 34--72
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.74 ...mi-professional, and not-professional.\par
                                                    Professional copters are ...
- <./Chapter2/Figures/predator.jpg>] [8pdfTeX warning (ext4): destination with t
+ <./Chapter2/Figures/predator.jpg>] [9pdfTeX warning (ext4): destination with t
 he same identifier (name{table.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -932,7 +962,7 @@ l.75 \par
           A quadrotor architecture is chosen for this thesis since they are ...
  <./Chapter2/Figures/Asctec_Falcon.jpg> <./Chapter2/Figures/phantom.jpg> <./Cha
 pter2/Figures/parrot.jpg> <./Chapter2/Figures/special_one.jpg> <./Chapter2/Figu
-res/iri.jpg>] <Chapter2/Figures/motionstage.jpg, id=629, 1204.5pt x 803.0pt>
+res/iri.jpg>] <Chapter2/Figures/motionstage.jpg, id=650, 1204.5pt x 803.0pt>
 File: Chapter2/Figures/motionstage.jpg Graphic file (type jpg)
 
 <use Chapter2/Figures/motionstage.jpg>
@@ -943,54 +973,50 @@ Package pdftex.def Info: Chapter2/Figures/motionstage.jpg used on input line 82
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] [10pdfTeX warning (ext4): destination with the same identifier (name{figure
-.2.2}) has been already used, duplicate ignored
+[10] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.95 ...lution in commercial and DIY products.\par
                                                    Till now APM seems to be ...
- <./Chapter2/Figures/motionstage.jpg>] [11]
+ <./Chapter2/Figures/motionstage.jpg>] [12]
 Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-[12]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
-[13] [14]
+[14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-[15]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
-[16]) [17]
+[17]) [18]
 \openout2 = `Chapter3/chapter3.aux'.
 
  (./Chapter3/chapter3.tex
 Chapter 3.
-[18
+[19
 
 
 
-] <Chapter3/Figures/iris.jpg, id=741, 602.25pt x 462.72874pt>
+] <Chapter3/Figures/iris.jpg, id=762, 602.25pt x 462.72874pt>
 File: Chapter3/Figures/iris.jpg Graphic file (type jpg)
 
 <use Chapter3/Figures/iris.jpg>
 Package pdftex.def Info: Chapter3/Figures/iris.jpg used on input line 37.
 (pdftex.def)             Requested size: 330.05322pt x 253.59782pt.
 
-
-Package natbib Warning: Citation `Delitalia' on page 19 undefined on input line
- 42.
-
-<Chapter3/Figures/iris_planner.jpg, id=743, 1236.62pt x 819.06pt>
+<Chapter3/Figures/iris_planner.jpg, id=765, 1236.62pt x 819.06pt>
 File: Chapter3/Figures/iris_planner.jpg Graphic file (type jpg)
 
 <use Chapter3/Figures/iris_planner.jpg>
@@ -1001,14 +1027,14 @@ Package pdftex.def Info: Chapter3/Figures/iris_planner.jpg used on input line 4
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
+[20pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.53 
       <./Chapter3/Figures/iris.jpg>]
-<Chapter3/Figures/pixhawk.PNG, id=751, 411.78844pt x 265.74281pt>
+<Chapter3/Figures/pixhawk.PNG, id=774, 411.78844pt x 265.74281pt>
 File: Chapter3/Figures/pixhawk.PNG Graphic file (type png)
 
 <use Chapter3/Figures/pixhawk.PNG>
@@ -1018,27 +1044,27 @@ Package pdftex.def Info: Chapter3/Figures/pixhawk.PNG used on input line 71.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.78 
       <./Chapter3/Figures/iris_planner.jpg>]
-<Chapter3/Figures/groundcontrol.jpg, id=762, 1284.8pt x 722.7pt>
+<Chapter3/Figures/groundcontrol.jpg, id=785, 1284.8pt x 722.7pt>
 File: Chapter3/Figures/groundcontrol.jpg Graphic file (type jpg)
 
 <use Chapter3/Figures/groundcontrol.jpg>
 Package pdftex.def Info: Chapter3/Figures/groundcontrol.jpg used on input line 
 99.
 (pdftex.def)             Requested size: 371.30594pt x 208.86084pt.
- [21pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [22pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.102 \end{figure}
-                   <./Chapter3/Figures/pixhawk.PNG>] [22pdfTeX warning (ext4): 
+                   <./Chapter3/Figures/pixhawk.PNG>] [23pdfTeX warning (ext4): 
 destination with the same identifier (name{figure.3.4}) has been already used, 
 duplicate ignored
 
@@ -1046,33 +1072,33 @@ duplicate ignored
                                                   \fi \fi 
 l.134 \item T
              he maximum packet length is 263 bytes for full payload <./Chapter3
-/Figures/groundcontrol.jpg>] [23pdfTeX warning (ext4): destination with the sam
+/Figures/groundcontrol.jpg>] [24pdfTeX warning (ext4): destination with the sam
 e identifier (name{table.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.134 \item T
              he maximum packet length is 263 bytes for full payload]
-<Chapter3/Figures/MAVPack.PNG, id=785, 563.85657pt x 575.90157pt>
+<Chapter3/Figures/MAVPack.PNG, id=809, 563.85657pt x 575.90157pt>
 File: Chapter3/Figures/MAVPack.PNG Graphic file (type png)
 
 <use Chapter3/Figures/MAVPack.PNG>
 Package pdftex.def Info: Chapter3/Figures/MAVPack.PNG used on input line 139.
 (pdftex.def)             Requested size: 330.05322pt x 337.10757pt.
- [24pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [25pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.144 \newpage
                <./Chapter3/Figures/MAVPack.PNG>]
-<Chapter3/Figures/flex13.PNG, id=793, 243.91125pt x 209.28188pt>
+<Chapter3/Figures/flex13.PNG, id=817, 243.91125pt x 209.28188pt>
 File: Chapter3/Figures/flex13.PNG Graphic file (type png)
 
 <use Chapter3/Figures/flex13.PNG>
 Package pdftex.def Info: Chapter3/Figures/flex13.PNG used on input line 151.
 (pdftex.def)             Requested size: 247.54149pt x 212.39807pt.
- [25pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [26pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1084,7 +1110,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-<Chapter3/Figures/marker.jpg, id=801, 70.8246pt x 70.8246pt>
+<Chapter3/Figures/marker.jpg, id=824, 70.8246pt x 70.8246pt>
 File: Chapter3/Figures/marker.jpg Graphic file (type jpg)
 
 <use Chapter3/Figures/marker.jpg>
@@ -1095,27 +1121,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--182
 
  []
 
-<Chapter3/Figures/HUB.png, id=804, 258.9675pt x 234.8775pt>
+<Chapter3/Figures/HUB.png, id=827, 258.9675pt x 234.8775pt>
 File: Chapter3/Figures/HUB.png Graphic file (type png)
 
 <use Chapter3/Figures/HUB.png>
 Package pdftex.def Info: Chapter3/Figures/HUB.png used on input line 185.
 (pdftex.def)             Requested size: 206.28247pt x 187.10303pt.
- [26pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [27pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.189 
        <./Chapter3/Figures/marker.jpg>]
-<Chapter3/Figures/motiv_iris.PNG, id=809, 510.40688pt x 339.51843pt>
+<Chapter3/Figures/motiv_iris.PNG, id=832, 510.40688pt x 339.51843pt>
 File: Chapter3/Figures/motiv_iris.PNG Graphic file (type png)
 
 <use Chapter3/Figures/motiv_iris.PNG>
 Package pdftex.def Info: Chapter3/Figures/motiv_iris.PNG used on input line 192
 .
 (pdftex.def)             Requested size: 288.7942pt x 192.11319pt.
- [27pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [28pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1130,7 +1156,7 @@ has been already used, duplicate ignored
 l.204 \item R
              igid bodies with symmetric shapes induce big uncertainties in a...
  <./Chapter3/Figures/HUB.png (PNG copy)> <./Chapter3/Figures/motiv_iris.PNG>]
-<Chapter3/Figures/irismarker.jpg, id=818, 1842.885pt x 1683.28876pt>
+<Chapter3/Figures/irismarker.jpg, id=840, 1842.885pt x 1683.28876pt>
 File: Chapter3/Figures/irismarker.jpg Graphic file (type jpg)
 
 <use Chapter3/Figures/irismarker.jpg>
@@ -1138,21 +1164,21 @@ Package pdftex.def Info: Chapter3/Figures/irismarker.jpg used on input line 212
 .
 (pdftex.def)             Requested size: 247.54149pt x 226.10403pt.
 
-<Chapter3/Figures/flight_arena.png, id=819, 278.2395pt x 298.11375pt>
+<Chapter3/Figures/flight_arena.png, id=841, 278.2395pt x 298.11375pt>
 File: Chapter3/Figures/flight_arena.png Graphic file (type png)
 
 <use Chapter3/Figures/flight_arena.png>
 Package pdftex.def Info: Chapter3/Figures/flight_arena.png used on input line 2
 21.
 (pdftex.def)             Requested size: 247.54149pt x 265.22487pt.
- [28pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [29pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.227 
        <./Chapter3/Figures/irismarker.jpg>]
-<Chapter3/Figures/panoramic.png, id=826, 845.1575pt x 474.77374pt>
+<Chapter3/Figures/panoramic.png, id=849, 845.1575pt x 474.77374pt>
 File: Chapter3/Figures/panoramic.png Graphic file (type png)
 
 <use Chapter3/Figures/panoramic.png>
@@ -1163,7 +1189,7 @@ Package pdftex.def Info: Chapter3/Figures/panoramic.png used on input line 230.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter3/Figures/motiv_panorama.PNG, id=827, 497.60907pt x 335.75438pt>
+<Chapter3/Figures/motiv_panorama.PNG, id=850, 497.60907pt x 335.75438pt>
 File: Chapter3/Figures/motiv_panorama.PNG Graphic file (type png)
 
 <use Chapter3/Figures/motiv_panorama.PNG>
@@ -1179,7 +1205,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
-[29pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
+[30pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1190,7 +1216,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
-[30pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
+[31pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1198,7 +1224,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--265
 l.274 \item S
              oftware tools: Qt C++ Libraries, Px4 build environment \cite{PX...
  <./Chapter3/Figures/panoramic.png>]
-<Chapter3/Figures/telemetry.jpg, id=840, 410.4936pt x 289.08pt>
+<Chapter3/Figures/telemetry.jpg, id=863, 410.4936pt x 289.08pt>
 File: Chapter3/Figures/telemetry.jpg Graphic file (type jpg)
 
 <use Chapter3/Figures/telemetry.jpg>
@@ -1210,7 +1236,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 276--284
 
  []
 
-[31pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
+[32pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1223,7 +1249,7 @@ l.284
                                                   \fi \fi 
 l.284 
        <./Chapter3/Figures/motiv_panorama.PNG> <./Chapter3/Figures/telemetry.jp
-g>] <Chapter3/Figures/integration.png, id=851, 607.068pt x 560.0925pt>
+g>] <Chapter3/Figures/integration.png, id=874, 607.068pt x 560.0925pt>
 File: Chapter3/Figures/integration.png Graphic file (type png)
 
 <use Chapter3/Figures/integration.png>
@@ -1239,20 +1265,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--325
 
  []
 
-[32] [33pdfTeX warning (ext4): destination with the same identifier (name{figur
+[33] [34pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.3.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.332 \item z
               axis goes down towards the earth. <./Chapter3/Figures/integration
-.png>] <Chapter3/Figures/frames.png, id=872, 465.99094pt x 311.66437pt>
+.png>] <Chapter3/Figures/frames.png, id=894, 465.99094pt x 311.66437pt>
 File: Chapter3/Figures/frames.png Graphic file (type png)
 
 <use Chapter3/Figures/frames.png>
 Package pdftex.def Info: Chapter3/Figures/frames.png used on input line 340.
 (pdftex.def)             Requested size: 330.05322pt x 220.75537pt.
- [34pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [35pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1268,7 +1294,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 386--388
 
  []
 
-) [35]
+) [36]
 \openout2 = `Chapter4/chapter4.aux'.
 
  (./Chapter4/chapter4.tex
@@ -1278,7 +1304,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-[36
+[37
 
 
 
@@ -1295,7 +1321,7 @@ s-eps-converted-to.pdf Chapter4/Figures/ref_frames.eps>
 (epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter4/Figures/ref_frames-eps-converted-to.pdf, id=898, 228.855pt x 176.66pt
+<Chapter4/Figures/ref_frames-eps-converted-to.pdf, id=922, 228.855pt x 176.66pt
 >
 File: Chapter4/Figures/ref_frames-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter4/Figures/ref_frames-eps-converted-to.pdf>
@@ -1319,7 +1345,7 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 46.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter4/Figures/bladeflap-eps-converted-to.pdf, id=900, 258.9675pt x 131.4912
+<Chapter4/Figures/bladeflap-eps-converted-to.pdf, id=924, 258.9675pt x 131.4912
 6pt>
 File: Chapter4/Figures/bladeflap-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter4/Figures/bladeflap-eps-converted-to.pdf>
@@ -1330,7 +1356,7 @@ n input line 46.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[37pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1347,7 +1373,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-[38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1373,12 +1399,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--111
 
  []
 
-[39]
+[40]
 Underfull \hbox (badness 10000) in paragraph at lines 145--147
 
  []
 
-[40]
+[41]
 Package epstopdf Info: Source file: <Chapter4/Figures/top_iris.eps>
 (epstopdf)                    date: 2015-09-04 11:49:22
 (epstopdf)                    size: 103598 bytes
@@ -1391,7 +1417,7 @@ eps-converted-to.pdf Chapter4/Figures/top_iris.eps>
 (epstopdf)             \includegraphics on input line 150.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter4/Figures/top_iris-eps-converted-to.pdf, id=969, 252.945pt x 251.94125p
+<Chapter4/Figures/top_iris-eps-converted-to.pdf, id=992, 252.945pt x 251.94125p
 t>
 File: Chapter4/Figures/top_iris-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter4/Figures/top_iris-eps-converted-to.pdf>
@@ -1403,14 +1429,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--176
 
  []
 
-[41pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
+[42pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.176 
        <./Chapter4/Figures/top_iris-eps-converted-to.pdf>]
-<Chapter4/Figures/forces.png, id=1005, 730.73pt x 553.06625pt>
+<Chapter4/Figures/forces.png, id=1027, 730.73pt x 553.06625pt>
 File: Chapter4/Figures/forces.png Graphic file (type png)
 
 <use Chapter4/Figures/forces.png>
@@ -1420,7 +1446,7 @@ Package pdftex.def Info: Chapter4/Figures/forces.png used on input line 207.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[42] [43pdfTeX warning (ext4): destination with the same identifier (name{figur
+[43] [44pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1436,23 +1462,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
-[44]
+[45]
 Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
-[45] [46]) [47pdfTeX warning (ext4): destination with the same identifier (name
+[46] [47]) [48pdfTeX warning (ext4): destination with the same identifier (name
 {table.4.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.83 \include{Chapter4/chapter4}
+l.88 \include{Chapter4/chapter4}
                                 ]
 \openout2 = `Chapter5/chapter5.aux'.
 
  (./Chapter5/chapter5.tex
 Chapter 5.
-[48
+[49
 
 
 
@@ -1461,7 +1487,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-<Chapter5/Figures/pub_sub.PNG, id=1080, 340.27126pt x 196.48407pt>
+<Chapter5/Figures/pub_sub.PNG, id=1102, 340.27126pt x 196.48407pt>
 File: Chapter5/Figures/pub_sub.PNG Graphic file (type png)
 
 <use Chapter5/Figures/pub_sub.PNG>
@@ -1472,7 +1498,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-[49pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+[50pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1483,20 +1509,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
-[50] <Chapter5/Figures/iris_state.png, id=1097, 505.89pt x 460.72125pt>
+[51] <Chapter5/Figures/iris_state.png, id=1119, 505.89pt x 460.72125pt>
 File: Chapter5/Figures/iris_state.png Graphic file (type png)
 
 <use Chapter5/Figures/iris_state.png>
 Package pdftex.def Info: Chapter5/Figures/iris_state.png used on input line 81.
 
 (pdftex.def)             Requested size: 288.7942pt x 263.01454pt.
- [51pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [52pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.90 
-      <./Chapter5/Figures/iris_state.png>] [52pdfTeX warning (ext4): destinatio
+      <./Chapter5/Figures/iris_state.png>] [53pdfTeX warning (ext4): destinatio
 n with the same identifier (name{table.5.1}) has been already used, duplicate i
 gnored
 
@@ -1523,12 +1549,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--147
 
  []
 
-[53]
+[54]
 Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-[54]
+[55]
 Package epstopdf Info: Source file: <Chapter5/Figures/arch.eps>
 (epstopdf)                    date: 2015-09-05 13:17:57
 (epstopdf)                    size: 67981 bytes
@@ -1541,7 +1567,7 @@ converted-to.pdf Chapter5/Figures/arch.eps>
 (epstopdf)             \includegraphics on input line 199.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter5/Figures/arch-eps-converted-to.pdf, id=1138, 598.235pt x 319.1925pt>
+<Chapter5/Figures/arch-eps-converted-to.pdf, id=1160, 598.235pt x 319.1925pt>
 File: Chapter5/Figures/arch-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter5/Figures/arch-eps-converted-to.pdf>
@@ -1552,19 +1578,19 @@ ut line 199.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[55] [56pdfTeX warning (ext4): destination with the same identifier (name{figur
+[56] [57pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.5.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.221 \end{equation}
-                     <./Chapter5/Figures/arch-eps-converted-to.pdf>] [57]
-[58]
+                     <./Chapter5/Figures/arch-eps-converted-to.pdf>] [58]
+[59]
 Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
-<Chapter5/Figures/roll_esti.png, id=1179, 1620.0525pt x 911.405pt>
+<Chapter5/Figures/roll_esti.png, id=1201, 1620.0525pt x 911.405pt>
 File: Chapter5/Figures/roll_esti.png Graphic file (type png)
 
 <use Chapter5/Figures/roll_esti.png>
@@ -1572,47 +1598,47 @@ Package pdftex.def Info: Chapter5/Figures/roll_esti.png used on input line 315.
 
 (pdftex.def)             Requested size: 371.30594pt x 208.88167pt.
 
-<Chapter5/Figures/pitch_esti.png, id=1181, 1599.9775pt x 873.2625pt>
+<Chapter5/Figures/pitch_esti.png, id=1203, 1599.9775pt x 873.2625pt>
 File: Chapter5/Figures/pitch_esti.png Graphic file (type png)
 
 <use Chapter5/Figures/pitch_esti.png>
 Package pdftex.def Info: Chapter5/Figures/pitch_esti.png used on input line 327
 .
 (pdftex.def)             Requested size: 371.30594pt x 202.645pt.
- [59pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [60pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.330 \end{figure}
                    <./Chapter5/Figures/roll_esti.png>]
-<Chapter5/Figures/yaw_esti.png, id=1190, 1597.97pt x 867.24pt>
+<Chapter5/Figures/yaw_esti.png, id=1212, 1597.97pt x 867.24pt>
 File: Chapter5/Figures/yaw_esti.png Graphic file (type png)
 
 <use Chapter5/Figures/yaw_esti.png>
 Package pdftex.def Info: Chapter5/Figures/yaw_esti.png used on input line 340.
 (pdftex.def)             Requested size: 371.30594pt x 201.51212pt.
- [60pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [61pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.344 \noindent
                 <./Chapter5/Figures/pitch_esti.png>]
-<Chapter5/Figures/x_conv.png, id=1199, 1591.9475pt x 874.26625pt>
+<Chapter5/Figures/x_conv.png, id=1221, 1591.9475pt x 874.26625pt>
 File: Chapter5/Figures/x_conv.png Graphic file (type png)
 
 <use Chapter5/Figures/x_conv.png>
 Package pdftex.def Info: Chapter5/Figures/x_conv.png used on input line 358.
 (pdftex.def)             Requested size: 371.30594pt x 203.90512pt.
- [61pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [62pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.362 
        <./Chapter5/Figures/yaw_esti.png>]
-<Chapter5/Figures/y_conv.png, id=1205, 1597.97pt x 875.27pt>
+<Chapter5/Figures/y_conv.png, id=1227, 1597.97pt x 875.27pt>
 File: Chapter5/Figures/y_conv.png Graphic file (type png)
 
 <use Chapter5/Figures/y_conv.png>
@@ -1623,7 +1649,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 370--372
 
  []
 
-[62pdfTeX warning (ext4): destination with the same identifier (name{figure.5.7
+[63pdfTeX warning (ext4): destination with the same identifier (name{figure.5.7
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1636,14 +1662,14 @@ l.373
                                                   \fi \fi 
 l.373 
        <./Chapter5/Figures/x_conv.png> <./Chapter5/Figures/y_conv.png>]
-<Chapter5/Figures/z_conv.png, id=1212, 1598.97375pt x 875.27pt>
+<Chapter5/Figures/z_conv.png, id=1234, 1598.97375pt x 875.27pt>
 File: Chapter5/Figures/z_conv.png Graphic file (type png)
 
 <use Chapter5/Figures/z_conv.png>
 Package pdftex.def Info: Chapter5/Figures/z_conv.png used on input line 377.
 (pdftex.def)             Requested size: 371.30594pt x 203.24442pt.
 
-<Chapter5/Figures/yaw_conv.png, id=1214, 1591.9475pt x 884.30376pt>
+<Chapter5/Figures/yaw_conv.png, id=1236, 1591.9475pt x 884.30376pt>
 File: Chapter5/Figures/yaw_conv.png Graphic file (type png)
 
 <use Chapter5/Figures/yaw_conv.png>
@@ -1653,7 +1679,7 @@ Package pdftex.def Info: Chapter5/Figures/yaw_conv.png used on input line 388.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[63pdfTeX warning (ext4): destination with the same identifier (name{figure.5.9
+[64pdfTeX warning (ext4): destination with the same identifier (name{figure.5.9
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1672,7 +1698,7 @@ ion2-eps-converted-to.pdf Chapter5/Figures/perturbation2.eps>
 (epstopdf)             \includegraphics on input line 400.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter5/Figures/perturbation2-eps-converted-to.pdf, id=1224, 598.235pt x 367.
+<Chapter5/Figures/perturbation2-eps-converted-to.pdf, id=1245, 598.235pt x 367.
 3725pt>
 File: Chapter5/Figures/perturbation2-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1684,30 +1710,30 @@ ed on input line 400.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [64pdfTeX warning (ext4): destination with the same identifier (name{figure.5
+) [65pdfTeX warning (ext4): destination with the same identifier (name{figure.5
 .10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.84 \include{Chapter5/chapter5}
-                                 <./Chapter5/Figures/yaw_conv.png>] [65pdfTeX w
+l.89 \include{Chapter5/chapter5}
+                                 <./Chapter5/Figures/yaw_conv.png>] [66pdfTeX w
 arning (ext4): destination with the same identifier (name{figure.5.11}) has bee
 n already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.84 \include{Chapter5/chapter5}
+l.89 \include{Chapter5/chapter5}
                                  <./Chapter5/Figures/perturbation2-eps-converte
 d-to.pdf>]
 \openout2 = `Chapter6/chapter6.aux'.
 
  (./Chapter6/chapter6.tex
 Chapter 6.
-[66
+[67
 
 
 
-] [67] [68]
+] [68] [69]
 Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
@@ -1717,22 +1743,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
-<Chapter6/Figures/first_arch.png, id=1263, 483.30562pt x 153.57375pt>
+<Chapter6/Figures/first_arch.png, id=1286, 483.30562pt x 153.57375pt>
 File: Chapter6/Figures/first_arch.png Graphic file (type png)
 
 <use Chapter6/Figures/first_arch.png>
 Package pdftex.def Info: Chapter6/Figures/first_arch.png used on input line 57.
 
 (pdftex.def)             Requested size: 330.05322pt x 104.88103pt.
- [69]
-<Chapter6/Figures/nested_arch.png, id=1273, 447.17062pt x 248.42813pt>
+ [70]
+<Chapter6/Figures/nested_arch.png, id=1294, 447.17062pt x 248.42813pt>
 File: Chapter6/Figures/nested_arch.png Graphic file (type png)
 
 <use Chapter6/Figures/nested_arch.png>
 Package pdftex.def Info: Chapter6/Figures/nested_arch.png used on input line 65
 .
 (pdftex.def)             Requested size: 330.05322pt x 183.36768pt.
- [70pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [71pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1758,19 +1784,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--107
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[71]
+[72]
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-<Chapter6/Figures/behavior.png, id=1287, 334.24875pt x 162.6075pt>
+<Chapter6/Figures/behavior.png, id=1309, 334.24875pt x 162.6075pt>
 File: Chapter6/Figures/behavior.png Graphic file (type png)
 
 <use Chapter6/Figures/behavior.png>
 Package pdftex.def Info: Chapter6/Figures/behavior.png used on input line 117.
 (pdftex.def)             Requested size: 330.05322pt x 160.57996pt.
 
-<Chapter6/Figures/switch.png, id=1289, 452.13919pt x 234.42581pt>
+<Chapter6/Figures/switch.png, id=1311, 452.13919pt x 234.42581pt>
 File: Chapter6/Figures/switch.png Graphic file (type png)
 
 <use Chapter6/Figures/switch.png>
@@ -1780,13 +1806,13 @@ Package pdftex.def Info: Chapter6/Figures/switch.png used on input line 124.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[72pdfTeX warning (ext4): destination with the same identifier (name{table.6.1}
+[73pdfTeX warning (ext4): destination with the same identifier (name{table.6.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.128 
-      ] [73pdfTeX warning (ext4): destination with the same identifier (name{fi
+      ] [74pdfTeX warning (ext4): destination with the same identifier (name{fi
 gure.6.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1799,7 +1825,7 @@ l.130
                                                   \fi \fi 
 l.130 
        <./Chapter6/Figures/behavior.png> <./Chapter6/Figures/switch.png>]
-<Chapter6/Figures/behav_flow.png, id=1303, 569.12625pt x 478.78876pt>
+<Chapter6/Figures/behav_flow.png, id=1325, 569.12625pt x 478.78876pt>
 File: Chapter6/Figures/behav_flow.png Graphic file (type png)
 
 <use Chapter6/Figures/behav_flow.png>
@@ -1810,17 +1836,17 @@ Package pdftex.def Info: Chapter6/Figures/behav_flow.png used on input line 140
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[74]
+[75]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[75pdfTeX warning (ext4): destination with the same identifier (name{figure.6.5
+[76pdfTeX warning (ext4): destination with the same identifier (name{figure.6.5
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.167 
-       <./Chapter6/Figures/behav_flow.png>] [76pdfTeX warning (ext4): destinati
+       <./Chapter6/Figures/behav_flow.png>] [77pdfTeX warning (ext4): destinati
 on with the same identifier (name{table.6.2}) has been already used, duplicate 
 ignored
 
@@ -1833,12 +1859,12 @@ Overfull \hbox (13.73158pt too wide) in paragraph at lines 191--192
 mod-ules is done with a sim-ple method.
  []
 
-[77]
+[78]
 Overfull \hbox (40.17537pt too wide) in paragraph at lines 202--213
  [][] 
  []
 
-<Chapter6/Figures/arch_scheme.png, id=1327, 551.05875pt x 561.89925pt>
+<Chapter6/Figures/arch_scheme.png, id=1349, 551.05875pt x 561.89925pt>
 File: Chapter6/Figures/arch_scheme.png Graphic file (type png)
 
 <use Chapter6/Figures/arch_scheme.png>
@@ -1849,20 +1875,20 @@ Package pdftex.def Info: Chapter6/Figures/arch_scheme.png used on input line 21
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[78pdfTeX warning (ext4): destination with the same identifier (name{table.6.3}
+[79pdfTeX warning (ext4): destination with the same identifier (name{table.6.3}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.230 
-      ] [79pdfTeX warning (ext4): destination with the same identifier (name{fi
+      ] [80pdfTeX warning (ext4): destination with the same identifier (name{fi
 gure.6.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.237 ...the following convention: \begin{itemize}
                                                    <./Chapter6/Figures/arch_sch
-eme.png>] <Chapter6/Figures/mangui.png, id=1340, 404.51125pt x 429.605pt>
+eme.png>] <Chapter6/Figures/mangui.png, id=1362, 404.51125pt x 429.605pt>
 File: Chapter6/Figures/mangui.png Graphic file (type png)
 
 <use Chapter6/Figures/mangui.png>
@@ -1874,7 +1900,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 293.
-[80]
+[81]
 Package epstopdf Info: Source file: <Chapter6/Figures/move1.eps>
 (epstopdf)                    date: 2015-09-06 23:23:55
 (epstopdf)                    size: 41712 bytes
@@ -1887,7 +1913,7 @@ f>
 (epstopdf)             \includegraphics on input line 305.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter6/Figures/move1-eps-converted-to.pdf, id=1349, 300.12125pt x 206.7725pt
+<Chapter6/Figures/move1-eps-converted-to.pdf, id=1371, 300.12125pt x 206.7725pt
 >
 File: Chapter6/Figures/move1-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter6/Figures/move1-eps-converted-to.pdf>
@@ -1906,7 +1932,7 @@ f>
 (epstopdf)             \includegraphics on input line 306.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter6/Figures/move2-eps-converted-to.pdf, id=1350, 332.24126pt x 206.7725pt
+<Chapter6/Figures/move2-eps-converted-to.pdf, id=1372, 332.24126pt x 206.7725pt
 >
 File: Chapter6/Figures/move2-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter6/Figures/move2-eps-converted-to.pdf>
@@ -1917,13 +1943,13 @@ put line 306.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[81pdfTeX warning (ext4): destination with the same identifier (name{figure.6.7
+[82pdfTeX warning (ext4): destination with the same identifier (name{figure.6.7
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.319 \end{equation}
-                     <./Chapter6/Figures/mangui.png>] [82] [83pdfTeX warning (e
+                     <./Chapter6/Figures/mangui.png>] [83] [84pdfTeX warning (e
 xt4): destination with the same identifier (name{figure.6.8}) has been already 
 used, duplicate ignored
 
@@ -1931,7 +1957,7 @@ used, duplicate ignored
                                                   \fi \fi 
 l.332 
        <./Chapter6/Figures/move1-eps-converted-to.pdf> <./Chapter6/Figures/move
-2-eps-converted-to.pdf>] [84]
+2-eps-converted-to.pdf>] [85]
 Package epstopdf Info: Source file: <Chapter6/Figures/rotate.eps>
 (epstopdf)                    date: 2015-09-07 07:07:13
 (epstopdf)                    size: 27005 bytes
@@ -1944,21 +1970,21 @@ s-converted-to.pdf Chapter6/Figures/rotate.eps>
 (epstopdf)             \includegraphics on input line 354.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter6/Figures/rotate-eps-converted-to.pdf, id=1424, 399.4925pt x 407.5225pt
+<Chapter6/Figures/rotate-eps-converted-to.pdf, id=1446, 399.4925pt x 407.5225pt
 >
 File: Chapter6/Figures/rotate-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter6/Figures/rotate-eps-converted-to.pdf>
 Package pdftex.def Info: Chapter6/Figures/rotate-eps-converted-to.pdf used on i
 nput line 354.
 (pdftex.def)             Requested size: 330.05322pt x 336.70145pt.
- [85pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [86pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.364 
        <./Chapter6/Figures/rotate-eps-converted-to.pdf>]
-<Chapter6/Figures/executioner.png, id=1433, 514.92375pt x 307.1475pt>
+<Chapter6/Figures/executioner.png, id=1455, 514.92375pt x 307.1475pt>
 File: Chapter6/Figures/executioner.png Graphic file (type png)
 
 <use Chapter6/Figures/executioner.png>
@@ -1969,7 +1995,7 @@ Package pdftex.def Info: Chapter6/Figures/executioner.png used on input line 36
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[86pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1
+[87pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1
 0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1977,7 +2003,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 l.398 T
        he performances of the task rotate and take off are already presented...
  <./Chapter6/Figures/executioner.png>]
-<Chapter6/Figures/xalpha1.png, id=1450, 1587.9325pt x 870.25125pt>
+<Chapter6/Figures/xalpha1.png, id=1472, 1587.9325pt x 870.25125pt>
 File: Chapter6/Figures/xalpha1.png Graphic file (type png)
 
 <use Chapter6/Figures/xalpha1.png>
@@ -1987,7 +2013,7 @@ Package pdftex.def Info: Chapter6/Figures/xalpha1.png used on input line 403.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/xalpha06.png, id=1451, 1585.925pt x 878.28125pt>
+<Chapter6/Figures/xalpha06.png, id=1473, 1585.925pt x 878.28125pt>
 File: Chapter6/Figures/xalpha06.png Graphic file (type png)
 
 <use Chapter6/Figures/xalpha06.png>
@@ -1997,7 +2023,7 @@ Package pdftex.def Info: Chapter6/Figures/xalpha06.png used on input line 410.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/takeland.png, id=1453, 1590.94376pt x 874.26625pt>
+<Chapter6/Figures/takeland.png, id=1475, 1590.94376pt x 874.26625pt>
 File: Chapter6/Figures/takeland.png Graphic file (type png)
 
 <use Chapter6/Figures/takeland.png>
@@ -2007,14 +2033,14 @@ Package pdftex.def Info: Chapter6/Figures/takeland.png used on input line 418.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/multi1.png, id=1454, 568.1225pt x 612.2875pt>
+<Chapter6/Figures/multi1.png, id=1476, 568.1225pt x 612.2875pt>
 File: Chapter6/Figures/multi1.png Graphic file (type png)
 
 <use Chapter6/Figures/multi1.png>
 Package pdftex.def Info: Chapter6/Figures/multi1.png used on input line 425.
 (pdftex.def)             Requested size: 123.77074pt x 133.38634pt.
 
-<Chapter6/Figures/multi2.png, id=1455, 480.79625pt x 490.83376pt>
+<Chapter6/Figures/multi2.png, id=1477, 480.79625pt x 490.83376pt>
 File: Chapter6/Figures/multi2.png Graphic file (type png)
 
 <use Chapter6/Figures/multi2.png>
@@ -2034,13 +2060,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--435
 
  []
 
-[87pdfTeX warning (ext4): destination with the same identifier (name{table.6.4}
+[88pdfTeX warning (ext4): destination with the same identifier (name{table.6.4}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.435 
-      ] <Chapter6/Figures/landing.png, id=1463, 1179.40625pt x 694.595pt>
+      ] <Chapter6/Figures/landing.png, id=1484, 1179.40625pt x 694.595pt>
 File: Chapter6/Figures/landing.png Graphic file (type png)
 
 <use Chapter6/Figures/landing.png>
@@ -2050,7 +2076,7 @@ Package pdftex.def Info: Chapter6/Figures/landing.png used on input line 441.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/multiland.png, id=1466, 1421.31pt x 776.9025pt>
+<Chapter6/Figures/multiland.png, id=1487, 1421.31pt x 776.9025pt>
 File: Chapter6/Figures/multiland.png Graphic file (type png)
 
 <use Chapter6/Figures/multiland.png>
@@ -2061,86 +2087,92 @@ Package pdftex.def Info: Chapter6/Figures/multiland.png used on input line 451.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[88pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1
+[89pdfTeX warning (ext4): destination with the same identifier (name{figure.6.1
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.460 
+l.459 
        <./Chapter6/Figures/xalpha1.png>]
-<Chapter6/Figures/circle.png, id=1475, 1337.99875pt x 665.48625pt>
+<Chapter6/Figures/circle.png, id=1497, 1337.99875pt x 665.48625pt>
 File: Chapter6/Figures/circle.png Graphic file (type png)
 
 <use Chapter6/Figures/circle.png>
-Package pdftex.def Info: Chapter6/Figures/circle.png used on input line 463.
+Package pdftex.def Info: Chapter6/Figures/circle.png used on input line 462.
 (pdftex.def)             Requested size: 330.05322pt x 164.15747pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter6/Figures/snippet.png, id=1476, 348.30125pt x 407.5225pt>
+<Chapter6/Figures/snippet.png, id=1498, 348.30125pt x 407.5225pt>
 File: Chapter6/Figures/snippet.png Graphic file (type png)
 
 <use Chapter6/Figures/snippet.png>
-Package pdftex.def Info: Chapter6/Figures/snippet.png used on input line 471.
+Package pdftex.def Info: Chapter6/Figures/snippet.png used on input line 470.
 (pdftex.def)             Requested size: 206.28247pt x 241.35649pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [89pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+) [90pdfTeX warning (ext4): destination with the same identifier (name{figure.6
 .12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.85 \include{Chapter6/chapter6}
-                                 <./Chapter6/Figures/xalpha06.png>] [90pdfTeX w
+l.90 \include{Chapter6/chapter6}
+                                 <./Chapter6/Figures/xalpha06.png>] [91pdfTeX w
 arning (ext4): destination with the same identifier (name{figure.6.13}) has bee
 n already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.85 \include{Chapter6/chapter6}
+l.90 \include{Chapter6/chapter6}
                                 pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.6.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.85 \include{Chapter6/chapter6}
+l.90 \include{Chapter6/chapter6}
                                 pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.6.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.85 \include{Chapter6/chapter6}
+l.90 \include{Chapter6/chapter6}
                                  <./Chapter6/Figures/takeland.png> <./Chapter6/
 Figures/multi1.png> <./Chapter6/Figures/multi2.png> <./Chapter6/Figures/landing
-.png>] [91pdfTeX warning (ext4): destination with the same identifier (name{fig
+.png>] [92pdfTeX warning (ext4): destination with the same identifier (name{fig
 ure.6.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.85 \include{Chapter6/chapter6}
+l.90 \include{Chapter6/chapter6}
                                 pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.6.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.85 \include{Chapter6/chapter6}
+l.90 \include{Chapter6/chapter6}
                                  <./Chapter6/Figures/multiland.png> <./Chapter6
-/Figures/circle.png>] [92pdfTeX warning (ext4): destination with the same ident
+/Figures/circle.png>] [93pdfTeX warning (ext4): destination with the same ident
 ifier (name{figure.6.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.85 \include{Chapter6/chapter6}
+l.90 \include{Chapter6/chapter6}
                                  <./Chapter6/Figures/snippet.png>]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[94
+
+]
 \openout2 = `Chapter7/chapter7.aux'.
 
-
-(./Chapter7/chapter7.tex
+ (./Chapter7/chapter7.tex
 Chapter 7.
-<Chapter7/Figures/couple.jpg, id=1495, 752.8125pt x 564.1075pt>
+<Chapter7/Figures/couple.jpg, id=1521, 752.8125pt x 564.1075pt>
 File: Chapter7/Figures/couple.jpg Graphic file (type jpg)
 
 <use Chapter7/Figures/couple.jpg>
@@ -2150,7 +2182,7 @@ Package pdftex.def Info: Chapter7/Figures/couple.jpg used on input line 22.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter7/Figures/spacex.png, id=1497, 1606.0pt x 770.88pt>
+<Chapter7/Figures/spacex.png, id=1523, 1606.0pt x 770.88pt>
 File: Chapter7/Figures/spacex.png Graphic file (type png)
 
 <use Chapter7/Figures/spacex.png>
@@ -2160,8 +2192,7 @@ Package pdftex.def Info: Chapter7/Figures/spacex.png used on input line 30.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[93
-
+[95
 
 
 ]
@@ -2169,7 +2200,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--40
 
  []
 
-[94pdfTeX warning (ext4): destination with the same identifier (name{figure.7.1
+[96pdfTeX warning (ext4): destination with the same identifier (name{figure.7.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2184,7 +2215,7 @@ has been already used, duplicate ignored
 l.51 \item T
             he trajectory of the platform is assumed to be mostly linear, no...
  <./Chapter7/Figures/couple.jpg> <./Chapter7/Figures/spacex.png (PNG copy)>]
-<Chapter7/Figures/labmate.png, id=1510, 608.2725pt x 509.905pt>
+<Chapter7/Figures/labmate.png, id=1536, 608.2725pt x 509.905pt>
 File: Chapter7/Figures/labmate.png Graphic file (type png)
 
 <use Chapter7/Figures/labmate.png>
@@ -2206,7 +2237,7 @@ w3-eps-converted-to.pdf Chapter7/Figures/landwindow3.eps>
 (epstopdf)             \includegraphics on input line 72.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/landwindow3-eps-converted-to.pdf, id=1512, 387.4475pt x 387.4
+<Chapter7/Figures/landwindow3-eps-converted-to.pdf, id=1538, 387.4475pt x 387.4
 475pt>
 File: Chapter7/Figures/landwindow3-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2214,17 +2245,17 @@ File: Chapter7/Figures/landwindow3-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: Chapter7/Figures/landwindow3-eps-converted-to.pdf used
  on input line 72.
 (pdftex.def)             Requested size: 330.05322pt x 330.0591pt.
- [95]
+ [97]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[96pdfTeX warning (ext4): destination with the same identifier (name{figure.7.3
+[98pdfTeX warning (ext4): destination with the same identifier (name{figure.7.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.87 
-      <./Chapter7/Figures/labmate.png>] [97pdfTeX warning (ext4): destination w
+      <./Chapter7/Figures/labmate.png>] [99pdfTeX warning (ext4): destination w
 ith the same identifier (name{figure.7.4}) has been already used, duplicate ign
 ored
 
@@ -2244,7 +2275,7 @@ in2-eps-converted-to.pdf Chapter7/Figures/tracknogain2.eps>
 (epstopdf)             \includegraphics on input line 98.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/tracknogain2-eps-converted-to.pdf, id=1536, 598.235pt x 371.3
+<Chapter7/Figures/tracknogain2-eps-converted-to.pdf, id=1562, 598.235pt x 371.3
 875pt>
 File: Chapter7/Figures/tracknogain2-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2252,8 +2283,8 @@ File: Chapter7/Figures/tracknogain2-eps-converted-to.pdf Graphic file (type pdf
 Package pdftex.def Info: Chapter7/Figures/tracknogain2-eps-converted-to.pdf use
 d on input line 98.
 (pdftex.def)             Requested size: 330.05322pt x 204.89844pt.
- [98pdfTeX warning (ext4): destination with the same identifier (name{figure.7.
-5}) has been already used, duplicate ignored
+ [100pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -2268,7 +2299,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--128
 
  []
 
-[99]
+[101]
 Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
@@ -2285,7 +2316,7 @@ ps-converted-to.pdf Chapter7/Figures/profile.eps>
 (epstopdf)             \includegraphics on input line 154.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/profile-eps-converted-to.pdf, id=1559, 434.62375pt x 395.4775
+<Chapter7/Figures/profile-eps-converted-to.pdf, id=1585, 434.62375pt x 395.4775
 pt>
 File: Chapter7/Figures/profile-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter7/Figures/profile-eps-converted-to.pdf>
@@ -2296,14 +2327,14 @@ input line 154.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[100] <Chapter7/Figures/trackcompare.png, id=1565, 572.1375pt x 828.09375pt>
+[102] <Chapter7/Figures/trackcompare.png, id=1591, 572.1375pt x 828.09375pt>
 File: Chapter7/Figures/trackcompare.png Graphic file (type png)
 
 <use Chapter7/Figures/trackcompare.png>
 Package pdftex.def Info: Chapter7/Figures/trackcompare.png used on input line 1
 67.
 (pdftex.def)             Requested size: 247.54149pt x 358.28462pt.
- [101pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+ [103pdfTeX warning (ext4): destination with the same identifier (name{figure.7
 .6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2321,14 +2352,14 @@ verted-to.pdf Chapter7/Figures/w.eps>
 (epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/w-eps-converted-to.pdf, id=1579, 258.9675pt x 258.9675pt>
+<Chapter7/Figures/w-eps-converted-to.pdf, id=1605, 258.9675pt x 258.9675pt>
 File: Chapter7/Figures/w-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter7/Figures/w-eps-converted-to.pdf>
 Package pdftex.def Info: Chapter7/Figures/w-eps-converted-to.pdf used on input 
 line 179.
 (pdftex.def)             Requested size: 247.54149pt x 247.55089pt.
- [102pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+ [104pdfTeX warning (ext4): destination with the same identifier (name{figure.7
 .7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2346,7 +2377,7 @@ nverted-to.pdf Chapter7/Figures/zb.eps>
 (epstopdf)             \includegraphics on input line 189.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/zb-eps-converted-to.pdf, id=1585, 598.235pt x 244.915pt>
+<Chapter7/Figures/zb-eps-converted-to.pdf, id=1612, 598.235pt x 244.915pt>
 File: Chapter7/Figures/zb-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Chapter7/Figures/zb-eps-converted-to.pdf>
@@ -2357,7 +2388,7 @@ Package pdftex.def Info: Chapter7/Figures/zb-eps-converted-to.pdf used on input
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter7/Figures/wy.png, id=1587, 1437.37pt x 497.86pt>
+<Chapter7/Figures/wy.png, id=1614, 1437.37pt x 497.86pt>
 File: Chapter7/Figures/wy.png Graphic file (type png)
 
 <use Chapter7/Figures/wy.png>
@@ -2367,26 +2398,26 @@ Package pdftex.def Info: Chapter7/Figures/wy.png used on input line 199.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Chapter7/Figures/wx.png, id=1590, 1423.3175pt x 502.87875pt>
+<Chapter7/Figures/wx.png, id=1617, 1423.3175pt x 502.87875pt>
 File: Chapter7/Figures/wx.png Graphic file (type png)
 
 <use Chapter7/Figures/wx.png>
 Package pdftex.def Info: Chapter7/Figures/wx.png used on input line 208.
 (pdftex.def)             Requested size: 371.30594pt x 131.18277pt.
- [103pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+ [105pdfTeX warning (ext4): destination with the same identifier (name{figure.7
 .8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.212 
        <./Chapter7/Figures/w-eps-converted-to.pdf>]
-<Chapter7/Figures/d.png, id=1602, 1437.37pt x 484.81125pt>
+<Chapter7/Figures/d.png, id=1629, 1437.37pt x 484.81125pt>
 File: Chapter7/Figures/d.png Graphic file (type png)
 
 <use Chapter7/Figures/d.png>
 Package pdftex.def Info: Chapter7/Figures/d.png used on input line 217.
 (pdftex.def)             Requested size: 371.30594pt x 125.2342pt.
- [104pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+ [106pdfTeX warning (ext4): destination with the same identifier (name{figure.7
 .9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2418,7 +2449,7 @@ eps-converted-to.pdf Chapter7/Figures/platform.eps>
 (epstopdf)             \includegraphics on input line 228.
 Package epstopdf Info: Output file is already uptodate.
 
-<Chapter7/Figures/platform-eps-converted-to.pdf, id=1613, 1446.40375pt x 458.71
+<Chapter7/Figures/platform-eps-converted-to.pdf, id=1639, 1446.40375pt x 458.71
 375pt>
 File: Chapter7/Figures/platform-eps-converted-to.pdf Graphic file (type pdf)
  <use Chapter7/Figures/platform-eps-converted-to.pdf>
@@ -2426,7 +2457,7 @@ Package pdftex.def Info: Chapter7/Figures/platform-eps-converted-to.pdf used on
  input line 228.
 (pdftex.def)             Requested size: 330.05322pt x 104.669pt.
 
-<Chapter7/Figures/sequence.png, id=1614, 453.695pt x 901.3675pt>
+<Chapter7/Figures/sequence.png, id=1640, 453.695pt x 901.3675pt>
 File: Chapter7/Figures/sequence.png Graphic file (type png)
 
 <use Chapter7/Figures/sequence.png>
@@ -2436,25 +2467,25 @@ Package pdftex.def Info: Chapter7/Figures/sequence.png used on input line 238.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [105pdfTeX warning (ext4): destination with the same identifier (name{figure.
+) [107pdfTeX warning (ext4): destination with the same identifier (name{figure.
 7.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.86 \include{Chapter7/chapter7}
+l.92 \include{Chapter7/chapter7}
                                 pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.7.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.86 \include{Chapter7/chapter7}
+l.92 \include{Chapter7/chapter7}
                                  <./Chapter7/Figures/d.png> <./Chapter7/Figures
-/platform-eps-converted-to.pdf>] [106pdfTeX warning (ext4): destination with th
+/platform-eps-converted-to.pdf>] [108pdfTeX warning (ext4): destination with th
 e same identifier (name{figure.7.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.86 \include{Chapter7/chapter7}
+l.92 \include{Chapter7/chapter7}
                                  <./Chapter7/Figures/sequence.png>]
 \openout2 = `Conclusions/conclusions.aux'.
 
@@ -2471,7 +2502,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
-[107
+[109
 
 
 
@@ -2490,7 +2521,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
 
  []
 
-[108]) [109] (./PhDThesis_example.bbl (./PhDThesis_example.brf)
+[110]) [111]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[112
+
+] (./PhDThesis_example.bbl (./PhDThesis_example.brf)
 \tf@brf=\write7
 \openout7 = `PhDThesis_example.brf'.
 
@@ -2500,8 +2538,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--18
 www . airware . com / products /
  []
 
-[110
-
+[113
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 95--95
@@ -2521,7 +2558,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--127
 pixhawk . org / dev / toolchain _
  []
 
-[111]
+[114]
 Underfull \hbox (badness 4084) in paragraph at lines 152--152
 []\OT1/cmr/m/n/12 Reference frames.  [][]$\OT1/cmtt/m/n/12 https : / / pixhawk 
 . org / dev / know-[]how / frames _ of _
@@ -2533,7 +2570,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--167
  org / dev / shared _ object _
  []
 
-[112] [113]
+[115] [116]
 Underfull \hbox (badness 7595) in paragraph at lines 327--327
 []\OT1/cmr/m/n/12 Michael, Nathan.  Quadro-tor Mod-el-ing and Con-trol.  [][]$\
 OT1/cmtt/m/n/12 http :
@@ -2546,35 +2583,32 @@ lass / 16311 / www / s15 /
  []
 
 )
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
-[114]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
+ [117]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
  (./PhDThesis_example.aux (./Acknowledgement/acknowledgement.aux)
 (./Dedication/dedication.aux) (./Abstract/abstract.aux)
 (./Introduction/introduction.aux) (./Chapter2/chapter2.aux)
 (./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
 (./Chapter6/chapter6.aux) (./Chapter7/chapter7.aux)
 (./Conclusions/conclusions.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
 Package rerunfilecheck Info: File `PhDThesis_example.out' has not changed.
 (rerunfilecheck)             Checksum: 3B32BE3BDC329C7A65AADF6CEEE2AC41;5202.
 Package rerunfilecheck Info: File `PhDThesis_example.brf' has not changed.
-(rerunfilecheck)             Checksum: E660033D447C1B380F524A626430CE66;3475.
+(rerunfilecheck)             Checksum: 0BEF4AD5DE75E519FCE19804EB0F38B3;3524.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 9329 strings out of 493304
- 137056 string characters out of 6139872
- 228755 words of memory out of 5000000
- 11954 multiletter control sequences out of 15000+600000
+ 9335 strings out of 493304
+ 137097 string characters out of 6139872
+ 228757 words of memory out of 5000000
+ 11953 multiletter control sequences out of 15000+600000
  14033 words of font info for 51 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  39i,17n,45p,2455b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2596,10 +2630,10 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PhDThesis_example.pdf (124 pages, 12541226 bytes).
+Output written on PhDThesis_example.pdf (131 pages, 12542318 bytes).
 PDF statistics:
- 1947 PDF objects out of 2073 (max. 8388607)
- 1690 compressed objects within 17 object streams
- 482 named destinations out of 1000 (max. 500000)
+ 1980 PDF objects out of 2073 (max. 8388607)
+ 1715 compressed objects within 18 object streams
+ 489 named destinations out of 1000 (max. 500000)
  954 words of extra memory for PDF output out of 10000 (max. 10000000)
 

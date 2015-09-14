@@ -87,7 +87,7 @@
 \usepackage{array}
 \usepackage{epstopdf}
 \usepackage{xcolor}
-
+\usepackage[absolute,overlay]{textpos}
 
 
 
@@ -124,9 +124,9 @@ Degree in \textit{Robotics Engineering}
 \setbeamertemplate{section in toc}[square]
 \setbeamercolor{frametitle}{fg=Blue!80,bg=Gray!10}
 \setbeamertemplate{blocks}[default]
-\setbeamercolor{block title}{fg=Blue,bg=NavyBlue!}
+\setbeamercolor{block title}{fg=Blue,bg=NavyBlue!20}
 \setbeamercolor{block body}{fg=Black,bg=NavyBlue!5}
-
+ \graphicspath{f/}
 
 \begin{document}
 
@@ -147,21 +147,66 @@ Degree in \textit{Robotics Engineering}
 \section{Introduction} 
 
 \begin{frame}
-\frametitle{Paragraphs of Text}
+\frametitle{The quadrotor}
+The number of applications in which UAVs (Unmanned Aerial Vehicles) are involved is exponentially increasing, especially in indoor scenarios. \\~\\ 
+The most popular architecture is the \textbf{quadrotor}: a helicopter
+with four rotors. The main features are:\\ 
 
-\begin{equation}
-x ^ 3 = R_i + \int g
-\end{equation}
-\centerline{sentence should be centered.}
+\begin{itemize}
+\item Good stability
+\item Omni-directional kinematics 
+\item Hovering on a fixed point
+\item Medium payload
+\end{itemize}
+
+\begin{textblock*}{5cm}(7cm,4.6cm) % {block width} (coords)
+\includegraphics[width=0.8\textwidth]{f/quad.png}
+\end{textblock*}
+
+\vspace{2ex}
+Due to its properties, the quadrotor is the main chosen architecture for indoor flight.
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Bullet Points}
+\frametitle{Problem statement}
+\begin{block}{Goal}
+We want to design a set of algorithms and SW components enabling a quadrotor
+to achieve stability, through position feedback given from a motion capture system,
+and perform different tasks in an indoor scenario.
+\end{block} 
+The work of this thesis produced:
+\begin{itemize}
+\item A correct integration between the on board autopilot and the mocap system
+\item A functioning experimental setup mounted in the new laboratory
+\item A software architecture capable of letting the robot execute tasks sequentially from a list
+\item A procedure for landing on a moving platform
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Work flow}
+
+The total work is divided in main steps:
 \begin{enumerate}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus
+
+\item Analysis of state of the art approaches to UAV control, modeling, trajectory planning and execution
+
+\item Technical analysis and documentation on the given tools (Autopilot, Motion Capture, Quadcopter)
+
+\item Integration between mocap and the quadrotor
+\begin{itemize}
+
+\item Integration and testing between mocap and onboard estimation modules
+\item Integration and testing of onboard controller through set point control
+
+\end{itemize}
+\item Relocation of the equipment in the new laboratory
+\item Design of the high level software architecture 
+\item Testing the software, coding and debugging different kind of tasks
+\item Design and testing an algorithm for landing on a mobile platform
+
 \end{enumerate}
 \end{frame}
 
@@ -174,21 +219,52 @@ x ^ 3 = R_i + \int g
 
 
 \begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus 
-dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
+\frametitle{Setup}
+We can identify five distinct parts:
+\vspace{2em}
+\begin{itemize}
+\item  IRIS quadcopter from 3D robotics
+\item  Motion Capture system from Optitrack
+\item  Linux workstation
+\item  Windows machine
+\item  Flight arena
+\end{itemize}
 \end{frame}
+%-------------------------------------------------
+\begin{frame}
+\frametitle{IRIS}
+The IRIS quadcopter is flying robot manufactured by 3DRobotics and commercially available. \\~\\ 
 
+	\begin{columns}[t]
+		\column{.5\textwidth} 
+		\textbf{Main features}
+		\begin{itemize}
+			\item Relatively cheap
+			\item High quality and robust 
+			\item Ready to fly
+			\item Compatible with Android tablets
+		\end{itemize}
+		\column{.5\textwidth}
+		\textbf{Main components}
+		\begin{itemize}
+			\item Four 850 KV motors ( PWM )
+			\item One 11.1 V LiPo battery
+			\item Control electronics
+			\item Auto pilot software
+		\end{itemize}
+	\end{columns}
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{IRIS}
+\begin{figure}
+\centering
+\includegraphics[width = 0.5\textwidth]{f/iris.jpg}
+\includegraphics[width = 0.5\textwidth]{f/iris_planner.jpg}
+\caption{IRIS Pictures. On the left the top view while on the right the robot with a camera and control devices.}
+\end{figure}
+
+\end{frame}
 %------------------------------------------------
 \section{Model overview}
 
@@ -209,7 +285,7 @@ Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenati
 \end{itemize}
 
 \column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat
 
 \end{columns}
 \end{frame}

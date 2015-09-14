@@ -453,7 +453,6 @@ The third experiment is qualitative. We let the robot take off, land on a table,
  \label{figure:multiland}
 \end{figure}
 
-\noindent
 The last experiment consists in a more complex list which incorporates every designed behavior. The output of the program is shown in Figure \ref{figure:snip} where we can see every successfully node executed. The full video can be viewed here \url{https://www.dropbox.com/s/41kpdlm5svm9iir/circle_final.MP4?dl=0}. 
 
 The robot takes off, rotates and performs a circle around a cylinder pointing the nose at the center of the trajectory simulating an inspection. The behavior \textit{follow trajectory} and \textit{rotate} execute concurrently and independently. The circular trajectory lasts for 8 seconds. After there is a sequence of move actions. Since there is the possibility to set as parameter a waiting time for action move, we can generate some sort of waypoints by setting this value to zero. The three orange markers on the ground represent the way points, move actions with no waiting time and higher scaling factor alpha. On the black marker is executed a a move action with longer waiting time. Next, the robot flies in front of the camera with low scaling factor thus moving slowly and higher waiting time. After a rotation, the robot flies back to the landing site. This experiment demonstrates the ability of the architecture of executing more complex lists in a totally autonomous way. Moreover, it dshows how behaviors can be parametrized depending on the need. A move action, for example, could be a waypoint or a slow inspection. Figure \ref{figure:circle} shows the scene of this experiment. The central cylinder is the axis of the center of the circle, the orange markers are the waypoints and the black marker is a hovering task (longer waiting time).
@@ -461,7 +460,7 @@ The robot takes off, rotates and performs a circle around a cylinder pointing th
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.8\textwidth]{circle.png}
- \caption{Scene of the third experiment.}
+ \caption{Scene of the last experiment.}
  \label{figure:circle}
 \end{figure}
 
@@ -469,7 +468,7 @@ The robot takes off, rotates and performs a circle around a cylinder pointing th
 \begin{figure}[h]
 \centering
  \includegraphics[width=0.5\textwidth]{snippet.png}
- \caption{Output for the third experiment.}
+ \caption{Output for the last experiment.}
  \label{figure:snip}
 \end{figure}
 
