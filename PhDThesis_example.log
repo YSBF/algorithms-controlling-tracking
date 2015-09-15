@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  13 SEP 2015 21:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  15 SEP 2015 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -612,31 +612,30 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )))
+Package hyperref Info: Option `colorlinks' set `true' on input line 58.
+
 (./PhDThesis_example.aux (./Acknowledgement/acknowledgement.aux)
 (./Dedication/dedication.aux) (./Abstract/abstract.aux)
 (./Introduction/introduction.aux) (./Chapter2/chapter2.aux)
-(./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux
-
-LaTeX Warning: Label `figure:refframes' multiply defined.
-
-) (./Chapter5/chapter5.aux) (./Chapter6/chapter6.aux) (./Chapter7/chapter7.aux)
+(./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
+(./Chapter6/chapter6.aux) (./Chapter7/chapter7.aux)
 (./Conclusions/conclusions.aux))
 \openout1 = `PhDThesis_example.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -653,8 +652,8 @@ LaTeX Font Info:    ... okay on input line 54.
 \everyMPtoPDFconversion=\toks29
 )
 \AtBeginShipoutBox=\box31
-Package backref Info: ** backref set up for natbib ** on input line 54.
-Package hyperref Info: Link coloring ON on input line 54.
+Package backref Info: ** backref set up for natbib ** on input line 60.
+Package hyperref Info: Link coloring ON on input line 60.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -663,9 +662,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count127
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
 
 (./PhDThesis_example.out) (./PhDThesis_example.out)
 \@outlinefile=\write4
@@ -680,7 +679,7 @@ Package epstopdf Info: Source file: <Figures/System/logo_unige.eps>
 (epstopdf)                    size: 19286 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/System/logo_unige-
 eps-converted-to.pdf Figures/System/logo_unige.eps>
-(epstopdf)             \includegraphics on input line 63.
+(epstopdf)             \includegraphics on input line 69.
 Package epstopdf Info: Output file is already uptodate.
 
 <Figures/System/logo_unige-eps-converted-to.pdf, id=289, 405.515pt x 470.75874p
@@ -688,7 +687,7 @@ t>
 File: Figures/System/logo_unige-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/System/logo_unige-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/System/logo_unige-eps-converted-to.pdf used on
- input line 63.
+ input line 69.
 (pdftex.def)             Requested size: 85.35826pt x 99.09212pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1472,7 +1471,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.88 \include{Chapter4/chapter4}
+l.94 \include{Chapter4/chapter4}
                                 ]
 \openout2 = `Chapter5/chapter5.aux'.
 
@@ -1715,14 +1714,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.89 \include{Chapter5/chapter5}
+l.95 \include{Chapter5/chapter5}
                                  <./Chapter5/Figures/yaw_conv.png>] [66pdfTeX w
 arning (ext4): destination with the same identifier (name{figure.5.11}) has bee
 n already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.89 \include{Chapter5/chapter5}
+l.95 \include{Chapter5/chapter5}
                                  <./Chapter5/Figures/perturbation2-eps-converte
 d-to.pdf>]
 \openout2 = `Chapter6/chapter6.aux'.
@@ -2119,26 +2118,26 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 \include{Chapter6/chapter6}
+l.96 \include{Chapter6/chapter6}
                                  <./Chapter6/Figures/xalpha06.png>] [91pdfTeX w
 arning (ext4): destination with the same identifier (name{figure.6.13}) has bee
 n already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 \include{Chapter6/chapter6}
+l.96 \include{Chapter6/chapter6}
                                 pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.6.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 \include{Chapter6/chapter6}
+l.96 \include{Chapter6/chapter6}
                                 pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.6.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 \include{Chapter6/chapter6}
+l.96 \include{Chapter6/chapter6}
                                  <./Chapter6/Figures/takeland.png> <./Chapter6/
 Figures/multi1.png> <./Chapter6/Figures/multi2.png> <./Chapter6/Figures/landing
 .png>] [92pdfTeX warning (ext4): destination with the same identifier (name{fig
@@ -2146,20 +2145,20 @@ ure.6.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 \include{Chapter6/chapter6}
+l.96 \include{Chapter6/chapter6}
                                 pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.6.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 \include{Chapter6/chapter6}
+l.96 \include{Chapter6/chapter6}
                                  <./Chapter6/Figures/multiland.png> <./Chapter6
 /Figures/circle.png>] [93pdfTeX warning (ext4): destination with the same ident
 ifier (name{figure.6.18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 \include{Chapter6/chapter6}
+l.96 \include{Chapter6/chapter6}
                                  <./Chapter6/Figures/snippet.png>]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
@@ -2472,20 +2471,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.92 \include{Chapter7/chapter7}
+l.98 \include{Chapter7/chapter7}
                                 pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.7.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.92 \include{Chapter7/chapter7}
+l.98 \include{Chapter7/chapter7}
                                  <./Chapter7/Figures/d.png> <./Chapter7/Figures
 /platform-eps-converted-to.pdf>] [108pdfTeX warning (ext4): destination with th
 e same identifier (name{figure.7.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.92 \include{Chapter7/chapter7}
+l.98 \include{Chapter7/chapter7}
                                  <./Chapter7/Figures/sequence.png>]
 \openout2 = `Conclusions/conclusions.aux'.
 
@@ -2583,32 +2582,28 @@ lass / 16311 / www / s15 /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
  [117]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
  (./PhDThesis_example.aux (./Acknowledgement/acknowledgement.aux)
 (./Dedication/dedication.aux) (./Abstract/abstract.aux)
 (./Introduction/introduction.aux) (./Chapter2/chapter2.aux)
 (./Chapter3/chapter3.aux) (./Chapter4/chapter4.aux) (./Chapter5/chapter5.aux)
 (./Chapter6/chapter6.aux) (./Chapter7/chapter7.aux)
 (./Conclusions/conclusions.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `PhDThesis_example.out' has not changed.
 (rerunfilecheck)             Checksum: 3B32BE3BDC329C7A65AADF6CEEE2AC41;5202.
 Package rerunfilecheck Info: File `PhDThesis_example.brf' has not changed.
 (rerunfilecheck)             Checksum: 0BEF4AD5DE75E519FCE19804EB0F38B3;3524.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
- 9335 strings out of 493304
- 137097 string characters out of 6139872
- 228757 words of memory out of 5000000
- 11953 multiletter control sequences out of 15000+600000
+ 9336 strings out of 493304
+ 137111 string characters out of 6139872
+ 228800 words of memory out of 5000000
+ 11954 multiletter control sequences out of 15000+600000
  14033 words of font info for 51 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  39i,17n,45p,2455b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2630,7 +2625,7 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PhDThesis_example.pdf (131 pages, 12542318 bytes).
+Output written on PhDThesis_example.pdf (131 pages, 12542145 bytes).
 PDF statistics:
  1980 PDF objects out of 2073 (max. 8388607)
  1715 compressed objects within 18 object streams

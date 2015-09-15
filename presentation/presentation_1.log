@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  13 SEP 2015 22:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.4)  16 SEP 2015 00:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -989,6 +989,28 @@ Grid set 16 x 16 = 22.7622pt x 17.07166pt
 \TP@tbargs=\toks46
 \TP@prevdepth=\dimen207
 TextBlockOrigin set to 0pt x 0pt
+) (/usr/share/texlive/texmf-dist/tex/latex/movie15/movie15.sty
+Package: movie15 2012/05/16
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/ifdraft.sty
+Package: ifdraft 2008/08/11 v1.3 Detect class options draft and final (HO)
+)
+\@MXV@page=\count163
+\@MXV@adict=\count164
+\@MXV@aadict=\count165
+\@MXV@includes=\count166
+\@MXV@players=\count167
+\@MXV@links=\count168
+\@MXV@width=\dimen208
+\@MXV@height=\dimen209
+\@MXV@depth=\dimen210
+\@MXV@totalheight=\dimen211
+\@MXV@@boxdepth=\dimen212
+\@MXV@traiselen=\dimen213
+\@MXV@braiselen=\dimen214
+\@MXV@start=\dimen215
+\@MXV@end=\dimen216
+\@MXV@textbox=\box57
 )
 (/usr/share/texmf/tex/latex/beamer/base/themes/inner/beamerinnerthemerectangles
 .sty
@@ -1047,19 +1069,19 @@ LaTeX Font Info:    ... okay on input line 131.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count163
-\scratchdimen=\dimen208
-\scratchbox=\box57
-\nofMPsegments=\count164
-\nofMParguments=\count165
+\scratchcounter=\count169
+\scratchdimen=\dimen217
+\scratchbox=\box58
+\nofMPsegments=\count170
+\nofMParguments=\count171
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count166
-\MPscratchDim=\dimen209
-\MPnumerator=\count167
-\makeMPintoPDFobject=\count168
+\MPscratchCnt=\count172
+\MPscratchDim=\dimen218
+\MPnumerator=\count173
+\makeMPintoPDFobject=\count174
 \everyMPtoPDFconversion=\toks48
 ) ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box58
+\AtBeginShipoutBox=\box59
 Package hyperref Info: Link coloring OFF on input line 131.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1068,7 +1090,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count169
+\c@section@level=\count175
 )
 LaTeX Info: Redefining \ref on input line 131.
 LaTeX Info: Redefining \pageref on input line 131.
@@ -1169,7 +1191,7 @@ Overfull \hbox (50.3596pt too wide) has occurred while \output is active
 
 [2
 
-] <f/quad.png, id=114, 770.88pt x 444.66125pt>
+] <f/quad.png, id=108, 770.88pt x 444.66125pt>
 File: f/quad.png Graphic file (type png)
  <use f/quad.png>
 Package pdftex.def Info: f/quad.png used on input line 168.
@@ -1216,13 +1238,13 @@ Overfull \hbox (50.3596pt too wide) has occurred while \output is active
 
 [8
 
-] <f/iris.jpg, id=287, 602.25pt x 462.72874pt>
+] <f/iris.jpg, id=281, 602.25pt x 462.72874pt>
 File: f/iris.jpg Graphic file (type jpg)
  <use f/iris.jpg>
 Package pdftex.def Info: f/iris.jpg used on input line 267.
 (pdftex.def)             Requested size: 171.14764pt x 131.49779pt.
 
-<f/iris_planner.jpg, id=288, 1236.62pt x 819.06pt>
+<f/iris_planner.jpg, id=282, 1236.62pt x 819.06pt>
 File: f/iris_planner.jpg Graphic file (type jpg)
  <use f/iris_planner.jpg>
 Package pdftex.def Info: f/iris_planner.jpg used on input line 267.
@@ -1234,44 +1256,74 @@ Overfull \hbox (50.3596pt too wide) has occurred while \output is active
 
 [9
 
- <./f/iris.jpg> <./f/iris_planner.jpg>] (./presentation_1.toc)
+ <./f/iris.jpg> <./f/iris_planner.jpg>]
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [10
 
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 291.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 291.
+] <f/irismarker.jpg, id=337, 1842.885pt x 1683.28876pt>
+File: f/irismarker.jpg Graphic file (type jpg)
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+<use f/irismarker.jpg>
+Package pdftex.def Info: f/irismarker.jpg used on input line 298.
+(pdftex.def)             Requested size: 102.68962pt x 93.77551pt.
+
+<f/motiv_panorama.PNG, id=338, 497.60907pt x 335.75438pt>
+File: f/motiv_panorama.PNG Graphic file (type png)
+
+<use f/motiv_panorama.PNG>
+Package pdftex.def Info: f/motiv_panorama.PNG used on input line 298.
+(pdftex.def)             Requested size: 138.62917pt x 93.53925pt.
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [11
 
-] (./presentation_1.toc)
+ <./f/irismarker.jpg> <./f/motiv_panorama.PNG>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 336.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 336.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<f/frames.png, id=369, 465.99094pt x 311.66437pt>
+File: f/frames.png Graphic file (type png)
+ <use f/frames.png>
+Package pdftex.def Info: f/frames.png used on input line 336.
+(pdftex.def)             Requested size: 171.14764pt x 114.4675pt.
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [12
 
-]
+ <./f/frames.png>] <f/integration.png, id=400, 607.068pt x 560.0925pt>
+File: f/integration.png Graphic file (type png)
+
+<use f/integration.png>
+Package pdftex.def Info: f/integration.png used on input line 345.
+(pdftex.def)             Requested size: 236.18459pt x 217.90532pt.
+
+Overfull \vbox (11.90134pt too high) detected at line 345
+ []
+
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [13
 
-] (./presentation_1.toc)
+ <./f/integration.png>] (./presentation_1.toc)
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1279,16 +1331,31 @@ Overfull \hbox (50.3596pt too wide) has occurred while \output is active
 [14
 
 ]
+Package epstopdf Info: Source file: <f/ref_frames.eps>
+(epstopdf)                    date: 2015-09-04 11:49:22
+(epstopdf)                    size: 1025972 bytes
+(epstopdf)             Output file: <f/ref_frames-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-09-15 13:59:41
+(epstopdf)                    size: 20458 bytes
+(epstopdf)             Command: <repstopdf --outfile=f/ref_frames-eps-converted
+-to.pdf f/ref_frames.eps>
+(epstopdf)             \includegraphics on input line 365.
+Package epstopdf Info: Output file is already uptodate.
+ <f/ref_frames-eps-converted-to.pdf, id=463, 228.855pt x 176.66pt>
+File: f/ref_frames-eps-converted-to.pdf Graphic file (type pdf)
+
+<use f/ref_frames-eps-converted-to.pdf>
+Package pdftex.def Info: f/ref_frames-eps-converted-to.pdf used on input line 3
+65.
+(pdftex.def)             Requested size: 171.14764pt x 132.11998pt.
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [15
 
-]
-\openout4 = `presentation_1.vrb'.
-
- (./presentation_1.vrb)
+ <./f/ref_frames-eps-converted-to.pdf>]
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1296,13 +1363,23 @@ Overfull \hbox (50.3596pt too wide) has occurred while \output is active
 [16
 
 ]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 407.
+
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [17
 
-] (./presentation_1.toc)
+]
+Overfull \hbox (10.54727pt too wide) detected at line 444
+[] []
+ []
+
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1310,30 +1387,62 @@ Overfull \hbox (50.3596pt too wide) has occurred while \output is active
 [18
 
 ]
-\openout4 = `presentation_1.vrb'.
-
- (./presentation_1.vrb)
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [19
 
-]
+] <f/control_arch.png, id=621, 731.73375pt x 389.35463pt>
+File: f/control_arch.png Graphic file (type png)
+
+<use f/control_arch.png>
+Package pdftex.def Info: f/control_arch.png used on input line 479.
+(pdftex.def)             Requested size: 342.2953pt x 182.13524pt.
+
+Overfull \vbox (3.33127pt too high) detected at line 479
+ []
+
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [20
 
- </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
+ <./f/control_arch.png>] <f/x_conv.png, id=649, 1591.9475pt x 874.26625pt>
+File: f/x_conv.png Graphic file (type png)
+
+<use f/x_conv.png>
+Package pdftex.def Info: f/x_conv.png used on input line 493.
+(pdftex.def)             Requested size: 171.14764pt x 93.98178pt.
+ <f/y_conv.png, id=650, 1597.97pt x 875.27pt>
+File: f/y_conv.png Graphic file (type png)
+
+<use f/y_conv.png>
+Package pdftex.def Info: f/y_conv.png used on input line 493.
+(pdftex.def)             Requested size: 171.14764pt x 93.74245pt.
+ <f/z_conv.png, id=651, 1598.97375pt x 875.27pt>
+File: f/z_conv.png Graphic file (type png)
+
+<use f/z_conv.png>
+Package pdftex.def Info: f/z_conv.png used on input line 493.
+(pdftex.def)             Requested size: 171.14764pt x 93.67566pt.
+ <f/yaw_conv.png, id=652, 1591.9475pt x 884.30376pt>
+File: f/yaw_conv.png Graphic file (type png)
+
+<use f/yaw_conv.png>
+Package pdftex.def Info: f/yaw_conv.png used on input line 493.
+(pdftex.def)             Requested size: 171.14764pt x 95.06079pt.
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [21
 
-] (./presentation_1.toc)
+ <./f/x_conv.png> <./f/y_conv.png> <./f/z_conv.png> <./f/yaw_conv.png>]
+(./presentation_1.toc)
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1341,11 +1450,53 @@ Overfull \hbox (50.3596pt too wide) has occurred while \output is active
 [22
 
 ]
+
+Package movie15 Warning: Label `v/circle_final.MP4' multiply defined on input l
+ine 508.
+
+
 Overfull \hbox (50.3596pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [23
+
+pdfTeX warning (ext4): destination with the same identifier (name{@MXV@v/circle
+_final.MP4.23}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.508 \end{frame}
+                 <<v/circle_final.MP4>>]
+\openout4 = `presentation_1.vrb'.
+
+ (./presentation_1.vrb)
+Overfull \hbox (50.3596pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[24
+
+] (./presentation_1.toc)
+Overfull \hbox (50.3596pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[25
+
+] (./presentation_1.toc)
+Overfull \hbox (50.3596pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[26
+
+]
+Overfull \hbox (50.3596pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[27
 
 ]
 \tf@nav=\write6
@@ -1357,42 +1508,68 @@ Overfull \hbox (50.3596pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `presentation_1.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 401.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 401.
- (./presentation_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 401.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 401.
+
+
+Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+(movie15)                @@ Package `movie15' is obsolete and @@
+(movie15)                @@ superseded by `media9'.           @@
+(movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
+
+
+Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+(movie15)                @@ There were multiply-defined labels! @@
+(movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
+
+
+Package movie15 Warning: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+(movie15)                @@ Rerun to get object references right! @@
+(movie15)                @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 547.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 547.
+(./presentation_1.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 547.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 547.
 Package rerunfilecheck Info: File `presentation_1.out' has not changed.
-(rerunfilecheck)             Checksum: 776993559D51ED6C636A2129A6062627;371.
+(rerunfilecheck)             Checksum: 47E44C61860CAABAD81D33F6894FF414;326.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 401.
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 547.
  ) 
 Here is how much of TeX's memory you used:
- 16647 strings out of 493304
- 306891 string characters out of 6139872
- 387377 words of memory out of 5000000
- 19599 multiletter control sequences out of 15000+600000
- 11994 words of font info for 44 fonts, out of 8000000 for 9000
+ 17100 strings out of 493304
+ 314110 string characters out of 6139872
+ 435229 words of memory out of 5000000
+ 20024 multiletter control sequences out of 15000+600000
+ 13760 words of font info for 50 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,17n,53p,403b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt10.pfb>
-Output written on presentation_1.pdf (23 pages, 887358 bytes).
+ 49i,17n,53p,403b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+si10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on presentation_1.pdf (27 pages, 103498019 bytes).
 PDF statistics:
- 793 PDF objects out of 1000 (max. 8388607)
- 737 compressed objects within 8 object streams
- 56 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 946 PDF objects out of 1000 (max. 8388607)
+ 866 compressed objects within 9 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

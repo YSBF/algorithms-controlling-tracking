@@ -109,7 +109,7 @@ The position estimator is based on inertial model and optimized for multirotors.
 	\label{tab:corrgain}
 \end{table}
 \noindent
-\textbf{Note}: the accelerometers are used as an absolute measure, thus treated as the input of the system used for prediction (\eqref{eq:prediction}). Moreover I changed the gain \textit{INAV\_W\_Z\_BARO} from 50 to 0.0001 because the sensor gives the absolute altitude above sea level while the mocap gives the height respect to the earth frame (the floor of the room). This causes a mismatch in the two measures leading to false prediction with a constant offset, hence the gain for the barometer is set very low.
+\textbf{Note}: the accelerometers are used as an absolute measure, thus treated as the input of the system used for prediction \eqref{eq:prediction}. Moreover I changed the gain \textit{INAV\_W\_Z\_BARO} from 50 to 0.0001 because the sensor gives the absolute altitude above sea level while the mocap gives the height respect to the earth frame (the floor of the room). This causes a mismatch in the two measures leading to false prediction with a constant offset, hence the gain for the barometer is set very low.
 
 \subsubsection*{Working principle of position estimator}
 The algorithm for position estimation is divided in two phases: prediction and update. The model used for \textbf{prediction} is the following: 

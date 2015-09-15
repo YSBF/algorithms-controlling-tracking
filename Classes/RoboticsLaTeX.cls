@@ -40,7 +40,7 @@
 \usepackage{graphics}
 \usepackage{StyleFiles/fancyhdr}
 \usepackage{eucal}
-\usepackage[round, sort, numbers, authoryear]{natbib}
+\usepackage[sort, numbers, authoryear]{natbib}
 \usepackage[english]{babel}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage[perpage]{footmisc}

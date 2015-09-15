@@ -88,7 +88,7 @@
 \usepackage{epstopdf}
 \usepackage{xcolor}
 \usepackage[absolute,overlay]{textpos}
-
+\usepackage{movie15}
 
 
 
@@ -191,7 +191,7 @@ The work of this thesis produced:
 The total work is divided in main steps:
 \begin{enumerate}
 
-\item Analysis of state of the art approaches to UAV control, modeling, trajectory planning and execution
+\item Analysis of state of the art approaches to UAV control and modeling
 
 \item Technical analysis and documentation on the given tools (Autopilot, Motion Capture, Quadcopter)
 
@@ -261,58 +261,237 @@ The IRIS quadcopter is flying robot manufactured by 3DRobotics and commercially 
 \centering
 \includegraphics[width = 0.5\textwidth]{f/iris.jpg}
 \includegraphics[width = 0.5\textwidth]{f/iris_planner.jpg}
-\caption{IRIS Pictures. On the left the top view while on the right the robot with a camera and control devices.}
+
 \end{figure}
 
 \end{frame}
-%------------------------------------------------
-\section{Model overview}
-
+%----------------++--------------------------------
 \begin{frame}
-\tableofcontents[sectionstyle=show,square,currentsection]
+\frametitle{IRIS - PixHawk / PX4}
+The brain of the robot is the \textbf{PixHawk} board. 
+\begin{itemize}
+\item Two embedded processors
+\item IMU, barometer, magnetometer  and GPS receiver
+\item ESCs (Electronic Speed Controllers) 
+\item RC Radio interface
+\item Telemetry module through MAVLink protocol
+\end{itemize}
+Featuring the \textbf{PX4} open source autopilot. \\~\\
+PX4 runs on NuttX, an open source RTOS, and includes different modules executing in parallel. 
+\\~\\
+Modules implement: estimation and control, low level management, failsafe.
 \end{frame}
 
+%--------------------------------------------------
 \begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+\frametitle{Motion Capture}
+Responsible for the localization of the robot.\\~\\
 
+It relies on eight OptiTrack cameras detecting IR beams reflected by passive markers. \\~\\
+
+Provides 6D (translation and rotation) position of rigid bodies defined by at least three markers. Position is provided by a local frame predefined by the user. 
+\begin{figure}
+\centering
+\includegraphics[width = 0.3\textwidth]{f/irismarker.jpg} \hspace{2em}
+\includegraphics[width = 0.405\textwidth]{f/motiv_panorama.PNG}
+\end{figure}
+\end{frame}
+%--------------------------------------------------
+\begin{frame}[t]
+\frametitle{Adapting reference frames}
+
+\begin{columns}[t] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 \column{.45\textwidth} % Left column and width
-\textbf{Heading}
+\textbf{Mocap reference frame}
 \begin{itemize}
-\item Statement
-\item Explanation
-\item Example
+\item X and Z axis on the horizontal plane
+\item Y axis vertical pointing up
+
 \end{itemize}
-
 \column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat
+\textbf{Earth reference frame}
+\begin{itemize}
+\item X and Y axis on the horizontal plane
+\item Z axis vertical pointing down
+\item When mag is on, X is North, Y East and Z is down
+\end{itemize}
+\end{columns}
 
+\begin{columns} % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+\column{.5\textwidth} % Left column and width
+\begin{equation*}
+\begin{aligned}
+P\textsuperscript{E}& = \begin{bmatrix}x&&z&&-y\end{bmatrix}^T
+\\
+Q\textsuperscript{E}& = \begin{bmatrix}
+w&&x&&z&&-y
+\end{bmatrix}^T\\
+\end{aligned}
+\end{equation*}
+
+with $[x,y,z]$ and $[w,x,y,z]$ in mocap frame
+\column{.5\textwidth}
+\includegraphics[width = 1\textwidth]{f/frames.png}
 \end{columns}
 \end{frame}
 
+\begin{frame}
+\frametitle{Overall integration}
+\begin{figure}
+\centering
+\includegraphics[width = 0.69\textwidth]{f/integration.png}
+\end{figure}
 
-\section{State estimation and control}
+\end{frame}
+
+%--------------------------------------------------
+\section{Modeling, estimation and control}
 
 \begin{frame}
 \tableofcontents[sectionstyle=show,square,currentsection]
 \end{frame}
 
+\begin{frame}[t]
+\frametitle{Reference frames}
+\begin{itemize}
+\item $\Re^B$ body frame, attached to the robot center of mass
+\item $\Re^E$ earth frame, placed on the floor at the center of the room
+\end{itemize}
+\begin{figure}
+\centering
+\includegraphics[width = 0.5\textwidth]{f/ref_frames.eps}
+\end{figure}
+${}^ET_B$ defines the transformation of $\Re^B$ respect to $\Re^E$ as base frame.
+\end{frame}
+
 
 \begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+\frametitle{Propulsion}
+Each rotor generates:\begin{itemize}
+\item A force $f_i = k \omega_i ^ 2$
+\item A torque $\tau_i = k_d \omega_i ^ 2$
+\end{itemize} 
+Performing forces and torques balance:
+\begin{equation*}
+\begin{bmatrix}
+T^B\\\tau_\phi\\\tau_\theta\\\tau_\psi
+\end{bmatrix} = \begin{bmatrix}
+k&&k&&k&&k\\
+k d_i S(30)&&-k d_i S(30)k&& -d_i S(30)&&d_i S(30)\\
+-k d_i C(30)&&-k d_i C(30)k&& d_i C(30)&&d_i C(30)\\
+k_d&&-k_d&&-k_d&&k_d
+\end{bmatrix} \begin{bmatrix}
+\omega_1\\\omega_2\\\omega_3\\\omega_4
+\end{bmatrix}^2
+\end{equation*}
+$T^B$: thrust along $z^B$ \\ $\tau$ : torques on the three axis
 \end{frame}
+
+\begin{frame}[t]
+\frametitle{Rigid body equations}
+The model is described by the well known rigid body equations of motion:
+\begin{align*}
+\boldsymbol{\dot{r}}& = \boldsymbol{v}\\ 
+m\boldsymbol{\dot{v}}& = \boldsymbol{F}\\ 
+\dot{R}& = R\Omega_\times\\ 
+I\boldsymbol{\dot{\Omega}}& = -\boldsymbol{\Omega} \times I\boldsymbol{\Omega} + \boldsymbol{\tau}
+\end{align*}
+Define the input vector as : $\textbf{U} = \begin{bmatrix}
+T^B&&\tau_\phi && \tau_\theta && \tau_\psi
+\end{bmatrix}^T$
+\vspace{2em}
+
+then: $\boldsymbol{\dot{v}} = \frac{1}{m}\left(\begin{bmatrix}0\\0\\mg\end{bmatrix}^E + R\begin{bmatrix}0\\0\\U_1\end{bmatrix}^B\right)$  and $\boldsymbol{\dot{\Omega}} =I^{-1}\left(\begin{bmatrix}
+U_2\\U_2\\U_4
+\end{bmatrix} -\boldsymbol{\Omega} \times I\boldsymbol{\Omega}\right)$
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{State estimation}
+
+\begin{columns}[t]
+\column{.5\textwidth}
+\textbf{Position estimator}:
+Fixed gain observer
+\begin{itemize}
+\item Accelerometers (input)
+\item GPS
+\item Barometer
+\item Mocap
+\end{itemize}
+\vspace{1em}
+Position estimator model:
+\begin{equation*}
+\begin{aligned}
+	\boldsymbol{x_k}(\boldsymbol{x_{k-1}}, dt , \boldsymbol{a})& = \boldsymbol{x_{k-1}} + \boldsymbol{v_k}dt + \frac{1}{2}\boldsymbol{a} dt^2 \\
+	 \boldsymbol{v_k} ( \boldsymbol{v_{k-1}} ,\boldsymbol{a} , dt)& = \boldsymbol{v_{k-1}} + \boldsymbol{a}dt
+	 \end{aligned}
+\end{equation*}
+\column{.45\textwidth}
+\textbf{Attitude estimator}:
+Extended Kalman Filter
+\begin{itemize}
+\item Accelerometer
+\item Gyroscope
+\item Magnetometer
+\end{itemize}
+\vspace{2em}
+ The magnetometer gives the value of the magnetic field in robot frame along three axis. The yaw is normally calculated respect to the North-South line.
+\end{columns}
+
+
+
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Yaw correct estimation}
+
+\begin{columns}[t]
+\column{0.5\textwidth}
+Measured mag. field in body frame:
+\\
+\vspace{1em}
+$\boldsymbol{mag}^B = \begin{bmatrix}mag_x \\ mag_y \\ mag_z\end{bmatrix}$ 
+\column{0.5\textwidth}
+Fake mag. field in earth frame:
+\\
+\vspace{1em}
+$\boldsymbol{mag^E}$ = $\begin{bmatrix}1\\ 0 \\ 0.4\end{bmatrix}^T$
+\end{columns}
+\vspace{1em}
+Then we cut of the magnetometer sensor and replace $\boldsymbol{mag}^B$ with:
+\begin{equation}
+	 \boldsymbol{mag^B} = R^T \boldsymbol{mag^E}
+\end{equation}
+\vspace{1ex}
+
+\textit{Roll} and \textit{Pitch} angles are estimated by the EKF. By passing the value of the \textit{Yaw} calculated by the mocap we are able to construct the $R$ matrix and inject the value of $\boldsymbol{mag^B}$ inside the estimator.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Controller structure}
+Two modules implement a cascade of P / PID controllers: \textbf{position control} module and \textbf{attitude control} module.
+\begin{figure}
+\centering
+\includegraphics[width = 1\textwidth]{f/control_arch.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Results}
+\begin{textblock*}{1\textwidth}(0.4cm,1cm)
+	\begin{figure}
+	\vspace{1em}
+	\includegraphics[width = 0.5\textwidth]{f/x_conv.png}
+	\includegraphics[width = 0.5\textwidth]{f/y_conv.png} \\
+	\vspace{1ex}
+	\includegraphics[width = 0.5\textwidth]{f/z_conv.png}
+	\includegraphics[width = 0.5\textwidth]{f/yaw_conv.png}
+	\end{figure}
+\end{textblock*}
+\end{frame}
+
 
 %------------------------------------------------
 \section{Software architecture}
@@ -323,9 +502,9 @@ Treatment 3 & 0.0009271 & 0.296 \\
 
 \begin{frame}
 \frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
+\movie{ciao}{v/circle_final.MP4}
+\includemovie[poster,autoplay]{3.25cm}{3.25cm}{v/circle_final.MP4}
+
 \end{frame}
 
 %------------------------------------------------
@@ -343,15 +522,6 @@ $E = mc^2$
 \end{example}
 \end{frame}
 
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
 
 %------------------------------------------------
 \section{Landing on a mobile platform}
@@ -360,30 +530,6 @@ Uncomment the code on this slide to include your own image from the same directo
 \tableofcontents[sectionstyle=show,square,currentsection]
 \end{frame}
 
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
-}
-\end{frame}
-\subsection*{sub}
-
-\begin{frame}
-
-\end{frame}
 %------------------------------------------------
 
 \section{Conclusions}

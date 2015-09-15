@@ -1,8 +1,7 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@sectionintoc {2}{System setup}{6}{0}{2}
-\beamer@sectionintoc {3}{Model overview}{10}{0}{3}
-\beamer@sectionintoc {4}{State estimation and control}{12}{0}{4}
-\beamer@sectionintoc {5}{Software architecture}{14}{0}{5}
-\beamer@sectionintoc {6}{Landing on a mobile platform}{18}{0}{6}
-\beamer@sectionintoc {7}{Conclusions}{22}{0}{7}
+\beamer@sectionintoc {3}{Modeling, estimation and control}{14}{0}{3}
+\beamer@sectionintoc {4}{Software architecture}{22}{0}{4}
+\beamer@sectionintoc {5}{Landing on a mobile platform}{25}{0}{5}
+\beamer@sectionintoc {6}{Conclusions}{26}{0}{6}
