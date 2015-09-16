@@ -89,7 +89,7 @@
 \usepackage{xcolor}
 \usepackage[absolute,overlay]{textpos}
 \usepackage{movie15}
-
+\usepackage{media9}
 
 
 
@@ -500,10 +500,93 @@ Two modules implement a cascade of P / PID controllers: \textbf{position control
 \tableofcontents[sectionstyle=show,square,currentsection]
 \end{frame}
 
+\begin{frame}[t]
+\frametitle{Definition}
+\begin{block}{Definition}
+A software architecture is an abstract view of a software system distinct from the details of implementation, algorithms, and data representation.
+\end{block}
+
+It is represented by a block diagram. Each block is independent with known in/out relation.
+\vspace{1ex}
+
+A well written software architecture should:
+ \begin{itemize}
+ \item Provide flexibility and adaptability
+ \item Allow for interoperability 
+ \item Provide control on the system
+ \item Reduce maintenance time and cost
+ \item Help developers improving the software
+ \end{itemize}
+
+\end{frame}
+
 \begin{frame}
-\frametitle{Theorem}
-\movie{ciao}{v/circle_final.MP4}
-\includemovie[poster,autoplay]{3.25cm}{3.25cm}{v/circle_final.MP4}
+\frametitle{Goal}
+The SW must:\begin{itemize}
+\item Be expandable
+\item Be flexible
+\item Be able to control the robot by sending position feedback and set point
+\item Execute sequentially a list of tasks predefined by the user
+\end{itemize}
+
+\vspace{2em}
+\textbf{Note: }Position feedback and set point are vectors $P = \begin{bmatrix}
+x\\y\\z\\yaw
+\end{bmatrix}$
+\end{frame}
+
+\begin{frame}
+\frametitle{Scheme}
+\begin{figure}
+\centering
+\includegraphics[width = 0.9\textwidth]{f/nested_arch.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Design Patterns}
+How do we design the core modules?
+\vspace{3em}
+\begin{block}{Design Pattern}
+The pattern is a description or template for how to solve a problem that can be used in many different situations.
+\end{block}
+The Pattern is the architectural style chosen among the available ones depending on the problem. 
+
+\vspace{2em}
+A \textbf{Behavioral design} is used for organizing each SW component.
+
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Behavioral design in nature}
+Inspired from animals
+
+\begin{figure}
+\centering
+\includegraphics[width =0.4 \textwidth]{f/frog.jpg}
+\includegraphics[width =0.4 \textwidth]{f/pigeot.jpg}
+\end{figure}
+\begin{columns}
+
+\end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Demo}
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{f/circle.png}
+%\includemovie[poster]{0.5cm}{0.5cm}{v/circle_final.MP4} \\
+\includegraphics[width = 0.5\textwidth]{f/multiland.png}
+%\includemovie[poster]{0.5cm}{0.5cm}{v/multiland.MP4}
+
+\end{figure}
+
+%\includemedia[
+% width=0.5\textwidth
+%]{	\includegraphics[width = 0.5\textwidth]{f/z_conv.png}}{v/circle_final.MP4}
 
 \end{frame}
 
