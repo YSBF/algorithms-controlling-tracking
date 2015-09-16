@@ -101,14 +101,14 @@ Figure \ref{figure:nogain} represents an actual trial in the lab. The implemente
 \end{figure}
 The control can be improved by adding  another source for feedback, the position error which can be measured by $\boldsymbol{P_e} = \boldsymbol{P_{t}} - \boldsymbol{P_{r}}$. By observing the phenomenon we can think of issuing a position set point a bit ahead the robotic platform so that, even if the robot does not converges to $\boldsymbol{P_{sp}}$, we can in some way anticipare the platform. That said, the controller is modified to the following:
 \begin{equation}
-\boldsymbol{P_{sp}} = \boldsymbol{P_{r}} + K_p \boldsymbol{P_e} 
+\boldsymbol{P_{sp}} = \boldsymbol{P_{t}} + K_p \boldsymbol{P_e} 
 \label{eq:contr2}
 \end{equation}
 Meaning that, depending on the actual horizontal error, the set point is accordingly issued, weighted by $K_p$ gain and placed ahead the mobile platform. 
 
 This is a big improvement but it is still insufficient. Proportional controls are made to work with the presence of errors. If the target is reached, the error goes to zero and the equation \eqref{eq:contr2} simply becomes \eqref{eq:contr1}. As stated before, the error is static, meaning that at regime it is constant. The best way to compensate for this kind of errors is to insert and integral action. Hence the third and final controller is:
 \begin{equation}
-\boldsymbol{P_{sp}} = \boldsymbol{P_{r}} + K_p \boldsymbol{P_e} +  K_i \int \boldsymbol{P_e}
+\boldsymbol{P_{sp}} = \boldsymbol{P_{t}} + K_p \boldsymbol{P_e} +  K_i \int \boldsymbol{P_e}
 \label{eq:contr3}
 \end{equation}
 Integrating the error, the last terms grows. When the robot reaches the vertical of the platform, proportional term goes to zero but the integral remains at a certain value. This value it is somehow related to the velocity of the platform and it is able to cancel static error.

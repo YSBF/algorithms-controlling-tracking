@@ -148,23 +148,12 @@ Degree in \textit{Robotics Engineering}
 
 \begin{frame}
 \frametitle{The quadrotor}
-The number of applications in which UAVs (Unmanned Aerial Vehicles) are involved is exponentially increasing, especially in indoor scenarios. \\~\\ 
-The most popular architecture is the \textbf{quadrotor}: a helicopter
-with four rotors. The main features are:\\ 
-
-\begin{itemize}
-\item Good stability
-\item Omni-directional kinematics 
-\item Hovering on a fixed point
-\item Medium payload
-\end{itemize}
-
-\begin{textblock*}{5cm}(7cm,4.6cm) % {block width} (coords)
-\includegraphics[width=0.8\textwidth]{f/quad.png}
-\end{textblock*}
-
-\vspace{2ex}
-Due to its properties, the quadrotor is the main chosen architecture for indoor flight.
+The number of applications in which UAVs (Unmanned Aerial Vehicles) are involved is exponentially increasing, especially in indoor scenarios.
+\begin{figure}
+\centering
+\includegraphics[width = 0.8\textwidth]{f/intro.png}
+\includemovie[poster]{0.5cm}{0.5cm}{v/first.mp4}
+\end{figure}
 \end{frame}
 
 %------------------------------------------------
@@ -179,35 +168,10 @@ and perform different tasks in an indoor scenario.
 The work of this thesis produced:
 \begin{itemize}
 \item A correct integration between the on board autopilot and the mocap system
-\item A functioning experimental setup mounted in the new laboratory
+\item A functioning experimental setup mounted in the new EMARO laboratory
 \item A software architecture capable of letting the robot execute tasks sequentially from a list
 \item A procedure for landing on a moving platform
 \end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Work flow}
-
-The total work is divided in main steps:
-\begin{enumerate}
-
-\item Analysis of state of the art approaches to UAV control and modeling
-
-\item Technical analysis and documentation on the given tools (Autopilot, Motion Capture, Quadcopter)
-
-\item Integration between mocap and the quadrotor
-\begin{itemize}
-
-\item Integration and testing between mocap and onboard estimation modules
-\item Integration and testing of onboard controller through set point control
-
-\end{itemize}
-\item Relocation of the equipment in the new laboratory
-\item Design of the high level software architecture 
-\item Testing the software, coding and debugging different kind of tasks
-\item Design and testing an algorithm for landing on a mobile platform
-
-\end{enumerate}
 \end{frame}
 
 %------------------------------------------------
@@ -218,19 +182,6 @@ The total work is divided in main steps:
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Setup}
-We can identify five distinct parts:
-\vspace{2em}
-\begin{itemize}
-\item  IRIS quadcopter from 3D robotics
-\item  Motion Capture system from Optitrack
-\item  Linux workstation
-\item  Windows machine
-\item  Flight arena
-\end{itemize}
-\end{frame}
-%-------------------------------------------------
 \begin{frame}
 \frametitle{IRIS}
 The IRIS quadcopter is flying robot manufactured by 3DRobotics and commercially available. \\~\\ 
@@ -522,9 +473,7 @@ A well written software architecture should:
 
 \begin{frame}
 \frametitle{Goal}
-The SW must:\begin{itemize}
-\item Be expandable
-\item Be flexible
+In particular the SW must:\begin{itemize}
 \item Be able to control the robot by sending position feedback and set point
 \item Execute sequentially a list of tasks predefined by the user
 \end{itemize}
@@ -557,22 +506,108 @@ A \textbf{Behavioral design} is used for organizing each SW component.
 
 \end{frame}
 
-\begin{frame}[t]
-\frametitle{Behavioral design in nature}
-Inspired from animals
+\begin{frame}[t,fragile]
+\frametitle{Behavioral design}
+Inspired from animals but largely applied in robotics
 
-\begin{figure}
-\centering
-\includegraphics[width =0.4 \textwidth]{f/frog.jpg}
-\includegraphics[width =0.4 \textwidth]{f/pigeot.jpg}
-\end{figure}
-\begin{columns}
+\begin{columns}[t]
+\column{0.5\textwidth}
+\begin{verbatim}
+if(TAKE_OFF){ takeOff(); }
+
+if(LAND){ land(); }
+\end{verbatim}
+\column{0.5\textwidth}
+\begin{verbatim}
+if(MOVE){ move(); }
+
+if(FOLLOW_T){ followTraj(); 
+			              rotate(); }
+\end{verbatim}
 
 \end{columns}
+\vspace{2em}
+\textit{TAKE\_OFF, LAND, MOVE, FOLLOW\_T} are boolean signals of the so called \textbf{switching logic}.  \\~\\ 
+
+\textit{takeOff(), land(), move(), followTraj()} are C++ functions and they are called \textbf{behaviors}.
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Behaviors and switching logic}
+
+\begin{figure}
+\includegraphics[width = 0.8\textwidth]{f/switch.png}
+\end{figure}
 
 \end{frame}
 
+\begin{frame}
+\frametitle{Implemented behaviors}
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c}
+Actual task               & Activated behaviors   \\ \hline
+take off                  & take\_off             \\
+land                      & land                  \\
+move                      & move                  \\
+follow trajectory         & follow\_traj ; rotate \\
+rotate                    & rotate                \\
+land on a mobile platform & plat\_land           
+\end{tabular}
+\caption{Switching logic mapping.}
+\label{tab:map}
+\end{table}
+\end{frame}
 
+\begin{frame}
+\frametitle{Tasks and switching}
+\begin{itemize}
+\item Tasks are executed sequentially.
+
+\item Tasks activate different behaviors.
+
+\item Behaviors can be concurrent if they act on different dynamics.
+
+\item Tasks can be personalized by parameters
+
+\end{itemize}
+\begin{figure}
+\centering
+\includegraphics[width = 0.6\textwidth]{f/executioner.png}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+\frametitle{List Example}
+
+\includegraphics[width = 0.6\textwidth]{f/nodelist.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Overall structure}
+Each module runs on a different thread
+\begin{figure}
+\includegraphics[width = 0.6\textwidth]{f/arch_scheme.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Move algorithm}
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{f/move1.eps}
+\includegraphics[width = 0.5\textwidth]{f/move2.eps}
+\end{figure}
+\begin{equation*}
+\boldsymbol{P_{sp}} = 
+\begin{cases}
+    \boldsymbol{P_g}, & \text{if } \lVert\boldsymbol{V_e} \rVert \leq \alpha \\
+    \boldsymbol{P_r} + \alpha \boldsymbol{u_e},&    \text{if } \lVert\boldsymbol{V_e}\rVert > \alpha
+\end{cases}
+\end{equation*}
+\end{frame}
 
 \begin{frame}
 \frametitle{Demo}
@@ -583,37 +618,129 @@ Inspired from animals
 %\includemovie[poster]{0.5cm}{0.5cm}{v/multiland.MP4}
 
 \end{figure}
-
-%\includemedia[
-% width=0.5\textwidth
-%]{	\includegraphics[width = 0.5\textwidth]{f/z_conv.png}}{v/circle_final.MP4}
-
 \end{frame}
 
 %------------------------------------------------
 
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-
-%------------------------------------------------
 \section{Landing on a mobile platform}
 
 \begin{frame}
 \tableofcontents[sectionstyle=show,square,currentsection]
 \end{frame}
 
-%------------------------------------------------
+\begin{frame}[t]
+Remember the first video?
+
+\vspace{2em}
+\begin{figure}
+\centering
+\includegraphics[width = 0.8\textwidth]{f/intro.png}
+\includemovie[poster]{0.5cm}{0.5cm}{v/final.mp4}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Motivations}
+Manual landing on a mobile platform could be difficult, even with some help. Landing maneuver must be automated.
+\vspace{2ex}
+
+Applications: \begin{itemize}
+\item Cooperative robotics
+\item Land on moving recharge stations
+\item Land on air carriers
+\end{itemize}
+This is still an open problems with various solutions.
+\vspace{2ex}
+\begin{block}{Problem statement}
+It is possible, through position control, to develop an algorithm which is able to guide IRIS along a landing maneuver on a mobile platform?
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Assumptions}
+\begin{itemize}
+\item Only the position of the platform is know, velocity is not used in the controller.
+\item The trajectory of the platform is assumed to be mostly linear, no sudden changes in direction are taken into account.
+\item The velocity of the platform is constant.
+\item The extremities of the trajectory are roughly known.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tackling the problem}
+We divide the problem in two subproblems, in fact vertical and horizontal dynamics are decoupled and treated separately.
+\begin{columns}[t]
+\column{0.45\textwidth}
+\begin{block}{Tracking - horizontal dynamics}
+Forcing the IRIS horizontal position to a reference signal (platform position) and minimizing the error between the two. Done by changing x and y set points.
+\end{block}
+\column{0.5\textwidth}
+\begin{block}{Landing - vertical dynamics}
+Assuring the descent maneuver to be performed at the proper time in order to finally perform the touchdown. Done by changing altitude set point.
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tracking}
+Let us first issue the horizontal set point (x , y) equal to the platform position: $\boldsymbol{P_{sp }} = \boldsymbol{P_{r}}$
+\begin{figure}
+\includegraphics[width = 0.6\textwidth]{f/tracknogain2.eps}
+\end{figure}
+
+We observe a static error $\boldsymbol{P_e} = \boldsymbol{P_{t}} - \boldsymbol{P_{r}}$
+\end{frame}
+
+\begin{frame}
+\frametitle{Tracking}
+We need to place the position setpoint in front of the platform.
+\begin{equation}
+\boldsymbol{P_{sp}} = \boldsymbol{P_{t}} + K_p \boldsymbol{P_e} 
+\label{eq:contr2}
+\end{equation}
+A big improvement but still wrong, when the error goes to zero the proportional action disappears. Finally:
+\begin{equation}
+\boldsymbol{P_{sp}} = \boldsymbol{P_{t}} + K_p \boldsymbol{P_e} +  K_i \int \boldsymbol{P_e}
+\end{equation}
+where the integral forces the static error to zero.
+\end{frame}
+
+\begin{frame}
+\frametitle{Tracking comparison}
+\begin{figure}
+\includegraphics[height = 0.8\textheight]{f/trackcompare.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Landing}
+Landing is performed in a simple but effective way. The variable that is calculated in this section is the z component of the position set point. \\~\\
+
+Let $\lVert \boldsymbol{P_e} \rVert = d$ \\~\\
+
+then a linear relation between $z_{sp}$ and $d$ is chosen:
+\begin{equation}
+	z_{sp} = M d + Q
+\end{equation}
+Line parameters are calculated following a procedure:
+\begin{enumerate}
+\item Choose the maximum height $H_{max}$
+\item Define a minimum positive height $H_{min}$
+\item Define the radius of influence $\rho$
+\item Define the tolerance $\tau$
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Landing profile}
+\begin{figure}
+\includegraphics[height = 0.8\textheight]{f/profile.eps}
+\end{figure}
+\end{frame}
+
 
 \section{Conclusions}
 
@@ -622,7 +749,17 @@ $E = mc^2$
 \end{frame}
 
 \begin{frame}
+\frametitle{Conclusions}
+\end{frame}
+
+\begin{frame}
 \Huge{\centerline{Thank you}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Appendix}
+
+
 \end{frame}
 
 %----------------------------------------------------------------------------------------

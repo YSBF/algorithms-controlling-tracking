@@ -1,10 +1,23 @@
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
+\frametitle{Behavioral design}
+Inspired from animals but largely applied in robotics
+
+\begin{columns}[t]
+\column{0.5\textwidth}
 \begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
+if(TAKE_OFF){ takeOff(); }
+
+if(LAND){ land(); }
+\end{verbatim}
+\column{0.5\textwidth}
+\begin{verbatim}
+if(MOVE){ move(); }
+
+if(FOLLOW_T){ followTraj();
+              rotate(); }
+\end{verbatim}
+
+\end{columns}
+\vspace{2em}
+\textit{TAKE\_OFF, LAND, MOVE, FOLLOW\_T} are boolean signals of the so called \textbf{switching logic}.  \\~\\
+
+\textit{takeOff(), land(), move(), followTraj()} are C++ functions and they are called \textbf{behaviors}.
