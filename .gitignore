@@ -42,4 +42,14 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.aux
-*.aux
+*.bbl
+*.blg
+*.brf
+*.glo
+*.lof
+*.log
+*.out
+*.ps
+*.synctex.gz
+*.toc
+
